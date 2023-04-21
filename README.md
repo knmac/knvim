@@ -20,9 +20,11 @@ export NVIM_APPNAME="knvim"
 
 ## Prerequisites
 
-- Neovim 0.9+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
+- Neovim 0.9.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
 - A [nerd-font](https://www.nerdfonts.com/) for the glyphs.
-- GCC-14 for Neorg. For MacOS, `export CC="$(which gcc-12)"`.
+- `npm` for Mason (installer for LSP).
+- `rg` and `fd` for Telescope (fuzzy finder).
+- GCC-14 for Neorg. For MacOS, `export CC="$(which gcc-12)"` (only need for the first run or when to resync parser for Neorg).
 
 ## Demo
 
