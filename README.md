@@ -17,9 +17,6 @@ Then add this command to `.bashrc` or `.zshrc`.
 ```bash
 export NVIM_APPNAME="knvim"
 ```
-## Demo
-
-[TODO]
 
 ## Prerequisites
 
@@ -27,9 +24,13 @@ export NVIM_APPNAME="knvim"
 - A [nerd-font](https://www.nerdfonts.com/) for the glyphs.
 - GCC-14 for Neorg. For MacOS, `export CC="$(which gcc-12)"`.
 
-## Clean-up
+## Demo
 
-Remove `$HOME/.config/knvim` and `$HOME/.local/share/knvim`.
+[TODO]
+
+## Removing knvim
+
+Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/knvim`.
 
 ## Cheatsheet
 
