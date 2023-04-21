@@ -31,4 +31,4 @@ export NVIM_APPNAME="knvim"
 
 ## Cheatsheet
 
-Cheatsheet for knvim can be found [here](res/cheatsheet.md'). You can also access cheatsheet from the start page.
+Cheatsheet for knvim can be found [here](res/cheatsheet.md). You can also access cheatsheet from the start page.
