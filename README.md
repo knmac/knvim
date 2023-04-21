@@ -1,6 +1,6 @@
 # knvim
 
-K-nvim or kn-vim, a pun on my username knmac.
+K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knmac.
 
 ![screenshot](./res/screenshot.png)
 
@@ -21,13 +21,15 @@ export NVIM_APPNAME="knvim"
 
 [TODO]
 
-## Installation
+## Prerequisites
 
-[TODO]
+- Neovim 0.9+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
+- A [nerd-font](https://www.nerdfonts.com/) for the glyphs.
+- GCC-14 for Neorg. For MacOS, `export CC="$(which gcc-12)"`.
 
 ## Clean-up
 
-[TODO]
+Remove `$HOME/.config/knvim` and `$HOME/.local/share/knvim`.
 
 ## Cheatsheet
 
