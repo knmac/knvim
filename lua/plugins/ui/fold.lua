@@ -11,6 +11,7 @@ return {
                     -- foldfunc = 'builtin',
                     -- setopt = true,
                     relculright = true,
+                    ft_ignore = { 'Outline' },
                     segments = {
                         { text = { builtin.foldfunc },      click = 'v:lua.ScFa' },
                         { text = { '%s' },                  click = 'v:lua.ScSa' },
