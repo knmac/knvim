@@ -24,7 +24,6 @@ export NVIM_APPNAME="knvim"
 - A [nerd-font](https://www.nerdfonts.com/) for the glyphs.
 - `npm` for Mason (installer for LSP).
 - `rg` and `fd` for Telescope (fuzzy finder).
-- GCC-14 for Neorg. For MacOS, `export CC="$(which gcc-12)"` (only need for the first run or when to resync parser for Neorg).
 
 ## Demo
 
