@@ -45,12 +45,14 @@ g.loaded_perl_provider = 0
 opt.mouse = 'a'                     -- enable mouse support
 opt.clipboard = 'unnamedplus'       -- copy/paste to system clipboard
 opt.swapfile = false                -- don't use swapfile
-opt.encoding = 'utf-8'              -- use Unicode
 opt.wildmenu = true                 -- enhance mode of command-line completion
 opt.wildmode = 'longest:full,full'  -- completion mode config
 opt.backspace = 'indent,eol,start'  -- resolve the problem that backspace not working
+opt.encoding = 'utf-8'              -- use Unicode
+opt.spelllang = 'en_us'             -- set spell language as US english
+opt.spellfile = vim.fn.stdpath('data') .. '/spelling/en.utf-8.add'  -- file to store custom spelling
 
-vim.cmd [[ set path+=** ]]          -- provide tab-completion for file-related tasks, e.g., gf
+-- vim.cmd [[ set path+=** ]]          -- provide tab-completion for file-related tasks, e.g., gf
 
 
 -------------------------------------------------------------------------------
@@ -94,15 +96,6 @@ opt.hlsearch = true                 -- highlight matches
 
 
 -------------------------------------------------------------------------------
--- Memory, CPU
--------------------------------------------------------------------------------
-opt.hidden = true                   -- enable background buffers
-opt.history = 100                   -- remember n lines in history
--- opt.lazyredraw = true               -- faster scrolling
-opt.synmaxcol = 240                 -- max column for syntax highlight
-
-
--------------------------------------------------------------------------------
 -- Tabs, indent
 -------------------------------------------------------------------------------
 opt.expandtab = true                -- use spaces instead of tabs
@@ -111,3 +104,12 @@ opt.softtabstop = 4                 -- affect what happens when press <Tab> or <
 opt.shiftwidth = 4                  -- affect what happens when press >>, <<, or ==
 opt.smarttab = true                 -- affects how <Tab> are interpreted based on cursor location
 opt.autoindent = true               -- copy the indent from the prev line to a new line
+
+
+-------------------------------------------------------------------------------
+-- Others
+-------------------------------------------------------------------------------
+opt.hidden = true                   -- enable background buffers
+-- opt.history = 100                   -- remember n lines in history
+-- opt.lazyredraw = true               -- faster scrolling
+-- opt.synmaxcol = 240                 -- max column for syntax highlight

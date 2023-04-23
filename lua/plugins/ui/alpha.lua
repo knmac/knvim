@@ -6,11 +6,6 @@ return {
         config = function()
             local dashboard = require('alpha.themes.dashboard')
 
-            -- Create Dictionary file if necessary
-            local Path = require('plenary.path')
-            Path:new(vim.fn.stdpath('data') .. '/spelling'):mkdir()
-            Path:new(vim.fn.stdpath('data') .. '/spelling/en-US.txt'):touch()
-
             -- Get version
             local function get_version()
                 local version = vim.version()
@@ -36,7 +31,6 @@ return {
                 dashboard.button('t', '  Text finder', ':Telescope live_grep<CR>'),
                 dashboard.button('u', '  Update packages', ':Lazy sync<CR>'),
                 dashboard.button('l', '  Language servers', ':Mason<CR>'),
-                dashboard.button('d', '  Dictionary', ':e ' .. vim.fn.stdpath('data') .. '/spelling/en-US.txt<CR>'),
                 dashboard.button('c', '  Configurations', ':cd ' .. vim.fn.stdpath('config') .. ' | e $MYVIMRC<CR>'),
                 dashboard.button('h', '  Cheatsheet', ':e ' .. vim.fn.stdpath('config') .. '/res/cheatsheet.md | SymbolsOutlineOpen<CR>'),
                 dashboard.button('q', '  Quit', ':qa<CR>'),
