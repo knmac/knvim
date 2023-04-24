@@ -24,7 +24,8 @@ return {
                         end,
                         cond = function()
                             return navic.is_available()
-                        end
+                        end,
+                        color = { bg = 'NONE' },
                     },
                 },
                 lualine_x = {},
