@@ -57,6 +57,12 @@ return {
             }
         },
     },
+    -- UI improvement for vim.ui.select and vim.ui.input, good for rename prompt
+    -- (appear at the variable location)
+    {
+        'stevearc/dressing.nvim',
+        event = 'VeryLazy',
+        },
     -- LSP config
     {
         'neovim/nvim-lspconfig',

@@ -23,7 +23,7 @@ return {
             },
         },
         {
-            'stevearc/dressing.nvim', -- UI improvement for vim.ui.select and vim.ui.input
+            'stevearc/dressing.nvim', -- UI improvement for vim.ui.select and vim.ui.input, good for rename prompt
             event = 'VeryLazy',
         },
     },
