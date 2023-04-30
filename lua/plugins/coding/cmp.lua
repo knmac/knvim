@@ -22,10 +22,6 @@ return {
                 snippet_engine = 'luasnip',
             },
         },
-        {
-            'stevearc/dressing.nvim', -- UI improvement for vim.ui.select and vim.ui.input, good for rename prompt
-            event = 'VeryLazy',
-        },
     },
     config = function()
         local cmp = require('cmp')

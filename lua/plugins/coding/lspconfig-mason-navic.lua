@@ -62,7 +62,7 @@ return {
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
-        },
+    },
     -- LSP config
     {
         'neovim/nvim-lspconfig',
