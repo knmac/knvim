@@ -30,6 +30,7 @@ return {
                 barbar = true,
                 cmp = true,
                 gitsigns = true,
+                leap = true,
                 neotree = true,
                 noice = true,
                 notify = true,
