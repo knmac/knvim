@@ -66,16 +66,15 @@ return {
     -- LSP config
     {
         'neovim/nvim-lspconfig',
-        dependencies = 'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim and nvim-lspconfig
-        config = function()
-            local servers = { 'pyright', 'bashls', 'clangd', 'vimls', 'lua_ls', 'ltex', 'texlab' }
-
-            -- Install the LSP servers automatically using mason-lspconfig
-            require('mason-lspconfig').setup({
-                ensure_installed = servers,
+        dependencies = {
+            'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim and nvim-lspconfig
+            opts = {
+                -- Install the LSP servers automatically using mason-lspconfig
+                ensure_installed = { 'pyright', 'bashls', 'clangd', 'vimls', 'lua_ls', 'ltex', 'texlab' },
                 automatic_installation = true,
-            })
-
+            },
+        },
+        config = function()
             -------------------------------------------------------------------------------
             -- Set up LSP servers
             -------------------------------------------------------------------------------
@@ -182,12 +181,14 @@ return {
 
             -- Use a loop to conveniently call 'setup' on multiple servers and
             -- map buffer local keybindings when the language server attaches
+            -- The servers are ensured to be installed by mason-lspconfig
+            local servers = require('mason-lspconfig').get_installed_servers()
             for _, lsp in ipairs(servers) do
-                lspconfig[lsp].setup {
+                lspconfig[lsp].setup({
                     on_attach = on_attach,
                     flags = lsp_flags,
                     settings = server_cfgs[lsp],
-                }
+                })
             end
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()

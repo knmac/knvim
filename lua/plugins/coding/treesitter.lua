@@ -35,6 +35,7 @@ return {
                 'regex',
                 'sql',
                 'vim',
+                'dap_repl',
             },
             matchup = {
                 enable = true,

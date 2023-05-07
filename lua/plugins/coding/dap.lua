@@ -1,23 +1,26 @@
 -- Debug adapter protocol
 return {
-    'mfussenegger/nvim-dap',            -- debug adapter protocol
+    'mfussenegger/nvim-dap', -- debug adapter protocol
     event = 'VeryLazy',
     dependencies = {
-        'rcarriga/nvim-dap-ui',         -- UI for nvim-dap
-        'jay-babu/mason-nvim-dap.nvim', -- bridges mason.nvim and nvim-dap
+        'nvim-treesitter/nvim-treesitter',
+        {
+            'rcarriga/nvim-dap-ui', -- UI for nvim-dap
+            opts = {},
+        },
+        {
+            'jay-babu/mason-nvim-dap.nvim', -- bridges mason.nvim and nvim-dap
+            opts = {
+                ensure_installed = { 'python', 'codelldb' },
+                automatic_installation = true,
+            },
+        },
+        {
+            'LiadOz/nvim-dap-repl-highlights', -- syntax highlights to nvim-dap REPL
+            opts = {},
+        },
     },
     config = function()
-        local servers = { 'python', 'codelldb' }
-
-        require('mason-nvim-dap').setup({
-            ensure_installed = servers,
-            automatic_installation = true,
-        })
-
-        -- Init DAP-UI
-        require('dapui').setup({})
-
-        -- Init for DAP
         local dap = require('dap')
 
         -- Configurations for each languages ------------------------------------------
@@ -35,6 +38,7 @@ return {
                 console = 'integratedTerminal',
                 cwd = '${workspaceFolder}',
                 program = '${file}',
+                repl_lang = 'javascript',
                 args = {},
             },
             {
@@ -46,6 +50,7 @@ return {
                 program = function()
                     return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
                 end,
+                repl_lang = 'javascript',
                 args = {},
             },
         }
@@ -53,12 +58,11 @@ return {
         -- TODO: C/C++ - codelldb
 
         -- Set up signs and colors
-        vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
-        vim.fn.sign_define('DapBreakpointCondition',
-            { text = '🔶', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
-        vim.fn.sign_define('DapLogPoint', { text = '📜', texthl = 'DapLogPoint', linehl = '', numhl = '' })
-        vim.fn.sign_define('DapStopped', { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
-        vim.fn.sign_define('DapBreakpointRejected', { text = '🚫', texthl = '', linehl = '', numhl = '' })
+        vim.fn.sign_define('DapBreakpoint',          { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+        vim.fn.sign_define('DapBreakpointCondition', { text = '🔶', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
+        vim.fn.sign_define('DapLogPoint',            { text = '📜', texthl = 'DapLogPoint', linehl = '', numhl = '' })
+        vim.fn.sign_define('DapStopped',             { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
+        vim.fn.sign_define('DapBreakpointRejected',  { text = '🚫', texthl = '', linehl = '', numhl = '' })
 
         -- Wrapper function to set keymaps with default opts
         local map = function(mode, lhs, rhs, desc)

@@ -1,15 +1,14 @@
 -- Code linter
 return {
-    'jose-elias-alvarez/null-ls.nvim',     -- linter and formatter
-    dependencies = 'jayp0521/mason-null-ls.nvim',       -- bridges mason.nvim and null-ls
-    config = function()
-        local servers = { 'pylama', 'black', 'cpplint', 'shellcheck' }
-
-        require('mason-null-ls').setup({
-            ensure_installed = servers,
+    'jose-elias-alvarez/null-ls.nvim', -- linter and formatter
+    dependencies = {
+        'jayp0521/mason-null-ls.nvim', -- bridges mason.nvim and null-ls
+        opts = {
+            ensure_installed = { 'pylama', 'black', 'cpplint', 'shellcheck' },
             automatic_installation = true,
-        })
-
+        },
+    },
+    config = function()
         -- Init for null-ls
         local null_ls = require('null-ls')
         local formatting = null_ls.builtins.formatting
@@ -20,20 +19,20 @@ return {
             debug = true,
             sources = {
                 -- Formatting
-                formatting.black.with({     -- Python formatter
+                formatting.black.with({ -- Python formatter
                     extra_args = { '--fast', },
                 }),
                 -- Non-LSP diagnostics (linters)
                 diagnostics.pylama.with({
                     -- Python linter
                     extra_args = {
-                        '-l', 'pycodestyle',     -- use pycodestyle as flake8 duplicates many things from pyright
+                        '-l', 'pycodestyle', -- use pycodestyle as flake8 duplicates many things from pyright
                         '--max-line-length', '100',
                         '--ignore', 'E226,E402,E501,W503,W504,W391',
                     }
                 }),
-                diagnostics.cpplint,        -- C/C++ linter
-                diagnostics.shellcheck,     -- Shell script linter
+                diagnostics.cpplint,    -- C/C++ linter
+                diagnostics.shellcheck, -- Shell script linter
                 -- Completion
                 -- completion.spell,  -- Spell suggestion
             },
