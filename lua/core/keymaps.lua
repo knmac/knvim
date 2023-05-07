@@ -110,12 +110,16 @@ map('n', '<F1>', '<cmd>Telescope help_tags<CR>', default_opts)
 -- <S-F1>: Show keymaps
 map('n', '<F13>', '<cmd>Telescope keymaps<CR>', default_opts)
 
--- <F2>: Show task list
-map('n', '<F2>', '<cmd>TodoTelescope<CR>', default_opts)
+-- <F2>: Rename (check lspconfig)
+map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', default_opts)
+-- <S-F2>: Show task list
+map('n', '<F14>', '<cmd>TodoTelescope<CR>', default_opts)
 
 -- <F3>: Show file tree explorer
 -- map('n', '<F3>', '<cmd>NvimTreeToggle<CR>', default_opts)
 map('n', '<F3>', '<cmd>Neotree toggle<CR>', default_opts)
+-- <F3>: Show file tree at the current file dir
+map('n', '<F15>', '<cmd>Neotree dir=%:p:h<CR>', default_opts)
 
 -- <F4>: Show tags of current buffer
 -- map('n', '<F4>', ':Telescope current_buffer_tags<CR>', default_opts)
@@ -123,6 +127,8 @@ map('n', '<F3>', '<cmd>Neotree toggle<CR>', default_opts)
 map('n', '<F4>', '<cmd>SymbolsOutline<CR>', default_opts)
 -- <S-F4>: Generate tags
 -- map('n', '<F16>', ':!ctags -R --links=no . <CR>', default_opts)
+-- <S-F4>: Show diagnostics
+map('n', '<F16>', '<cmd>Telescope diagnostics<CR>', default_opts)
 
 -- <F5>: Show and switch buffer
 map('n', '<F5>', '<cmd>Telescope buffers<CR>', default_opts)
@@ -149,8 +155,10 @@ map('n', '<F8>', '<cmd>BufferClose<CR>', default_opts)
 -- <S-F8>: Close current tab
 map('n', '<F20>', '<cmd>tabclose<CR>', default_opts)
 
--- <F9>: Show diagnostics Quickfix
-map('n', '<F9>', '<cmd>Telescope diagnostics<CR>', default_opts)
+-- <F9>: Remove trailing spaces
+map('n', '<F9>', [[<cmd>%s/\s\+$//e<CR>]], default_opts)
+-- <S-F9>: Clear registers
+map('n', '<F21>', '<cmd>ClearRegisters<CR>', default_opts)
 
 -- <F10>: Run make file
 map('n', '<F10>', '<cmd>make<CR>', default_opts)

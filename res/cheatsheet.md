@@ -9,10 +9,14 @@
 | Functionality                            | Key-binding                  |
 | ---------------------------------------- | ---------------------------- |
 | Search for help                          | `F1`                         |
-| Show key-bindings                        | `Shift+F1`                   |
-| Open to-do list (project-wise)           | `F2`                         |
+| Rename variables                         | `F2`                         |
 | Toggle file explorer                     | `F3` (or `<leader> t`)       |
 | Toggle symbol view                       | `F4` (or `<leader> o`)       |
+|                                          |                              |
+| Show key-bindings                        | `Shift+F1`                   |
+| Open to-do list (project-wise)           | `Shift+F2`                   |
+| Toggle file explorer at the current file | `Shift+F3` (or `<leader> T`) |
+| Open diagnostic list (project-wise)      | `Shift+F4` (or `<leader> E`) |
 |                                          |                              |
 | Show buffer list                         | `F5`                         |
 | Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
@@ -24,12 +28,14 @@
 | Next tab                                 | `Shift+F7`                   |
 | Close the current tab                    | `Shift+F8`                   |
 |                                          |                              |
-| Open diagnostic list (project-wise)      | `F9` (or `<leader> E`)       |
+| Remove trailing spaces                   | `F9`                         |
 | Run the `make` command                   | `F10`                        |
-| Run the `make clean` command             | `Shift+F10`                  |
 | Toggle zoom the current window (splits)  | `F11`                        |
-| Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
 | Toggle relative number                   | `F12`                        |
+|                                          |                              |
+| Clear registers                          | `Shift+F9`                   |
+| Run the `make clean` command             | `Shift+F10`                  |
+| Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
 | Toggle welcome screen                    | `Shift+F12`                  |
 
 
