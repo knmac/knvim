@@ -8,8 +8,17 @@ return {
             highlight = {
                 enable = true,
                 -- disable = {},
-                disable = function(_, bufnr) -- Disable in large buffers
-                    return vim.api.nvim_buf_line_count(bufnr) > 50000
+                disable = function(_, bufnr)
+                    if vim.api.nvim_buf_line_count(bufnr) > 50000 then
+                        -- Disable in large number of line
+                        return true
+                    end
+
+                    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
+                    if ok and stats and stats.size > 100*1024 then
+                        -- Disable in large buffer size
+                        return true
+                    end
                 end,
             },
             indent = {
