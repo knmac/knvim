@@ -91,7 +91,7 @@
 | Generate doc string for function                | `<leader> d`         |
 | Toggle file explorer                            | `<leader> t`         |
 | Toggle symbol view                              | `<leader> o`         |
-| Dismiss current notify's message                | `<leader> n`         |
+| Dismiss current notification message            | `<leader> n`         |
 |                                                 |                      |
 | Toggle DAP UI                                   | `,d`                 |
 | Toggle DAP breakpoint                           | `,b`                 |
