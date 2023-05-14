@@ -27,7 +27,12 @@ export NVIM_APPNAME="knvim"
 
 ## Demo
 
-[TODO]
+Config structure and cheatsheet:
+![demo1](./res/demo1.png)
+
+Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
+![demo2](./res/demo2.png)
+
 
 ## Removing knvim
 
