@@ -1,4 +1,4 @@
-# knvim
+# KNVIM
 
 K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knmac.
 
@@ -21,9 +21,10 @@ The following prerequisites are for manual installation.
 - A [nerd-font](https://www.nerdfonts.com/) for the glyphs.
 - `npm` for Mason (installer for LSP).
 - `rg` and `fd` for Telescope (fuzzy finder).
-Clone this repo to `$HOME/.config`:
 
 ### Installation
+
+Clone this repo to `$HOME/.config`:
 
 ```bash
 git clone https://github.com/knmac/knvim.git $HOME/.config/knvim
@@ -42,7 +43,7 @@ Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/
 
 ## Installation using nvim-lazyman
 
-![nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, simply run the folling command to install knvim:
+![nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
 
 ```bash
 lazyman -w Knvim
