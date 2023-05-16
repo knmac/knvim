@@ -54,6 +54,23 @@ return {
                 args = {},
             },
         }
+        -- NOTE: For per-project config, create .vscode/launch.json that looks something like this:
+        -- {
+        --   // Use IntelliSense to learn about possible attributes.
+        --   // Hover to view descriptions of existing attributes.
+        --   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+        --   "version": "0.2.0",
+        --   "configurations": [
+        --     {
+        --       "name": "NAME OF THE LAUNCH",
+        --       "type": "python",
+        --       "request": "launch",
+        --       "program": "${file}",
+        --       "console": "integratedTerminal",
+        --       "args": ["TOKEN1", "TOKEN2", ...]
+        --     }
+        --   ]
+        -- }
 
         -- TODO: C/C++ - codelldb
 
