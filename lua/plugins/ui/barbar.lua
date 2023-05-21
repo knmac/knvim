@@ -1,7 +1,11 @@
 -- Tabline bar at the top
 return {
-    'romgrk/barbar.nvim',                         -- buffer line (top)
-    dependencies = 'nvim-tree/nvim-web-devicons', -- extra icons with colors
+    'romgrk/barbar.nvim',              -- buffer line (top)
+    dependencies = {
+        'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
+        'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    init = function() vim.g.barbar_auto_setup = false end,
     opts = {
         -- Excludes buffers from the tabline
         exclude_ft = {},
