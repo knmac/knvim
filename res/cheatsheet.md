@@ -6,6 +6,10 @@
 
 ### 1.1. Fn key-bindings
 
+- `F1-4`: toggle things
+- `F5-6`: buffers/tabs
+- `F10-12`: random frequently used things
+
 | Functionality                            | Key-binding                  |
 | ---------------------------------------- | ---------------------------- |
 | Search for help                          | `F1`                         |
@@ -41,28 +45,28 @@
 
 ### 1.2. Telescope key-bindings
 
-| Functionality                      | Key-binding       |
-| ---------------------------------- | ----------------- |
-| Open Telescope                     | `<space> <space>` |
-| Fuzzy search for filename          | `<space> f`       |
-| Fuzzy search for text              | `<space> t`       |
-| Fuzzy search for buffer            | `<space> b`       |
-| Fuzzy search for session           | `<space> s`       |
-| Fuzzy search for bibtex citations  | `<space> c`       |
-| Fuzzy search for vim options       | `<space> v`       |
-| File browser using Telescope       | `<space> w`       |
-| Show notification history          | `<space> n`       |
-| Fuzzy search in the current buffer | `<space> /`       |
+| Functionality                       | Key-binding       |
+| ----------------------------------- | ----------------- |
+| Open Telescope                      | `<space> <space>` |
+| Fuzzy search for *f*ilename         | `<space> f`       |
+| Fuzzy search for *t*ext             | `<space> t`       |
+| Fuzzy search for *b*uffer           | `<space> b`       |
+| Fuzzy search for *s*ession          | `<space> s`       |
+| Fuzzy search for bibtex *c*itations | `<space> c`       |
+| Fuzzy search for *v*im options      | `<space> v`       |
+| File bro*w*ser using Telescope      | `<space> w`       |
+| Show *n*otification history         | `<space> n`       |
+| Fuzzy search in the current buffer  | `<space> /`       |
 
 
 ### 1.3. LSP-related key-bindings
 
 | Functionality                                         | Key-binding   |
 | ----------------------------------------------------- | ------------- |
-| Show definitions                                      | `gd`          |
-| Show implementation                                   | `gi`          |
-| Show reference                                        | `gr`          |
-| Show type definition                                  | `gt`          |
+| Go to *d*efinitions                                   | `gd`          |
+| Go to *i*mplementation                                | `gi`          |
+| Go to *r*eference                                     | `gr`          |
+| Go to *t*ype definition                               | `gt`          |
 | Show function documentation (on hover)                | `K`           |
 | Show signature help (while typing function arguments) | `Ctrl+k`      |
 |                                                       |               |
@@ -70,17 +74,56 @@
 | Code action (if supported by the language server)     | `<leader> ca` |
 | Code formatting (if supported by the language server) | `<leader> f`  |
 |                                                       |               |
-| Open diagnostic list (project-wise)                   | `<leader> E`  |
-| Show current line's diagnostic                        | `<leader> e`  |
-| Go to previous diagnostic                             | `[e`          |
-| Go to next diagnostic                                 | `]e`          |
+| Open *e*rror (diagnostic) list (project-wise)         | `<leader> E`  |
+| Show current line's error                             | `<leader> e`  |
+| Go to previous error                                  | `[e`          |
+| Go to next error                                      | `]e`          |
 |                                                       |               |
-| Add workspace folder                                  | `<leader> wa` |
-| Remove workspace folder                               | `<leader> wr` |
-| List workspace folder                                 | `<leader> wl` |
+| *A*dd *w*orkspace folder                              | `<leader> wa` |
+| *R*emove *w*orkspace folder                           | `<leader> wr` |
+| *L*ist *w*orkspace folder                             | `<leader> wl` |
 
 
-### 1.4. Other custom key-bindings
+### 1.4. Window and buffer navigation
+
+| Functionality                 | Key-binding/Command  |
+| ----------------------------- | -------------------- |
+| Switch to the left window     | `Alt+h`              |
+| Switch to the lower window    | `Alt+j`              |
+| Switch to the upper window    | `Alt+k`              |
+| Switch to the right window    | `Alt+l`              |
+| Swap with the left window     | `Alt+Shift+h`        |
+| Swap with the lower window    | `Alt+Shift+j`        |
+| Swap with the upper window    | `Alt+Shift+k`        |
+| Swap with the right window    | `Alt+Shift+l`        |
+|                               |                      |
+| Switch to the previous buffer | `Ctrl+Alt+h`         |
+| Switch to the next buffer     | `Ctrl+Alt+l`         |
+| *J*ump to a buffer            | `Ctrl+Alt+j`         |
+| *K*ill a buffer               | `Ctrl+Alt+k`         |
+| Swap with the previous buffer | `Ctrl+Alt+Shift+h`   |
+| Swap with the next buffer     | `Ctrl+Alt+Shift+l`   |
+| Restore a closed buffer       | `Ctrl+Alt+Shift+j`   |
+| Kill the current buffer       | `Ctrl+Alt+Shift+k`   |
+
+
+### 1.5. DAP key-bindings
+
+| Functionality                                   | Key-binding/Command  |
+| ----------------------------------------------- | -------------------- |
+| Toggle DAP UI                                   | `,d`                 |
+| Toggle DAP breakpoint                           | `,b`                 |
+| Toggle DAP breakpoint with condition            | `,B`                 |
+| Continue DAP debugging                          | `,c`                 |
+| Run last DAP launcher (if there are many)       | `,l`                 |
+| Step over                                       | `,n`                 |
+| Step into                                       | `,i`                 |
+| Step out                                        | `,o`                 |
+| Terminate debugging                             | `,t`                 |
+| Hover variable while debugging                  | `,h`                 |
+
+
+### 1.6. Other custom key-bindings
 
 | Functionality                                   | Key-binding/Command  |
 | ----------------------------------------------- | -------------------- |
@@ -93,39 +136,10 @@
 | Toggle symbol view                              | `<leader> o`         |
 | Dismiss current notification message            | `<leader> n`         |
 |                                                 |                      |
-| Toggle DAP UI                                   | `,d`                 |
-| Toggle DAP breakpoint                           | `,b`                 |
-| Toggle DAP breakpoint with condition            | `,B`                 |
-| Continue DAP debugging                          | `,c`                 |
-| Run last DAP launcher (if there are many)       | `,l`                 |
-| Step over                                       | `,n`                 |
-| Step into                                       | `,i`                 |
-| Step out                                        | `,o`                 |
-| Terminate debugging                             | `,t`                 |
-| Hover variable while debugging                  | `,h`                 |
-|                                                 |                      |
-| Switch to the left window                       | `<Alt+h>`            |
-| Switch to the lower window                      | `<Alt+j>`            |
-| Switch to the upper window                      | `<Alt+k>`            |
-| Switch to the right window                      | `<Alt+l>`            |
-| Swap with the left window                       | `<Alt+Shift+h>`      |
-| Swap with the lower window                      | `<Alt+Shift+j>`      |
-| Swap with the upper window                      | `<Alt+Shift+k>`      |
-| Swap with the right window                      | `<Alt+Shift+l>`      |
-|                                                 |                      |
-| Switch to the previous buffer                   | `<Ctrl+Alt+h>`       |
-| Switch to the next buffer                       | `<Ctrl+Alt+l>`       |
-| Jump to a buffer                                | `<Ctrl+Alt+j>`       |
-| Kill a buffer                                   | `<Ctrl+Alt+k>`       |
-| Swap with the previous buffer                   | `<Ctrl+Alt+Shift+h>` |
-| Swap with the next buffer                       | `<Ctrl+Alt+Shift+l>` |
-| Restore a closed buffer                         | `<Ctrl+Alt+Shift+j>` |
-| Close the current buffer                        | `<Ctrl+Alt+Shift+k>` |
-|                                                 |                      |
 | Toggle terminal                                 | `<Ctrl+\>`           |
 |                                                 |                      |
-| Go to previous hunk of Git change               | `[c`                 |
-| Go to next hunk of Git change                   | `]c`                 |
+| Go to previous hunk of Git *c*hange             | `[c`                 |
+| Go to next hunk of Git *c*hange                 | `]c`                 |
 |                                                 |                      |
 | Toggle line-wise comment (normal mode)          | `gcc`                |
 | Toggle line-wise comment (visual mode)          | `gc`                 |
@@ -220,7 +234,17 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 | Reopen all folds | `zR`        |
 
 
-### 2.6. Buffers manipulation
+### 2.6. Spellings
+
+| Functionality            | Key-binding   |
+| ------------------------ | ------------- |
+| Spelling suggestions     | `z=`          |
+| Add word to spell list   | `zg`          |
+| Previous misspelled word | `[s`          |
+| Next misspelled word     | `]s`          |
+
+
+### 2.7. Buffers manipulation
 
 | Functionality           | Key-binding                           |
 |-------------------------|---------------------------------------|
