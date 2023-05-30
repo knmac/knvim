@@ -44,6 +44,7 @@ return {
                 'regex',
                 'sql',
                 'vim',
+                'javascript',
                 'dap_repl',
             },
             matchup = {

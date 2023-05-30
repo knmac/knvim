@@ -1,7 +1,6 @@
 -- Debug adapter protocol
 return {
     'mfussenegger/nvim-dap', -- debug adapter protocol
-    event = 'VeryLazy',
     dependencies = {
         'nvim-treesitter/nvim-treesitter',
         {
@@ -17,6 +16,7 @@ return {
         },
         {
             'LiadOz/nvim-dap-repl-highlights', -- syntax highlights to nvim-dap REPL
+            build = ':TSInstall dap_repl',
             opts = {},
         },
     },
@@ -89,6 +89,7 @@ return {
 
         -- Set up keymaps
         map('n', ',d', function() require('dapui').toggle() end, 'Toggle UI')
+        map('n', ',D', function() require('dap').repl.open() end, 'Open default REPL')
         map('n', ',k', function() require('dap.ui.widgets').hover() end, 'Check variable value on hover')
 
         map('n', ',c', function()
