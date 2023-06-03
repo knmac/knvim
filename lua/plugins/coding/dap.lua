@@ -1,4 +1,11 @@
 -- Debug adapter protocol
+
+-- Wrapper function to set keymaps with default opts
+local map = function(mode, lhs, rhs, desc)
+    local opts = { noremap = true, silent = true, desc = 'DAP: ' .. desc }
+    vim.keymap.set(mode, lhs, rhs, opts)
+end
+
 return {
     'mfussenegger/nvim-dap', -- debug adapter protocol
     dependencies = {
@@ -23,37 +30,9 @@ return {
     config = function()
         local dap = require('dap')
 
-        -- Configurations for each languages ------------------------------------------
-        -- Python - debugpy
-        dap.adapters.python = {
-            type = 'executable',
-            command = vim.g.python3_host_prog,
-            args = { '-m', 'debugpy.adapter', },
-        }
-        dap.configurations.python = {
-            {
-                name = '[Default] Launch DAP for the current file',
-                type = 'python',
-                request = 'launch',
-                console = 'integratedTerminal',
-                cwd = '${workspaceFolder}',
-                program = '${file}',
-                repl_lang = 'javascript',
-                args = {},
-            },
-            {
-                name = '[Default] Launch DAP with file selection',
-                type = 'python',
-                request = 'launch',
-                console = 'integratedTerminal',
-                cwd = '${workspaceFolder}',
-                program = function()
-                    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                end,
-                repl_lang = 'javascript',
-                args = {},
-            },
-        }
+        -- --------------------------------------------------------------------
+        -- Configurations for each languages
+        -- --------------------------------------------------------------------
         -- NOTE: For per-project config, create .vscode/launch.json that looks something like this:
         -- {
         --   // Use IntelliSense to learn about possible attributes.
@@ -72,24 +51,77 @@ return {
         --   ]
         -- }
 
-        -- TODO: C/C++ - codelldb
+        -- Python - debugpy
+        dap.adapters.python = {
+            type = 'executable',
+            command = vim.g.python3_host_prog,
+            args = { '-m', 'debugpy.adapter', },
+        }
+        dap.configurations.python = {
+            {
+                name = '[Default] Launch DAP (debugpy) for the current file',
+                type = 'python',
+                request = 'launch',
+                console = 'integratedTerminal',
+                cwd = '${workspaceFolder}',
+                program = '${file}',
+                repl_lang = 'javascript',
+                args = {},
+            },
+            {
+                name = '[Default] Launch DAP (debugpy) with file selection',
+                type = 'python',
+                request = 'launch',
+                console = 'integratedTerminal',
+                cwd = '${workspaceFolder}',
+                program = function()
+                    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                end,
+                repl_lang = 'javascript',
+                args = {},
+            },
+        }
 
+        -- TODO: C/C++ - codelldb
+        -- Experimental, not ready yet
+        dap.adapters.codelldb = {
+            type = 'server',
+            port = '${port}',
+            executable = {
+                command = vim.fn.stdpath('data') .. '/mason/packages/codelldb/codelldb',
+                args = {'--port', '${port}'},
+                -- On windows you may have to uncomment this:
+                -- detached = false,
+            }
+        }
+        dap.configurations.cpp = {
+            {
+                name = '[Default] Launch DAP (codelldb) for the current file',
+                type = 'codelldb',
+                request = 'launch',
+                program = '${file}',
+                -- targetArchitecture = 'x86_64',
+                cwd = '${workspaceFolder}',
+                stopOnEntry = false,
+                args = {},
+            },
+        }
+        dap.configurations.c = dap.configurations.cpp
+
+        -- --------------------------------------------------------------------
         -- Set up signs and colors
+        -- --------------------------------------------------------------------
         vim.fn.sign_define('DapBreakpoint',          { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
         vim.fn.sign_define('DapBreakpointCondition', { text = '🔶', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
         vim.fn.sign_define('DapLogPoint',            { text = '📜', texthl = 'DapLogPoint', linehl = '', numhl = '' })
         vim.fn.sign_define('DapStopped',             { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
         vim.fn.sign_define('DapBreakpointRejected',  { text = '🚫', texthl = '', linehl = '', numhl = '' })
 
-        -- Wrapper function to set keymaps with default opts
-        local map = function(mode, lhs, rhs, desc)
-            local opts = { noremap = true, silent = true, desc = 'DAP: ' .. desc }
-            vim.keymap.set(mode, lhs, rhs, opts)
-        end
-
+        -- --------------------------------------------------------------------
         -- Set up keymaps
+        -- --------------------------------------------------------------------
         map('n', ',d', function() require('dapui').toggle() end, 'Toggle UI')
-        map('n', ',D', function() require('dap').repl.open() end, 'Open default REPL')
+        map('n', ',D', function() require('dap').repl.toggle() end, 'Open default REPL')
         map('n', ',k', function() require('dap.ui.widgets').hover() end, 'Check variable value on hover')
 
         map('n', ',c', function()
@@ -100,8 +132,7 @@ return {
         end, 'Start/Continue debugging')
         map('n', ',l', function() dap.run_last() end, 'Run the last debug adapter entry')
         map('n', ',b', function() dap.toggle_breakpoint() end, 'Toggle breakpoint')
-        map('n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
-            'Toggle breakpoint with condition')
+        map('n', ',B', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, 'Toggle breakpoint with condition')
         map('n', ',n', function() dap.step_over() end, 'Step over')
         map('n', ',s', function() dap.step_into() end, 'Step into')
         map('n', ',u', function() dap.step_out() end, 'Step out')
