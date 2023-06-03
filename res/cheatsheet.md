@@ -141,7 +141,7 @@
 | Go to previous hunk of Git *c*hange             | `[c`                 |
 | Go to next hunk of Git *c*hange                 | `]c`                 |
 |                                                 |                      |
-| Toggle line-wise comment (normal mode)          | `gcc`                |
+| Toggle line-wise comment (normal mode)          | `gcc` or `Ctrl+/`    |
 | Toggle line-wise comment (visual mode)          | `gc`                 |
 | Toggle block-wise comment (normal mode)         | `gbc`                |
 | Toggle block-wise comment (visual mode)         | `gb`                 |
