@@ -43,13 +43,13 @@ Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/
 
 ## Installation using nvim-lazyman
 
-![nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
+[nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
 
 ```bash
 lazyman -w Knvim
 ```
 
-Follow instructions from ![nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, boostrapping, and other cool features.
+Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, boostrapping, and other cool features.
 
 
 ## Knvim Cheatsheet
