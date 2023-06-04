@@ -51,7 +51,7 @@ return {
         --   ]
         -- }
 
-        -- Python - debugpy
+        -- Python - debugpy ---------------------------------------------------
         dap.adapters.python = {
             type = 'executable',
             command = vim.g.python3_host_prog,
@@ -62,9 +62,9 @@ return {
                 name = '[Default] Launch DAP (debugpy) for the current file',
                 type = 'python',
                 request = 'launch',
+                program = '${file}',
                 console = 'integratedTerminal',
                 cwd = '${workspaceFolder}',
-                program = '${file}',
                 repl_lang = 'javascript',
                 args = {},
             },
@@ -72,19 +72,21 @@ return {
                 name = '[Default] Launch DAP (debugpy) with file selection',
                 type = 'python',
                 request = 'launch',
-                console = 'integratedTerminal',
-                cwd = '${workspaceFolder}',
                 program = function()
                     return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
                 end,
+                console = 'integratedTerminal',
+                cwd = '${workspaceFolder}',
                 repl_lang = 'javascript',
                 args = {},
             },
         }
 
-        -- TODO: C/C++ - codelldb
-        -- Experimental, not ready yet
-        dap.adapters.codelldb = {
+        -- C/C++ - codelldb ---------------------------------------------------
+        -- NOTE:your code has to be compiled first, e.g., using
+        -- g++ -g -Wall main.cpp -o [output_name]
+        -- Then provide [output_name] as the program name
+        dap.adapters.lldb = {
             type = 'server',
             port = '${port}',
             executable = {
@@ -96,17 +98,20 @@ return {
         }
         dap.configurations.cpp = {
             {
-                name = '[Default] Launch DAP (codelldb) for the current file',
-                type = 'codelldb',
+                name = '[Default] Launch DAP (codelldb) with file selection',
+                type = 'lldb',
                 request = 'launch',
-                program = '${file}',
-                -- targetArchitecture = 'x86_64',
+                program = function()
+                    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                end,
+                console = 'integratedTerminal',
                 cwd = '${workspaceFolder}',
                 stopOnEntry = false,
                 args = {},
             },
         }
         dap.configurations.c = dap.configurations.cpp
+        dap.configurations.rust = dap.configurations.cpp
 
         -- --------------------------------------------------------------------
         -- Set up signs and colors
