@@ -75,9 +75,9 @@ return {
             },
         },
         config = function()
-            -------------------------------------------------------------------------------
+            -------------------------------------------------------------------
             -- Set up LSP servers
-            -------------------------------------------------------------------------------
+            -------------------------------------------------------------------
             local lspconfig = require('lspconfig')
             local telescope_ok, telescope = pcall(require, 'telescope.builtin')
             local navic_ok, navic = pcall(require, 'nvim-navic')
@@ -196,9 +196,9 @@ return {
             lspconfig.clangd.setup({ capabilities = capabilities })
 
 
-            -------------------------------------------------------------------------------
+            -------------------------------------------------------------------
             -- Setup UI for LSP
-            -------------------------------------------------------------------------------
+            -------------------------------------------------------------------
             -- Popped up window borders
             vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
                 vim.lsp.handlers.hover, {

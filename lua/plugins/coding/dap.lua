@@ -84,7 +84,7 @@ return {
 
         -- C/C++ - codelldb ---------------------------------------------------
         -- NOTE:your code has to be compiled first, e.g., using
-        -- g++ -g -Wall main.cpp -o [output_name]
+        -- g++ -g main.cpp -o [output_name]
         -- Then provide [output_name] as the program name
         dap.adapters.lldb = {
             type = 'server',
