@@ -1,5 +1,6 @@
 -- Extra utils without needing to config
 return {
+    'rlane/pounce.nvim',
     'andymass/vim-matchup',        -- highlight and navigate sets of matching text
     'norcalli/nvim-colorizer.lua', -- colorize color code
     -- Non-lua nvim plugins

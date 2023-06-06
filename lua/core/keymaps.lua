@@ -44,6 +44,13 @@ map('t', '<A-l>', [[<C-\><C-n><C-w>l]], default_opts)
 -------------------------------------------------------------------------------
 -- Plugins and Function key bindings
 -------------------------------------------------------------------------------
+-- Pounce
+map('n', 's',  '<cmd>Pounce<CR>', default_opts)
+map('n', 'S',  '<cmd>PounceRepeat<CR>', default_opts)
+map('x', 's',  '<cmd>Pounce<CR>', default_opts)
+map('o', 'gs', '<cmd>Pounce<CR>', default_opts)  -- 's' is used by vim-surround
+-- map('n', 'S',  ':Pounce <C-r>/<cr>', default_opts)  -- note: if you want to use <C-r> you cannot use <cmd>
+
 -- Barbar (buffer line)
 map('n', '<C-A-h>',   '<cmd>BufferPrevious<CR>', default_opts)
 map('n', '<C-A-j>',   '<cmd>BufferPick<CR>', default_opts)

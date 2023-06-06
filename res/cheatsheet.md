@@ -138,6 +138,8 @@
 |                                                 |                      |
 | Toggle terminal                                 | `<Ctrl+\>`           |
 |                                                 |                      |
+| Fuzzy motion mode                               | `s`                  |
+|                                                 |                      |
 | Go to previous hunk of Git *c*hange             | `[c`                 |
 | Go to next hunk of Git *c*hange                 | `]c`                 |
 |                                                 |                      |
