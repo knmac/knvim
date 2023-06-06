@@ -12,15 +12,64 @@ Config structure and cheatsheet:
 Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
 ![demo2](./res/demo2.png)
 
+## Config structure
+
+```
+init.lua
+lua/
+├── core/
+│  ├── auto_commands.lua
+│  ├── init.lua
+│  ├── keymaps.lua
+│  └── settings.lua
+└── plugins/
+   ├── coding/
+   │  ├── cmp.lua
+   │  ├── comment.lua
+   │  ├── dap.lua
+   │  ├── lspconfig-mason-navic.lua
+   │  ├── null-ls.lua
+   │  └── treesitter.lua
+   ├── experimentals/
+   │  └── neorg.lua
+   ├── ui/
+   │  ├── alpha.lua
+   │  ├── barbar.lua
+   │  ├── catppuccin.lua
+   │  ├── fold.lua
+   │  ├── illuminate.lua
+   │  ├── indentblankline.lua
+   │  ├── lualine.lua
+   │  ├── noice-notify.lua
+   │  └── winsep.lua
+   ├── utils/
+   │  ├── extra.lua
+   │  ├── gitsigns.lua
+   │  ├── neo-tree.lua
+   │  ├── symbols-outline.lua
+   │  ├── telescope.lua
+   │  ├── todo-comments.lua
+   │  ├── toggleterm.lua
+   │  ├── which-key.lua
+   │  └── zen-mode.lua
+   └── init.lua
+```
+
+The configs in `experimentals/` directories are not activated by default. To use them, uncommment the following line in `lua/plugins/init.lua`:
+
+```lua
+{ import = 'plugins.experimentals', },
+```
+
 ## Manual installation
 
 ### Prerequisites
 
 The following prerequisites are for manual installation.
 - Neovim 0.9.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
-- A [nerd-font](https://www.nerdfonts.com/) for the glyphs.
-- `npm` for Mason (installer for LSP).
-- `rg` and `fd` for Telescope (fuzzy finder).
+- A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font.
+- `npm` for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formaters).
+- `rg` and `fd` for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
 
 ### Installation
 
