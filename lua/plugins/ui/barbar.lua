@@ -14,7 +14,7 @@ return {
         hide = { extensions = false, inactive = false },
         icons = {
             modified = { button = '' },
-            pinned = { button = '' },
+            pinned = { button = '', filename = true },
         },
         -- Set the filetypes which barbar will offset itself for
         sidebar_filetypes = {

@@ -60,6 +60,7 @@ map('n', '<C-A-S-h>', '<cmd>BufferMovePrevious<CR>', default_opts)
 map('n', '<C-A-S-j>', '<cmd>BufferRestore<CR>', default_opts)
 map('n', '<C-A-S-k>', '<cmd>BufferClose<CR>', default_opts)
 map('n', '<C-A-S-l>', '<cmd>BufferMoveNext<CR>', default_opts)
+map('n', '<C-A-p>',   '<cmd>BufferPin<CR>', default_opts)
 
 -- Telescope
 map('n', '<space><space>', '<cmd>Telescope<CR>', default_opts)
