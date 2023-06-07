@@ -6,6 +6,7 @@
 
 ### 1.1. Fn key-bindings
 
+Overall logic:
 - `F1-4`: toggle things
 - `F5-6`: buffers/tabs
 - `F10-12`: random frequently used things
@@ -86,7 +87,11 @@
 
 ### 1.4. Window and buffer navigation
 
-| Functionality                 | Key-binding/Command  |
+Overall logic:
+- `Alt`: for split manipulation (with `Shift` to swap)
+- `Ctrl+Alt`: for buffer manipulation (with `Shift` for extra functionalities)
+
+| Functionality                 | Key-binding          |
 | ----------------------------- | -------------------- |
 | Switch to the left window     | `Alt+h`              |
 | Switch to the lower window    | `Alt+j`              |
@@ -105,13 +110,15 @@
 | Swap with the next buffer     | `Ctrl+Alt+Shift+l`   |
 | Restore a closed buffer       | `Ctrl+Alt+Shift+j`   |
 | Kill the current buffer       | `Ctrl+Alt+Shift+k`   |
+| Pin/unpin the current buffer  | `Ctrl+Alt+p`         |
 
 
 ### 1.5. DAP key-bindings
 
-| Functionality                                   | Key-binding/Command  |
+| Functionality                                   | Key-binding          |
 | ----------------------------------------------- | -------------------- |
 | Toggle DAP UI                                   | `,d`                 |
+| Toggle DAP defautl REPL                         | `,D`                 |
 | Toggle DAP breakpoint                           | `,b`                 |
 | Toggle DAP breakpoint with condition            | `,B`                 |
 | Continue DAP debugging                          | `,c`                 |
@@ -125,7 +132,7 @@
 
 ### 1.6. Other custom key-bindings
 
-| Functionality                                   | Key-binding/Command  |
+| Functionality                                   | Key-binding          |
 | ----------------------------------------------- | -------------------- |
 | Insert python breakpoint (on the next line)     | `<leader> b`         |
 | Insert python breakpoint (on the previous line) | `<leader> B`         |
@@ -157,36 +164,36 @@
 
 ### 2.1. Standard navigation
 
-| Group             | Functionality                             | Key-binding/Command         |
-|-------------------|-------------------------------------------|-----------------------------|
-| Line navigation   | Go left/down/up/right                     | `h`/`j`/`k`/`l`             |
-|                   | Go next/previous (useful for menu items)  | `Ctrl+n`/`Ctrl+p`           |
-|                   | Go to start/end of current line           | `0`/`$`                     |
-|                   | Go to non-blank start/end of current line | `^`/`g_`                    |
-| Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                     |
-|                   | Go to end of a word                       | `e`                         |
-| Screen navigation | Go to first/last line                     | `gg`/`G`                    |
-|                   | Go to `n`-th line                         | `:n` (or `ngg` or `nG`)     |
-|                   | Go half-page up/down                      | `Ctrl+u`/`Ctrl+d`           |
-|                   | Go full-page backward/forward             | `Ctrl+b`/`Ctrl+f`           |
-| Search navigation | Search (forward) for pattern              | `/[pattern]`                |
-|                   | Search (backward) for pattern             | `?[pattern]`                |
-|                   | Go to next/previous matching pattern      | `n`/`N`                     |
-| Window navigation | Create a horizontal split                 | `:split` (or `<Ctrl+w> s`)  |
-|                   | Create a vertical split                   | `:vsplit` (or `<Ctrl+w> v`) |
-|                   | Go to left/down/up/right split            | `Ctrl+w` `h`/`j`/`k`/`l`    |
+| Group             | Functionality                             | Key-binding                 | Command   |
+| ----------------- | ----------------------------------------- | --------------------------- | --------- |
+| Line navigation   | Go left/down/up/right                     | `h`/`j`/`k`/`l`             |           |
+|                   | Go next/previous (useful for menu items)  | `Ctrl+n`/`Ctrl+p`           |           |
+|                   | Go to start/end of current line           | `0`/`$`                     |           |
+|                   | Go to non-blank start/end of current line | `^`/`g_`                    |           |
+| Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                     |           |
+|                   | Go to end of a word                       | `e`                         |           |
+| Screen navigation | Go to first/last line                     | `gg`/`G`                    |           |
+|                   | Go to `n`-th line                         | `<n>gg` or `<n>G`           | `:n`      |
+|                   | Go half-page up/down                      | `Ctrl+u`/`Ctrl+d`           |           |
+|                   | Go full-page backward/forward             | `Ctrl+b`/`Ctrl+f`           |           |
+| Search navigation | Search (forward) for pattern              | `/<pattern>`                |           |
+|                   | Search (backward) for pattern             | `?<pattern>`                |           |
+|                   | Go to next/previous matching pattern      | `n`/`N`                     |           |
+| Window navigation | Create a horizontal split                 | `<Ctrl+w> s`                | `:split`  |
+|                   | Create a vertical split                   | `<Ctrl+w> v`                | `:vsplit` |
+|                   | Go to left/down/up/right split            | `Ctrl+w` `h`/`j`/`k`/`l`    |           |
 
 
 ### 2.2. Substitution
 
 General command:
 
-`[substitution_options]/[old_string]/[new_string]/[execution_options]`
+`<substitution_options>/<old_string>/<new_string>/<execution_options>`
 
 Substitution options:
 
 | Functionality                              | Key-binding |
-|--------------------------------------------|-------------|
+| ------------------------------------------ | ----------- |
 | Replace all                                | `%s`        |
 | Replace the current line                   | `s`         |
 | Replace from line 5 to line 12             | `5,12s`     |
@@ -195,7 +202,7 @@ Substitution options:
 Execution options:
 
 | Functionality                | Key-binding |
-|------------------------------|-------------|
+| ---------------------------- | ----------- |
 | Execute without confirmation | `g`         |
 | Execute with confirmation    | `gc`        |
 
@@ -208,7 +215,7 @@ Examples:
 ### 2.3. Vim's default auto-completion (insert mode)
 
 | Functionality                      | Key-binding     |
-|------------------------------------|-----------------|
+| ---------------------------------- | --------------- |
 | Word/pattern completion - forward  | `Ctrl+x Ctrl+n` |
 | Word/pattern completion - backward | `Ctrl+x Ctrl+p` |
 | Line completion                    | `Ctrl+x Ctrl+l` |
@@ -221,7 +228,7 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 ### 2.4. Ctags key-bindings (requires Ctags)
 
 | Functionality        | Key-binding |
-|----------------------|-------------|
+| -------------------- | ----------- |
 | Go to definition     | `Ctrl+]`    |
 | Preview definition   | `Ctrl+w }`  |
 | Close preview window | `Ctrl+w z`  |
@@ -230,7 +237,7 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 ### 2.5. Code folding
 
 | Functionality    | Key-binding |
-|------------------|-------------|
+| ---------------- | ----------- |
 | Toggle a fold    | `za`        |
 | Close all folds  | `zM`        |
 | Reopen all folds | `zR`        |
@@ -248,11 +255,11 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 
 ### 2.7. Buffers manipulation
 
-| Functionality           | Key-binding                           |
-|-------------------------|---------------------------------------|
-| Open file in new buffer | `:badd [filename]`                    |
+| Functionality           | Command                               |
+| ----------------------- | ------------------------------------- |
+| Open file in new buffer | `:badd <filename>`                    |
 | Go to next buffer       | `:bn`                                 |
 | Go to previous buffer   | `:bp`                                 |
 | Delete buffer           | `:bd`                                 |
 | List all buffers        | `:ls`                                 |
-| Go to a buffer          | `:b` `[buffer_index]`/`[buffer_name]` |
+| Go to a buffer          | `:b` `<buffer_index>`/`<buffer_name>` |
