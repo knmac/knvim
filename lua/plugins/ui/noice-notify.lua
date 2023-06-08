@@ -14,7 +14,7 @@ return {
                 -- Setup LSP for prettier rendering
                 lsp = {
                     progress = {
-                        enabled = false,
+                        enabled = true,
                     },
                     override = {
                         -- override the default lsp markdown formatter with Noice
@@ -35,6 +35,10 @@ return {
                         enabled = true,
                     },
                 },
+                messages = {
+                    enabled = true,
+                    view_search = false,
+                }
             })
             vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = nil })
         end
