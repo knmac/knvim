@@ -146,13 +146,14 @@ return {
                 end
             end
 
+            -- Server common configs
             local lsp_flags = {
                 -- This is the default in Nvim 0.7+
                 debounce_text_changes = 150,
             }
 
             -- Server-specific configs
-            local server_cfgs = {
+            local lsp_settings = {
                 lua_ls = {
                     Lua = {
                         diagnostics = {
@@ -179,6 +180,12 @@ return {
                 },
             }
 
+            local utf16_cap = vim.lsp.protocol.make_client_capabilities()
+            utf16_cap.offsetEncoding = { 'utf-16' }
+            local lsp_capabilities = {
+                clangd = { utf16_cap },
+            }
+
             -- Use a loop to conveniently call 'setup' on multiple servers and
             -- map buffer local keybindings when the language server attaches
             -- The servers are ensured to be installed by mason-lspconfig
@@ -187,13 +194,10 @@ return {
                 lspconfig[lsp].setup({
                     on_attach = on_attach,
                     flags = lsp_flags,
-                    settings = server_cfgs[lsp],
+                    settings = lsp_settings[lsp],
+                    capabilities = lsp_capabilities[lsp],
                 })
             end
-
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities.offsetEncoding = { 'utf-16' }
-            lspconfig.clangd.setup({ capabilities = capabilities })
 
 
             -------------------------------------------------------------------
