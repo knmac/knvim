@@ -3,6 +3,10 @@
 -- ----------------------------------------------------------------------------
 require('core')
 
+-- Overwrite some custom paths if needed (already defined in core/settings.lua)
+-- vim.g.python3_host_prog = ''
+-- vim.opt.spellfile = ''
+
 -- ----------------------------------------------------------------------------
 -- Setup plugins with the package-manager lazy-nvim
 -- ----------------------------------------------------------------------------
