@@ -46,6 +46,7 @@ lua/
    │  ├── extra.lua
    │  ├── gitsigns.lua
    │  ├── neo-tree.lua
+   │  ├── swenv.lua
    │  ├── symbols-outline.lua
    │  ├── telescope.lua
    │  ├── todo-comments.lua

@@ -80,8 +80,10 @@ return {
                 lualine_b = { 'branch', 'diff', 'diagnostics' },
                 lualine_c = { { 'filename', path = 3, }, 'searchcount' },
                 lualine_x = { fmt_stat, 'encoding', 'fileformat', 'filetype' },
-                lualine_y = { 'progress' },
-                lualine_z = { 'location' }
+                lualine_y = { 'location', 'progress' },
+                lualine_z = {
+                    { 'swenv', icon = ' ', color = { fg = '#24273A', }, }
+                },
             },
             inactive_sections = {
                 lualine_a = {},

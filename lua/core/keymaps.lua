@@ -74,6 +74,7 @@ map('n', '<space>w',       '<cmd>Telescope file_browser<CR>', default_opts)
 map('n', '<space>h',       '<cmd>Telescope help_tags<CR>', default_opts)
 map('n', '<space>n',       '<cmd>Telescope notify<CR>', default_opts)
 map('n', '<space>s',       '<cmd>SessionManager load_session<CR>', default_opts)
+map('n', '<space>e',       function() require('swenv.api').pick_venv() end, default_opts)
 
 -- Easy align
 -- Start interactive EasyAlign in visual mode (e.g. vip\a)

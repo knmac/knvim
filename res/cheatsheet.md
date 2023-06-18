@@ -56,6 +56,7 @@ Overall logic:
 | Fuzzy search for bibtex *c*itations | `<space> c`       |
 | Fuzzy search for *v*im options      | `<space> v`       |
 | File bro*w*ser using Telescope      | `<space> w`       |
+| Switch python environment           | `<space> e`       |
 | Show *n*otification history         | `<space> n`       |
 | Fuzzy search in the current buffer  | `<space> /`       |
 
