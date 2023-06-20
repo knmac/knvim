@@ -3,13 +3,22 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
         'nvim-tree/nvim-web-devicons',
-        'nvim-telescope/telescope.nvim',  -- Switch filetype
+        'nvim-telescope/telescope.nvim',  -- Switch filetype and git branches
         'SmiteshP/nvim-navic',  -- Show navic status
         'AckslD/swenv.nvim',  -- Show and switch python env
     },
     config = function()
         -- Custom components --------------------------------------------------
-        -- Navic status for winbar
+        -- Message to show the number of spaces per tab of the buffer
+        local fmt_stat = {
+            function()
+                local stat = ''
+                stat = stat .. 'spaces=' .. vim.opt_local.tabstop._value
+                return stat
+            end,
+        }
+
+        -- Custom components using nvim-navic
         local navic_stat = {
             function()
                 local loc = require('nvim-navic').get_location()
@@ -24,19 +33,16 @@ return {
             color = { bg = 'NONE' },
         }
 
-        -- Message to show the number of spaces per tab of the buffer
-        local fmt_stat = {
-            function()
-                local stat = ''
-                stat = stat .. 'spaces=' .. vim.opt_local.tabstop._value
-                return stat
-            end,
-        }
-
-        -- Python virtual env
+        -- Custom components using swenv
         local env_stat = {
             function()
-                return require('swenv.api').get_current_venv().name
+                local current_env = require('swenv.api').get_current_venv()
+                if current_env ~= nil then
+                    current_env = current_env.name
+                else
+                    current_env = '∅'
+                end
+                return current_env
             end,
             icon = ' ',
             on_click = function()
@@ -45,12 +51,19 @@ return {
             end,
         }
 
-        -- Clickable filetype
+        -- Custom components using telescope
         local filetype_stat = {
             'filetype',  -- builtin filetype component
             on_click = function()
                 require('telescope.builtin').filetypes()
                 vim.cmd.LspRestart()
+            end,
+        }
+
+        local branch_stat = {
+            'branch',
+            on_click = function()
+                require('telescope.builtin').git_branches()
             end,
         }
 
@@ -80,7 +93,7 @@ return {
             },
             sections = {
                 lualine_a = { 'mode' },
-                lualine_b = { 'branch',
+                lualine_b = { branch_stat,
                               'diff',
                               'diagnostics',
                             },
