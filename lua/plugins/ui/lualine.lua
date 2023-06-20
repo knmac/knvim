@@ -10,12 +10,18 @@ return {
     },
     config = function()
         -- Custom components --------------------------------------------------
-        -- Message to show the number of spaces per tab of the buffer
+        -- Show and change the number of spaces per tab of the local buffer
         local fmt_stat = {
             function()
                 local stat = ''
-                stat = stat .. 'spaces=' .. vim.opt_local.tabstop._value
+                stat = stat .. 'Spaces:' .. vim.opt_local.tabstop:get()
                 return stat
+            end,
+            on_click = function()
+                local spaces = tonumber(vim.fn.input('Local number of spaces per tab: '))
+                vim.opt_local.tabstop = spaces
+                vim.opt_local.softtabstop = spaces  -- For editing
+                vim.opt_local.shiftwidth = spaces  -- For autoindent
             end,
         }
 
