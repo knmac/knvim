@@ -114,7 +114,7 @@ return {
                               filetype_stat,
                             },
                 lualine_y = { { 'searchcount', icon = '', },
-                              'location',
+                              { 'location', icon = '', },
                               'progress',
                             },
                 lualine_z = { env_stat },
