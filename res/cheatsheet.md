@@ -1,8 +1,8 @@
-# My NeoVim cheatsheet
+# Knvim cheatsheet
 
 (The default `<leader>` is `\`)
 
-## 1. Custom Vim key-bindings
+## 1. Custom key-bindings
 
 ### 1.1. Fn key-bindings
 
@@ -263,4 +263,4 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 | Go to previous buffer   | `:bp`                                 |
 | Delete buffer           | `:bd`                                 |
 | List all buffers        | `:ls`                                 |
-| Go to a buffer          | `:b` `<buffer_index>`/`<buffer_name>` |
+| Gogto a buffer          | `:b` `<buffer_index>`/`<buffer_name>` |

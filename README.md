@@ -2,7 +2,7 @@
 
 K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knmac.
 
-![screenshot](./res/screenshot.png)
+![Screenshot](./res/screenshot.png)
 
 ## Demo
 
@@ -62,13 +62,21 @@ The configs in `experimentals/` directories are not activated by default. To use
 { import = 'plugins.experimentals', },
 ```
 
+## Feature highlights
+
+- Targeting python, bash, latex, markdown, and (*some*) C/C++ usage
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (*mostly*) clickable
+- Key-biddings that (*hopefully*) make sense
+- Fun (*for me*) to use!!!
+
+
 ## Manual installation
 
 ### Prerequisites
 
 The following prerequisites are for manual installation.
 - Neovim 0.9.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
-- A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font.
+- A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [WezTerm](https://wezfurlong.org/wezterm/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font).
 - `npm` for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formaters).
 - `rg` and `fd` for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
 
@@ -93,7 +101,7 @@ Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/
 
 ## Installation using nvim-lazyman
 
-[nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
+[Nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
 
 ```bash
 lazyman -w Knvim

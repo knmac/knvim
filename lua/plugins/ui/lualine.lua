@@ -6,6 +6,7 @@ return {
         'nvim-telescope/telescope.nvim',  -- Switch filetype and git branches
         'SmiteshP/nvim-navic',  -- Show navic status
         'AckslD/swenv.nvim',  -- Show and switch python env
+        'lewis6991/gitsigns.nvim',  -- Clickable diffthis
     },
     config = function()
         -- Custom components --------------------------------------------------
@@ -67,6 +68,14 @@ return {
             end,
         }
 
+        -- Custom components using gitsigns
+        local diff_stat = {
+            'diff',  -- builtin diff component
+            on_click = function()
+                require('gitsigns').diffthis()
+            end,
+        }
+
         -- Main config --------------------------------------------------------
         require('lualine').setup({
             options = {
@@ -94,18 +103,18 @@ return {
             sections = {
                 lualine_a = { 'mode' },
                 lualine_b = { branch_stat,
-                              'diff',
+                              diff_stat,
                               'diagnostics',
                             },
                 lualine_c = { { 'filename', path = 3, },
-                              'searchcount',
                             },
                 lualine_x = { fmt_stat,
                               'encoding',
                               'fileformat',
                               filetype_stat,
                             },
-                lualine_y = { 'location',
+                lualine_y = { { 'searchcount', icon = '', },
+                              'location',
                               'progress',
                             },
                 lualine_z = { env_stat },
