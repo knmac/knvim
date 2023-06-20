@@ -25,7 +25,7 @@ return {
         dependencies = 'neovim/nvim-lspconfig',
         opts = {
             highlight = true,
-            separator = ' › ',
+            separator = ' 〉',
             -- VScode-like icons
             icons = {
                 File = ' ',

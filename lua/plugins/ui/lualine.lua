@@ -30,7 +30,7 @@ return {
             function()
                 local loc = require('nvim-navic').get_location()
                 if loc ~= '' then
-                    return '› ' .. loc
+                    return '〉' .. loc
                 end
                 return loc
             end,
