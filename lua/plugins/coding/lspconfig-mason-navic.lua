@@ -70,7 +70,10 @@ return {
             'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim and nvim-lspconfig
             opts = {
                 -- Install the LSP servers automatically using mason-lspconfig
-                ensure_installed = { 'pyright', 'bashls', 'clangd', 'vimls', 'lua_ls', 'ltex', 'texlab' },
+                ensure_installed = {
+                    'pyright', 'bashls', 'clangd', 'vimls', 'lua_ls', 'ltex',
+                    'texlab', 'tsserver',
+                },
                 automatic_installation = true,
             },
         },

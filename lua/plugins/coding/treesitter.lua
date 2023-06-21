@@ -45,6 +45,7 @@ return {
                 'sql',
                 'vim',
                 'javascript',
+                'typescript',
                 'dap_repl',
             },
             matchup = {
