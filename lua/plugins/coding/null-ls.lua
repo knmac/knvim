@@ -4,7 +4,7 @@ return {
     dependencies = {
         'jayp0521/mason-null-ls.nvim', -- bridges mason.nvim and null-ls
         opts = {
-            ensure_installed = { 'pylama', 'black', 'cpplint', 'shellcheck' },
+            ensure_installed = { 'pylama', 'black', 'cpplint', 'shellcheck', 'prettierd', },
             automatic_installation = true,
         },
     },
@@ -18,13 +18,13 @@ return {
         null_ls.setup({
             debug = true,
             sources = {
-                -- Formatting
+                -- Formatting -------------------------------------------------
                 formatting.black.with({ -- Python formatter
                     extra_args = { '--fast', },
                 }),
-                -- Non-LSP diagnostics (linters)
-                diagnostics.pylama.with({
-                    -- Python linter
+                formatting.prettierd,  -- Javascript, Typescript, ... formatter
+                -- Non-LSP diagnostics (linters) ------------------------------
+                diagnostics.pylama.with({  -- Python linter
                     extra_args = {
                         '-l', 'pycodestyle', -- use pycodestyle as flake8 duplicates many things from pyright
                         '--max-line-length', '100',
