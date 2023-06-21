@@ -74,6 +74,13 @@ return {
             end,
         }
 
+        local diagnostics_stat = {
+            'diagnostics',
+            on_click = function()
+                require('telescope.builtin').diagnostics()
+            end,
+        }
+
         -- Custom components using gitsigns
         local diff_stat = {
             'diff',  -- builtin diff component
@@ -110,7 +117,7 @@ return {
                 lualine_a = { 'mode' },
                 lualine_b = { branch_stat,
                               diff_stat,
-                              'diagnostics',
+                              diagnostics_stat,
                             },
                 lualine_c = { { 'filename', path = 3, },
                             },
