@@ -47,11 +47,11 @@ return {
                 if current_env ~= nil then
                     current_env = current_env.name
                 else
-                    current_env = '∅'
+                    current_env = ' ∅'
                 end
                 return current_env
             end,
-            icon = ' ',
+            icon = '',
             on_click = function()
                 require('swenv.api').pick_venv()
                 vim.cmd.LspRestart()
@@ -69,6 +69,7 @@ return {
 
         local branch_stat = {
             'branch',
+            icon = '',
             on_click = function()
                 require('telescope.builtin').git_branches()
             end,
