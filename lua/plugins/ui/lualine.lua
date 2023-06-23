@@ -25,6 +25,30 @@ return {
             end,
         }
 
+        -- Fancier version of the builtin 'progress' component
+        local progress_stat = {
+            function()
+                -- Progress bar
+                local sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' }
+                local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+                local lines = vim.api.nvim_buf_line_count(0)
+                local i = math.floor((curr_line - 1) / lines * #sbar) + 1
+                local progress_bar = string.rep(sbar[i], 2)
+
+                -- Percentage
+                local percent = ''
+                if curr_line == 1 then
+                    percent = 'Top'
+                elseif curr_line == lines then
+                    percent = 'Bot'
+                else
+                    percent =  string.format('%2d%%%%', math.floor(curr_line / lines * 100))
+                end
+
+                return progress_bar .. ' ' .. percent
+            end,
+        }
+
         -- Custom components using nvim-navic
         local navic_stat = {
             function()
@@ -129,7 +153,7 @@ return {
                             },
                 lualine_y = { { 'searchcount', icon = '', },
                               { 'location', icon = '', },
-                              'progress',
+                              progress_stat,
                             },
                 lualine_z = { env_stat },
             },
