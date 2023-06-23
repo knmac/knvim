@@ -46,6 +46,7 @@ return {
                 'vim',
                 'javascript',
                 'typescript',
+                'scala',
                 'dap_repl',
             },
             matchup = {
