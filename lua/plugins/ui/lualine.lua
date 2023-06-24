@@ -3,10 +3,10 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
         'nvim-tree/nvim-web-devicons',
-        'nvim-telescope/telescope.nvim',  -- Switch filetype and git branches
-        'SmiteshP/nvim-navic',  -- Show navic status
-        'AckslD/swenv.nvim',  -- Show and switch python env
-        'lewis6991/gitsigns.nvim',  -- Clickable diffthis
+        'nvim-telescope/telescope.nvim', -- Switch filetype and git branches
+        'SmiteshP/nvim-navic',           -- Show navic status
+        'AckslD/swenv.nvim',             -- Show and switch python env
+        'lewis6991/gitsigns.nvim',       -- Clickable diffthis
     },
     config = function()
         -- Custom components --------------------------------------------------
@@ -20,20 +20,20 @@ return {
             on_click = function()
                 local spaces = tonumber(vim.fn.input('Local number of spaces per tab: '))
                 vim.opt_local.tabstop = spaces
-                vim.opt_local.softtabstop = spaces  -- For editing
+                vim.opt_local.softtabstop = spaces -- For editing
                 vim.opt_local.shiftwidth = spaces  -- For autoindent
             end,
         }
 
-        -- Fancier version of the builtin 'progress' component
+        -- Fancier version of the builtin 'location' and 'progress' components
         local progress_stat = {
             function()
-                -- Progress bar
-                local sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' }
+                -- Location
                 local curr_line = vim.api.nvim_win_get_cursor(0)[1]
+                local curr_col = vim.api.nvim_win_get_cursor(0)[2] + 1
                 local lines = vim.api.nvim_buf_line_count(0)
-                local i = math.floor((curr_line - 1) / lines * #sbar) + 1
-                local progress_bar = string.rep(sbar[i], 2)
+                -- local location = string.format('%3d/%3d:%-2d', curr_line, lines, curr_col)
+                local location = string.format('%3d:%-2d', curr_line, curr_col)
 
                 -- Percentage
                 local percent = ''
@@ -42,11 +42,17 @@ return {
                 elseif curr_line == lines then
                     percent = 'Bot'
                 else
-                    percent =  string.format('%2d%%%%', math.floor(curr_line / lines * 100))
+                    percent = string.format('%2d%%%%', math.floor(curr_line / lines * 100))
                 end
 
-                return progress_bar .. ' ' .. percent
+                -- Progress bar
+                local sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' }
+                local i = math.floor((curr_line - 1) / lines * #sbar) + 1
+                local progress_bar = string.rep(sbar[i], 2)
+
+                return location .. ' ' .. percent .. ' ' .. progress_bar
             end,
+            -- icon = '',
         }
 
         -- Custom components using nvim-navic
@@ -84,7 +90,7 @@ return {
 
         -- Custom components using telescope
         local filetype_stat = {
-            'filetype',  -- builtin filetype component
+            'filetype', -- builtin filetype component
             on_click = function()
                 require('telescope.builtin').filetypes()
                 vim.cmd.LspRestart()
@@ -108,7 +114,7 @@ return {
 
         -- Custom components using gitsigns
         local diff_stat = {
-            'diff',  -- builtin diff component
+            'diff', -- builtin diff component
             on_click = function()
                 require('gitsigns').diffthis()
             end,
@@ -152,7 +158,6 @@ return {
                               filetype_stat,
                             },
                 lualine_y = { { 'searchcount', icon = '', },
-                              { 'location', icon = '', },
                               progress_stat,
                             },
                 lualine_z = { env_stat },
@@ -179,7 +184,7 @@ return {
                 lualine_a = {},
                 lualine_b = {},
                 lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } },
-                            },
+                },
                 lualine_x = {},
                 lualine_y = {},
                 lualine_z = {}
