@@ -186,8 +186,7 @@ return {
             winbar = {
                 lualine_a = {},
                 lualine_b = {},
-                lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, navic_stat,
-                            },
+                lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, navic_stat, },
                 lualine_x = {},
                 lualine_y = {},
                 lualine_z = {}
