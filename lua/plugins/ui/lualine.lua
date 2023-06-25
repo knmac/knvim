@@ -24,9 +24,7 @@ return {
                 -- vim.opt_local.shiftwidth = spaces  -- For autoindent
                 vim.ui.select(
                     { 2, 4, 8 },
-                    {
-                        prompt = 'Local number of spaces per tab',
-                    },
+                    { prompt = 'Local number of spaces per tab' },
                     function(spaces)
                         vim.opt_local.tabstop = spaces
                         vim.opt_local.softtabstop = spaces -- For editing
@@ -64,6 +62,20 @@ return {
                 return location .. ' ' .. percent .. ' ' .. progress_bar
             end,
             -- icon = '',
+        }
+
+        -- Clickable version of builtin 'fileformat'
+        local fileformat_stat = {
+            'fileformat',
+            on_click = function()
+                vim.ui.select(
+                    { 'unix', 'mac', 'dos' },
+                    { prompt = 'Select fileformat' },
+                    function(ff)
+                        vim.opt_local.fileformat = ff
+                    end
+                )
+            end,
         }
 
         -- Custom components using nvim-navic
@@ -157,20 +169,10 @@ return {
             },
             sections = {
                 lualine_a = { 'mode' },
-                lualine_b = { branch_stat,
-                              diff_stat,
-                              diagnostics_stat,
-                            },
-                lualine_c = { { 'filename', path = 3, },
-                            },
-                lualine_x = { fmt_stat,
-                              'encoding',
-                              'fileformat',
-                              filetype_stat,
-                            },
-                lualine_y = { { 'searchcount', icon = '', },
-                              progress_stat,
-                            },
+                lualine_b = { branch_stat, diff_stat, diagnostics_stat, },
+                lualine_c = { { 'filename', path = 3, }, },
+                lualine_x = { fmt_stat, 'encoding', fileformat_stat, filetype_stat, },
+                lualine_y = { { 'searchcount', icon = '', }, progress_stat, },
                 lualine_z = { env_stat },
             },
             inactive_sections = {
@@ -184,8 +186,7 @@ return {
             winbar = {
                 lualine_a = {},
                 lualine_b = {},
-                lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } },
-                              navic_stat,
+                lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, navic_stat,
                             },
                 lualine_x = {},
                 lualine_y = {},
@@ -194,8 +195,7 @@ return {
             inactive_winbar = {
                 lualine_a = {},
                 lualine_b = {},
-                lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } },
-                },
+                lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, },
                 lualine_x = {},
                 lualine_y = {},
                 lualine_z = {}
