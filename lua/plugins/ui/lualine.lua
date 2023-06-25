@@ -18,10 +18,21 @@ return {
                 return stat
             end,
             on_click = function()
-                local spaces = tonumber(vim.fn.input('Local number of spaces per tab: '))
-                vim.opt_local.tabstop = spaces
-                vim.opt_local.softtabstop = spaces -- For editing
-                vim.opt_local.shiftwidth = spaces  -- For autoindent
+                -- local spaces = tonumber(vim.fn.input('Local number of spaces per tab: '))
+                -- vim.opt_local.tabstop = spaces
+                -- vim.opt_local.softtabstop = spaces -- For editing
+                -- vim.opt_local.shiftwidth = spaces  -- For autoindent
+                vim.ui.select(
+                    { 2, 4, 8 },
+                    {
+                        prompt = 'Local number of spaces per tab',
+                    },
+                    function(spaces)
+                        vim.opt_local.tabstop = spaces
+                        vim.opt_local.softtabstop = spaces -- For editing
+                        vim.opt_local.shiftwidth = spaces  -- For autoindent
+                    end
+                )
             end,
         }
 
