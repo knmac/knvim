@@ -12,6 +12,15 @@ Config structure and cheatsheet:
 Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
 ![demo2](./res/demo2.png)
 
+
+## Feature highlights
+
+- Targeting python, bash, latex, markdown, and (*some*) C/C++ usage
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (*mostly*) clickable
+- Key-biddings that (*hopefully*) make sense
+- Fun (*for me*) to use!!!
+
+
 ## Config structure
 
 ```
@@ -31,7 +40,7 @@ lua/
    │  ├── null-ls.lua
    │  └── treesitter.lua
    ├── experimentals/
-   │  └── neorg.lua
+   │  └── ...
    ├── ui/
    │  ├── alpha.lua
    │  ├── barbar.lua
@@ -61,13 +70,6 @@ The configs in `experimentals/` directories are not activated by default. To use
 ```lua
 { import = 'plugins.experimentals', },
 ```
-
-## Feature highlights
-
-- Targeting python, bash, latex, markdown, and (*some*) C/C++ usage
-- [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (*mostly*) clickable
-- Key-biddings that (*hopefully*) make sense
-- Fun (*for me*) to use!!!
 
 
 ## Manual installation
