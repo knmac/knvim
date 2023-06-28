@@ -26,9 +26,11 @@ return {
                     { 2, 4, 8 },
                     { prompt = 'Local number of spaces per tab' },
                     function(spaces)
-                        vim.opt_local.tabstop = spaces
-                        vim.opt_local.softtabstop = spaces -- For editing
-                        vim.opt_local.shiftwidth = spaces  -- For autoindent
+                        if (spaces ~= nil) then
+                            vim.opt_local.tabstop = spaces
+                            vim.opt_local.softtabstop = spaces -- For editing
+                            vim.opt_local.shiftwidth = spaces  -- For autoindent
+                        end
                     end
                 )
             end,
@@ -72,7 +74,9 @@ return {
                     { 'unix', 'mac', 'dos' },
                     { prompt = 'Select fileformat' },
                     function(ff)
-                        vim.opt_local.fileformat = ff
+                        if ff ~= nil then
+                            vim.opt_local.fileformat = ff
+                        end
                     end
                 )
             end,
