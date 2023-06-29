@@ -7,7 +7,7 @@ return {
         filetype_exclude = {
             'help', 'startify', 'make', 'NvimTree', 'neo-tree', 'neo-tree-popup',
             'dashboard', 'lsp-installer', 'alpha', 'packer', 'Outline', 'mason',
-            'dap-float', 'lazy',
+            'dap-float', 'lazy', 'noice',
         },
         use_treesitter = true,
         show_current_context = true,
