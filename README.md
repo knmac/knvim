@@ -2,19 +2,16 @@
 
 K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knmac.
 
-<!-- ![Screenshot](./res/screenshot.png) -->
-![demo3](./res/demo3.gif)
-
 ## Demo
+<!-- ![Screenshot](./res/screenshot.png) -->
+Video demo with clickable lualine
+![demo3](./res/demo1.gif)
 
-Config structure and cheatsheet:
-![demo1](./res/demo1.png)
+Config structure and cheatsheet
+![demo1](./res/demo2.png)
 
 Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
-![demo2](./res/demo2.png)
-
-<!-- Video demo with clickable lualine -->
-<!-- ![demo3](./res/demo3.gif) -->
+![demo2](./res/demo3.png)
 
 
 ## Feature highlights
