@@ -12,6 +12,9 @@ Config structure and cheatsheet:
 Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
 ![demo2](./res/demo2.png)
 
+Video demo with clickable lualine
+![demo2](./res/demo3.gif)
+
 
 ## Feature highlights
 
