@@ -2,7 +2,8 @@
 
 K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knmac.
 
-![Screenshot](./res/screenshot.png)
+<!-- ![Screenshot](./res/screenshot.png) -->
+![demo3](./res/demo3.gif)
 
 ## Demo
 
@@ -12,8 +13,8 @@ Config structure and cheatsheet:
 Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
 ![demo2](./res/demo2.png)
 
-Video demo with clickable lualine
-![demo2](./res/demo3.gif)
+<!-- Video demo with clickable lualine -->
+<!-- ![demo3](./res/demo3.gif) -->
 
 
 ## Feature highlights
