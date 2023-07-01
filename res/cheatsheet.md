@@ -51,7 +51,7 @@ Overall logic:
 | Open Telescope                      | `<space> <space>` |
 | Fuzzy search for *f*ilename         | `<space> f`       |
 | Fuzzy search for *t*ext             | `<space> t`       |
-| Fuzzy search for *b*uffer           | `<space> b`       |
+| Fuzzy search for active *b*uffer    | `<space> b`       |
 | Fuzzy search for *s*ession          | `<space> s`       |
 | Fuzzy search for bibtex *c*itations | `<space> c`       |
 | Fuzzy search for *v*im options      | `<space> v`       |
@@ -59,6 +59,7 @@ Overall logic:
 | Switch python environment           | `<space> e`       |
 | Show *n*otification history         | `<space> n`       |
 | Fuzzy search in the current buffer  | `<space> /`       |
+| Fuzzy search for commands           | `<space> ?`       |
 
 
 ### 1.3. LSP-related key-bindings
@@ -167,22 +168,22 @@ Overall logic:
 
 | Group             | Functionality                             | Key-binding                 | Command   |
 | ----------------- | ----------------------------------------- | --------------------------- | --------- |
-| Line navigation   | Go left/down/up/right                     | `h`/`j`/`k`/`l`             |           |
-|                   | Go next/previous (useful for menu items)  | `Ctrl+n`/`Ctrl+p`           |           |
-|                   | Go to start/end of current line           | `0`/`$`                     |           |
-|                   | Go to non-blank start/end of current line | `^`/`g_`                    |           |
-| Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                     |           |
-|                   | Go to end of a word                       | `e`                         |           |
-| Screen navigation | Go to first/last line                     | `gg`/`G`                    |           |
-|                   | Go to `n`-th line                         | `<n>gg` or `<n>G`           | `:n`      |
-|                   | Go half-page up/down                      | `Ctrl+u`/`Ctrl+d`           |           |
-|                   | Go full-page backward/forward             | `Ctrl+b`/`Ctrl+f`           |           |
-| Search navigation | Search (forward) for pattern              | `/<pattern>`                |           |
-|                   | Search (backward) for pattern             | `?<pattern>`                |           |
-|                   | Go to next/previous matching pattern      | `n`/`N`                     |           |
+| Line navigation   | Go left/down/up/right                     | `h`/`j`/`k`/`l`             | _         |
+|                   | Go next/previous (useful for menu items)  | `Ctrl+n`/`Ctrl+p`           | _         |
+|                   | Go to start/end of current line           | `0`/`$`                     | _         |
+|                   | Go to non-blank start/end of current line | `^`/`g_`                    | _         |
+| Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                     | _         |
+|                   | Go to end of a word                       | `e`                         | _         |
+| Screen navigation | Go to first/last line                     | `gg`/`G`                    | _         |
+|                   | Go to `n`-th line                         | `<n>gg` or `<n>G`           | `:<n>`    |
+|                   | Go half-page up/down                      | `Ctrl+u`/`Ctrl+d`           | _         |
+|                   | Go full-page backward/forward             | `Ctrl+b`/`Ctrl+f`           | _         |
+| Search navigation | Search (forward) for pattern              | `/<pattern>`                | _         |
+|                   | Search (backward) for pattern             | `?<pattern>`                | _         |
+|                   | Go to next/previous matching pattern      | `n`/`N`                     | _         |
 | Window navigation | Create a horizontal split                 | `<Ctrl+w> s`                | `:split`  |
 |                   | Create a vertical split                   | `<Ctrl+w> v`                | `:vsplit` |
-|                   | Go to left/down/up/right split            | `Ctrl+w` `h`/`j`/`k`/`l`    |           |
+|                   | Go to left/down/up/right split            | `Ctrl+w` `h`/`j`/`k`/`l`    | _         |
 
 
 ### 2.2. Substitution
