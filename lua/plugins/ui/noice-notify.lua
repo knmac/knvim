@@ -38,7 +38,14 @@ return {
                 messages = {
                     enabled = true,
                     view_search = false,
-                }
+                },
+                routes = {
+                    {
+                        -- Skip all lsp progress contain the word 'Checking document'
+                        filter = { event = 'lsp', kind = 'progress', find = 'Checking document', },
+                        opts = { skip = true, },
+                    },
+                },
             })
             vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = nil })
         end
