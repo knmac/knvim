@@ -166,24 +166,35 @@ Overall logic:
 
 ### 2.1. Standard navigation
 
-| Group             | Functionality                             | Key-binding                 | Command   |
-| ----------------- | ----------------------------------------- | --------------------------- | --------- |
-| Line navigation   | Go left/down/up/right                     | `h`/`j`/`k`/`l`             | _         |
-|                   | Go next/previous (useful for menu items)  | `Ctrl+n`/`Ctrl+p`           | _         |
-|                   | Go to start/end of current line           | `0`/`$`                     | _         |
-|                   | Go to non-blank start/end of current line | `^`/`g_`                    | _         |
-| Word navigation   | Go to next/previous beginning of a word   | `w`/`b`                     | _         |
-|                   | Go to end of a word                       | `e`                         | _         |
-| Screen navigation | Go to first/last line                     | `gg`/`G`                    | _         |
-|                   | Go to `n`-th line                         | `<n>gg` or `<n>G`           | `:<n>`    |
-|                   | Go half-page up/down                      | `Ctrl+u`/`Ctrl+d`           | _         |
-|                   | Go full-page backward/forward             | `Ctrl+b`/`Ctrl+f`           | _         |
-| Search navigation | Search (forward) for pattern              | `/<pattern>`                | _         |
-|                   | Search (backward) for pattern             | `?<pattern>`                | _         |
-|                   | Go to next/previous matching pattern      | `n`/`N`                     | _         |
-| Window navigation | Create a horizontal split                 | `<Ctrl+w> s`                | `:split`  |
-|                   | Create a vertical split                   | `<Ctrl+w> v`                | `:vsplit` |
-|                   | Go to left/down/up/right split            | `Ctrl+w` `h`/`j`/`k`/`l`    | _         |
+| Group             | Functionality                                    | Key-binding                 | Command   |
+| ----------------- | ------------------------------------------------ | --------------------------- | --------- |
+| Line navigation   | Go left/down/up/right                            | `h`/`j`/`k`/`l`             | _         |
+|                   | Go next/previous (useful for menu items)         | `Ctrl+n`/`Ctrl+p`           | _         |
+|                   | Move screen upward/downward (w.o. moving cursor) | `Ctrl+e`/`Ctrl+y`           | _         |
+|                   | Go to start/end of current line                  | `0`/`$`                     | _         |
+|                   | Go to non-blank start/end of current line        | `^`/`g_`                    | _         |
+| Word navigation   | Go to next/previous beginning of a word          | `w`/`b`                     | _         |
+|                   | Go to next/previous beginning of a WORD          | `W`/`B`                     | _         |
+|                   | Go to end of a word                              | `e`                         | _         |
+|                   | Go to end of a WORD                              | `E`                         | _         |
+| Screen navigation | Go to first/last line                            | `gg`/`G`                    | _         |
+|                   | Go to `i`-th line                                | `<i>gg` or `<i>G`           | `:<i>`    |
+|                   | Go half-page up/down                             | `Ctrl+u`/`Ctrl+d`           | _         |
+|                   | Go full-page backward/forward                    | `Ctrl+b`/`Ctrl+f`           | _         |
+| Search navigation | Search (forward) for pattern                     | `/<pattern>`                | _         |
+|                   | Search (backward) for pattern                    | `?<pattern>`                | _         |
+|                   | Go to next/previous matching pattern             | `n`/`N`                     | _         |
+|                   | Clear search                                     | `Ctrl+l` (Neovim only)      | `:nohl`   |
+| Split navigation  | Create a horizontal split                        | `Ctrl+w` `s`                | `:split`  |
+|                   | Create a vertical split                          | `Ctrl+w` `v`                | `:vsplit` |
+|                   | Go to left/down/up/right split                   | `Ctrl+w` `h`/`j`/`k`/`l`    | _         |
+|                   | Move current split to the far left/down/up/right | `Ctrl+w` `H`/`J`/`K`/`L`    | -         |
+|                   | Swap current split with the next                 | `Ctrl+w` `x`                | -         |
+|                   | Increase/decrease height                         | `Ctrl+w` `+`/`-`            | -         |
+|                   | Increase/decrease width                          | `Ctrl+w` `>`/`<`            | -         |
+|                   | Max out height                                   | `Ctrl+w` `_`                | -         |
+|                   | Max out width                                    | `Ctrl+w` `|`                | -         |
+|                   | Equal height/width for all splits                | `Ctrl+w` `=`                | -         |
 
 
 ### 2.2. Substitution
