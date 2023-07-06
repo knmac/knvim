@@ -82,78 +82,6 @@ return {
             -- Set up LSP servers
             -------------------------------------------------------------------
             local lspconfig = require('lspconfig')
-            local telescope_ok, telescope = pcall(require, 'telescope.builtin')
-            local navic_ok, navic = pcall(require, 'nvim-navic')
-
-            -- Wrapper for keymapping with default opts
-            local map = function(mode, lhs, rhs, desc)
-                local opts = { noremap = true, silent = true, desc = 'LSP: ' .. desc }
-                vim.keymap.set(mode, lhs, rhs, opts)
-            end
-
-            local bufmap = function(mode, lhs, rhs, bufnr, desc)
-                local bufopts = { noremap = true, silent = true, buffer = bufnr, desc = 'LSP: ' .. desc }
-                vim.keymap.set(mode, lhs, rhs, bufopts)
-            end
-
-            -- Mappings
-            -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            map('n', '<leader>e', function() vim.diagnostic.open_float({ border = 'rounded' }) end,
-                'Show diagnostics of the current line')
-            map('n', '[e', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end,
-                'Go to the previous diagnostic')
-            map('n', ']e', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end,
-                'Go to the next diagnostic')
-            if telescope_ok then
-                map('n', '<leader>E', telescope.diagnostics, 'Show all diagnostics')
-            else
-                map('n', '<leader>E', function() vim.diagnostic.setloclist() end, 'Show all diagnostics')
-            end
-
-            -- Use an on_attach function to only map the following keys
-            -- after the language server attaches to the current buffer
-            local on_attach = function(client, bufnr)
-                -- Enable completion triggered by <c-x><c-o>
-                vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-                -- Mappings
-                -- See `:help vim.lsp.*` for documentation on any of the below functions
-                if telescope_ok then
-                    bufmap('n', 'gd', telescope.lsp_definitions, bufnr, 'Go to definition')
-                    bufmap('n', 'gi', telescope.lsp_implementations, bufnr, 'Go to implementation')
-                    bufmap('n', 'gr', telescope.lsp_references, bufnr, 'Go to references')
-                    bufmap('n', 'gt', telescope.lsp_type_definitions, bufnr, 'Go to type definition')
-                else
-                    bufmap('n', 'gd', vim.lsp.buf.definition, bufnr, 'Go to definition')
-                    bufmap('n', 'gi', vim.lsp.buf.implementation, bufnr, 'Go to implementation')
-                    bufmap('n', 'gr', vim.lsp.buf.references, bufnr, 'Go to references')
-                    bufmap('n', 'gt', vim.lsp.buf.type_definition, bufnr, 'Go to type definition')
-                end
-
-                bufmap('n', 'gD', vim.lsp.buf.declaration, bufnr, 'Go to declaration')
-                bufmap('n', 'K', vim.lsp.buf.hover, bufnr, 'Show docstring of the item under the cursor')
-                bufmap('i', '<C-k>', vim.lsp.buf.signature_help, bufnr, 'Show signature help')
-
-                bufmap('n', '<leader>rn', vim.lsp.buf.rename, bufnr, 'Rename variable under the cursor')
-                bufmap('n', '<leader>ca', vim.lsp.buf.code_action, bufnr, 'Code action')
-                bufmap('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, bufnr, 'Format the buffer')
-
-                bufmap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufnr, 'Add workspace')
-                bufmap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufnr, 'Remove workspace')
-                bufmap('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufnr,
-                    'List workspaces')
-
-                -- Enable vim-navic
-                if navic_ok and client.server_capabilities.documentSymbolProvider then
-                    navic.attach(client, bufnr)
-                end
-            end
-
-            -- Server common configs
-            local lsp_flags = {
-                -- This is the default in Nvim 0.7+
-                debounce_text_changes = 150,
-            }
 
             -- Server-specific configs
             local lsp_settings = {
@@ -195,16 +123,83 @@ return {
             local servers = require('mason-lspconfig').get_installed_servers()
             for _, lsp in ipairs(servers) do
                 lspconfig[lsp].setup({
-                    on_attach = on_attach,
-                    flags = lsp_flags,
+                    on_attach = function(client, bufnr)
+                        require('navic').attach(client, bufnr)
+                    end,
                     settings = lsp_settings[lsp],
                     capabilities = lsp_capabilities[lsp],
                 })
             end
 
+            -------------------------------------------------------------------
+            -- Set up key-bindings
+            -------------------------------------------------------------------
+            local telescope_ok, telescope = pcall(require, 'telescope.builtin')
+
+            -- Wrapper for keymapping with default opts
+            local map = function(mode, lhs, rhs, desc)
+                local opts = { noremap = true, silent = true, desc = 'LSP: ' .. desc }
+                vim.keymap.set(mode, lhs, rhs, opts)
+            end
+
+            -- Global mappings.
+            -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+            map('n', '<leader>e', function() vim.diagnostic.open_float({ border = 'rounded' }) end,
+                'Show diagnostics of the current line')
+            map('n', '[e', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end,
+                'Go to the previous diagnostic')
+            map('n', ']e', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end,
+                'Go to the next diagnostic')
+            if telescope_ok then
+                map('n', '<leader>E', telescope.diagnostics, 'Show all diagnostics')
+            else
+                map('n', '<leader>E', function() vim.diagnostic.setloclist() end, 'Show all diagnostics')
+            end
+
+            -- Use LspAttach autocommand to only map the following keys
+            -- after the language server attaches to the current buffer
+            vim.api.nvim_create_autocmd('LspAttach', {
+                group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+                callback = function(ev)
+                    local bufmap = function(mode, lhs, rhs, desc)
+                        local bufopts = { noremap = true, silent = true, buffer = ev.buf, desc = 'LSP: ' .. desc }
+                        vim.keymap.set(mode, lhs, rhs, bufopts)
+                    end
+
+                    -- Enable completion triggered by <c-x><c-o>
+                    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+                    -- Buffer local mappings.
+                    -- See `:help vim.lsp.*` for documentation on any of the below functions
+                    if telescope_ok then
+                        bufmap('n', 'gd', telescope.lsp_definitions, 'Go to definition')
+                        bufmap('n', 'gi', telescope.lsp_implementations, 'Go to implementation')
+                        bufmap('n', 'gr', telescope.lsp_references, 'Go to references')
+                        bufmap('n', 'gt', telescope.lsp_type_definitions, 'Go to type definition')
+                    else
+                        bufmap('n', 'gd', vim.lsp.buf.definition, 'Go to definition')
+                        bufmap('n', 'gi', vim.lsp.buf.implementation, 'Go to implementation')
+                        bufmap('n', 'gr', vim.lsp.buf.references, 'Go to references')
+                        bufmap('n', 'gt', vim.lsp.buf.type_definition, 'Go to type definition')
+                    end
+
+                    bufmap('n', 'gD', vim.lsp.buf.declaration, 'Go to declaration')
+                    bufmap('n', 'K', vim.lsp.buf.hover, 'Show docstring of the item under the cursor')
+                    bufmap({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, 'Show signature help')
+
+                    bufmap('n', '<leader>rn', vim.lsp.buf.rename, 'Rename variable under the cursor')
+                    bufmap({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+                    bufmap('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, 'Format the buffer')
+
+                    bufmap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace')
+                    bufmap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace')
+                    bufmap('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, 'List workspaces')
+                end,
+            })
+
 
             -------------------------------------------------------------------
-            -- Setup UI for LSP
+            -- Setup UI
             -------------------------------------------------------------------
             -- Popped up window borders
             vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
