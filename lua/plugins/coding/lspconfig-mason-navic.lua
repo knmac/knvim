@@ -57,8 +57,8 @@ return {
             }
         },
     },
-    -- UI improvement for vim.ui.select and vim.ui.input, good for rename prompt
-    -- (appear at the variable location)
+    -- UI improvement for vim.ui.select and vim.ui.input
+    -- Good for renaming prompt (appear at the variable location)
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
@@ -81,8 +81,6 @@ return {
             -------------------------------------------------------------------
             -- Set up LSP servers
             -------------------------------------------------------------------
-            local lspconfig = require('lspconfig')
-
             -- Server-specific configs
             local lsp_settings = {
                 lua_ls = {
@@ -94,7 +92,7 @@ return {
                 },
                 ltex = {
                     ltex = {
-                        -- disable spell check
+                        -- disable spell check of ltex (use vim spellcheck instead)
                         disabledRules = {
                             ['en']    = { 'MORFOLOGIK_RULE_EN' },
                             ['en-AU'] = { 'MORFOLOGIK_RULE_EN_AU' },
@@ -122,12 +120,12 @@ return {
             -- The servers are ensured to be installed by mason-lspconfig
             local servers = require('mason-lspconfig').get_installed_servers()
             for _, lsp in ipairs(servers) do
-                lspconfig[lsp].setup({
-                    on_attach = function(client, bufnr)
-                        require('navic').attach(client, bufnr)
-                    end,
+                require('lspconfig')[lsp].setup({
                     settings = lsp_settings[lsp],
                     capabilities = lsp_capabilities[lsp],
+                    on_attach = function(client, bufnr)
+                        require('nvim-navic').attach(client, bufnr)
+                    end,
                 })
             end
 
@@ -160,14 +158,19 @@ return {
             -- after the language server attaches to the current buffer
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-                callback = function(ev)
+                callback = function(args)
+                    local bufnr = args.buf
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+
                     local bufmap = function(mode, lhs, rhs, desc)
-                        local bufopts = { noremap = true, silent = true, buffer = ev.buf, desc = 'LSP: ' .. desc }
+                        local bufopts = { noremap = true, silent = true, buffer = bufnr, desc = 'LSP: ' .. desc }
                         vim.keymap.set(mode, lhs, rhs, bufopts)
                     end
 
                     -- Enable completion triggered by <c-x><c-o>
-                    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+                    if client.server_capabilities.completionProvider then
+                        vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+                    end
 
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
