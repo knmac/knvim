@@ -69,7 +69,7 @@ Overall logic:
 | Go to *d*efinitions                                   | `gd`          |
 | Go to *i*mplementation                                | `gi`          |
 | Go to *r*eference                                     | `gr`          |
-| Go to *t*ype definition                               | `gt`          |
+| Go to t*y*pe definition                               | `gy`          |
 | Show function documentation (on hover)                | `K`           |
 | Show signature help (while typing function arguments) | `Ctrl+k`      |
 |                                                       |               |

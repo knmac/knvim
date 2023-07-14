@@ -178,12 +178,12 @@ return {
                         bufmap('n', 'gd', telescope.lsp_definitions, 'Go to definition')
                         bufmap('n', 'gi', telescope.lsp_implementations, 'Go to implementation')
                         bufmap('n', 'gr', telescope.lsp_references, 'Go to references')
-                        bufmap('n', 'gt', telescope.lsp_type_definitions, 'Go to type definition')
+                        bufmap('n', 'gy', telescope.lsp_type_definitions, 'Go to type definition')
                     else
                         bufmap('n', 'gd', vim.lsp.buf.definition, 'Go to definition')
                         bufmap('n', 'gi', vim.lsp.buf.implementation, 'Go to implementation')
                         bufmap('n', 'gr', vim.lsp.buf.references, 'Go to references')
-                        bufmap('n', 'gt', vim.lsp.buf.type_definition, 'Go to type definition')
+                        bufmap('n', 'gy', vim.lsp.buf.type_definition, 'Go to type definition')
                     end
 
                     bufmap('n', 'gD', vim.lsp.buf.declaration, 'Go to declaration')
