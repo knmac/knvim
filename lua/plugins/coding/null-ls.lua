@@ -2,7 +2,7 @@
 return {
     'jose-elias-alvarez/null-ls.nvim', -- linter and formatter
     dependencies = {
-        'jayp0521/mason-null-ls.nvim', -- bridges mason.nvim and null-ls
+        'jay-babu/mason-null-ls.nvim', -- bridges mason.nvim and null-ls
         opts = {
             ensure_installed = { 'pylama', 'black', 'cpplint', 'shellcheck', 'prettierd', },
             automatic_installation = true,
