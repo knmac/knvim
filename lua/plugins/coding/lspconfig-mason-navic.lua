@@ -219,10 +219,10 @@ return {
             require('lspconfig.ui.windows').default_options.border = 'rounded'
 
             -- Diagnostic signs
-            vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
-            vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
-            vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
-            vim.fn.sign_define('DiagnosticSignHint', { text = ' ', texthl = 'DiagnosticSignHint' })
+            vim.fn.sign_define('DiagnosticSignError', { text = '󰅚 ', texthl = 'DiagnosticSignError' }) -- x000f015a
+            vim.fn.sign_define('DiagnosticSignWarn',  { text = '󰀪 ', texthl = 'DiagnosticSignWarn' })  -- x000f002a
+            vim.fn.sign_define('DiagnosticSignInfo',  { text = '󰋽 ', texthl = 'DiagnosticSignInfo' })  -- x000f02fd
+            vim.fn.sign_define('DiagnosticSignHint',  { text = '󰌶 ', texthl = 'DiagnosticSignHint' })  -- x000f0336
 
             -- Config diagnostics
             vim.diagnostic.config({

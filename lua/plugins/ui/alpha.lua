@@ -25,16 +25,16 @@ return {
 
             dashboard.section.buttons.val = {
                 dashboard.button('e', '󰝒  Edit a new file',  ':ene<CR>'),
-                dashboard.button('s', '  Session manager',  ':SessionManager load_session<CR>'),
                 dashboard.button('r', '  Recent files',     ':Telescope oldfiles<CR>'),
-                dashboard.button('f', '  File finder',      ':Telescope find_files<CR>'),
+                dashboard.button('s', '󰺄  Session manager',  ':SessionManager load_session<CR>'),
+                dashboard.button('f', '󰱼  File finder',      ':Telescope find_files<CR>'),
                 dashboard.button('t', '󱎸  Text finder',      ':Telescope live_grep<CR>'),
-                dashboard.button('u', '  Update packages',  ':Lazy sync<CR>'),
+                dashboard.button('u', '󰏖  Update packages',  ':Lazy sync<CR>'),
                 dashboard.button('l', '  Language servers', ':Mason<CR>'),
                 dashboard.button('h', '  Health checker',   ':checkhealth<CR>'),
                 dashboard.button('c', '  Configurations',   ':cd ' .. vim.fn.stdpath('config') .. ' | e $MYVIMRC<CR>'),
-                dashboard.button('?', '󰘥  Cheatsheet',       ':e ' .. vim.fn.stdpath('config') .. '/res/cheatsheet.md | SymbolsOutlineOpen<CR>'),
-                dashboard.button('q', '  Quit',             ':qa<CR>'),
+                dashboard.button('?', '  Cheatsheet',       ':e ' .. vim.fn.stdpath('config') .. '/res/cheatsheet.md | SymbolsOutlineOpen<CR>'),
+                dashboard.button('q', '󰍃  Quit',             ':qa<CR>'),
             }
 
             -- Set footer

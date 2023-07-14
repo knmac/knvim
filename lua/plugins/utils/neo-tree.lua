@@ -18,12 +18,40 @@ return {
                 source_selector = {
                     winbar = true,
                     statusline = false,
+                    sources = {
+                        { source = 'filesystem', display_name = ' 󰉓 Files ' },
+                        { source = 'buffers',    display_name = ' 󰈚 Buffers ' },
+                        { source = 'git_status', display_name = ' 󰊢 Git ' },
+                    },
+                },
+                default_component_configs = {
+                    icon = {
+                        folder_closed = '󰉋',
+                        folder_open = '󰝰',
+                        folder_empty = "󰜌",
+                        folder_empty_open = "󰜌",
+                    },
+                    git_status = {
+                        symbols = {
+                            -- Change type
+                            added     = '', -- or '', but this is redundant info if you use git_status_colors on the name
+                            modified  = '', -- or '', but this is redundant info if you use git_status_colors on the name
+                            deleted   = '', -- this can only be used in the git_status source
+                            renamed   = '', -- this can only be used in the git_status source
+                            -- Status type
+                            untracked = '',
+                            ignored   = '',
+                            unstaged  = '󰄱',
+                            staged    = '',
+                            conflict  = '',
+                        }
+                    },
                 },
             })
         end,
     },
     -- Window picker
-    -- only needed if you want to use the commands with "_with_window_picker" suffix
+    -- only needed if you want to use the commands with '_with_window_picker' suffix
     {
         's1n7ax/nvim-window-picker',
         version = 'v1.*',

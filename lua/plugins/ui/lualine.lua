@@ -108,7 +108,7 @@ return {
                 end
                 return current_env
             end,
-            icon = '',
+            icon = '󰌠',
             on_click = function()
                 require('swenv.api').pick_venv()
                 vim.cmd.LspRestart()
@@ -126,7 +126,7 @@ return {
 
         local branch_stat = {
             'branch',
-            icon = '',
+            icon = '󰘬',
             on_click = function()
                 require('telescope.builtin').git_branches()
             end,
@@ -176,7 +176,7 @@ return {
                 lualine_b = { branch_stat, diff_stat, diagnostics_stat, },
                 lualine_c = { { 'filename', path = 3, }, },
                 lualine_x = { fmt_stat, 'encoding', fileformat_stat, filetype_stat, },
-                lualine_y = { { 'searchcount', icon = '', }, progress_stat, },
+                lualine_y = { { 'searchcount', icon = '', }, progress_stat, },
                 lualine_z = { env_stat },
             },
             inactive_sections = {
