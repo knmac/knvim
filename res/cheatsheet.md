@@ -149,8 +149,10 @@ Overall logic:
 |                                                 |                      |
 | Fuzzy motion mode                               | `s`                  |
 |                                                 |                      |
-| Go to previous hunk of Git *c*hange             | `[c`                 |
-| Go to next hunk of Git *c*hange                 | `]c`                 |
+| Go to previous hunk of Git change               | `[h`                 |
+| Go to next hunk of Git change                   | `]h`                 |
+| Preview current hunk of Git change              | `<leader>h`          |
+| Preview current hunk of Git change (inline)     | `<leader>H`          |
 |                                                 |                      |
 | Toggle line-wise comment (normal mode)          | `gcc` or `Ctrl+/`    |
 | Toggle line-wise comment (visual mode)          | `gc`                 |

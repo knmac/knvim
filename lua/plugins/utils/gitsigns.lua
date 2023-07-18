@@ -9,8 +9,10 @@ return {
             local opts = { noremap = true, silent = true }
 
             -- Navigation
-            buf_set_keymap('n', ']c', '<cmd>Gitsigns next_hunk<CR>', opts)
-            buf_set_keymap('n', '[c', '<cmd>Gitsigns prev_hunk<CR>', opts)
+            buf_set_keymap('n', ']h', '<cmd>Gitsigns next_hunk<CR>', opts)
+            buf_set_keymap('n', '[h', '<cmd>Gitsigns prev_hunk<CR>', opts)
+            buf_set_keymap('n', '<leader>h', '<cmd>Gitsigns preview_hunk<CR>', opts)
+            buf_set_keymap('n', '<leader>H', '<cmd>Gitsigns preview_hunk_inline<CR>', opts)
 
             -- Actions
             -- map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
