@@ -111,7 +111,6 @@ return {
             icon = '󰌠',
             on_click = function()
                 require('swenv.api').pick_venv()
-                vim.cmd.LspRestart()
             end,
         }
 
