@@ -34,7 +34,7 @@ map('n', '<A-S-k>', '<C-w>k<C-w>x', default_opts)
 map('n', '<A-S-l>', '<C-w>l<C-w>x', default_opts)
 
 -- Navigation from terminal
-map('t', '<esc>', [[<C-\><C-n>]], default_opts)
+-- map('t', '<esc>', [[<C-\><C-n>]], default_opts)
 map('t', '<A-h>', [[<C-\><C-n><C-w>h]], default_opts)
 map('t', '<A-j>', [[<C-\><C-n><C-w>j]], default_opts)
 map('t', '<A-k>', [[<C-\><C-n><C-w>k]], default_opts)
