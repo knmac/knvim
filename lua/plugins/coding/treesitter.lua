@@ -1,7 +1,7 @@
 -- Code parser generator for syntax highlighting
 return {
-    'nvim-treesitter/nvim-treesitter', -- code parser generator for syntax highlighting
-    dependencies = 'HiPhish/nvim-ts-rainbow2',  -- colorize parentheses
+    'nvim-treesitter/nvim-treesitter',                -- code parser generator for syntax highlighting
+    dependencies = 'HiPhish/rainbow-delimiters.nvim', -- colorize parentheses
     build = ':TSUpdate',
     config = function()
         require('nvim-treesitter.configs').setup({
@@ -15,14 +15,14 @@ return {
                     end
 
                     local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
-                    if ok and stats and stats.size > 100*1024 then
+                    if ok and stats and stats.size > 100 * 1024 then
                         -- Disable in large buffer size
                         return true
                     end
                 end,
             },
             indent = {
-                enable = false,  -- treesitter's indent is buggy
+                enable = false, -- treesitter's indent is buggy
                 disable = {},
             },
             ensure_installed = {
@@ -52,19 +52,33 @@ return {
             matchup = {
                 enable = true,
             },
-            rainbow = {
-                enable = true,
-                -- list of languages you want to disable the plugin for
-                -- disable = { 'jsx', 'cpp' },
-                -- Which query to use for finding delimiters
-                query = 'rainbow-parens',
-                -- Highlight the entire buffer all at once
-                strategy = require('ts-rainbow.strategy.global'),
-            }
         })
 
         -- Overwrite fold method using treesitter expression
         vim.opt.foldmethod = 'expr'
         vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+        -- Rainbow delimiters config
+        local rainbow_delimiters = require 'rainbow-delimiters'
+
+        vim.g.rainbow_delimiters = {
+            strategy = {
+                [''] = rainbow_delimiters.strategy['global'],
+                vim = rainbow_delimiters.strategy['local'],
+            },
+            query = {
+                [''] = 'rainbow-delimiters',
+                lua = 'rainbow-blocks',
+            },
+            highlight = {
+                'RainbowDelimiterRed',
+                'RainbowDelimiterYellow',
+                'RainbowDelimiterBlue',
+                'RainbowDelimiterOrange',
+                'RainbowDelimiterGreen',
+                'RainbowDelimiterViolet',
+                'RainbowDelimiterCyan',
+            },
+        }
     end,
 }

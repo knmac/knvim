@@ -39,7 +39,7 @@ return {
                 symbols_outline = true,
                 telescope = true,
                 treesitter = true,
-                ts_rainbow2 = true,
+                rainbow_delimiters = true,
                 which_key = true,
                 indent_blankline = {
                     enabled = true,
