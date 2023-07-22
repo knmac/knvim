@@ -142,8 +142,9 @@ Overall logic:
 | Insert '=' characters                           | `<leader> =`         |
 | Generate doc string for function                | `<leader> d`         |
 | Toggle file explorer                            | `<leader> t`         |
-| Toggle symbol view                              | `<leader> o`         |
+| Toggle symbol outline view                      | `<leader> o`         |
 | Dismiss current notification message            | `<leader> n`         |
+| Open Lazygit terminal                           | `<leader> g`         |
 |                                                 |                      |
 | Toggle terminal                                 | `<Ctrl+\>`           |
 |                                                 |                      |
