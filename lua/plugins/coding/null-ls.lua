@@ -28,7 +28,7 @@ return {
                     extra_args = {
                         '-l', 'pycodestyle', -- use pycodestyle as flake8 duplicates many things from pyright
                         '--max-line-length', '100',
-                        '--ignore', 'E226,E402,E501,W503,W504,W391',
+                        '--ignore', 'E226,E402,E501,E731,W503,W504,W391',
                     }
                 }),
                 diagnostics.cpplint,    -- C/C++ linter

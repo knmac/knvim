@@ -73,19 +73,15 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Clear registered macros
--- TODO: change to lua implementation
-vim.cmd [[
-function! ClearRegisters()
-    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
-    let i=0
-    while (i<strlen(regs))
-        exec 'let @'.regs[i].'=""'
-        let i=i+1
-    endwhile
-endfunction
- 
-command! ClearRegisters call ClearRegisters()
-]]
+function ClearReg()
+    vim.cmd [[
+    let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+', '\zs')
+    for r in regs
+        call setreg(r, [])
+    endfor
+    ]]
+end
+vim.api.nvim_create_user_command('ClearReg', function() ClearReg() end, {})
 
 -- Toogle zoom the current window
 -- TODO: change to lua implementation
