@@ -12,9 +12,11 @@ local opt = vim.opt                 -- global/buffer/windows-scoped options
 -------------------------------------------------------------------------------
 local possible_python_paths = {
     -- Extend the list for possible python path. Will use the 1st possible one
-    os.getenv('HOME') .. '/.venvs/dev/bin/python',
-    os.getenv('HOME') .. '/opt/anaconda3/envs/dev/bin/python',
-    '/usr/bin/python',
+    os.getenv('HOME') .. '/.venvs/dev/bin/python',  -- Custom virtual env
+    os.getenv('HOME') .. '/opt/anaconda3/envs/dev/bin/python', -- MacOS's default conda
+    os.getenv('HOME') .. '/anaconda3/envs/dev/bin/python', -- Linux's default conda
+    '/usr/bin/python3',  -- System default python3
+    '/usr/bin/python',  -- System default python
 }
 for _, python_path in pairs(possible_python_paths) do
     if io.open(python_path, 'r') ~= nil then
