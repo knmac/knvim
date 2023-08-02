@@ -1,5 +1,4 @@
 -- Nvim-metals for scala development (cannot be used with lsp-config)
--- TODO: highly experimental, needs to cleanup
 return {
     'scalameta/nvim-metals',
     dependencies = 'nvim-lua/plenary.nvim',
@@ -47,52 +46,13 @@ return {
             },
         }
 
-        -----------------------------------------------------------------------
         -- On attach
-        -----------------------------------------------------------------------
-        -- local telescope = require('telescope.builtin')
-        -- local bufmap = function(mode, lhs, rhs, bufnr, desc)
-        --     local bufopts = { noremap = true, silent = true, buffer = bufnr, desc = 'LSP: ' .. desc }
-        --     vim.keymap.set(mode, lhs, rhs, bufopts)
-        -- end
-
-        -- metals_config.on_attach = function(client, bufnr)
-        --     -- Enable completion triggered by <c-x><c-o>
-        --     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-        --     -- Mappings
-        --     bufmap('n', 'gd', telescope.lsp_definitions, bufnr, 'Go to definition')
-        --     bufmap('n', 'gi', telescope.lsp_implementations, bufnr, 'Go to implementation')
-        --     bufmap('n', 'gr', telescope.lsp_references, bufnr, 'Go to references')
-        --     bufmap('n', 'gy', telescope.lsp_type_definitions, bufnr, 'Go to type definition')
-
-        --     bufmap('n', 'gD', vim.lsp.buf.declaration, bufnr, 'Go to declaration')
-        --     bufmap('n', 'K', vim.lsp.buf.hover, bufnr, 'Show docstring of the item under the cursor')
-        --     bufmap({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, bufnr, 'Show signature help')
-
-        --     bufmap('n', '<leader>rn', vim.lsp.buf.rename, bufnr, 'Rename variable under the cursor')
-        --     bufmap({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, bufnr, 'Code action')
-        --     bufmap('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, bufnr, 'Format the buffer')
-
-        --     bufmap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufnr, 'Add workspace')
-        --     bufmap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufnr, 'Remove workspace')
-        --     bufmap('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufnr, 'List workspaces')
-
-        --     -- Enable vim-navic
-        --     require('nvim-navic').attach(client, bufnr)
-
-        --     require('metals').setup_dap()
-        -- end
         metals_config.on_attach = function(client, bufnr)
-            -- Enable vim-navic
             require('nvim-navic').attach(client, bufnr)
-
             require('metals').setup_dap()
         end
 
-        -----------------------------------------------------------------------
         -- Autocmd that will actually be in charging of starting the whole thing
-        -----------------------------------------------------------------------
         local nvim_metals_group = vim.api.nvim_create_augroup('nvim-metals', { clear = true })
         vim.api.nvim_create_autocmd('FileType', {
             -- NOTE: You may or may not want java included here. You will need it if you
