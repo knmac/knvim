@@ -57,6 +57,18 @@ return {
             }
         },
     },
+    -- Winbar setup that uses navic
+    {
+        'utilyre/barbecue.nvim',
+        name = 'barbecue',
+        version = '*',
+        dependencies = {
+            'SmiteshP/nvim-navic',
+            'nvim-tree/nvim-web-devicons', -- optional dependency
+        },
+        opts = {
+        },
+    },
     -- UI improvement for vim.ui.select and vim.ui.input
     -- Good for renaming prompt (appear at the variable location)
     {

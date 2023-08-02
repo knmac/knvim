@@ -83,19 +83,19 @@ return {
         }
 
         -- Custom components using nvim-navic
-        local navic_stat = {
-            function()
-                local loc = require('nvim-navic').get_location()
-                if loc ~= '' then
-                    return '〉' .. loc
-                end
-                return loc
-            end,
-            cond = function()
-                return require('nvim-navic').is_available()
-            end,
-            color = { bg = 'NONE' },
-        }
+        -- local navic_stat = {
+        --     function()
+        --         local loc = require('nvim-navic').get_location()
+        --         if loc ~= '' then
+        --             return '〉' .. loc
+        --         end
+        --         return loc
+        --     end,
+        --     cond = function()
+        --         return require('nvim-navic').is_available()
+        --     end,
+        --     color = { bg = 'NONE' },
+        -- }
 
         -- Custom components using swenv
         local env_stat = {
@@ -186,22 +186,22 @@ return {
                 lualine_y = {},
                 lualine_z = {}
             },
-            winbar = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, navic_stat, },
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {}
-            },
-            inactive_winbar = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, },
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {}
-            },
+            -- winbar = {
+            --     lualine_a = {},
+            --     lualine_b = {},
+            --     lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, navic_stat, },
+            --     lualine_x = {},
+            --     lualine_y = {},
+            --     lualine_z = {}
+            -- },
+            -- inactive_winbar = {
+            --     lualine_a = {},
+            --     lualine_b = {},
+            --     lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, },
+            --     lualine_x = {},
+            --     lualine_y = {},
+            --     lualine_z = {}
+            -- },
             tabline = {},
             -- extensions = { 'nvim-tree', 'neo-tree', 'quickfix', 'fugitive', 'symbols-outline', 'toggleterm', 'nvim-dap-ui' }
         })
