@@ -173,9 +173,9 @@ return {
             sections = {
                 lualine_a = { 'mode' },
                 lualine_b = { branch_stat, diff_stat, diagnostics_stat, },
-                lualine_c = { { 'filename', path = 3, }, },
+                lualine_c = { { 'filename', path = 3, }, { 'searchcount', icon = '󰍉', } },
                 lualine_x = { fmt_stat, 'encoding', fileformat_stat, filetype_stat, },
-                lualine_y = { { 'searchcount', icon = '', }, progress_stat, },
+                lualine_y = { progress_stat, },
                 lualine_z = { env_stat },
             },
             inactive_sections = {
