@@ -19,75 +19,30 @@ return {
             }
         },
     },
-    -- Navic
-    {
-        'SmiteshP/nvim-navic', -- statusline/winbar component using lsp
-        dependencies = 'neovim/nvim-lspconfig',
-        opts = {
-            highlight = true,
-            separator = ' 〉',
-            -- VScode-like icons
-            icons = {
-                File = ' ',
-                Module = ' ',
-                Namespace = ' ',
-                Package = ' ',
-                Class = ' ',
-                Method = ' ',
-                Property = ' ',
-                Field = ' ',
-                Constructor = ' ',
-                Enum = ' ',
-                Interface = ' ',
-                Function = ' ',
-                Variable = ' ',
-                Constant = ' ',
-                String = ' ',
-                Number = ' ',
-                Boolean = ' ',
-                Array = ' ',
-                Object = ' ',
-                Key = ' ',
-                Null = ' ',
-                EnumMember = ' ',
-                Struct = ' ',
-                Event = ' ',
-                Operator = ' ',
-                TypeParameter = ' ',
-            }
-        },
-    },
-    -- Winbar setup that uses navic
-    {
-        'utilyre/barbecue.nvim',
-        name = 'barbecue',
-        version = '*',
-        dependencies = {
-            'SmiteshP/nvim-navic',
-            'nvim-tree/nvim-web-devicons', -- optional dependency
-        },
-        opts = {
-        },
-    },
-    -- UI improvement for vim.ui.select and vim.ui.input
-    -- Good for renaming prompt (appear at the variable location)
-    {
-        'stevearc/dressing.nvim',
-        event = 'VeryLazy',
-    },
     -- LSP config
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim and nvim-lspconfig
-            opts = {
-                -- Install the LSP servers automatically using mason-lspconfig
-                ensure_installed = {
-                    'pyright', 'bashls', 'clangd', 'vimls', 'lua_ls', 'ltex',
-                    'texlab', 'tsserver',
+            {
+                'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim and nvim-lspconfig
+                opts = {
+                    -- Install the LSP servers automatically using mason-lspconfig
+                    ensure_installed = {
+                        'pyright', 'bashls', 'clangd', 'vimls', 'lua_ls',
+                        'texlab', 'marksman', 'tsserver',
+                        -- 'ltex',
+                    },
+                    automatic_installation = true,
                 },
-                automatic_installation = true,
             },
+            -- UI improvement for vim.ui.select and vim.ui.input
+            -- Good for renaming prompt (appear at the variable location)
+            {
+                'stevearc/dressing.nvim',
+                event = 'VeryLazy',
+            },
+            -- statusline/winbar component using lsp
+            'SmiteshP/nvim-navic',
         },
         config = function()
             -------------------------------------------------------------------
@@ -102,23 +57,23 @@ return {
                         }
                     },
                 },
-                ltex = {
-                    ltex = {
-                        -- disable spell check of ltex (use vim spellcheck instead)
-                        disabledRules = {
-                            ['en']    = { 'MORFOLOGIK_RULE_EN' },
-                            ['en-AU'] = { 'MORFOLOGIK_RULE_EN_AU' },
-                            ['en-CA'] = { 'MORFOLOGIK_RULE_EN_CA' },
-                            ['en-GB'] = { 'MORFOLOGIK_RULE_EN_GB' },
-                            ['en-NZ'] = { 'MORFOLOGIK_RULE_EN_NZ' },
-                            ['en-US'] = { 'MORFOLOGIK_RULE_EN_US' },
-                            ['en-ZA'] = { 'MORFOLOGIK_RULE_EN_ZA' },
-                            ['es']    = { 'MORFOLOGIK_RULE_ES' },
-                            ['it']    = { 'MORFOLOGIK_RULE_IT_IT' },
-                            ['de']    = { 'MORFOLOGIK_RULE_DE_DE' },
-                        },
-                    },
-                },
+                -- ltex = {
+                --     ltex = {
+                --         -- disable spell check of ltex (use vim spellcheck instead)
+                --         disabledRules = {
+                --             ['en']    = { 'MORFOLOGIK_RULE_EN' },
+                --             ['en-AU'] = { 'MORFOLOGIK_RULE_EN_AU' },
+                --             ['en-CA'] = { 'MORFOLOGIK_RULE_EN_CA' },
+                --             ['en-GB'] = { 'MORFOLOGIK_RULE_EN_GB' },
+                --             ['en-NZ'] = { 'MORFOLOGIK_RULE_EN_NZ' },
+                --             ['en-US'] = { 'MORFOLOGIK_RULE_EN_US' },
+                --             ['en-ZA'] = { 'MORFOLOGIK_RULE_EN_ZA' },
+                --             ['es']    = { 'MORFOLOGIK_RULE_ES' },
+                --             ['it']    = { 'MORFOLOGIK_RULE_IT_IT' },
+                --             ['de']    = { 'MORFOLOGIK_RULE_DE_DE' },
+                --         },
+                --     },
+                -- },
             }
 
             local utf16_cap = vim.lsp.protocol.make_client_capabilities()
