@@ -16,7 +16,7 @@ return {
         require('zen-mode').setup({
             window = {
                 backdrop = 0.95,
-                width = width_with_max(0.85, 150),
+                width = width_with_max(0.85, 200),
             },
             plugins = {
                 kitty = {
@@ -24,7 +24,7 @@ return {
                     font = '+2',
                 },
                 wezterm = {
-                    enabled = true,
+                    enabled = false,
                     font = '+2',
                 },
             },

@@ -7,7 +7,9 @@ return {
         filetype_exclude = {
             'help', 'startify', 'make', 'NvimTree', 'neo-tree', 'neo-tree-popup',
             'dashboard', 'lsp-installer', 'alpha', 'packer', 'Outline', 'mason',
-            'dap-float', 'lazy', 'lspinfo', 'null-ls-info', 'noice',
+            'dap-float', 'dap-repl', 'dapui_scopes', 'dapui_breakpoints',
+            'dapui_stacks', 'dapui_watches', 'dapui_console',
+            'lazy', 'lspinfo', 'null-ls-info', 'noice',
         },
         use_treesitter = true,
         show_current_context = true,

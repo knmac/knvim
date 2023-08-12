@@ -29,6 +29,7 @@ return {
     },
     config = function()
         local dap = require('dap')
+        local dapui = require('dapui')
 
         -- --------------------------------------------------------------------
         -- Configurations for each languages
@@ -114,6 +115,19 @@ return {
         dap.configurations.rust = dap.configurations.cpp
 
         -- --------------------------------------------------------------------
+        -- Automatically open when a debug session is created
+        -- --------------------------------------------------------------------
+        dap.listeners.after.event_initialized['dapui_config'] = function()
+            dapui.open()
+        end
+        dap.listeners.before.event_terminated['dapui_config'] = function()
+            dapui.close()
+        end
+        dap.listeners.before.event_exited['dapui_config'] = function()
+            dapui.close()
+        end
+
+        -- --------------------------------------------------------------------
         -- Set up signs and colors
         -- --------------------------------------------------------------------
         vim.fn.sign_define('DapBreakpoint',          { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
@@ -125,8 +139,8 @@ return {
         -- --------------------------------------------------------------------
         -- Set up keymaps
         -- --------------------------------------------------------------------
-        map('n', ',d', function() require('dapui').toggle() end, 'Toggle UI')
-        map('n', ',D', function() require('dap').repl.toggle() end, 'Open default REPL')
+        map('n', ',d', function() dapui.toggle() end, 'Toggle UI')
+        map('n', ',D', function() dap.repl.toggle() end, 'Open default REPL')
         map('n', ',k', function() require('dap.ui.widgets').hover() end, 'Check variable value on hover')
 
         map('n', ',c', function()
