@@ -6,7 +6,7 @@ return {
         'nvim-telescope/telescope.nvim', -- Switch filetype and git branches
         'SmiteshP/nvim-navic',           -- Show navic status
         'AckslD/swenv.nvim',             -- Show and switch python env
-        'lewis6991/gitsigns.nvim',       -- Clickable diffthis
+        'sindrets/diffview.nvim',        -- Clickable diffthis
     },
     config = function()
         -- Custom components --------------------------------------------------
@@ -142,7 +142,7 @@ return {
         local diff_stat = {
             'diff', -- builtin diff component
             on_click = function()
-                require('gitsigns').diffthis()
+                vim.cmd('DiffviewOpen')
             end,
         }
 
