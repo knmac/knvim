@@ -94,7 +94,8 @@ map('n', '<C-/>', function() require('Comment.api').toggle.linewise.current() en
 
 -- Alternative ways to toggle Neotree, symbol outline, and zen-mode
 map('n', '<leader>t', '<cmd>Neotree toggle<CR>', default_opts)
-map('n', '<leader>T', '<cmd>Neotree dir=%:p:h<CR>', default_opts)
+-- map('n', '<leader>T', '<cmd>Neotree dir=%:p:h<CR>', default_opts)
+map('n', '<leader>T', '<cmd>Neotree reveal<CR>', default_opts)
 map('n', '<leader>o', '<cmd>SymbolsOutline<CR>', default_opts)
 map('n', '<leader>z', '<cmd>ZenMode<CR>', default_opts)
 
