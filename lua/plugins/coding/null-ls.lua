@@ -1,4 +1,4 @@
--- Code linter
+-- Code linter and formatter
 return {
     'jose-elias-alvarez/null-ls.nvim', -- linter and formatter
     dependencies = {
@@ -24,9 +24,8 @@ return {
                 }),
                 formatting.prettierd,  -- Javascript, Typescript, ... formatter
                 -- Non-LSP diagnostics (linters) ------------------------------
-                diagnostics.pylama.with({  -- Python linter
+                diagnostics.pycodestyle.with({  -- Python linter, wrapped by Mason's pylama
                     extra_args = {
-                        '-l', 'pycodestyle', -- use pycodestyle as flake8 duplicates many things from pyright
                         '--max-line-length', '100',
                         '--ignore', 'E226,E402,E501,E731,W503,W504,W391',
                     }
