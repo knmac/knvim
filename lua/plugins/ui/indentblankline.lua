@@ -8,7 +8,7 @@ return {
             'help', 'startify', 'make', 'NvimTree', 'neo-tree', 'neo-tree-popup',
             'dashboard', 'lsp-installer', 'alpha', 'packer', 'Outline', 'mason',
             'dap-float', 'dap-repl', 'dapui_scopes', 'dapui_breakpoints',
-            'dapui_stacks', 'dapui_watches', 'dapui_console',
+            'dapui_stacks', 'dapui_watches', 'dapui_console', 'norg',
             'lazy', 'lspinfo', 'null-ls-info', 'noice',
         },
         use_treesitter = true,
