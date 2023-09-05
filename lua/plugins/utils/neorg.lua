@@ -15,8 +15,8 @@ return {
             ['core.dirman'] = {
                 config = {
                     workspaces = {
-                        work = '~/notes/work',
-                        home = '~/notes/home',
+                        work = '~/Documents/notes/work',
+                        home = '~/Documents/notes/home',
                     }
                 }
             },
