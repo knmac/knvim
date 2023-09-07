@@ -24,8 +24,9 @@ return {
                 }),
                 formatting.prettierd,  -- Javascript, Typescript, ... formatter
                 -- Non-LSP diagnostics (linters) ------------------------------
-                diagnostics.pycodestyle.with({  -- Python linter, wrapped by Mason's pylama
+                diagnostics.pylama.with({  -- Python linter
                     extra_args = {
+                        '-l', 'pycodestyle',
                         '--max-line-length', '100',
                         '--ignore', 'E226,E402,E501,E731,W503,W504,W391',
                     }
