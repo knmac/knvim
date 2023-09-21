@@ -76,6 +76,7 @@ Overall logic:
 | Rename variables                                      | `<leader> rn` |
 | Code action (if supported by the language server)     | `<leader> ca` |
 | Code formatting (if supported by the language server) | `<leader> f`  |
+| Code formatting (using non-LSP formatter)             | `<leader> F`  |
 |                                                       |               |
 | Open *e*rror (diagnostic) list (project-wise)         | `<leader> E`  |
 | Show current line's error                             | `<leader> e`  |

@@ -37,8 +37,9 @@ lua/
    │  ├── cmp.lua
    │  ├── comment.lua
    │  ├── dap.lua
-   │  ├── lspconfig-mason-navic.lua
-   │  ├── null-ls.lua
+   │  ├── linter-formatter.lua
+   │  ├── lspconfig-mason.lua
+   │  ├── metals.lua
    │  └── treesitter.lua
    ├── experimentals/
    │  └── ...

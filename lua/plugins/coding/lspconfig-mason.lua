@@ -19,22 +19,23 @@ return {
             }
         },
     },
+    -- Ensure install for Mason's LSP
+    {
+        'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim and nvim-lspconfig
+        opts = {
+            -- Install the LSP servers automatically using mason-lspconfig
+            ensure_installed = {
+                'pyright', 'ruff_lsp', 'bashls', 'clangd', 'vimls', 'lua_ls',
+                'texlab', 'marksman', 'tsserver',
+                -- 'ltex',
+            },
+            automatic_installation = true,
+        },
+    },
     -- LSP config
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            {
-                'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim and nvim-lspconfig
-                opts = {
-                    -- Install the LSP servers automatically using mason-lspconfig
-                    ensure_installed = {
-                        'pyright', 'ruff_lsp', 'bashls', 'clangd', 'vimls', 'lua_ls',
-                        'texlab', 'marksman', 'tsserver',
-                        -- 'ltex',
-                    },
-                    automatic_installation = true,
-                },
-            },
             -- UI improvement for vim.ui.select and vim.ui.input
             -- Good for renaming prompt (appear at the variable location)
             {
