@@ -4,7 +4,7 @@ return {
     dependencies = {
         'WhoIsSethDaniel/mason-tool-installer.nvim',
         opts = {
-            ensure_installed = { 'pylama', 'black', 'cpplint', 'shellcheck', 'prettierd', },
+            ensure_installed = { 'black', 'cpplint', 'shellcheck', 'prettierd', },
         },
     },
     config = function()
@@ -23,13 +23,6 @@ return {
                 }),
                 formatting.prettierd,  -- Javascript, Typescript, ... formatter
                 -- Non-LSP diagnostics (linters) ------------------------------
-                diagnostics.pylama.with({  -- Python linter
-                    extra_args = {
-                        '-l', 'pycodestyle',
-                        '--max-line-length', '100',
-                        '--ignore', 'E226,E402,E501,E731,W503,W504,W391',
-                    }
-                }),
                 diagnostics.cpplint,    -- C/C++ linter
                 diagnostics.shellcheck, -- Shell script linter
                 -- Completion

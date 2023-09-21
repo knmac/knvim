@@ -28,7 +28,7 @@ return {
                 opts = {
                     -- Install the LSP servers automatically using mason-lspconfig
                     ensure_installed = {
-                        'pyright', 'bashls', 'clangd', 'vimls', 'lua_ls',
+                        'pyright', 'ruff_lsp', 'bashls', 'clangd', 'vimls', 'lua_ls',
                         'texlab', 'marksman', 'tsserver',
                         -- 'ltex',
                     },
@@ -91,7 +91,9 @@ return {
                     settings = lsp_settings[lsp],
                     capabilities = lsp_capabilities[lsp],
                     on_attach = function(client, bufnr)
-                        require('nvim-navic').attach(client, bufnr)
+                        if lsp ~= 'ruff_lsp' then
+                            require('nvim-navic').attach(client, bufnr)
+                        end
                     end,
                 })
             end
