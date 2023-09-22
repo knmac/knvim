@@ -92,7 +92,11 @@ return {
                     settings = lsp_settings[lsp],
                     capabilities = lsp_capabilities[lsp],
                     on_attach = function(client, bufnr)
-                        if lsp ~= 'ruff_lsp' then
+                        if lsp == 'ruff_lsp' then
+                            -- Turn off hover for ruff
+                            client.server_capabilities.hoverProvider = false
+                        else
+                            -- Use navic for non-ruff
                             require('nvim-navic').attach(client, bufnr)
                         end
                     end,
@@ -162,7 +166,7 @@ return {
 
                     bufmap('n', '<leader>rn', vim.lsp.buf.rename, 'Rename variable under the cursor')
                     bufmap({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, 'Code action')
-                    bufmap('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, 'Format the buffer')
+                    -- bufmap('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, 'Format the buffer')
 
                     bufmap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace')
                     bufmap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace')
