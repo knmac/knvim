@@ -36,6 +36,7 @@ return {
                 'markdown_inline',
                 'json',
                 'yaml',
+                'toml',
                 'html',
                 'css',
                 'lua',

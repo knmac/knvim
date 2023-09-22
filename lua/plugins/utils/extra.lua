@@ -1,9 +1,11 @@
 -- Extra utils without needing to config
 return {
-    'rlane/pounce.nvim',
-    'andymass/vim-matchup',        -- highlight and navigate sets of matching text
-    'norcalli/nvim-colorizer.lua', -- colorize color code
-    -- Non-lua nvim plugins
-    'junegunn/vim-easy-align',     -- alignment plugin
-    'fladson/vim-kitty',           -- syntax highlighting for kitty
+    -- Lua nvim plugins -------------------------------------------------------
+    'rlane/pounce.nvim',             -- fuzzy text jumping
+    'andymass/vim-matchup',          -- highlight and navigate sets of matching text
+    'norcalli/nvim-colorizer.lua',   -- colorize color code
+    -- Non-lua nvim plugins ---------------------------------------------------
+    'junegunn/vim-easy-align',       -- alignment plugin
+    'Vimjas/vim-python-pep8-indent', -- better indentation format for python
+    -- 'fladson/vim-kitty',           -- syntax highlighting for kitty
 }
