@@ -4,7 +4,7 @@ return {
     {
         'WhoIsSethDaniel/mason-tool-installer.nvim',
         opts = {
-            ensure_installed = { 'black', 'cpplint', 'shellcheck', 'prettierd', },
+            ensure_installed = { 'cpplint', 'shellcheck', 'black', 'prettierd', },
         },
     },
     -- Linter
