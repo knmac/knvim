@@ -6,6 +6,5 @@ return {
     'norcalli/nvim-colorizer.lua',   -- colorize color code
     -- Non-lua nvim plugins ---------------------------------------------------
     'junegunn/vim-easy-align',       -- alignment plugin
-    'Vimjas/vim-python-pep8-indent', -- better indentation format for python
     -- 'fladson/vim-kitty',           -- syntax highlighting for kitty
 }
