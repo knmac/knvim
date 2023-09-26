@@ -51,12 +51,15 @@ lua/
    │  ├── illuminate.lua
    │  ├── indentblankline.lua
    │  ├── lualine.lua
+   │  ├── navic-barbecue.lua
    │  ├── noice-notify.lua
    │  └── winsep.lua
    ├── utils/
+   │  ├── diffview.lua
    │  ├── extra.lua
    │  ├── gitsigns.lua
    │  ├── neo-tree.lua
+   │  ├── neorg.lua
    │  ├── swenv.lua
    │  ├── symbols-outline.lua
    │  ├── telescope.lua
@@ -108,7 +111,7 @@ Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/
 [Nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
 
 ```bash
-lazyman -w Knvim
+lazyman -L Knvim
 ```
 
 Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, boostrapping, and other cool features.
