@@ -1,6 +1,7 @@
 -- Show indent lines
 return {
     'lukas-reineke/indent-blankline.nvim', -- show indent line
+    main = 'ibl',
     opts = {
         --char = '|',
         buftype_exclude = { 'terminal' },
