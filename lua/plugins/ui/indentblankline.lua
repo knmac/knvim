@@ -3,22 +3,6 @@ return {
     'lukas-reineke/indent-blankline.nvim', -- show indent line
     main = 'ibl',
     config = function()
-        require('ibl').setup({
-            --char = '|',
-            buftype_exclude = { 'terminal' },
-            filetype_exclude = {
-                'help', 'startify', 'make', 'NvimTree', 'neo-tree', 'neo-tree-popup',
-                'dashboard', 'lsp-installer', 'alpha', 'packer', 'Outline', 'mason',
-                'dap-float', 'dap-repl', 'dapui_scopes', 'dapui_breakpoints',
-                'dapui_stacks', 'dapui_watches', 'dapui_console', 'norg',
-                'lazy', 'lspinfo', 'null-ls-info', 'noice',
-            },
-            use_treesitter = true,
-            show_current_context = true,
-            show_current_context_start = false,
-        })
-
-        -- rainbow-delimiters.nvim integration
         local highlight = {
             'RainbowRed',
             'RainbowYellow',
@@ -42,7 +26,27 @@ return {
         end)
 
         vim.g.rainbow_delimiters = { highlight = highlight }
-        require('ibl').setup { scope = { highlight = highlight } }
+        require('ibl').setup({
+            indent = {
+                char = '│',
+            },
+            exclude = {
+                filetypes = {
+                    'help', 'startify', 'make', 'NvimTree', 'neo-tree', 'neo-tree-popup',
+                    'dashboard', 'lsp-installer', 'alpha', 'packer', 'Outline', 'mason',
+                    'dap-float', 'dap-repl', 'dapui_scopes', 'dapui_breakpoints',
+                    'dapui_stacks', 'dapui_watches', 'dapui_console', 'norg',
+                    'lazy', 'lspinfo', 'null-ls-info', 'noice',
+                },
+                buftypes = {
+                    'terminal', 'nofile', 'quickfix', 'prompt',
+                },
+            },
+            scope = {
+                -- enabled = false,
+                highlight = highlight,
+            },
+        })
 
         hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
     end,
