@@ -27,9 +27,7 @@ return {
 
         vim.g.rainbow_delimiters = { highlight = highlight }
         require('ibl').setup({
-            indent = {
-                char = '│',
-            },
+            -- indent = { char = '│', },
             exclude = {
                 filetypes = {
                     'help', 'startify', 'make', 'NvimTree', 'neo-tree', 'neo-tree-popup',
