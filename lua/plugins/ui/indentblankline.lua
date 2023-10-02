@@ -16,13 +16,13 @@ return {
         -- create the highlight groups in the highlight setup hook, so they are reset
         -- every time the colorscheme changes
         hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-            vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#E06C75' })
-            vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#E5C07B' })
-            vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#61AFEF' })
-            vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#D19A66' })
-            vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#98C379' })
-            vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#C678DD' })
-            vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#56B6C2' })
+            vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#ED8796' })
+            vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#EED49F' })
+            vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#8AADF4' })
+            vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#F5A97F' })
+            vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#A6DA95' })
+            vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#C6A0F6' })
+            vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#8BD5CA' })
         end)
 
         vim.g.rainbow_delimiters = { highlight = highlight }
