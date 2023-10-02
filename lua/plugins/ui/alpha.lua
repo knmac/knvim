@@ -84,7 +84,9 @@ return {
                     'gitcommit',
                     'toggleterm',
                     'NvimTree',
+                    'neo-tree',
                     'vista',
+                    'Outline',
                 },
                 autosave_ignore_buftypes = {}, -- All buffers of these bufer types will be closed before the session is saved.
                 autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
