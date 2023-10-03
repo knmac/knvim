@@ -2,7 +2,7 @@
 
 K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knmac.
 
-## Demo
+## 1. Demo
 <!-- ![Screenshot](./res/screenshot.png) -->
 Video demo with clickable lualine
 ![demo3](./res/demo1.gif)
@@ -14,7 +14,7 @@ Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
 ![demo2](./res/demo3.png)
 
 
-## Feature highlights
+## 2. Feature highlights
 
 - Targeting python, bash, latex, markdown, and (*some*) C/C++ usage
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (*mostly*) clickable
@@ -22,7 +22,7 @@ Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
 - Fun (*for me*) to use!!!
 
 
-## Config structure
+## 3. Config structure
 
 ```
 init.lua
@@ -77,9 +77,9 @@ The configs in `experimentals/` directories are not activated by default. To use
 ```
 
 
-## Manual installation
+## 3. Manual installation
 
-### Prerequisites
+### 3.1. Prerequisites
 
 The following prerequisites are for manual installation.
 - Neovim 0.9.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
@@ -88,7 +88,7 @@ The following prerequisites are for manual installation.
 - `rg` and `fd` for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
 - (Optional) [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [ToggleTerm](https://github.com/akinsho/toggleterm.nvim).
 
-### Installation
+### 3.2. Installation
 
 Clone this repo to `$HOME/.config`:
 
@@ -102,12 +102,12 @@ Then add this command to `.bashrc` or `.zshrc`.
 export NVIM_APPNAME="knvim"
 ```
 
-### Removing knvim
+### 3.3. Removing knvim
 
 Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/knvim`.
 
 
-## Installation using nvim-lazyman
+## 4. Installation using nvim-lazyman
 
 [Nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
 
@@ -118,15 +118,15 @@ lazyman -L Knvim
 Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, boostrapping, and other cool features.
 
 
-## Knvim Cheatsheet
+## 5. Knvim Cheatsheet
 
 Cheatsheet for knvim can be found [here](res/cheatsheet.md). You can also access cheatsheet from the start page.
 
-## Extra configs (optional)
+## 6. Extra configs (optional)
 
 This section shows you how to set up extra configuration for knvim to work as you want (completely optional)
 
-### Ruff (Python linter)
+### 6.1. Ruff (Python linter)
 
 Create the file `pyproject.toml` for each Python project, where the content looks something like this:
 
@@ -139,7 +139,7 @@ ignore = ["E501", "E402"]
 
 For more information, visit [here](https://docs.astral.sh/ruff/configuration/).
 
-### DAP
+### 6.2. DAP (Debugging tool)
 
 Create the file `.vscode/launch.json` for each project, where the content looks something like this:
 
@@ -164,7 +164,7 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
 
 The above config uses Python as an example, but you can setup debugger for other languages similarly. For more information, visit [here](https://go.microsoft.com/fwlink/?linkid=830387).
 
-### Diffview
+### 6.3. Diffview (Intergate Diffview to git mergetool automatically)
 
 Create the file `~/.gitconfig` globally, where the content looks something like this:
 
