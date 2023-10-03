@@ -121,3 +121,59 @@ Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazym
 ## Knvim Cheatsheet
 
 Cheatsheet for knvim can be found [here](res/cheatsheet.md). You can also access cheatsheet from the start page.
+
+## Extra configs (optional)
+
+This section shows you how to set up extra configuration for knvim to work as you want (completely optional)
+
+### Ruff (Python linter)
+
+Create the file `pyproject.toml` for each Python project, where the content looks something like this:
+
+```toml
+[tool.ruff]
+line-length = 100
+select = ["E", "F"]
+ignore = ["E501", "E402"]
+```
+
+For more information, visit [here](https://docs.astral.sh/ruff/configuration/).
+
+### DAP
+
+Create the file `.vscode/launch.json` for each project, where the content looks something like this:
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+        "configurations": [
+        {
+            "name": "NAME OF THE LAUNCH",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["TOKEN1", "TOKEN2", ...]
+        }
+    ]
+}
+```
+
+The above config uses Python as an example, but you can setup debugger for other languages similarly. For more information, visit [here](https://go.microsoft.com/fwlink/?linkid=830387).
+
+### Diffview
+
+Create the file `~/.gitconfig` globally, where the content looks something like this:
+
+```git_config
+[merge]
+    tool = nvim
+[mergetool]
+    keepBackup = false
+    prompt = false
+[mergetool "nvim"]
+    cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\" -c DiffviewOpen"
+```
