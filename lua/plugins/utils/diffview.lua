@@ -6,7 +6,7 @@
 --     keepBackup = false
 --     prompt = false
 -- [mergetool "nvim"]
---     cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+--     cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\" -c DiffviewOpen"
 return {
     'sindrets/diffview.nvim',
     opts = {
