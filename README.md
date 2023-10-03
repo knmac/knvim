@@ -126,7 +126,7 @@ Cheatsheet for knvim can be found [here](res/cheatsheet.md). You can also access
 
 This section shows you how to set up extra configuration for knvim to work as you want (completely optional)
 
-### 6.1. Ruff (Python linter)
+### 6.1. Ruff (Python linter) and Black (Python formater)
 
 Create the file `pyproject.toml` for each Python project, where the content looks something like this:
 
@@ -135,9 +135,12 @@ Create the file `pyproject.toml` for each Python project, where the content look
 line-length = 100
 select = ["E", "F"]
 ignore = ["E501", "E402"]
+
+[tool.black]
+line-length = 100
 ```
 
-For more information, visit [here](https://docs.astral.sh/ruff/configuration/).
+For more information, visit [here](https://docs.astral.sh/ruff/configuration/) and [here](https://python-poetry.org/docs/pyproject/).
 
 ### 6.2. DAP (Debugging tool)
 
