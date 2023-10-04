@@ -35,7 +35,7 @@ Overall logic:
 |                                          |                              |
 | Remove trailing spaces                   | `F9`                         |
 | Run the `make` command                   | `F10`                        |
-| Toggle zoom the current window (splits)  | `F11`                        |
+| Toggle zoom the current window (splits)  | `F11` (or `<leader> z`)      |
 | Toggle relative number                   | `F12`                        |
 |                                          |                              |
 | Clear registers                          | `Shift+F9`                   |
