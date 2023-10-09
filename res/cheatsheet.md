@@ -261,12 +261,15 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 
 ### 2.6. Spellings
 
-| Functionality            | Key-binding   |
-| ------------------------ | ------------- |
-| Spelling suggestions     | `z=`          |
-| Add word to spell list   | `zg`          |
-| Previous misspelled word | `[s`          |
-| Next misspelled word     | `]s`          |
+Need to turn spellchecking on first: `:set spell` (turning off with `:set nospell`). You can specify which language as (e.g., en_us, en_gb, ...) `:set spell spelllang=en_us`.
+
+| Functionality             | Key-binding   |
+| ------------------------- | ------------- |
+| Spelling suggestions      | `z=`          |
+| Add word to spell list    | `zg`          |
+| Mark word as bad spelling | `zm`          |
+| Previous misspelled word  | `[s`          |
+| Next misspelled word      | `]s`          |
 
 
 ### 2.7. Buffers manipulation
