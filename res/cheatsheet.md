@@ -126,7 +126,7 @@ Overall logic:
 ### 1.6. Other custom key-bindings
 
 | Group      | Functionality                                   | Key-binding          |
-|            | ----------------------------------------------- | -------------------- |
+| ---------- | ----------------------------------------------- | -------------------- |
 | Misc       | Insert python breakpoint (on the next line)     | `<leader> b`         |
 |            | Insert python breakpoint (on the previous line) | `<leader> B`         |
 |            | Insert '-' characters                           | `<leader> -`         |
