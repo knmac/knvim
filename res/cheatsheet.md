@@ -147,7 +147,7 @@ Overall logic:
 |            | Toggle block-wise comment (normal mode)         | `gbc`                |
 |            | Toggle block-wise comment (visual mode)         | `gb`                 |
 | Easy-align | Start easy align (in visual mode)               | `<leader>a`          |
-|            | - Easy align by `|`                             | `<leader>a*|`        |
+|            | - Easy align by `\|`                            | `<leader>a*\|`       |
 |            | - Easy align by ` `                             | `<leader>a* `        |
 
 
@@ -182,7 +182,7 @@ Overall logic:
 |                   | Increase/decrease height                         | `Ctrl+w` `+`/`-`            | -         |
 |                   | Increase/decrease width                          | `Ctrl+w` `>`/`<`            | -         |
 |                   | Max out height                                   | `Ctrl+w` `_`                | -         |
-|                   | Max out width                                    | `Ctrl+w` `|`                | -         |
+|                   | Max out width                                    | `Ctrl+w` `\|`               | -         |
 |                   | Equal height/width for all splits                | `Ctrl+w` `=`                | -         |
 
 
