@@ -11,37 +11,32 @@ Overall logic:
 - `F5-6`: buffers/tabs
 - `F10-12`: random frequently used things
 
-| Functionality                            | Key-binding                  |
-| ---------------------------------------- | ---------------------------- |
-| Search for help                          | `F1`                         |
-| Rename variables                         | `F2`                         |
-| Toggle file explorer                     | `F3` (or `<leader> t`)       |
-| Toggle symbol view                       | `F4` (or `<leader> o`)       |
-|                                          |                              |
-| Show key-bindings                        | `Shift+F1`                   |
-| Open to-do list (project-wise)           | `Shift+F2`                   |
-| Toggle file explorer at the current file | `Shift+F3` (or `<leader> T`) |
-| Open diagnostic list (project-wise)      | `Shift+F4` (or `<leader> E`) |
-|                                          |                              |
-| Show buffer list                         | `F5`                         |
-| Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
-| Next buffer                              | `F7` (or `Ctrl+Alt+l`)       |
-| Close the current buffer                 | `F8` (or `Ctrl+Alt+Shift+k`) |
-|                                          |                              |
-| Show tab list                            | `Shift+F5`                   |
-| Previous tab                             | `Shift+F6`                   |
-| Next tab                                 | `Shift+F7`                   |
-| Close the current tab                    | `Shift+F8`                   |
-|                                          |                              |
-| Remove trailing spaces                   | `F9`                         |
-| Run the `make` command                   | `F10`                        |
-| Toggle zoom the current window (splits)  | `F11` (or `<leader> z`)      |
-| Toggle relative number                   | `F12`                        |
-|                                          |                              |
-| Clear registers                          | `Shift+F9`                   |
-| Run the `make clean` command             | `Shift+F10`                  |
-| Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
-| Toggle welcome screen                    | `Shift+F12`                  |
+| Group                 | Functionality                            | Key-binding                  |
+| --------------------- | ---------------------------------------- | ---------------------------- |
+| `F1-4`: toggle things | Search for help                          | `F1`                         |
+|                       | Rename variables                         | `F2`                         |
+|                       | Toggle file explorer                     | `F3` (or `<leader> t`)       |
+|                       | Toggle symbol view                       | `F4` (or `<leader> o`)       |
+|                       | Show key-bindings                        | `Shift+F1`                   |
+|                       | Open to-do list (project-wise)           | `Shift+F2`                   |
+|                       | Toggle file explorer at the current file | `Shift+F3` (or `<leader> T`) |
+|                       | Open diagnostic list (project-wise)      | `Shift+F4` (or `<leader> E`) |
+| `F5-6`: buffers/tabs  | Show buffer list                         | `F5`                         |
+|                       | Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
+|                       | Next buffer                              | `F7` (or `Ctrl+Alt+l`)       |
+|                       | Close the current buffer                 | `F8` (or `Ctrl+Alt+Shift+k`) |
+|                       | Show tab list                            | `Shift+F5`                   |
+|                       | Previous tab                             | `Shift+F6`                   |
+|                       | Next tab                                 | `Shift+F7`                   |
+|                       | Close the current tab                    | `Shift+F8`                   |
+| `F10-12`: others      | Remove trailing spaces                   | `F9`                         |
+|                       | Run the `make` command                   | `F10`                        |
+|                       | Toggle zoom the current window (splits)  | `F11` (or `<leader> z`)      |
+|                       | Toggle relative number                   | `F12`                        |
+|                       | Clear registers                          | `Shift+F9`                   |
+|                       | Run the `make clean` command             | `Shift+F10`                  |
+|                       | Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
+|                       | Toggle welcome screen                    | `Shift+F12`                  |
 
 
 ### 1.2. Telescope key-bindings
@@ -64,27 +59,24 @@ Overall logic:
 
 ### 1.3. LSP-related key-bindings
 
-| Functionality                                         | Key-binding   |
-| ----------------------------------------------------- | ------------- |
-| Go to *d*efinitions                                   | `gd`          |
-| Go to *i*mplementation                                | `gi`          |
-| Go to *r*eference                                     | `gr`          |
-| Go to t*y*pe definition                               | `gy`          |
-| Show function documentation (on hover)                | `K`           |
-| Show signature help (while typing function arguments) | `Ctrl+k`      |
-|                                                       |               |
-| Rename variables                                      | `<leader> rn` |
-| Code action (if supported by the language server)     | `<leader> ca` |
-| Code formatting (if supported by the language server) | `<leader> f`  |
-|                                                       |               |
-| Open *e*rror (diagnostic) list (project-wise)         | `<leader> E`  |
-| Show current line's error                             | `<leader> e`  |
-| Go to previous error                                  | `[e`          |
-| Go to next error                                      | `]e`          |
-|                                                       |               |
-| *A*dd *w*orkspace folder                              | `<leader> wa` |
-| *R*emove *w*orkspace folder                           | `<leader> wr` |
-| *L*ist *w*orkspace folder                             | `<leader> wl` |
+| Group       | Functionality                                         | Key-binding   |
+| ----------- | ----------------------------------------------------- | ------------- |
+| Navigation  | Go to *d*efinitions                                   | `gd`          |
+|             | Go to *i*mplementation                                | `gi`          |
+|             | Go to *r*eference                                     | `gr`          |
+|             | Go to t*y*pe definition                               | `gy`          |
+| Misc        | Show function documentation (on hover)                | `K`           |
+|             | Show signature help (while typing function arguments) | `Ctrl+k`      |
+|             | Rename variables                                      | `<leader> rn` |
+|             | Code action (if supported by the language server)     | `<leader> ca` |
+|             | Code formatting (if supported by the language server) | `<leader> f`  |
+| Diagnostics | Open *e*rror (diagnostic) list (project-wise)         | `<leader> E`  |
+|             | Show current line's error                             | `<leader> e`  |
+|             | Go to previous error                                  | `[e`          |
+|             | Go to next error                                      | `]e`          |
+| Workspace   | *A*dd *w*orkspace folder                              | `<leader> wa` |
+|             | *R*emove *w*orkspace folder                           | `<leader> wr` |
+|             | *L*ist *w*orkspace folder                             | `<leader> wl` |
 
 
 ### 1.4. Window and buffer navigation
@@ -93,26 +85,25 @@ Overall logic:
 - `Alt`: for split manipulation (with `Shift` to swap)
 - `Ctrl+Alt`: for buffer manipulation (with `Shift` for extra functionalities)
 
-| Functionality                 | Key-binding          |
-| ----------------------------- | -------------------- |
-| Switch to the left window     | `Alt+h`              |
-| Switch to the lower window    | `Alt+j`              |
-| Switch to the upper window    | `Alt+k`              |
-| Switch to the right window    | `Alt+l`              |
-| Swap with the left window     | `Alt+Shift+h`        |
-| Swap with the lower window    | `Alt+Shift+j`        |
-| Swap with the upper window    | `Alt+Shift+k`        |
-| Swap with the right window    | `Alt+Shift+l`        |
-|                               |                      |
-| Switch to the previous buffer | `Ctrl+Alt+h`         |
-| Switch to the next buffer     | `Ctrl+Alt+l`         |
-| *J*ump to a buffer            | `Ctrl+Alt+j`         |
-| *K*ill a buffer               | `Ctrl+Alt+k`         |
-| Swap with the previous buffer | `Ctrl+Alt+Shift+h`   |
-| Swap with the next buffer     | `Ctrl+Alt+Shift+l`   |
-| Restore a closed buffer       | `Ctrl+Alt+Shift+j`   |
-| Kill the current buffer       | `Ctrl+Alt+Shift+k`   |
-| Pin/unpin the current buffer  | `Ctrl+Alt+p`         |
+| Group               | Functionality                 | Key-binding          |
+| ------------------- | ----------------------------- | -------------------- |
+| Split manipulation  | Switch to the left window     | `Alt+h`              |
+|                     | Switch to the lower window    | `Alt+j`              |
+|                     | Switch to the upper window    | `Alt+k`              |
+|                     | Switch to the right window    | `Alt+l`              |
+|                     | Swap with the left window     | `Alt+Shift+h`        |
+|                     | Swap with the lower window    | `Alt+Shift+j`        |
+|                     | Swap with the upper window    | `Alt+Shift+k`        |
+|                     | Swap with the right window    | `Alt+Shift+l`        |
+| Buffer manipulation | Switch to the previous buffer | `Ctrl+Alt+h`         |
+|                     | Switch to the next buffer     | `Ctrl+Alt+l`         |
+|                     | *J*ump to a buffer            | `Ctrl+Alt+j`         |
+|                     | *K*ill a buffer               | `Ctrl+Alt+k`         |
+|                     | Swap with the previous buffer | `Ctrl+Alt+Shift+h`   |
+|                     | Swap with the next buffer     | `Ctrl+Alt+Shift+l`   |
+|                     | Restore a closed buffer       | `Ctrl+Alt+Shift+j`   |
+|                     | Kill the current buffer       | `Ctrl+Alt+Shift+k`   |
+|                     | Pin/unpin the current buffer  | `Ctrl+Alt+p`         |
 
 
 ### 1.5. DAP key-bindings
@@ -134,35 +125,30 @@ Overall logic:
 
 ### 1.6. Other custom key-bindings
 
-| Functionality                                   | Key-binding          |
-| ----------------------------------------------- | -------------------- |
-| Insert python breakpoint (on the next line)     | `<leader> b`         |
-| Insert python breakpoint (on the previous line) | `<leader> B`         |
-| Insert '-' characters                           | `<leader> -`         |
-| Insert '=' characters                           | `<leader> =`         |
-| Generate doc string for function                | `<leader> d`         |
-| Toggle file explorer                            | `<leader> t`         |
-| Toggle symbol outline view                      | `<leader> o`         |
-| Dismiss current notification message            | `<leader> n`         |
-| Open Lazygit terminal                           | `<leader> g`         |
-|                                                 |                      |
-| Toggle terminal                                 | `<Ctrl+\>`           |
-|                                                 |                      |
-| Fuzzy motion mode                               | `s`                  |
-|                                                 |                      |
-| Go to previous hunk of Git change               | `[h`                 |
-| Go to next hunk of Git change                   | `]h`                 |
-| Preview current hunk of Git change              | `<leader>h`          |
-| Preview current hunk of Git change (inline)     | `<leader>H`          |
-|                                                 |                      |
-| Toggle line-wise comment (normal mode)          | `gcc` or `Ctrl+/`    |
-| Toggle line-wise comment (visual mode)          | `gc`                 |
-| Toggle block-wise comment (normal mode)         | `gbc`                |
-| Toggle block-wise comment (visual mode)         | `gb`                 |
-|                                                 |                      |
-| Start easy align (in visual mode)               | `<leader>a`          |
-| - Easy align by `|`                             | `<leader>a*|`        |
-| - Easy align by ` `                             | `<leader>a* `        |
+| Group      | Functionality                                   | Key-binding          |
+|            | ----------------------------------------------- | -------------------- |
+| Misc       | Insert python breakpoint (on the next line)     | `<leader> b`         |
+|            | Insert python breakpoint (on the previous line) | `<leader> B`         |
+|            | Insert '-' characters                           | `<leader> -`         |
+|            | Insert '=' characters                           | `<leader> =`         |
+|            | Generate doc string for function                | `<leader> d`         |
+|            | Toggle file explorer                            | `<leader> t`         |
+|            | Toggle symbol outline view                      | `<leader> o`         |
+|            | Dismiss current notification message            | `<leader> n`         |
+|            | Open Lazygit (terminal)                         | `<leader> g`         |
+| Terminal   | Toggle terminal                                 | `<Ctrl+\>`           |
+| Pounce     | Fuzzy motion mode                               | `s`                  |
+| Git hunk   | Go to previous hunk of Git change               | `[h`                 |
+|            | Go to next hunk of Git change                   | `]h`                 |
+|            | Preview current hunk of Git change              | `<leader>h`          |
+|            | Preview current hunk of Git change (inline)     | `<leader>H`          |
+| Comment    | Toggle line-wise comment (normal mode)          | `gcc` or `Ctrl+/`    |
+|            | Toggle line-wise comment (visual mode)          | `gc`                 |
+|            | Toggle block-wise comment (normal mode)         | `gbc`                |
+|            | Toggle block-wise comment (visual mode)         | `gb`                 |
+| Easy-align | Start easy align (in visual mode)               | `<leader>a`          |
+|            | - Easy align by `|`                             | `<leader>a*|`        |
+|            | - Easy align by ` `                             | `<leader>a* `        |
 
 
 ## 2. Default useful vim key-bindings
