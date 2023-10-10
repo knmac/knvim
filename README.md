@@ -88,6 +88,7 @@ The following prerequisites are for manual installation.
 - `rg` and `fd` for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
 - (Optional) [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [ToggleTerm](https://github.com/akinsho/toggleterm.nvim).
 
+
 ### 3.2. Installation
 
 Clone this repo to `$HOME/.config`:
@@ -122,6 +123,7 @@ Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazym
 
 Cheatsheet for knvim can be found [here](res/cheatsheet.md). You can also access cheatsheet from the start page.
 
+
 ## 6. Extra configs (optional)
 
 This section shows you how to set up extra configuration for knvim to work as you want (completely optional)
@@ -141,6 +143,7 @@ line-length = 100
 ```
 
 For more information, visit [here](https://docs.astral.sh/ruff/configuration/) and [here](https://python-poetry.org/docs/pyproject/).
+
 
 ### 6.2. DAP (Debugging tool)
 

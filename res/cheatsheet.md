@@ -65,6 +65,7 @@ Overall logic:
 |             | Go to *i*mplementation                                | `gi`          |
 |             | Go to *r*eference                                     | `gr`          |
 |             | Go to t*y*pe definition                               | `gy`          |
+|             | Go to *f*ile path (not LSP, vim default)              | `gf`          |
 | Misc        | Show function documentation (on hover)                | `K`           |
 |             | Show signature help (while typing function arguments) | `Ctrl+k`      |
 |             | Rename variables                                      | `<leader> rn` |
@@ -123,7 +124,19 @@ Overall logic:
 | Hover variable while debugging                  | `,h`                 |
 
 
-### 1.6. Other custom key-bindings
+### 1.6. Vim matchup
+
+Navigate to begining/end of a function. Convenient for long functions
+
+| Functionality                             | Key-binding |
+| ----------------------------------------- | ----------- |
+| Cycle to next matching word               | `%`         |
+| Go to {count}-th previous outer open word | `[%`        |
+| Go to {count}-th next outer open word     | `]%`        |
+| Go to inside {count}-th nearest block     | `z%`        |
+
+
+### 1.7. Other custom key-bindings
 
 | Group      | Functionality                                   | Key-binding          |
 | ---------- | ----------------------------------------------- | -------------------- |
@@ -188,7 +201,7 @@ Overall logic:
 
 ### 2.2. Substitution
 
-General command:
+General command (regex):
 
 `<substitution_options>/<old_string>/<new_string>/<execution_options>`
 
