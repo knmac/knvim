@@ -91,7 +91,10 @@ map('n', '<leader>a', '<Plug>(EasyAlign)', {})
 map('n', '<leader>d', '<cmd>Neogen<CR>', default_opts)
 
 -- Comment.nvim
-map('n', '<C-/>', function() require('Comment.api').toggle.linewise.current() end, default_opts)
+map('n', '<C-/>',
+    function() require('Comment.api').toggle.linewise.current() end,
+    { desc = 'Comment toggle current line', noremap = true, silent = true }
+)
 
 -- Alternative ways to toggle Neotree, symbol outline, and zen-mode
 map('n', '<leader>t', '<cmd>Neotree toggle<CR>', default_opts)
