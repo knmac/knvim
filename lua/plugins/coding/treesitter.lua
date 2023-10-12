@@ -1,7 +1,6 @@
 -- Code parser generator for syntax highlighting
 return {
     'nvim-treesitter/nvim-treesitter',                -- code parser generator for syntax highlighting
-    dependencies = 'HiPhish/rainbow-delimiters.nvim', -- colorize parentheses
     build = ':TSUpdate',
     config = function()
         require('nvim-treesitter.configs').setup({
@@ -58,28 +57,5 @@ return {
         -- Overwrite fold method using treesitter expression
         vim.opt.foldmethod = 'expr'
         vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-
-        -- Rainbow delimiters config
-        local rainbow_delimiters = require 'rainbow-delimiters'
-
-        vim.g.rainbow_delimiters = {
-            strategy = {
-                [''] = rainbow_delimiters.strategy['global'],
-                vim = rainbow_delimiters.strategy['local'],
-            },
-            query = {
-                [''] = 'rainbow-delimiters',
-                lua = 'rainbow-blocks',
-            },
-            highlight = {
-                'RainbowDelimiterRed',
-                'RainbowDelimiterYellow',
-                'RainbowDelimiterBlue',
-                'RainbowDelimiterOrange',
-                'RainbowDelimiterGreen',
-                'RainbowDelimiterViolet',
-                'RainbowDelimiterCyan',
-            },
-        }
     end,
 }
