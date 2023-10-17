@@ -41,6 +41,8 @@ Overall logic:
 
 ### 1.2. Telescope key-bindings
 
+All Telescope key-bindings start with `<space>`.
+
 | Functionality                       | Key-binding       |
 | ----------------------------------- | ----------------- |
 | Open Telescope                      | `<space> <space>` |
@@ -110,6 +112,8 @@ Overall logic:
 
 ### 1.5. DAP key-bindings
 
+All DAP key-bindings start with `,`.
+
 | Functionality                                   | Key-binding |
 | ----------------------------------------------- | ----------- |
 | Toggle DAP UI                                   | `,d`        |
@@ -127,7 +131,7 @@ Overall logic:
 
 ### 1.6. Vim matchup
 
-Navigate to begining/end of a function. Convenient for long functions
+Navigate to begining/end of a function. Convenient for long functions. This is the default key-bindings from the plugins, but I'm too lazy to make a different section :P
 
 | Functionality                             | Key-binding |
 | ----------------------------------------- | ----------- |
@@ -208,7 +212,19 @@ Navigate to begining/end of a function. Convenient for long functions
 |                   | Go to next/previous item in tab                  | `gt`/`gT`                | _         |
 
 
-### 2.2. Substitution
+### 2.2. Buffers manipulation
+
+| Functionality           | Command                               |
+| ----------------------- | ------------------------------------- |
+| Open file in new buffer | `:badd <filename>`                    |
+| Go to next buffer       | `:bn`                                 |
+| Go to previous buffer   | `:bp`                                 |
+| Delete buffer           | `:bd`                                 |
+| List all buffers        | `:ls`                                 |
+| Go to a buffer          | `:b` `<buffer_index>`/`<buffer_name>` |
+
+
+### 2.3. Substitution
 
 General command (regex):
 
@@ -222,6 +238,7 @@ Substitution options:
 | Replace the current line                   | `s`         |
 | Replace from line 5 to line 12             | `5,12s`     |
 | Replace from current line to the last line | `,$s`       |
+| Replace within the selection (visual mode) | `'<,'>s`    |
 
 Execution options:
 
@@ -234,9 +251,10 @@ Examples:
 
 - `:%s/foo/bar/g`: replace all `foo` by `bar`
 - `:s/foo/bar/g`: replace `foo` by `bar` on the current line
+- `:'<,'>s/foo/bar/g`: replace all `foo` by `bar` on the selection (visual mode)
 
 
-### 2.3. Vim's default auto-completion (insert mode)
+### 2.4. Vim's default auto-completion (insert mode)
 
 | Functionality                      | Key-binding     |
 | ---------------------------------- | --------------- |
@@ -249,15 +267,6 @@ Examples:
 More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-5-awesome-examples-for-automatic-word-completion-using-ctrl-x-magic/)
 
 
-### 2.4. Ctags key-bindings (requires Ctags)
-
-| Functionality        | Key-binding |
-| -------------------- | ----------- |
-| Go to definition     | `Ctrl+]`    |
-| Preview definition   | `Ctrl+w }`  |
-| Close preview window | `Ctrl+w z`  |
-
-
 ### 2.5. Code folding
 
 | Functionality    | Key-binding |
@@ -267,9 +276,9 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 | Reopen all folds | `zR`        |
 
 
-### 2.6. Spellings
+### 2.6. Spelling
 
-Need to turn spellchecking on first: `:set spell` (turning off with `:set nospell`). You can specify which language as (e.g., en_us, en_gb, ...) `:set spell spelllang=en_us`.
+Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath('data') .. '/spelling/en.utf-8.add'`). To turn spellchecking on, use the commmand: `:set spell` (turning off with `:set nospell`). You can specify which language as (e.g., en_us, en_gb, ...) `:set spell spelllang=en_us`. For more information, see `:h spell`.
 
 | Functionality             | Key-binding   |
 | ------------------------- | ------------- |
@@ -280,13 +289,10 @@ Need to turn spellchecking on first: `:set spell` (turning off with `:set nospel
 | Next misspelled word      | `]s`          |
 
 
-### 2.7. Buffers manipulation
+### 2.7. Ctags key-bindings (requires Ctags)
 
-| Functionality           | Command                               |
-| ----------------------- | ------------------------------------- |
-| Open file in new buffer | `:badd <filename>`                    |
-| Go to next buffer       | `:bn`                                 |
-| Go to previous buffer   | `:bp`                                 |
-| Delete buffer           | `:bd`                                 |
-| List all buffers        | `:ls`                                 |
-| Go to a buffer          | `:b` `<buffer_index>`/`<buffer_name>` |
+| Functionality        | Key-binding |
+| -------------------- | ----------- |
+| Go to definition     | `Ctrl+]`    |
+| Preview definition   | `Ctrl+w }`  |
+| Close preview window | `Ctrl+w z`  |
