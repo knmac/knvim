@@ -208,8 +208,8 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |                   | Max out height                                   | `Ctrl+w` `_`             | _         |
 |                   | Max out width                                    | `Ctrl+w` `\|`            | _         |
 |                   | Equal height/width for all splits                | `Ctrl+w` `=`             | _         |
-| Other navigation  | Go to next/previous item in stack                | `Ctrl+i`/`Ctrl+o`        | _         |
-|                   | Go to next/previous item in tab                  | `gt`/`gT`                | _         |
+| Other navigation  | Go to next/previous item in jumplist             | `Ctrl+i`/`Ctrl+o`        | _         |
+|                   | Go to next/previous item in tab (tab != buffer)  | `gt`/`gT`                | _         |
 
 
 ### 2.2. Buffers manipulation
