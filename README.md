@@ -82,10 +82,11 @@ The configs in `experimentals/` directories are not activated by default. To use
 ### 3.1. Prerequisites
 
 The following prerequisites are for manual installation.
-- Neovim 0.9.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
+- Neovim 0.9.1+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
 - A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [WezTerm](https://wezfurlong.org/wezterm/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font).
 - `npm` for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formaters).
 - `rg` and `fd` for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
+- (Optional) Python packages `pynvim` and `neovim` (installable with pip).
 - (Optional) [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [ToggleTerm](https://github.com/akinsho/toggleterm.nvim).
 
 
