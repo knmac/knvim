@@ -155,6 +155,7 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | Dismiss current notification message            | `<leader> n`      |
 |            | Open Lazygit (terminal)                         | `<leader> g`      |
 | Terminal   | Toggle terminal                                 | `<Ctrl+\>`        |
+|            | Enter normal mode in terminal                   | `<Ctrl+Esc>`      |
 | Pounce     | Fuzzy motion mode                               | `s`               |
 | Git hunk   | Go to previous hunk of Git change               | `[h`              |
 |            | Go to next hunk of Git change                   | `]h`              |
