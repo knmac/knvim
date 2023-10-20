@@ -103,8 +103,17 @@ return {
                 local current_env = require('swenv.api').get_current_venv()
                 if current_env ~= nil then
                     current_env = current_env.name
-                else
+                elseif vim.g.python3_host_prog == nil then
                     current_env = ' ∅'
+                else
+                    -- current_env = ' ∅'
+                    local Path = require('plenary.path')
+                    local tokens = Path._split(Path:new(vim.g.python3_host_prog))
+                    if #tokens > 2 then
+                        current_env = tokens[#tokens - 2]
+                    else
+                        current_env = ' ∅'
+                    end
                 end
                 return current_env
             end,
