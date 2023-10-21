@@ -57,9 +57,10 @@ return {
                 end
 
                 -- Progress bar
-                local sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' }
+                -- local sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' } -- lower one eigth block -> full block
+                local sbar = { '▔', '🮂', '🮃', '▀', '🮄', '🮅', '🮆', '█' } -- upper one eigth block -> full block
                 local i = math.floor((curr_line - 1) / lines * #sbar) + 1
-                local progress_bar = string.rep(sbar[i], 2)
+                local progress_bar = string.rep(sbar[i], 1)
 
                 return location .. ' ' .. percent .. ' ' .. progress_bar
             end,
