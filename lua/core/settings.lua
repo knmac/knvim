@@ -15,6 +15,7 @@ local possible_python_paths = {
     os.getenv('HOME') .. '/.venvs/dev/bin/python',  -- Custom virtual env
     os.getenv('HOME') .. '/opt/anaconda3/envs/dev/bin/python', -- MacOS's default conda
     os.getenv('HOME') .. '/anaconda3/envs/dev/bin/python', -- Linux's default conda
+    os.getenv('HOME') .. '/.pyenv/shims/python',  -- pyenv's default path
     '/usr/bin/python3',  -- System default python3
     '/usr/bin/python',  -- System default python
 }
