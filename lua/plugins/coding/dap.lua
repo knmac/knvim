@@ -23,6 +23,7 @@ return {
         },
         {
             'LiadOz/nvim-dap-repl-highlights', -- syntax highlights to nvim-dap REPL
+            dependencies = 'nvim-treesitter/nvim-treesitter',
             build = ':TSInstall dap_repl',
             opts = {},
         },
