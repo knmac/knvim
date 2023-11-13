@@ -47,12 +47,14 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- Go down/up soft-wrapped lines instead of 'real' lines
 vim.api.nvim_create_autocmd('FileType', {
-    desc = 'Go down/up soft-wrapped lines instead of real lines',
+    desc = 'Overwrite "line" naviagation with "wrapped-line" navigation',
     pattern = { 'md', 'markdown', 'tex', },
     group = user_cfgs_group,
     callback = function()
         vim.keymap.set('n', 'j', 'gj', default_opts)
         vim.keymap.set('n', 'k', 'gk', default_opts)
+        vim.keymap.set('n', '0', 'g0', default_opts)
+        vim.keymap.set('n', '$', 'g$', default_opts)
     end,
 })
 
