@@ -45,6 +45,14 @@ return {
                         filter = { event = 'lsp', kind = 'progress', find = 'Checking document', },
                         opts = { skip = true, },
                     },
+                    { filter = { find = 'E162' },                                   view = 'mini' },
+                    { filter = { event = 'msg_show', kind = '', find = 'written' }, view = 'mini' },
+                    { filter = { event = 'msg_show', find = 'search hit BOTTOM' },  skip = true },
+                    { filter = { event = 'msg_show', find = 'search hit TOP' },     skip = true },
+                    { filter = { event = 'emsg', find = 'E23' },                    skip = true },
+                    { filter = { event = 'emsg', find = 'E20' },                    skip = true },
+                    { filter = { find = 'No signature help' },                      skip = true },
+                    { filter = { find = 'E37' },                                    skip = true },
                 },
             })
             vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = nil })
@@ -59,7 +67,7 @@ return {
             })
 
             local map = function(mode, lhs, rhs, desc)
-                local opts = { noremap = true, silent = true, desc = 'DAP: ' .. desc }
+                local opts = { noremap = true, silent = true, desc = 'Noice: ' .. desc }
                 vim.keymap.set(mode, lhs, rhs, opts)
             end
             map('n', '<leader>n', function() require('notify').dismiss() end, 'Dismiss current notify message')
