@@ -27,6 +27,12 @@ map('n', '<A-j>', '<C-w>j', default_opts)
 map('n', '<A-k>', '<C-w>k', default_opts)
 map('n', '<A-l>', '<C-w>l', default_opts)
 
+-- In insert mode, <Alt>+h,j,k,l becomes arrows
+map('i', '<A-h>', '<Left>',  default_opts)
+map('i', '<A-j>', '<Down>',  default_opts)
+map('i', '<A-k>', '<Up>',    default_opts)
+map('i', '<A-l>', '<Right>', default_opts)
+
 -- Window swapping
 map('n', '<A-S-h>', '<C-w>h<C-w>x', default_opts)
 map('n', '<A-S-j>', '<C-w>j<C-w>x', default_opts)

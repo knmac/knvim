@@ -154,6 +154,7 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | Toggle symbol outline view                      | `<leader> o`      |
 |            | Dismiss current notification message            | `<leader> n`      |
 |            | Open Lazygit (terminal)                         | `<leader> g`      |
+|            | In insert mode, `<Alt>+h,j,k,l` becomes arrows  | `<Alt>+h,j,k,l`   |
 | Terminal   | Toggle terminal                                 | `<Ctrl+\>`        |
 |            | Enter normal mode in terminal                   | `<Ctrl+Esc>`      |
 | Pounce     | Fuzzy motion mode                               | `s`               |
