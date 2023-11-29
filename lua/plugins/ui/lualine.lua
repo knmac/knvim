@@ -10,6 +10,20 @@ return {
     },
     config = function()
         -- Custom components --------------------------------------------------
+        -- Show notification
+        local notify_stat = {
+            function()
+                return ' '
+            end,
+            on_click = function(n_clicks, btn, mod)
+                if btn == 'l' then
+                    require('telescope').extensions.notify.notify()
+                elseif btn == 'r' then
+                    require('notify').dismiss()
+                end
+            end,
+        }
+
         -- Show and change the number of spaces per tab of the local buffer
         local fmt_stat = {
             function()
@@ -181,12 +195,31 @@ return {
                 globalstatus = true,
             },
             sections = {
-                lualine_a = { 'mode' },
-                lualine_b = { branch_stat, diff_stat, diagnostics_stat, },
-                lualine_c = { { 'filename', path = 3, }, { 'searchcount', icon = '󰍉', } },
-                lualine_x = { fmt_stat, 'encoding', fileformat_stat, filetype_stat, },
-                lualine_y = { progress_stat, },
-                lualine_z = { env_stat },
+                lualine_a = {
+                    'mode',
+                },
+                lualine_b = {
+                    branch_stat,
+                    diff_stat,
+                    diagnostics_stat,
+                },
+                lualine_c = {
+                    { 'filename', path = 3, },
+                    { 'searchcount', icon = '󰍉', },
+                },
+                lualine_x = {
+                    fmt_stat,
+                    'encoding',
+                    fileformat_stat,
+                    filetype_stat,
+                },
+                lualine_y = {
+                    progress_stat,
+                },
+                lualine_z = {
+                    env_stat,
+                    notify_stat,
+                },
             },
             inactive_sections = {
                 lualine_a = {},
