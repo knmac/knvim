@@ -12,7 +12,7 @@ return {
         require('symbols-outline').setup({
             relative_width = false,
             width = width_with_min(0.15, 50),
-            autofold_depth = 1,
+            autofold_depth = 2,
             symbols = {
                 File = { icon = '', hl = '@text.uri' },
                 Module = { icon = '', hl = '@namespace' },
