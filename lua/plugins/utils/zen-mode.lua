@@ -32,13 +32,13 @@ return {
             on_open = function()
                 -- map('n', 'j', 'jzz', default_opts)
                 -- map('n', 'k', 'kzz', default_opts)
-                vim.o.foldcolumn = '0'  -- hide foldcolumn
+                vim.o.foldcolumn = '0' -- hide foldcolumn
             end,
             -- callback where you can add custom code when the Zen window closes
             on_close = function()
                 -- map('n', 'j', 'j', default_opts)
                 -- map('n', 'k', 'k', default_opts)
-                vim.o.foldcolumn = '1'  -- show foldcolumn
+                vim.o.foldcolumn = '1' -- show foldcolumn
             end,
         })
     end,

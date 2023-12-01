@@ -28,9 +28,9 @@ map('n', '<A-k>', '<C-w>k', default_opts)
 map('n', '<A-l>', '<C-w>l', default_opts)
 
 -- In insert mode, <Alt>+h,j,k,l becomes arrows
-map('i', '<A-h>', '<Left>',  default_opts)
-map('i', '<A-j>', '<Down>',  default_opts)
-map('i', '<A-k>', '<Up>',    default_opts)
+map('i', '<A-h>', '<Left>', default_opts)
+map('i', '<A-j>', '<Down>', default_opts)
+map('i', '<A-k>', '<Up>', default_opts)
 map('i', '<A-l>', '<Right>', default_opts)
 
 -- Window swapping
@@ -40,48 +40,48 @@ map('n', '<A-S-k>', '<C-w>k<C-w>x', default_opts)
 map('n', '<A-S-l>', '<C-w>l<C-w>x', default_opts)
 
 -- Navigation from terminal
-map('t', '<C-esc>', [[<C-\><C-n>]],       default_opts)
-map('t', '<A-h>',   [[<C-\><C-n><C-w>h]], default_opts)
-map('t', '<A-j>',   [[<C-\><C-n><C-w>j]], default_opts)
-map('t', '<A-k>',   [[<C-\><C-n><C-w>k]], default_opts)
-map('t', '<A-l>',   [[<C-\><C-n><C-w>l]], default_opts)
+map('t', '<C-esc>', [[<C-\><C-n>]], default_opts)
+map('t', '<A-h>', [[<C-\><C-n><C-w>h]], default_opts)
+map('t', '<A-j>', [[<C-\><C-n><C-w>j]], default_opts)
+map('t', '<A-k>', [[<C-\><C-n><C-w>k]], default_opts)
+map('t', '<A-l>', [[<C-\><C-n><C-w>l]], default_opts)
 
 
 ---------------------------------------------------------------------------------------------------
 -- Plugins and Function key bindings
 ---------------------------------------------------------------------------------------------------
 -- Pounce
-map('n', 's',  '<cmd>Pounce<CR>', default_opts)
-map('n', 'S',  '<cmd>PounceRepeat<CR>', default_opts)
-map('x', 's',  '<cmd>Pounce<CR>', default_opts)
-map('o', 'gs', '<cmd>Pounce<CR>', default_opts)  -- 's' is used by vim-surround
+map('n', 's', '<cmd>Pounce<CR>', default_opts)
+map('n', 'S', '<cmd>PounceRepeat<CR>', default_opts)
+map('x', 's', '<cmd>Pounce<CR>', default_opts)
+map('o', 'gs', '<cmd>Pounce<CR>', default_opts) -- 's' is used by vim-surround
 -- map('n', 'S',  ':Pounce <C-r>/<cr>', default_opts)  -- note: if you want to use <C-r> you cannot use <cmd>
 
 -- Barbar (buffer line)
-map('n', '<C-A-h>',   '<cmd>BufferPrevious<CR>', default_opts)
-map('n', '<C-A-j>',   '<cmd>BufferPick<CR>', default_opts)
-map('n', '<C-A-k>',   '<cmd>BufferPickDelete<CR>', default_opts)
-map('n', '<C-A-l>',   '<cmd>BufferNext<CR>', default_opts)
+map('n', '<C-A-h>', '<cmd>BufferPrevious<CR>', default_opts)
+map('n', '<C-A-j>', '<cmd>BufferPick<CR>', default_opts)
+map('n', '<C-A-k>', '<cmd>BufferPickDelete<CR>', default_opts)
+map('n', '<C-A-l>', '<cmd>BufferNext<CR>', default_opts)
 map('n', '<C-A-S-h>', '<cmd>BufferMovePrevious<CR>', default_opts)
 map('n', '<C-A-S-j>', '<cmd>BufferRestore<CR>', default_opts)
 map('n', '<C-A-S-k>', '<cmd>BufferClose<CR>', default_opts)
 map('n', '<C-A-S-l>', '<cmd>BufferMoveNext<CR>', default_opts)
-map('n', '<C-A-p>',   '<cmd>BufferPin<CR>', default_opts)
+map('n', '<C-A-p>', '<cmd>BufferPin<CR>', default_opts)
 
 -- Telescope
 map('n', '<space><space>', '<cmd>Telescope<CR>', default_opts)
-map('n', '<space>f',       '<cmd>Telescope find_files<CR>', default_opts)
-map('n', '<space>t',       '<cmd>Telescope live_grep<CR>', default_opts)
-map('n', '<space>b',       '<cmd>Telescope buffers<CR>', default_opts)
-map('n', '<space>/',       '<cmd>Telescope current_buffer_fuzzy_find<CR>', default_opts)
-map('n', '<space>c',       '<cmd>Telescope bibtex<CR>', default_opts)
-map('n', '<space>v',       '<cmd>Telescope vim_options<CR>', default_opts)
-map('n', '<space>w',       '<cmd>Telescope file_browser<CR>', default_opts)
-map('n', '<space>h',       '<cmd>Telescope help_tags<CR>', default_opts)
-map('n', '<space>k',       '<cmd>Telescope keymaps<CR>', default_opts)
-map('n', '<space>?',       '<cmd>Telescope commands<CR>', default_opts)
-map('n', '<space>n',       '<cmd>Telescope notify<CR>', default_opts)
-map('n', '<space>s',       '<cmd>SessionManager load_session<CR>', default_opts)
+map('n', '<space>f', '<cmd>Telescope find_files<CR>', default_opts)
+map('n', '<space>t', '<cmd>Telescope live_grep<CR>', default_opts)
+map('n', '<space>b', '<cmd>Telescope buffers<CR>', default_opts)
+map('n', '<space>/', '<cmd>Telescope current_buffer_fuzzy_find<CR>', default_opts)
+map('n', '<space>c', '<cmd>Telescope bibtex<CR>', default_opts)
+map('n', '<space>v', '<cmd>Telescope vim_options<CR>', default_opts)
+map('n', '<space>w', '<cmd>Telescope file_browser<CR>', default_opts)
+map('n', '<space>h', '<cmd>Telescope help_tags<CR>', default_opts)
+map('n', '<space>k', '<cmd>Telescope keymaps<CR>', default_opts)
+map('n', '<space>?', '<cmd>Telescope commands<CR>', default_opts)
+map('n', '<space>n', '<cmd>Telescope notify<CR>', default_opts)
+map('n', '<space>s', '<cmd>SessionManager load_session<CR>', default_opts)
 map('n', '<space>e',
     function() require('swenv.api').pick_venv() end,
     { desc = 'Switch python env', noremap = true, silent = true }

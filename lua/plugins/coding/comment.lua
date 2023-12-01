@@ -6,7 +6,7 @@ return {
         ---@type boolean
         padding = true,
         ---Whether the cursor should stay at its position
-        ---NOTE: This only affects NORMAL mode mappings and doesn't work with dot-repeat
+        ---This only affects NORMAL mode mappings and doesn't work with dot-repeat
         ---@type boolean
         sticky = true,
         ---Lines to be ignored while comment/uncomment.
@@ -35,7 +35,7 @@ return {
         mappings = {
             ---operator-pending mapping
             ---Includes `gcc`, `gcb`, `gc[count]{motion}` and `gb[count]{motion}`
-            ---NOTE: These mappings can be changed individually by `opleader` and `toggler` config
+            ---These mappings can be changed individually by `opleader` and `toggler` config
             basic = true,
             ---extra mapping
             ---Includes `gco`, `gcO`, `gcA`

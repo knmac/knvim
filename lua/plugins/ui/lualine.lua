@@ -15,7 +15,7 @@ return {
             function()
                 return ' '
             end,
-            on_click = function(n_clicks, btn, mod)
+            on_click = function(_, btn, _)
                 if btn == 'l' then
                     require('telescope').extensions.notify.notify()
                 elseif btn == 'r' then

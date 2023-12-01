@@ -26,7 +26,7 @@ return {
         end,
     },
     {
-        'lukas-reineke/indent-blankline.nvim', -- show indent line
+        'lukas-reineke/indent-blankline.nvim',            -- show indent line
         dependencies = 'HiPhish/rainbow-delimiters.nvim', -- Use color from rainbow_delimiters
         main = 'ibl',
         config = function()

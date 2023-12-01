@@ -1,6 +1,6 @@
 -- Code parser generator for syntax highlighting
 return {
-    'nvim-treesitter/nvim-treesitter',                -- code parser generator for syntax highlighting
+    'nvim-treesitter/nvim-treesitter', -- code parser generator for syntax highlighting
     build = ':TSUpdate',
     config = function()
         require('nvim-treesitter.configs').setup({

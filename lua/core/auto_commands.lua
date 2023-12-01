@@ -84,6 +84,7 @@ function ClearReg()
     ]]
     vim.notify('All registers cleared', vim.log.levels.INFO)
 end
+
 vim.api.nvim_create_user_command('ClearRegisters', function() ClearReg() end, {})
 
 -- Toggle zoom the current window
