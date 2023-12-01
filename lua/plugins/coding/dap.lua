@@ -32,9 +32,9 @@ return {
         local dap = require('dap')
         local dapui = require('dapui')
 
-        -- --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
         -- Configurations for each languages
-        -- --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
         -- NOTE: For per-project config, create .vscode/launch.json that looks something like this:
         -- {
         --   // Use IntelliSense to learn about possible attributes.
@@ -53,7 +53,7 @@ return {
         --   ]
         -- }
 
-        -- Python - debugpy ---------------------------------------------------
+        -- Python - debugpy -----------------------------------------------------------------------
         dap.adapters.python = {
             type = 'executable',
             command = vim.g.python3_host_prog,
@@ -84,7 +84,7 @@ return {
             },
         }
 
-        -- C/C++ - codelldb ---------------------------------------------------
+        -- C/C++ - codelldb -----------------------------------------------------------------------
         -- NOTE:your code has to be compiled first, e.g., using
         -- g++ -g main.cpp -o [output_name]
         -- Then provide [output_name] as the program name
@@ -115,9 +115,9 @@ return {
         dap.configurations.c = dap.configurations.cpp
         dap.configurations.rust = dap.configurations.cpp
 
-        -- --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
         -- Automatically open when a debug session is created
-        -- --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
         dap.listeners.after.event_initialized['dapui_config'] = function()
             dapui.open()
         end
@@ -128,18 +128,18 @@ return {
             dapui.close()
         end
 
-        -- --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
         -- Set up signs and colors
-        -- --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
         vim.fn.sign_define('DapBreakpoint',          { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
         vim.fn.sign_define('DapBreakpointCondition', { text = '🔶', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
         vim.fn.sign_define('DapLogPoint',            { text = '📜', texthl = 'DapLogPoint', linehl = '', numhl = '' })
         vim.fn.sign_define('DapStopped',             { text = '👀', texthl = '', linehl = 'debugPC', numhl = '' })
         vim.fn.sign_define('DapBreakpointRejected',  { text = '🚫', texthl = '', linehl = '', numhl = '' })
 
-        -- --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
         -- Set up keymaps
-        -- --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
         map('n', ',d', function() dapui.toggle() end, 'Toggle UI')
         map('n', ',D', function() dap.repl.toggle() end, 'Open default REPL')
         map('n', ',k', function() require('dap.ui.widgets').hover() end, 'Check variable value on hover')

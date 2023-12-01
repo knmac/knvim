@@ -1,15 +1,15 @@
 -- Neovim settings
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- Neovim API aliases
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 local g = vim.g                     -- global variables
 local opt = vim.opt                 -- global/buffer/windows-scoped options
 
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- Setup python path
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 local possible_python_paths = {
     -- Extend the list for possible python path. Will use the 1st possible one
     os.getenv('HOME') .. '/.venvs/dev/bin/python',  -- Custom virtual env
@@ -27,16 +27,16 @@ for _, python_path in pairs(possible_python_paths) do
 end
 
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- Deactivate unused providers
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 g.loaded_ruby_provider = 0
 g.loaded_perl_provider = 0
 
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- General
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- g.mapleader = ','                -- change leader to a comma
 opt.mouse = 'a'                     -- enable mouse support
 opt.clipboard = 'unnamedplus'       -- copy/paste to system clipboard
@@ -51,9 +51,9 @@ opt.spellfile = vim.fn.stdpath('data') .. '/spelling/en.utf-8.add'  -- file to s
 -- vim.cmd [[ set path+=** ]]          -- provide tab-completion for file-related tasks, e.g., gf
 
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- Neovim UI
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 opt.termguicolors = true            -- enable 24-bit RGB color in the TUI
 opt.ls = 2                          -- always show status bar
 opt.number = true                   -- show line number
@@ -61,7 +61,7 @@ opt.relativenumber = true           -- use relative number
 opt.numberwidth = 5                 -- width of line numbers
 opt.showcmd = true                  -- show command in bottom bar
 opt.cursorline = true               -- highlight current line
-opt.colorcolumn = '80'              -- line length marker at 80 columns
+opt.colorcolumn = '100'             -- line length marker at 100 columns
 opt.showmatch = true                -- highlight matching parenthesis
 opt.smartcase = true                -- ignore lowercase for the whole pattern
 opt.linebreak = true                -- wrap on word boundary
@@ -82,18 +82,18 @@ opt.foldnestmax = 10                -- 10 nested fold max
 -- opt.foldmethod = 'indent'           -- set folding method by looking at indent
 
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- Searching and substitution
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 opt.ignorecase = true               -- ignore case letters when search
 opt.incsearch = true                -- search as characters are entered
 opt.hlsearch = true                 -- highlight matches
 -- opt.inccommand = 'nosplit'          -- show substitution results live
 
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- Tabs, indent
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 opt.expandtab = true                -- use spaces instead of tabs
 opt.tabstop = 4                     -- change the width of the <Tab> key
 opt.softtabstop = 4                 -- affect what happens when press <Tab> or <BS>
@@ -102,9 +102,9 @@ opt.smarttab = true                 -- affects how <Tab> are interpreted based o
 opt.autoindent = true               -- copy the indent from the prev line to a new line
 
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 -- Others
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 opt.hidden = true                   -- enable background buffers
 -- opt.history = 100                   -- remember n lines in history
 -- opt.lazyredraw = true               -- faster scrolling

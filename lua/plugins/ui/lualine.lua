@@ -9,7 +9,7 @@ return {
         'sindrets/diffview.nvim',        -- Clickable diffthis
     },
     config = function()
-        -- Custom components --------------------------------------------------
+        -- Custom components ----------------------------------------------------------------------
         -- Show notification
         local notify_stat = {
             function()
@@ -170,7 +170,7 @@ return {
             end,
         }
 
-        -- Main config --------------------------------------------------------
+        -- Main config ----------------------------------------------------------------------------
         require('lualine').setup({
             options = {
                 icons_enabled = true,
