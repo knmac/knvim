@@ -39,15 +39,15 @@ return {
             end,
         })
 
-        -- Disable fold completely for alpha
-        vim.api.nvim_create_autocmd('FileType', {
-            desc = 'Disable folding for alpha',
-            pattern = { 'alpha', },
-            group = folding_group,
-            callback = function()
-                vim.opt_local.foldenable = false
-            end,
-        })
+        -- -- Disable fold completely for alpha
+        -- vim.api.nvim_create_autocmd('FileType', {
+        --     desc = 'Disable folding for alpha',
+        --     pattern = { 'alpha', },
+        --     group = folding_group,
+        --     callback = function()
+        --         vim.opt_local.foldenable = false
+        --     end,
+        -- })
 
         require('ufo').setup({})
     end,
