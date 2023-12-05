@@ -25,8 +25,7 @@ return {
         opts = {
             -- Install the LSP servers automatically using mason-lspconfig
             ensure_installed = {
-                'pyright', 'ruff_lsp', 'bashls', 'clangd', 'vimls', 'lua_ls',
-                'texlab', 'marksman', 'tsserver',
+                'pyright', 'ruff_lsp', 'bashls', 'clangd', 'vimls', 'lua_ls', 'texlab', 'marksman', 'tsserver',
                 -- 'ltex',
             },
             automatic_installation = true,
@@ -170,7 +169,8 @@ return {
 
                     bufmap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace')
                     bufmap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace')
-                    bufmap('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, 'List workspaces')
+                    bufmap('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
+                        'List workspaces')
                 end,
             })
 
@@ -194,9 +194,9 @@ return {
 
             -- Diagnostic signs
             vim.fn.sign_define('DiagnosticSignError', { text = '󰅚 ', texthl = 'DiagnosticSignError' }) -- x000f015a
-            vim.fn.sign_define('DiagnosticSignWarn',  { text = '󰀪 ', texthl = 'DiagnosticSignWarn' })  -- x000f002a
-            vim.fn.sign_define('DiagnosticSignInfo',  { text = '󰋽 ', texthl = 'DiagnosticSignInfo' })  -- x000f02fd
-            vim.fn.sign_define('DiagnosticSignHint',  { text = '󰌶 ', texthl = 'DiagnosticSignHint' })  -- x000f0336
+            vim.fn.sign_define('DiagnosticSignWarn', { text = '󰀪 ', texthl = 'DiagnosticSignWarn' }) -- x000f002a
+            vim.fn.sign_define('DiagnosticSignInfo', { text = '󰋽 ', texthl = 'DiagnosticSignInfo' }) -- x000f02fd
+            vim.fn.sign_define('DiagnosticSignHint', { text = '󰌶 ', texthl = 'DiagnosticSignHint' }) -- x000f0336
 
             -- Config diagnostics
             vim.diagnostic.config({

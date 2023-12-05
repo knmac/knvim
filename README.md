@@ -39,6 +39,7 @@ lua/
    │  ├── dap.lua
    │  ├── lspconfig-mason.lua
    │  ├── metals.lua
+   │  ├── neotest.lua
    │  ├── nonels.lua
    │  └── treesitter.lua
    ├── experimentals/
@@ -131,12 +132,19 @@ Create the file `pyproject.toml` for each Python project, where the content look
 
 ```toml
 [tool.ruff]
-line-length = 100
-select = ["E", "F"]
-ignore = ["E501", "E402"]
+line-length = 110
 
-[tool.black]
-line-length = 100
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`) codes by default.
+select = ["E", "F"]
+# Avoid enforcing line-length violations (`E501`)
+ignore = ["E501"]
+
+[tool.ruff.format]
+# Use double quotes for strings.
+quote-style = "double"
+# Indent with spaces, rather than tabs.
+indent-style = "space"
 ```
 
 For more information, visit [here](https://docs.astral.sh/ruff/configuration/) and [here](https://python-poetry.org/docs/pyproject/).
@@ -147,9 +155,6 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
 
 ```json
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
         "configurations": [
         {
@@ -158,7 +163,7 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["TOKEN1", "TOKEN2", ...]
+            "args": ["ARG1", "ARG2", ...]
         }
     ]
 }
