@@ -2,16 +2,16 @@
 return {
     -- Ensure install for linter and formatter
     {
-        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
         opts = {
-            ensure_installed = { 'cpplint', 'shellcheck', 'prettierd', },
+            ensure_installed = { "cpplint", "shellcheck", "prettierd", },
         },
     },
     -- Linter and formatter
     {
-        'nvimtools/none-ls.nvim',
+        "nvimtools/none-ls.nvim",
         config = function()
-            local null_ls = require('null-ls')
+            local null_ls = require("null-ls")
             null_ls.setup({
                 sources = {
                     null_ls.builtins.diagnostics.cpplint,

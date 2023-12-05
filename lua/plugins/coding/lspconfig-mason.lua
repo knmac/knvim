@@ -5,15 +5,15 @@
 return {
     -- Mason
     {
-        'williamboman/mason.nvim',
-        build = ':MasonUpdate',
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
         opts = {
             ui = {
-                border = 'rounded',
+                border = "rounded",
                 icons = {
-                    package_installed = '✓',
-                    package_pending = '➜',
-                    package_uninstalled = '✗',
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗",
                 },
                 check_outdated_packages_on_open = true,
             }
@@ -21,11 +21,12 @@ return {
     },
     -- Ensure install for Mason's LSP
     {
-        'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim and nvim-lspconfig
+        "williamboman/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
         opts = {
             -- Install the LSP servers automatically using mason-lspconfig
             ensure_installed = {
-                'pyright', 'ruff_lsp', 'bashls', 'clangd', 'vimls', 'lua_ls', 'texlab', 'marksman', 'tsserver',
+                "pyright", "ruff_lsp", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman",
+                "tsserver",
                 -- 'ltex',
             },
             automatic_installation = true,
@@ -33,16 +34,16 @@ return {
     },
     -- LSP config
     {
-        'neovim/nvim-lspconfig',
+        "neovim/nvim-lspconfig",
         dependencies = {
             -- UI improvement for vim.ui.select and vim.ui.input
             -- Good for renaming prompt (appear at the variable location)
             {
-                'stevearc/dressing.nvim',
-                event = 'VeryLazy',
+                "stevearc/dressing.nvim",
+                event = "VeryLazy",
             },
             -- statusline/winbar component using lsp
-            'SmiteshP/nvim-navic',
+            "SmiteshP/nvim-navic",
         },
         config = function()
             ---------------------------------------------------------------------------------------
@@ -53,7 +54,7 @@ return {
                 lua_ls = {
                     Lua = {
                         diagnostics = {
-                            globals = { 'vim', 'use', }
+                            globals = { "vim", "use", }
                         }
                     },
                 },
@@ -77,7 +78,7 @@ return {
             }
 
             local utf16_cap = vim.lsp.protocol.make_client_capabilities()
-            utf16_cap.offsetEncoding = { 'utf-16' }
+            utf16_cap.offsetEncoding = { "utf-16" }
             local lsp_capabilities = {
                 clangd = { utf16_cap },
             }
@@ -85,18 +86,18 @@ return {
             -- Use a loop to conveniently call 'setup' on multiple servers and
             -- map buffer local keybindings when the language server attaches
             -- The servers are ensured to be installed by mason-lspconfig
-            local servers = require('mason-lspconfig').get_installed_servers()
+            local servers = require("mason-lspconfig").get_installed_servers()
             for _, lsp in ipairs(servers) do
-                require('lspconfig')[lsp].setup({
+                require("lspconfig")[lsp].setup({
                     settings = lsp_settings[lsp],
                     capabilities = lsp_capabilities[lsp],
                     on_attach = function(client, bufnr)
-                        if lsp == 'ruff_lsp' then
+                        if lsp == "ruff_lsp" then
                             -- Turn off hover for ruff
                             client.server_capabilities.hoverProvider = false
                         else
                             -- Use navic for non-ruff
-                            require('nvim-navic').attach(client, bufnr)
+                            require("nvim-navic").attach(client, bufnr)
                         end
                     end,
                 })
@@ -105,72 +106,78 @@ return {
             ---------------------------------------------------------------------------------------
             -- Set up key-bindings
             ---------------------------------------------------------------------------------------
-            local telescope_ok, telescope = pcall(require, 'telescope.builtin')
+            local telescope_ok, telescope = pcall(require, "telescope.builtin")
 
             -- Wrapper for keymapping with default opts
             local map = function(mode, lhs, rhs, desc)
-                local opts = { noremap = true, silent = true, desc = 'LSP: ' .. desc }
+                local opts = { noremap = true, silent = true, desc = "LSP: " .. desc }
                 vim.keymap.set(mode, lhs, rhs, opts)
             end
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            map('n', '<leader>e', function() vim.diagnostic.open_float({ border = 'rounded' }) end,
-                'Show diagnostics of the current line')
-            map('n', '[e', function() vim.diagnostic.goto_prev({ float = { border = 'rounded' } }) end,
-                'Go to the previous diagnostic')
-            map('n', ']e', function() vim.diagnostic.goto_next({ float = { border = 'rounded' } }) end,
-                'Go to the next diagnostic')
+            map("n", "<leader>e", function() vim.diagnostic.open_float({ border = "rounded" }) end,
+                "Show diagnostics of the current line")
+            map("n", "[e",
+                function() vim.diagnostic.goto_prev({ float = { border = "rounded" } }) end,
+                "Go to the previous diagnostic")
+            map("n", "]e",
+                function() vim.diagnostic.goto_next({ float = { border = "rounded" } }) end,
+                "Go to the next diagnostic")
             if telescope_ok then
-                map('n', '<leader>E', telescope.diagnostics, 'Show all diagnostics')
+                map("n", "<leader>E", telescope.diagnostics, "Show all diagnostics")
             else
-                map('n', '<leader>E', function() vim.diagnostic.setloclist() end, 'Show all diagnostics')
+                map("n", "<leader>E", function() vim.diagnostic.setloclist() end,
+                    "Show all diagnostics")
             end
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
-            vim.api.nvim_create_autocmd('LspAttach', {
-                group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = vim.api.nvim_create_augroup("UserLspConfig", {}),
                 callback = function(args)
                     local bufnr = args.buf
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
 
                     local bufmap = function(mode, lhs, rhs, desc)
-                        local bufopts = { noremap = true, silent = true, buffer = bufnr, desc = 'LSP: ' .. desc }
+                        local bufopts = { noremap = true, silent = true, buffer = bufnr, desc =
+                        "LSP: " .. desc }
                         vim.keymap.set(mode, lhs, rhs, bufopts)
                     end
 
                     -- Enable completion triggered by <c-x><c-o>
                     if client.server_capabilities.completionProvider then
-                        vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+                        vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
                     end
 
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
                     if telescope_ok then
-                        bufmap('n', 'gd', telescope.lsp_definitions, 'Go to definition')
-                        bufmap('n', 'gi', telescope.lsp_implementations, 'Go to implementation')
-                        bufmap('n', 'gr', telescope.lsp_references, 'Go to references')
-                        bufmap('n', 'gy', telescope.lsp_type_definitions, 'Go to type definition')
+                        bufmap("n", "gd", telescope.lsp_definitions, "Go to definition")
+                        bufmap("n", "gi", telescope.lsp_implementations, "Go to implementation")
+                        bufmap("n", "gr", telescope.lsp_references, "Go to references")
+                        bufmap("n", "gy", telescope.lsp_type_definitions, "Go to type definition")
                     else
-                        bufmap('n', 'gd', vim.lsp.buf.definition, 'Go to definition')
-                        bufmap('n', 'gi', vim.lsp.buf.implementation, 'Go to implementation')
-                        bufmap('n', 'gr', vim.lsp.buf.references, 'Go to references')
-                        bufmap('n', 'gy', vim.lsp.buf.type_definition, 'Go to type definition')
+                        bufmap("n", "gd", vim.lsp.buf.definition, "Go to definition")
+                        bufmap("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
+                        bufmap("n", "gr", vim.lsp.buf.references, "Go to references")
+                        bufmap("n", "gy", vim.lsp.buf.type_definition, "Go to type definition")
                     end
 
-                    bufmap('n', 'gD', vim.lsp.buf.declaration, 'Go to declaration')
-                    bufmap('n', 'K', vim.lsp.buf.hover, 'Show docstring of the item under the cursor')
-                    bufmap({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, 'Show signature help')
+                    bufmap("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
+                    bufmap("n", "K", vim.lsp.buf.hover, "Show docstring of the item under the cursor")
+                    bufmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Show signature help")
 
-                    bufmap('n', '<leader>rn', vim.lsp.buf.rename, 'Rename variable under the cursor')
-                    bufmap({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, 'Code action')
-                    bufmap('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, 'Format the buffer')
+                    bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename variable under the cursor")
+                    bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
+                    bufmap("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end,
+                        "Format the buffer")
 
-                    bufmap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace')
-                    bufmap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace')
-                    bufmap('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
-                        'List workspaces')
+                    bufmap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add workspace")
+                    bufmap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove workspace")
+                    bufmap("n", "<leader>wl",
+                        function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
+                        "List workspaces")
                 end,
             })
 
@@ -179,33 +186,33 @@ return {
             -- Setup UI
             ---------------------------------------------------------------------------------------
             -- Popped up window borders
-            vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+            vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
                 vim.lsp.handlers.hover, {
-                    border = 'rounded',
+                    border = "rounded",
                 }
             )
-            vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+            vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
                 vim.lsp.handlers.signature_help, {
-                    border = 'rounded',
-                    close_events = { 'CursorMoved', 'BufHidden', 'InsertCharPre' },
+                    border = "rounded",
+                    close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
                 }
             )
-            require('lspconfig.ui.windows').default_options.border = 'rounded'
+            require("lspconfig.ui.windows").default_options.border = "rounded"
 
             -- Diagnostic signs
-            vim.fn.sign_define('DiagnosticSignError', { text = '󰅚 ', texthl = 'DiagnosticSignError' }) -- x000f015a
-            vim.fn.sign_define('DiagnosticSignWarn', { text = '󰀪 ', texthl = 'DiagnosticSignWarn' }) -- x000f002a
-            vim.fn.sign_define('DiagnosticSignInfo', { text = '󰋽 ', texthl = 'DiagnosticSignInfo' }) -- x000f02fd
-            vim.fn.sign_define('DiagnosticSignHint', { text = '󰌶 ', texthl = 'DiagnosticSignHint' }) -- x000f0336
+            vim.fn.sign_define("DiagnosticSignError", { text = "󰅚 ", texthl = "DiagnosticSignError" }) -- x000f015a
+            vim.fn.sign_define("DiagnosticSignWarn", { text = "󰀪 ", texthl = "DiagnosticSignWarn" }) -- x000f002a
+            vim.fn.sign_define("DiagnosticSignInfo", { text = "󰋽 ", texthl = "DiagnosticSignInfo" }) -- x000f02fd
+            vim.fn.sign_define("DiagnosticSignHint", { text = "󰌶 ", texthl = "DiagnosticSignHint" }) -- x000f0336
 
             -- Config diagnostics
             vim.diagnostic.config({
                 virtual_text = {
-                    source = 'always', -- Or 'if_many'  -> show source of diagnostics
+                    source = "always", -- Or 'if_many'  -> show source of diagnostics
                     -- prefix = '■', -- Could be '●', '▎', 'x'
                 },
                 float = {
-                    source = 'always', -- Or 'if_many'  -> show source of diagnostics
+                    source = "always", -- Or 'if_many'  -> show source of diagnostics
                 },
             })
         end,

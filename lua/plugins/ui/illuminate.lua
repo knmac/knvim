@@ -1,14 +1,10 @@
 -- Highlight related text under cursor
 return {
-    'RRethy/vim-illuminate',
+    "RRethy/vim-illuminate",
     config = function()
-        require('illuminate').configure({
+        require("illuminate").configure({
             -- providers: provider used to get references in the buffer, ordered by priority
-            providers = {
-                'lsp',
-                'treesitter',
-                'regex',
-            },
+            providers = { "lsp", "treesitter", "regex", },
             -- delay: delay in milliseconds
             delay = 100,
             -- filetype_overrides: filetype specific overrides.
@@ -16,12 +12,7 @@ return {
             -- supports the same keys passed to .configure except for filetypes_denylist and filetypes_allowlist
             filetype_overrides = {},
             -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
-            filetypes_denylist = {
-                'dirvish',
-                'fugitive',
-                'nertree',
-                'NvimTree',
-            },
+            filetypes_denylist = { "dirvish", "fugitive", "nertree", "NvimTree", },
             -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
             filetypes_allowlist = {},
             -- modes_denylist: modes to not illuminate, this overrides modes_allowlist

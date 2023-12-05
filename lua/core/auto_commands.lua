@@ -6,14 +6,14 @@ local default_opts = { noremap = true, silent = true }
 ---------------------------------------------------------------------------------------------------
 -- Auto change the configs
 ---------------------------------------------------------------------------------------------------
-local user_cfgs_group = vim.api.nvim_create_augroup('user_cfgs', { clear = false })
+local user_cfgs_group = vim.api.nvim_create_augroup("user_cfgs", { clear = false })
 
 -- Only show cursorline in active windows
-vim.api.nvim_create_autocmd('WinEnter', {
+vim.api.nvim_create_autocmd("WinEnter", {
     group = user_cfgs_group,
     callback = function() vim.opt_local.cursorline = true end,
 })
-vim.api.nvim_create_autocmd('WinLeave', {
+vim.api.nvim_create_autocmd("WinLeave", {
     group = user_cfgs_group,
     callback = function() vim.opt_local.cursorline = false end,
 })
@@ -25,18 +25,18 @@ autocmd FileType python setlocal indentkeys-=:
 ]]
 
 -- Use tab instead of space for make files
-vim.api.nvim_create_autocmd('FileType', {
-    desc = 'Use tab instead of space for make files',
-    pattern = { 'make' },
+vim.api.nvim_create_autocmd("FileType", {
+    desc = "Use tab instead of space for make files",
+    pattern = { "make" },
     group = user_cfgs_group,
     callback = function() vim.opt_local.expandtab = false end,
 })
 
 -- 2 spaces for these file types
-vim.api.nvim_create_autocmd('FileType', {
-    desc = '2 spaces for these files types',
-    -- pattern = { 'xml', 'html', 'c', 'cpp', 'h', 'hpp' },
-    pattern = { 'xml', 'yaml', 'json', 'html', 'css', 'typescript', 'scala' },
+vim.api.nvim_create_autocmd("FileType", {
+    desc = "2 spaces for these files types",
+    -- pattern = { "xml", "html", "c", "cpp", "h", "hpp" },
+    pattern = { "xml", "yaml", "json", "html", "css", "typescript", "scala" },
     group = user_cfgs_group,
     callback = function()
         vim.opt_local.tabstop = 2
@@ -46,31 +46,31 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Go down/up soft-wrapped lines instead of 'real' lines
-vim.api.nvim_create_autocmd('FileType', {
+vim.api.nvim_create_autocmd("FileType", {
     desc = 'Overwrite "line" naviagation with "wrapped-line" navigation',
-    pattern = { 'md', 'markdown', 'tex', },
+    pattern = { "md", "markdown", "tex", },
     group = user_cfgs_group,
     callback = function()
-        vim.keymap.set('n', 'j', 'gj', default_opts)
-        vim.keymap.set('n', 'k', 'gk', default_opts)
-        vim.keymap.set('n', '0', 'g0', default_opts)
-        vim.keymap.set('n', '$', 'g$', default_opts)
+        vim.keymap.set("n", "j", "gj", default_opts)
+        vim.keymap.set("n", "k", "gk", default_opts)
+        vim.keymap.set("n", "0", "g0", default_opts)
+        vim.keymap.set("n", "$", "g$", default_opts)
     end,
 })
 
 ---------------------------------------------------------------------------------------------------
 -- Callable commands
 ---------------------------------------------------------------------------------------------------
-local user_cmds_group = vim.api.nvim_create_augroup('user_cmds', { clear = false })
+local user_cmds_group = vim.api.nvim_create_augroup("user_cmds", { clear = false })
 
 -- Shortcut for Python breakpoint (ipdb)
-vim.api.nvim_create_autocmd('FileType', {
-    desc = 'Insert breakpoints for python files',
-    pattern = { 'python' },
+vim.api.nvim_create_autocmd("FileType", {
+    desc = "Insert breakpoints for python files",
+    pattern = { "python" },
     group = user_cmds_group,
     callback = function()
-        vim.keymap.set('n', '<leader>b', 'obreakpoint()<esc>', default_opts)
-        vim.keymap.set('n', '<leader>B', 'Obreakpoint()<esc>', default_opts)
+        vim.keymap.set("n", "<leader>b", "obreakpoint()<esc>", default_opts)
+        vim.keymap.set("n", "<leader>B", "Obreakpoint()<esc>", default_opts)
     end,
 })
 
@@ -82,10 +82,10 @@ function ClearReg()
         call setreg(r, [])
     endfor
     ]]
-    vim.notify('All registers cleared', vim.log.levels.INFO)
+    vim.notify("All registers cleared", vim.log.levels.INFO)
 end
 
-vim.api.nvim_create_user_command('ClearRegisters', function() ClearReg() end, {})
+vim.api.nvim_create_user_command("ClearRegisters", function() ClearReg() end, {})
 
 -- Toggle zoom the current window
 -- vim.cmd [[
@@ -121,6 +121,6 @@ function! FillLine( str )
 endfunction
 ]]
 -- Fill with '-' characters
-vim.keymap.set('n', '<leader>-', ':call FillLine("-")<CR>', default_opts)
+vim.keymap.set("n", "<leader>-", ':call FillLine("-")<CR>', default_opts)
 -- Fill with '=' characters
-vim.keymap.set('n', '<leader>=', ':call FillLine("=")<CR>', default_opts)
+vim.keymap.set("n", "<leader>=", ':call FillLine("=")<CR>', default_opts)

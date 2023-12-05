@@ -1,9 +1,9 @@
 -- Code parser generator for syntax highlighting
 return {
-    'nvim-treesitter/nvim-treesitter', -- code parser generator for syntax highlighting
-    build = ':TSUpdate',
+    "nvim-treesitter/nvim-treesitter", -- code parser generator for syntax highlighting
+    build = ":TSUpdate",
     config = function()
-        require('nvim-treesitter.configs').setup({
+        require("nvim-treesitter.configs").setup({
             highlight = {
                 enable = true,
                 -- disable = {},
@@ -24,30 +24,9 @@ return {
                 enable = false, -- treesitter's indent is buggy
                 disable = {},
             },
-            ensure_installed = {
-                'python',
-                'c',
-                'cpp',
-                'bash',
-                'latex',
-                'bibtex',
-                'markdown',
-                'markdown_inline',
-                'json',
-                'yaml',
-                'toml',
-                'html',
-                'css',
-                'lua',
-                'cmake',
-                'dockerfile',
-                'regex',
-                'sql',
-                'vim',
-                'javascript',
-                'typescript',
-                'scala',
-                'dap_repl',
+            ensure_installed = { "python", "c", "cpp", "bash", "latex", "bibtex", "markdown",
+                "markdown_inline", "json", "yaml", "toml", "html", "css", "lua", "cmake",
+                "dockerfile", "regex", "sql", "vim", "javascript", "typescript", "scala", "dap_repl",
             },
             matchup = {
                 enable = true,
@@ -55,7 +34,7 @@ return {
         })
 
         -- Overwrite fold method using treesitter expression
-        vim.opt.foldmethod = 'expr'
-        vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+        vim.opt.foldmethod = "expr"
+        vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
     end,
 }

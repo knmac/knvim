@@ -2,10 +2,10 @@
 return {
     {
         -- Noice
-        'folke/noice.nvim',
-        dependencies = 'MunifTanjim/nui.nvim', -- UI Component Library for Neovim
+        "folke/noice.nvim",
+        dependencies = "MunifTanjim/nui.nvim", -- UI Component Library for Neovim
         config = function()
-            require('noice').setup({
+            require("noice").setup({
                 -- Turn off cmdline, messages, popupmenu, and notify for the default behavior
                 -- cmdline = { enabled = false, },
                 -- messages = { enabled = false, },
@@ -18,11 +18,11 @@ return {
                     },
                     override = {
                         -- override the default lsp markdown formatter with Noice
-                        ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+                        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                         -- override the lsp markdown formatter with Noice
-                        ['vim.lsp.util.stylize_markdown'] = true,
+                        ["vim.lsp.util.stylize_markdown"] = true,
                         -- override cmp documentation with Noice (needs the other options to work)
-                        ['cmp.entry.get_documentation'] = true,
+                        ["cmp.entry.get_documentation"] = true,
                     },
                     -- Let nvim-cmp handle hover and signature
                     hover = {
@@ -42,35 +42,36 @@ return {
                 routes = {
                     {
                         -- Skip all lsp progress contain the word 'Checking document'
-                        filter = { event = 'lsp', kind = 'progress', find = 'Checking document', },
+                        filter = { event = "lsp", kind = "progress", find = "Checking document", },
                         opts = { skip = true, },
                     },
-                    { filter = { find = 'E162' },                                   view = 'mini' },
-                    { filter = { event = 'msg_show', kind = '', find = 'written' }, view = 'mini' },
-                    { filter = { event = 'msg_show', find = 'search hit BOTTOM' },  skip = true },
-                    { filter = { event = 'msg_show', find = 'search hit TOP' },     skip = true },
-                    { filter = { event = 'emsg', find = 'E23' },                    skip = true },
-                    { filter = { event = 'emsg', find = 'E20' },                    skip = true },
-                    { filter = { find = 'No signature help' },                      skip = true },
-                    { filter = { find = 'E37' },                                    skip = true },
+                    { filter = { find = "E162" },                                   view = "mini" },
+                    { filter = { event = "msg_show", kind = "", find = "written" }, view = "mini" },
+                    { filter = { event = "msg_show", find = "search hit BOTTOM" },  skip = true },
+                    { filter = { event = "msg_show", find = "search hit TOP" },     skip = true },
+                    { filter = { event = "emsg", find = "E23" },                    skip = true },
+                    { filter = { event = "emsg", find = "E20" },                    skip = true },
+                    { filter = { find = "No signature help" },                      skip = true },
+                    { filter = { find = "E37" },                                    skip = true },
                 },
             })
-            vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = nil })
+            vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = nil })
         end
     },
     -- Notify
     {
-        'rcarriga/nvim-notify', -- A fancy, configurable, notification manager
+        "rcarriga/nvim-notify", -- A fancy, configurable, notification manager
         config = function()
-            require('notify').setup({
+            require("notify").setup({
                 top_down = false,
             })
 
             local map = function(mode, lhs, rhs, desc)
-                local opts = { noremap = true, silent = true, desc = 'Noice: ' .. desc }
+                local opts = { noremap = true, silent = true, desc = "Noice: " .. desc }
                 vim.keymap.set(mode, lhs, rhs, opts)
             end
-            map('n', '<leader>n', function() require('notify').dismiss() end, 'Dismiss current notify message')
+            map("n", "<leader>n", function() require("notify").dismiss() end,
+                "Dismiss current notify message")
         end,
     },
 }

@@ -1,23 +1,23 @@
 -- Colorscheme
 return {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    "catppuccin/nvim",
+    name = "catppuccin",
     config = function()
-        require('catppuccin').setup({
-            flavour = 'macchiato', -- latte, frappe, macchiato, mocha
+        require("catppuccin").setup({
+            flavour = "macchiato", -- latte, frappe, macchiato, mocha
             transparent_background = false,
             term_colors = true,
             dim_inactive = {
                 enabled = false,
-                shade = 'dark',
+                shade = "dark",
                 percentage = 0.15,
             },
             styles = {
-                comments = { 'italic' },
-                conditionals = { 'bold' },
-                loops = { 'bold' },
-                functions = { 'bold', 'italic' },
-                keywords = { 'bold', 'italic' },
+                comments = { "italic" },
+                conditionals = { "bold" },
+                loops = { "bold" },
+                functions = { "bold", "italic" },
+                keywords = { "bold", "italic" },
                 strings = {},
                 variables = {},
                 numbers = {},
@@ -47,7 +47,7 @@ return {
                 },
                 navic = {
                     enabled = true,
-                    custom_bg = 'NONE',
+                    custom_bg = "NONE",
                 },
                 dap = {
                     enabled = true,
@@ -56,7 +56,7 @@ return {
             }
         })
 
-        vim.cmd.colorscheme('catppuccin')
-        vim.cmd.highlight('DiagnosticUnderlineError gui=undercurl') -- use undercurl for error, if supported by terminal
+        vim.cmd.colorscheme("catppuccin")
+        vim.cmd.highlight("DiagnosticUnderlineError gui=undercurl") -- use undercurl for error, if supported by terminal
     end,
 }

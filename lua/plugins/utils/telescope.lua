@@ -1,16 +1,16 @@
 -- Fuzzy finder for multiple things
 return {
-    'nvim-telescope/telescope.nvim',                    -- fuzzy finder for multiple things
+    "nvim-telescope/telescope.nvim",                    -- fuzzy finder for multiple things
     dependencies = {
-        'nvim-telescope/telescope-bibtex.nvim',         -- fuzzy finder for bibtex entries
-        'nvim-telescope/telescope-file-browser.nvim',   -- file browser extension
+        "nvim-telescope/telescope-bibtex.nvim",         -- fuzzy finder for bibtex entries
+        "nvim-telescope/telescope-file-browser.nvim",   -- file browser extension
         {
-            'nvim-telescope/telescope-fzf-native.nvim', -- use fzf sorter for telescope
-            build = 'make',
+            "nvim-telescope/telescope-fzf-native.nvim", -- use fzf sorter for telescope
+            build = "make",
         },
     },
     config = function()
-        require('telescope').setup({
+        require("telescope").setup({
             defaults = {
                 -- Default configuration for telescope goes here:
                 -- config_key = value,
@@ -20,29 +20,29 @@ return {
                         -- actions.which_key shows the mappings for your picker,
                         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
                         -- ['<C-h>'] = 'which_key'
-                        ['<C-j>'] = 'preview_scrolling_down',
-                        ['<C-k>'] = 'preview_scrolling_up',
+                        ["<C-j>"] = "preview_scrolling_down",
+                        ["<C-k>"] = "preview_scrolling_up",
                     }
                 },
                 vimgrep_arguments = {
-                    'rg',
-                    '--color=never',
-                    '--no-heading',
-                    '--with-filename',
-                    '--line-number',
-                    '--column',
-                    '--smart-case',
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
                 },
-                prompt_prefix = '   ',
-                selection_caret = '  ',
-                entry_prefix = '  ',
-                initial_mode = 'insert',
-                selection_strategy = 'reset',
-                sorting_strategy = 'ascending',
-                layout_strategy = 'horizontal',
+                prompt_prefix = "   ",
+                selection_caret = "  ",
+                entry_prefix = "  ",
+                initial_mode = "insert",
+                selection_strategy = "reset",
+                sorting_strategy = "ascending",
+                layout_strategy = "horizontal",
                 layout_config = {
                     horizontal = {
-                        prompt_position = 'top',
+                        prompt_position = "top",
                         preview_width = 0.55,
                         results_width = 0.8,
                     },
@@ -69,7 +69,7 @@ return {
                 --   extension_config_key = value,
                 -- }
                 -- please take a look at the readme of the extension you want to configure
-                ['fzf'] = {
+                ["fzf"] = {
                     fuzzy = true,                   -- false will only do exact matching
                     override_generic_sorter = true, -- override the generic sorter
                     override_file_sorter = true,    -- override the file sorter
@@ -81,25 +81,25 @@ return {
                 --         -- even more opts
                 --     }
                 -- },
-                ['bibtex'] = {
+                ["bibtex"] = {
                     -- Path to global bibliographies (placed outside of the project)
                     global_files = {
-                        os.getenv('HOME') .. '/Documents/global.bib',
+                        os.getenv("HOME") .. "/Documents/global.bib",
                     },
                     -- Use context awareness
                     context = true,
                     -- Use non-contextual behavior if no context found
                     -- This setting has no effect if context = false
                     context_fallback = true,
-                    citation_format = '{{author}} {{title}}. {{booktitle}}{{journal}}. {{year}}.',
+                    citation_format = "{{author}} {{title}}. {{booktitle}}{{journal}}. {{year}}.",
                 },
             }
         })
 
         -- Load other telescope extensions
-        require('telescope').load_extension('fzf')
-        require('telescope').load_extension('bibtex')
-        require('telescope').load_extension('file_browser')
-        require('telescope').load_extension('notify')
+        require("telescope").load_extension("fzf")
+        require("telescope").load_extension("bibtex")
+        require("telescope").load_extension("file_browser")
+        require("telescope").load_extension("notify")
     end,
 }

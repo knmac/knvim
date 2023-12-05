@@ -1,6 +1,6 @@
 -- Code commenter
 return {
-    'numToStr/Comment.nvim', -- code commenter
+    "numToStr/Comment.nvim", -- code commenter
     opts = {
         ---Add a space b/w comment and the line
         ---@type boolean
@@ -13,22 +13,22 @@ return {
         ---Could be a regex string or a function that returns a regex string.
         ---Example: Use '^$' to ignore empty lines
         ---@type string|function
-        ignore = '^$',
+        ignore = "^$",
         ---LHS of toggle mappings in NORMAL + VISUAL mode
         ---@type table
         toggler = {
             ---line-comment keymap
-            line = 'gcc',
+            line = "gcc",
             ---block-comment keymap
-            block = 'gbc',
+            block = "gbc",
         },
         ---LHS of operator-pending mappings in NORMAL + VISUAL mode
         ---@type table
         opleader = {
             ---line-comment keymap
-            line = 'gc',
+            line = "gc",
             ---block-comment keymap
-            block = 'gb',
+            block = "gb",
         },
         ---Create basic (operator-pending) and extended mappings for NORMAL + VISUAL mode
         ---@type table
