@@ -115,21 +115,34 @@ return {
         -- Custom components using swenv
         local env_stat = {
             function()
-                local current_env = require("swenv.api").get_current_venv()
-                if current_env ~= nil then
-                    current_env = current_env.name
-                elseif vim.g.python3_host_prog == nil then
-                    current_env = " ∅"
-                else
-                    -- current_env = ' ∅'
+                local swenv = require("swenv.api")
+                local current_env = "[-]"  -- No environment
+
+                if swenv.get_current_venv() ~= nil then
+                    -- Environment loaded by swenv
+                    local _name = swenv.get_current_venv().name
+                    local _src = swenv.get_current_venv().source
+                    current_env = _name .. " (" .. _src .. ")"
+                elseif vim.g.python3_host_prog ~= nil then
+                    -- Default environment from python3_host_prog
                     local Path = require("plenary.path")
                     local tokens = Path._split(Path:new(vim.g.python3_host_prog))
+
+                    -- Get the environment name from python3_host_prog
                     if #tokens > 2 then
+                        -- Standard path is .../[name]/bin/python, so get the third last token
                         current_env = tokens[#tokens - 2]
-                    else
-                        current_env = " ∅"
+
+                        -- Check if python3_host_prog is registered in swenv and get its source
+                        for _, v in ipairs(swenv.get_venvs()) do
+                            if v.name == current_env then
+                                current_env = current_env .. " (" .. v.source .. ")"
+                                break
+                            end
+                        end
                     end
                 end
+
                 return current_env
             end,
             icon = "󰌠",
