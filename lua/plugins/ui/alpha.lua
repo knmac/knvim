@@ -36,6 +36,8 @@ return {
                 dashboard.button("l", "  Language servers", ":Mason<CR>"),
                 dashboard.button("h", "  Health checker", ":checkhealth<CR>"),
                 dashboard.button("c", "  Configurations", ":cd " .. cfg_pth .. " | e $MYVIMRC<CR>"),
+                dashboard.button("p", "  Pull knvim",
+                    ":!git --git-dir=" .. cfg_pth .. "/.git --work-tree=" .. cfg_pth .. " pull<CR>"),
                 dashboard.button("?", "  Cheatsheet",
                     ":e " .. cfg_pth .. "/res/cheatsheet.md | SymbolsOutlineOpen<CR>"),
                 dashboard.button("q", "󰍃  Quit", ":qa<CR>"),

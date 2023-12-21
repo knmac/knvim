@@ -171,7 +171,7 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | - Easy align by ` `                             | `<leader>a* `     |
 
 
-## 2. Default useful vim key-bindings
+## 2. Useful default vim key-bindings
 
 ### 2.1. Standard navigation
 
