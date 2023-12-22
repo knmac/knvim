@@ -76,10 +76,10 @@ opt.listchars = "tab:>-,trail:." -- mark <Tab> as >-, trailing <Space> as .
 opt.splitright = true -- vertical split to the right
 opt.splitbelow = true -- orizontal split to the bottom
 
--- Folding
-opt.foldenable = true   -- enable folding
-opt.foldlevelstart = 10 -- open most folds by default
-opt.foldnestmax = 10    -- 10 nested fold max
+-- Folding (refer to lua/plugins/ui/fold.lua)
+-- opt.foldenable = true   -- enable folding
+-- opt.foldlevelstart = 10 -- open most folds by default
+-- opt.foldnestmax = 10    -- 10 nested fold max
 -- opt.foldmethod = 'indent' -- set folding method by looking at indent
 
 

@@ -27,6 +27,7 @@ return {
         vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
         vim.o.foldlevelstart = 99
         vim.o.foldenable = true
+        vim.o.foldnestmax = 10
 
         -- Hide fold columnn for some file types (still have them enable)
         local folding_group = vim.api.nvim_create_augroup("folding_group", { clear = true })
@@ -40,9 +41,9 @@ return {
         })
 
         -- Disable fold completely for alpha
-        vim.api.nvim_create_autocmd('FileType', {
-            desc = 'Disable folding for alpha',
-            pattern = { 'alpha', },
+        vim.api.nvim_create_autocmd("FileType", {
+            desc = "Disable folding for alpha",
+            pattern = { "alpha", },
             group = folding_group,
             callback = function()
                 vim.opt_local.foldenable = false

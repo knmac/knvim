@@ -3,7 +3,7 @@
 ---------------------------------------------------------------------------------------------------
 require("core")
 
--- Overwrite some custom paths if needed (already defined in core/settings.lua)
+-- Overwrite some custom paths if needed (already defined in lua/core/settings.lua)
 -- vim.g.python3_host_prog = ""
 -- vim.opt.spellfile = ""
 
