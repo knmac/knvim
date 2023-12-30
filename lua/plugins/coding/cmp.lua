@@ -72,8 +72,6 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-c>"]     = cmp.mapping.abort(),
                 ["<CR>"]      = cmp.mapping.confirm({ select = false }),
-                -- ['<Tab>']     = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
-                -- ['<S-Tab>']   = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })
                 ["<Tab>"]     = cmp.mapping(next_item, { "i", "s" }),
                 ["<S-Tab>"]   = cmp.mapping(prev_item, { "i", "s" }),
                 ["<C-n>"]     = cmp.mapping(next_item, { "i", "s" }),
@@ -89,6 +87,7 @@ return {
                 { name = "path" },
                 { name = "nvim_lsp_signature_help" },
                 { name = "calc" },
+                {{ name = "neorg" },},
             }),
             formatting = {
                 format = require("lspkind").cmp_format({
@@ -98,16 +97,7 @@ return {
             },
         })
 
-        -- Set configuration for specific filetype.
-        -- cmp.setup.filetype('gitcommit', {
-        --     sources = cmp.config.sources({
-        --         { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-        --     }, {
-        --         { name = 'buffer' },
-        --     })
-        -- })
-
-        -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+        -- `/` cmdline setup.
         cmp.setup.cmdline("/", {
             mapping = cmp.mapping.preset.cmdline(),
             sources = {
@@ -115,13 +105,12 @@ return {
             }
         })
 
-        -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+        -- `:` cmdline setup.
         cmp.setup.cmdline(":", {
             mapping = cmp.mapping.preset.cmdline(),
             sources = cmp.config.sources(
                 { { name = "path" } },
-                { { name = "cmdline" } },
-                { { name = "neorg" } }
+                { { name = "cmdline" } }
             )
         })
 
