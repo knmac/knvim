@@ -46,6 +46,14 @@ map("t", "<A-j>", [[<C-\><C-n><C-w>j]], default_opts)
 map("t", "<A-k>", [[<C-\><C-n><C-w>k]], default_opts)
 map("t", "<A-l>", [[<C-\><C-n><C-w>l]], default_opts)
 
+-- Toggle conceal level between 0 and 2
+map("n", "<leader>cc",
+    function()
+        vim.opt_local.conceallevel = math.abs(vim.opt_local.conceallevel._value - 2)
+    end,
+    { desc = "Toggle conceal level in the current buffer", noremap = true, silent = true }
+)
+
 
 ---------------------------------------------------------------------------------------------------
 -- Plugins and Function key bindings

@@ -60,7 +60,7 @@ lua/
    │  ├── extra.lua
    │  ├── gitsigns.lua
    │  ├── neo-tree.lua
-   │  ├── neorg.lua
+   │  ├── obsidian.lua
    │  ├── swenv.lua
    │  ├── symbols-outline.lua
    │  ├── telescope.lua
@@ -183,4 +183,23 @@ Create the file `~/.gitconfig` globally, where the content looks something like 
     prompt = false
 [mergetool "nvim"]
     cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\" -c DiffviewOpen"
+```
+
+### 6.3. Marksman (LSP server for markdown)
+
+Create the file `.marksman.toml` for each project, where the (default) content looks something like this:
+
+```toml
+[core]
+markdown.file_extensions = ["md", "markdown"]
+text_sync = "full"
+incremental_references = false
+paranoid = false
+
+[code_action]
+toc.enable = true
+create_missing_file.enable = true
+
+[completion]
+wiki.style = "title-slug"
 ```

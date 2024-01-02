@@ -152,6 +152,7 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | Generate doc string for function                | `<leader> d`      |
 |            | Toggle file explorer                            | `<leader> t`      |
 |            | Toggle symbol outline view                      | `<leader> o`      |
+|            | Toggle conceal level in the current buffer      | `<leader> cc`     |
 |            | Dismiss current notification message            | `<leader> n`      |
 |            | Open Lazygit (terminal)                         | `<leader> g`      |
 |            | In insert mode, `<Alt>+h,j,k,l` becomes arrows  | `<Alt>+h,j,k,l`   |

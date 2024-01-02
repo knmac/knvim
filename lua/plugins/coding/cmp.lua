@@ -87,7 +87,7 @@ return {
                 { name = "path" },
                 { name = "nvim_lsp_signature_help" },
                 { name = "calc" },
-                { name = "neorg" },
+                -- { name = "neorg" },
             }),
             formatting = {
                 format = require("lspkind").cmp_format({
