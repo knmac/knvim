@@ -54,5 +54,11 @@ return {
                 ObsidianHighlightText = { bg = "#eed49f" },
             },
         },
+        daily_notes = {
+            folder = "journal",
+            date_format = "%Y-%m-%d",
+            alias_format = "%B %-d, %Y",
+            template = nil,
+        },
     },
 }
