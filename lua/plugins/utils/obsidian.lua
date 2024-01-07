@@ -51,7 +51,7 @@ return {
                 ObsidianDone = { bold = true, fg = "#a6da95" },
                 ObsidianRefText = { underline = true, fg = "#b7bdf8" },
                 ObsidianTag = { italic = true, fg = "#7dc4e4" },
-                ObsidianHighlightText = { bg = "#eed49f" },
+                ObsidianHighlightText = { bg = "#eed49f", fg = "#24273a" },
             },
         },
         daily_notes = {

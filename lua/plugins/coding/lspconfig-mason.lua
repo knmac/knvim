@@ -140,8 +140,9 @@ return {
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
 
                     local bufmap = function(mode, lhs, rhs, desc)
-                        local bufopts = { noremap = true, silent = true, buffer = bufnr, desc =
-                        "LSP: " .. desc }
+                        local bufopts = {
+                            noremap = true, silent = true, buffer = bufnr, desc = "LSP: " .. desc
+                        }
                         vim.keymap.set(mode, lhs, rhs, bufopts)
                     end
 
