@@ -17,8 +17,12 @@ return {
     opts = {
         workspaces = {
             {
-                name = "default_vault",
-                path = "~/Documents/vaults",
+                name = "work",
+                path = "~/Documents/vaults/work",
+            },
+            {
+                name = "personal",
+                path = "~/Documents/vaults/personal",
             },
         },
         mappings = {
