@@ -29,9 +29,6 @@ return {
                 enable = false, -- treesitter's indent is buggy
                 disable = {},
             },
-            matchup = {
-                enable = true,
-            },
         })
     end,
 }
