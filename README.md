@@ -50,7 +50,7 @@ lua/
    │  ├── catppuccin.lua
    │  ├── fold.lua
    │  ├── illuminate.lua
-   │  ├── indentblankline.lua
+   │  ├── indentblankline-rainbow.lua
    │  ├── lualine.lua
    │  ├── navic-barbecue.lua
    │  ├── noice-notify.lua
@@ -59,6 +59,7 @@ lua/
    │  ├── diffview.lua
    │  ├── extra.lua
    │  ├── gitsigns.lua
+   │  ├── matchup.lua
    │  ├── neo-tree.lua
    │  ├── obsidian.lua
    │  ├── swenv.lua
