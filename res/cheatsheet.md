@@ -7,6 +7,7 @@
 ### 1.1. Fn key-bindings
 
 Overall logic:
+
 - `F1-4`: toggle things
 - `F5-6`: buffers/tabs
 - `F10-12`: random frequently used things
@@ -38,7 +39,6 @@ Overall logic:
 |                       | Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
 |                       | Toggle welcome screen                    | `Shift+F12`                  |
 
-
 ### 1.2. Telescope key-bindings
 
 All Telescope key-bindings start with `<space>`.
@@ -58,7 +58,6 @@ All Telescope key-bindings start with `<space>`.
 | Show *n*otification history         | `<space> n`       |
 | Fuzzy search in the current buffer  | `<space> /`       |
 | Fuzzy search for commands           | `<space> ?`       |
-
 
 ### 1.3. LSP-related key-bindings
 
@@ -82,10 +81,10 @@ All Telescope key-bindings start with `<space>`.
 |             | *R*emove *w*orkspace folder                           | `<leader> wr` |
 |             | *L*ist *w*orkspace folder                             | `<leader> wl` |
 
-
 ### 1.4. Window and buffer navigation
 
 Overall logic:
+
 - `Alt`: for split manipulation (with `Shift` to swap)
 - `Ctrl+Alt`: for buffer manipulation (with `Shift` for extra functionalities)
 
@@ -109,25 +108,23 @@ Overall logic:
 |                     | Kill the current buffer       | `Ctrl+Alt+Shift+k` |
 |                     | Pin/unpin the current buffer  | `Ctrl+Alt+p`       |
 
-
 ### 1.5. DAP key-bindings
 
 All DAP key-bindings start with `,`.
 
-| Functionality                                   | Key-binding |
-| ----------------------------------------------- | ----------- |
-| Toggle DAP UI                                   | `,d`        |
-| Toggle DAP defautl REPL                         | `,D`        |
-| Toggle DAP breakpoint                           | `,b`        |
-| Toggle DAP breakpoint with condition            | `,B`        |
-| Continue DAP debugging                          | `,c`        |
-| Run last DAP launcher (if there are many)       | `,l`        |
-| Step over                                       | `,n`        |
-| Step into                                       | `,i`        |
-| Step out                                        | `,o`        |
-| Terminate debugging                             | `,t`        |
-| Hover variable while debugging                  | `,h`        |
-
+| Functionality                             | Key-binding |
+| ----------------------------------------- | ----------- |
+| Toggle DAP UI                             | `,d`        |
+| Toggle DAP defautl REPL                   | `,D`        |
+| Toggle DAP breakpoint                     | `,b`        |
+| Toggle DAP breakpoint with condition      | `,B`        |
+| Continue DAP debugging                    | `,c`        |
+| Run last DAP launcher (if there are many) | `,l`        |
+| Step over                                 | `,n`        |
+| Step into                                 | `,i`        |
+| Step out                                  | `,o`        |
+| Terminate debugging                       | `,t`        |
+| Hover variable while debugging            | `,h`        |
 
 ### 1.6. Vim matchup
 
@@ -139,7 +136,6 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 | Go to {count}-th previous outer open word | `[%`        |
 | Go to {count}-th next outer open word     | `]%`        |
 | Go to inside {count}-th nearest block     | `z%`        |
-
 
 ### 1.7. Other custom key-bindings
 
@@ -171,49 +167,47 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | - Easy align by `\|`                            | `<leader>a*\|`    |
 |            | - Easy align by ` `                             | `<leader>a* `     |
 
-
 ## 2. Useful default vim key-bindings
 
 ### 2.1. Standard navigation
 
 | Group             | Functionality                                    | Key-binding              | Command   |
 | ----------------- | ------------------------------------------------ | ------------------------ | --------- |
-| Line navigation   | Go left/down/up/right                            | `h`/`j`/`k`/`l`          | _         |
-|                   | Go next/previous (useful for menu items)         | `Ctrl+n`/`Ctrl+p`        | _         |
-|                   | Go to start/end of current line                  | `0`/`$`                  | _         |
-|                   | Go to non-blank start/end of current line        | `^`/`g_`                 | _         |
-| Word navigation   | Go to next/previous beginning of a word          | `w`/`b`                  | _         |
-|                   | Go to next/previous beginning of a WORD          | `W`/`B`                  | _         |
-|                   | Go to end of a word                              | `e`                      | _         |
-|                   | Go to end of a WORD                              | `E`                      | _         |
-| Screen navigation | Go to first/last line                            | `gg`/`G`                 | _         |
+| Line navigation   | Go left/down/up/right                            | `h`/`j`/`k`/`l`          | -         |
+|                   | Go next/previous (useful for menu items)         | `Ctrl+n`/`Ctrl+p`        | -         |
+|                   | Go to start/end of current line                  | `0`/`$`                  | -         |
+|                   | Go to non-blank start/end of current line        | `^`/`g_`                 | -         |
+| Word navigation   | Go to next/previous beginning of a word          | `w`/`b`                  | -         |
+|                   | Go to next/previous beginning of a WORD          | `W`/`B`                  | -         |
+|                   | Go to end of a word                              | `e`                      | -         |
+|                   | Go to end of a WORD                              | `E`                      | -         |
+| Screen navigation | Go to first/last line                            | `gg`/`G`                 | -         |
 |                   | Go to `i`-th line                                | `<i>gg` or `<i>G`        | `:<i>`    |
-|                   | Move screen upward/downward (w.o. moving cursor) | `Ctrl+e`/`Ctrl+y`        | _         |
-|                   | Go half-page up/down                             | `Ctrl+u`/`Ctrl+d`        | _         |
-|                   | Go full-page backward/forward                    | `Ctrl+b`/`Ctrl+f`        | _         |
-|                   | Go to top of the screen (high)                   | `H`                      | _         |
-|                   | Go to middle of the screen (middle)              | `M`                      | _         |
-|                   | Go to bottom of the screen (low)                 | `L`                      | _         |
-|                   | Move current line to top of the screen           | `zt`                     | _         |
-|                   | Move current line to middle of the screen        | `zz`                     | _         |
-|                   | Move current line to bottom of the screen        | `zb`                     | _         |
-| Search navigation | Search (forward) for pattern                     | `/<pattern>`             | _         |
-|                   | Search (backward) for pattern                    | `?<pattern>`             | _         |
-|                   | Go to next/previous matching pattern             | `n`/`N`                  | _         |
+|                   | Move screen upward/downward (w.o. moving cursor) | `Ctrl+e`/`Ctrl+y`        | -         |
+|                   | Go half-page up/down                             | `Ctrl+u`/`Ctrl+d`        | -         |
+|                   | Go full-page backward/forward                    | `Ctrl+b`/`Ctrl+f`        | -         |
+|                   | Go to top of the screen (high)                   | `H`                      | -         |
+|                   | Go to middle of the screen (middle)              | `M`                      | -         |
+|                   | Go to bottom of the screen (low)                 | `L`                      | -         |
+|                   | Move current line to top of the screen           | `zt`                     | -         |
+|                   | Move current line to middle of the screen        | `zz`                     | -         |
+|                   | Move current line to bottom of the screen        | `zb`                     | -         |
+| Search navigation | Search (forward) for pattern                     | `/<pattern>`             | -         |
+|                   | Search (backward) for pattern                    | `?<pattern>`             | -         |
+|                   | Go to next/previous matching pattern             | `n`/`N`                  | -         |
 |                   | Clear search                                     | `Ctrl+l` (Neovim only)   | `:nohl`   |
 | Split navigation  | Create a horizontal split                        | `Ctrl+w` `s`             | `:split`  |
 |                   | Create a vertical split                          | `Ctrl+w` `v`             | `:vsplit` |
-|                   | Go to left/down/up/right split                   | `Ctrl+w` `h`/`j`/`k`/`l` | _         |
-|                   | Move current split to the far left/down/up/right | `Ctrl+w` `H`/`J`/`K`/`L` | _         |
-|                   | Swap current split with the next                 | `Ctrl+w` `x`             | _         |
-|                   | Increase/decrease height                         | `Ctrl+w` `+`/`-`         | _         |
-|                   | Increase/decrease width                          | `Ctrl+w` `>`/`<`         | _         |
-|                   | Max out height                                   | `Ctrl+w` `_`             | _         |
-|                   | Max out width                                    | `Ctrl+w` `\|`            | _         |
-|                   | Equal height/width for all splits                | `Ctrl+w` `=`             | _         |
-| Other navigation  | Go to next/previous item in jumplist             | `Ctrl+i`/`Ctrl+o`        | _         |
-|                   | Go to next/previous item in tab (tab != buffer)  | `gt`/`gT`                | _         |
-
+|                   | Go to left/down/up/right split                   | `Ctrl+w` `h`/`j`/`k`/`l` | -         |
+|                   | Move current split to the far left/down/up/right | `Ctrl+w` `H`/`J`/`K`/`L` | -         |
+|                   | Swap current split with the next                 | `Ctrl+w` `x`             | -         |
+|                   | Increase/decrease height                         | `Ctrl+w` `+`/`-`         | -         |
+|                   | Increase/decrease width                          | `Ctrl+w` `>`/`<`         | -         |
+|                   | Max out height                                   | `Ctrl+w` `_`             | -         |
+|                   | Max out width                                    | `Ctrl+w` `\|`            | -         |
+|                   | Equal height/width for all splits                | `Ctrl+w` `=`             | -         |
+| Other navigation  | Go to next/previous item in jumplist             | `Ctrl+i`/`Ctrl+o`        | -         |
+|                   | Go to next/previous item in tab (tab != buffer)  | `gt`/`gT`                | -         |
 
 ### 2.2. Buffers manipulation
 
@@ -225,7 +219,6 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 | Delete buffer           | `:bd`                                 |
 | List all buffers        | `:ls`                                 |
 | Go to a buffer          | `:b` `<buffer_index>`/`<buffer_name>` |
-
 
 ### 2.3. Substitution
 
@@ -256,7 +249,6 @@ Examples:
 - `:s/foo/bar/g`: replace `foo` by `bar` on the current line
 - `:'<,'>s/foo/bar/g`: replace all `foo` by `bar` on the selection (visual mode)
 
-
 ### 2.4. Vim's default auto-completion (insert mode)
 
 | Functionality                      | Key-binding     |
@@ -269,7 +261,6 @@ Examples:
 
 More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-5-awesome-examples-for-automatic-word-completion-using-ctrl-x-magic/)
 
-
 ### 2.5. Code folding
 
 | Functionality    | Key-binding |
@@ -278,19 +269,17 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 | Close all folds  | `zM`        |
 | Reopen all folds | `zR`        |
 
-
 ### 2.6. Spelling
 
 Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath('data') .. '/spelling/en.utf-8.add'`). To turn spellchecking on, use the commmand: `:set spell` (turning off with `:set nospell`). You can specify which language as (e.g., en_us, en_gb, ...) `:set spell spelllang=en_us`. For more information, see `:h spell`.
 
-| Functionality             | Key-binding   |
-| ------------------------- | ------------- |
-| Spelling suggestions      | `z=`          |
-| Add word to spell list    | `zg`          |
-| Mark word as bad spelling | `zm`          |
-| Previous misspelled word  | `[s`          |
-| Next misspelled word      | `]s`          |
-
+| Functionality             | Key-binding |
+| ------------------------- | ----------- |
+| Spelling suggestions      | `z=`        |
+| Add word to spell list    | `zg`        |
+| Mark word as bad spelling | `zm`        |
+| Previous misspelled word  | `[s`        |
+| Next misspelled word      | `]s`        |
 
 ### 2.7. Ctags key-bindings (requires Ctags)
 
