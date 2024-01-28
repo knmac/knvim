@@ -7,7 +7,7 @@ return {
             ensure_installed = { "python", "c", "cpp", "bash", "latex", "bibtex", "markdown",
                 "markdown_inline", "json", "yaml", "toml", "html", "css", "lua", "cmake",
                 "dockerfile", "regex", "sql", "vim", "vimdoc", "javascript", "typescript", "scala",
-                "dap_repl",
+                "dap_repl", "git_config",
             },
             highlight = {
                 enable = true,
