@@ -116,7 +116,7 @@ return {
         local env_stat = {
             function()
                 local swenv = require("swenv.api")
-                local current_env = "[-]"  -- No environment
+                local current_env = "[-]" -- No environment
 
                 if swenv.get_current_venv() ~= nil then
                     -- Environment loaded by swenv
@@ -204,7 +204,7 @@ return {
             },
             sections = {
                 lualine_a = {
-                    "mode",
+                    { "mode", icon = "" },
                 },
                 lualine_b = {
                     branch_stat,
