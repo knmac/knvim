@@ -4,6 +4,7 @@ return {
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
+        event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -30,6 +31,7 @@ return {
     {
         "s1n7ax/nvim-window-picker",
         version = "v1.*",
+        event = "VeryLazy",
         opts = {
             autoselect_one = true,
             include_current = false,

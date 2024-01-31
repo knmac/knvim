@@ -8,6 +8,7 @@ end
 
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
+    event = "VeryLazy",
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
         {

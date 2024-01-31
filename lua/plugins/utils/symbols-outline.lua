@@ -1,6 +1,7 @@
 -- Show project outline
 return {
     "simrat39/symbols-outline.nvim", -- show symbols of the current buffer
+    event = "VeryLazy",
     config = function()
         --- Return with with minimum threshold
         local width_with_min = function(ratio, min_width)
