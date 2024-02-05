@@ -1,5 +1,8 @@
 # KNVIM
 
+![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
+![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
+
 K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knmac.
 
 ## 1. Demo
@@ -84,7 +87,7 @@ The configs in `experimentals/` directories are not activated by default. To use
 
 The following dependencies are for manual installation.
 
-- Neovim 0.9.1+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
+- Neovim 0.9.5+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
 - A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [WezTerm](https://wezfurlong.org/wezterm/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font).
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formaters).
 - [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
@@ -204,3 +207,19 @@ create_missing_file.enable = true
 [completion]
 wiki.style = "title-slug"
 ```
+
+## 7. FAQs
+
+*Q1: Why knvim is not working on Windows?*
+
+*A1:* knvim config targets Unix-based OS (e.g., Linux and MacOS) and is not fully tested on Windows. Some common problems include different path separator (`/` on Unix vs `\` on Windows) abd EOL character (`LF` on Unix and `CR LF` on Windows). You may want to change these characters manually if you want to try knvim on Windows machines.
+
+*Q2: Why knvim does not include <this path> by default?*
+
+*A2:* knvim is my personal config of Neovim, so it does not cover a wide range of different use cases. You are more than welcome (and recommended) to fork and customize knvim to your personal liking. That said, I will try to add some configs if they are commonly used. Cheers!
+
+## 8. TODO
+
+- [ ] Automatically copy knvim to server for remote editing.
+- [ ] Image rendering (may only support Kitty and WezTerm terminal).
+- [ ] Automatically switch path separator and EOL character, depending on the OS in use.
