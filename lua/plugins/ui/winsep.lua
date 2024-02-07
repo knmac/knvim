@@ -1,7 +1,7 @@
 -- Highlight the current window
 return {
     "nvim-zh/colorful-winsep.nvim",
-    event = "VeryLazy",
+    event = "WinNew",
     config = function()
         local contains = function(tab, val)
             for _, value in ipairs(tab) do
