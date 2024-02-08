@@ -23,6 +23,31 @@ return {
                 filesystem = {
                     group_empty_dirs = true, -- when true, empty folders will be grouped together
                 },
+                window = {
+                    mappings = {
+                        -- Open with system defaults
+                        ["O"] = {
+                            command = function(state)
+                                local node = state.tree:get_node()
+                                local filepath = node.path
+                                -- local ostype = os.getenv("OS")
+                                local ostype = vim.loop.os_uname().sysname
+
+                                local command
+
+                                if ostype == "Windows_NT" then
+                                    command = "start " .. filepath
+                                elseif ostype == "Darwin" then
+                                    command = "open " .. filepath
+                                else
+                                    command = "xdg-open " .. filepath
+                                end
+                                os.execute(command)
+                            end,
+                            desc = "open_with_system_defaults",
+                        }
+                    },
+                },
             })
         end,
     },
