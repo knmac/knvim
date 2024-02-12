@@ -43,7 +43,12 @@ return {
                     {
                         -- Skip all lsp progress contain the word 'Checking document'
                         filter = { event = "lsp", kind = "progress", find = "Checking document", },
-                        opts = { skip = true, },
+                        skip = true,
+                    },
+                    {
+                        -- Skip obsidian notification about conceallevel
+                        filter = { find = "Obsidian additional syntax features require 'conceallevel' to be set to 1 or 2", },
+                        skip = true,
                     },
                     { filter = { find = "E162" },                                   view = "mini" },
                     { filter = { event = "msg_show", kind = "", find = "written" }, view = "mini" },
