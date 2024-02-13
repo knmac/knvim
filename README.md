@@ -210,13 +210,13 @@ wiki.style = "title-slug"
 
 ## 7. FAQs
 
-*Q1: Why knvim is not working on Windows?*
+_Q1: Why knvim is not working on Windows?_
 
-*A1:* knvim config targets Unix-based OS (e.g., Linux and MacOS) and is not fully tested on Windows. Some common problems include different path separator (`/` on Unix vs `\` on Windows) abd EOL character (`LF` on Unix and `CR LF` on Windows). You may want to change these characters manually if you want to try knvim on Windows machines.
+_A1:_ knvim config targets Unix-based OS (e.g., Linux and MacOS) and is not fully tested on Windows. Some common problems include different path separator (`/` on Unix vs `\` on Windows) abd EOL character (`LF` on Unix and `CR LF` on Windows). You may want to change these characters manually if you want to try knvim on Windows machines.
 
-*Q2: Why knvim does not include <this path> by default?*
+_Q2: Why knvim does not include <this path> by default?_
 
-*A2:* knvim is my personal config of Neovim, so it does not cover a wide range of different use cases. You are more than welcome (and recommended) to fork and customize knvim to your personal liking. That said, I will try to add some configs if they are commonly used. Cheers!
+_A2:_ knvim is my personal config of Neovim, so it does not cover a wide range of different use cases. You are more than welcome (and recommended) to fork and customize knvim to your personal liking. That said, I will try to add some configs if they are commonly used. Cheers!
 
 ## 8. TODO
 
