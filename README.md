@@ -78,7 +78,7 @@ lua/
 The configs in `experimentals/` directories are not activated by default. To use them, uncommment the following line in `lua/plugins/init.lua`:
 
 ```lua
-{ import = 'plugins.experimentals', },
+{ import = "plugins.experimentals", },
 ```
 
 ## 3. Manual installation

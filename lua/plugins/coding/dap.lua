@@ -164,6 +164,6 @@ return {
         map("n", ",s", function() dap.step_into() end, "Step into")
         map("n", ",u", function() dap.step_out() end, "Step out")
         map("n", ",t", function() dap.terminate() end, "Terminate debugging")
-        -- map('n', ',r', function() dap.run() end, 'Run debugging')
+        -- map("n", ",r", function() dap.run() end, "Run debugging")
     end
 }

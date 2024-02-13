@@ -13,13 +13,13 @@ local default_opts = { noremap = true, silent = true }
 map("v", ">", ">gv", default_opts)
 map("v", "<", "<gv", default_opts)
 
--- Go down/up soft-wrapped lines instead of 'real' lines
--- map('n', 'j', 'gj', default_opts)
--- map('n', 'k', 'gk', default_opts)
+-- Go down/up soft-wrapped lines instead of "real" lines
+-- map("n", "j", "gj", default_opts)
+-- map("n", "k", "gk", default_opts)
 
 -- Keep the cursor line in the middle of the screen
--- map('n', 'j', 'jzz', default_opts)
--- map('n', 'k', 'kzz', default_opts)
+-- map("n", "j", "jzz", default_opts)
+-- map("n", "k", "kzz", default_opts)
 
 -- Window navigation
 map("n", "<A-h>", "<C-w>h", default_opts)
@@ -62,8 +62,8 @@ map("n", "<leader>cc",
 map("n", "s", "<cmd>Pounce<CR>", default_opts)
 map("n", "S", "<cmd>PounceRepeat<CR>", default_opts)
 map("x", "s", "<cmd>Pounce<CR>", default_opts)
-map("o", "gs", "<cmd>Pounce<CR>", default_opts) -- 's' is used by vim-surround
--- map('n', 'S',  ':Pounce <C-r>/<cr>', default_opts)  -- note: if you want to use <C-r> you cannot use <cmd>
+map("o", "gs", "<cmd>Pounce<CR>", default_opts) -- "s" is used by vim-surround
+-- map("n", "S",  ":Pounce <C-r>/<cr>", default_opts)  -- note: if you want to use <C-r> you cannot use <cmd>
 
 -- Barbar (buffer line)
 map("n", "<C-A-h>", "<cmd>BufferPrevious<CR>", default_opts)
@@ -112,7 +112,7 @@ map("n", "<C-/>",
 
 -- Alternative ways to toggle Neotree, symbol outline, and zen-mode
 map("n", "<leader>t", "<cmd>Neotree toggle<CR>", default_opts)
--- map('n', '<leader>T', '<cmd>Neotree dir=%:p:h<CR>', default_opts)
+-- map("n", "<leader>T", "<cmd>Neotree dir=%:p:h<CR>", default_opts)
 map("n", "<leader>T", "<cmd>Neotree reveal<CR>", default_opts)
 map("n", "<leader>o", "<cmd>SymbolsOutline<CR>", default_opts)
 map("n", "<leader>z", "<cmd>ZenMode<CR>", default_opts)
@@ -129,18 +129,18 @@ map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", default_opts)
 map("n", "<F14>", "<cmd>TodoTelescope<CR>", default_opts)
 
 -- <F3>: Show file tree explorer
--- map('n', '<F3>', '<cmd>NvimTreeToggle<CR>', default_opts)
+-- map("n", "<F3>", "<cmd>NvimTreeToggle<CR>", default_opts)
 map("n", "<F3>", "<cmd>Neotree toggle<CR>", default_opts)
 -- <F3>: Show file tree at the current file dir
 map("n", "<F15>", "<cmd>Neotree dir=%:p:h<CR>", default_opts)
 
 -- <F4>: Show tags of current buffer
--- map('n', '<F4>', ':Telescope current_buffer_tags<CR>', default_opts)
+-- map("n", "<F4>", ":Telescope current_buffer_tags<CR>", default_opts)
 map("n", "<F4>", "<cmd>SymbolsOutline<CR>", default_opts)
 -- <S-F4>: Show diagnostics
 map("n", "<F16>", "<cmd>Telescope diagnostics<CR>", default_opts)
 -- <S-F4>: Generate tags
--- map('n', '<F16>', ':!ctags -R --links=no . <CR>', default_opts)
+-- map("n", "<F16>", ":!ctags -R --links=no . <CR>", default_opts)
 
 -- <F5>: Show and switch buffer
 map("n", "<F5>", "<cmd>Telescope buffers<CR>", default_opts)

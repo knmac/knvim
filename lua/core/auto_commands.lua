@@ -45,9 +45,9 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
--- Go down/up soft-wrapped lines instead of 'real' lines
+-- Go down/up soft-wrapped lines instead of "real" lines
 vim.api.nvim_create_autocmd("FileType", {
-    desc = 'Overwrite "line" naviagation with "wrapped-line" navigation',
+    desc = "Overwrite 'line' naviagation with 'wrapped-line' navigation",
     pattern = { "md", "markdown", "tex", "norg", },
     group = user_cfgs_group,
     callback = function()
