@@ -8,7 +8,7 @@ return {
         "hrsh7th/cmp-buffer",                  -- source for buffer words
         "hrsh7th/cmp-path",                    -- source for filesystem paths
         "hrsh7th/cmp-cmdline",                 -- source for vim's cmdline
-        "hrsh7th/cmp-nvim-lsp-signature-help", -- source for displaying function signatures with the current parameter emphasized
+        -- "hrsh7th/cmp-nvim-lsp-signature-help", -- source for displaying function signatures with the current parameter emphasized
         "hrsh7th/cmp-calc",                    -- source for math calculation
         "onsails/lspkind-nvim",                -- pictogram for LSP
         "L3MON4D3/LuaSnip",                    -- snippets plugin
@@ -85,7 +85,7 @@ return {
                 -- { name = 'snippy' }, -- For snippy users.
                 { name = "buffer" },
                 { name = "path" },
-                { name = "nvim_lsp_signature_help" },
+                -- { name = "nvim_lsp_signature_help" },
                 { name = "calc" },
                 -- { name = "neorg" },
             }),

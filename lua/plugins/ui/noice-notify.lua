@@ -24,12 +24,11 @@ return {
                         -- override cmp documentation with Noice (needs the other options to work)
                         ["cmp.entry.get_documentation"] = true,
                     },
-                    -- Let nvim-cmp handle hover and signature
                     hover = {
-                        enabled = false,
+                        enabled = true,
                     },
                     signature = {
-                        enabled = false,
+                        enabled = true,
                     },
                     message = {
                         enabled = true,
@@ -59,8 +58,26 @@ return {
                     { filter = { find = "No signature help" },                      skip = true },
                     { filter = { find = "E37" },                                    skip = true },
                 },
+                presets = {
+                    lsp_doc_border = true,
+                },
             })
+
+            -- Remove background for NormalFloat
             vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = nil })
+
+            -- Scroll for lsp docs and signature helps
+            vim.keymap.set({ "n", "i", "s" }, "<c-j>", function()
+                if not require("noice.lsp").scroll(4) then
+                    return "<c-j>"
+                end
+            end, { silent = true, expr = true })
+
+            vim.keymap.set({ "n", "i", "s" }, "<c-k>", function()
+                if not require("noice.lsp").scroll(-4) then
+                    return "<c-k>"
+                end
+            end, { silent = true, expr = true })
         end
     },
     -- Notify
