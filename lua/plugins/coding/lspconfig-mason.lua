@@ -167,7 +167,7 @@ return {
 
                     bufmap("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
                     bufmap("n", "K", vim.lsp.buf.hover, "Show docstring of the item under the cursor")
-                    bufmap({ "n", "i" }, "<C-K>", vim.lsp.buf.signature_help, "Show signature help")
+                    -- bufmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Show signature help")
 
                     bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename variable under the cursor")
                     bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
