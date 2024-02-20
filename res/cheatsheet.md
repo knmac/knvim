@@ -22,7 +22,7 @@ Overall logic:
 |                       | Open to-do list (project-wise)           | `Shift+F2`                   |
 |                       | Toggle file explorer at the current file | `Shift+F3` (or `<leader> T`) |
 |                       | Open diagnostic list (project-wise)      | `Shift+F4` (or `<leader> E`) |
-| `F5-6`: buffers/tabs  | Show buffer list                         | `F5`                         |
+| `F5-8`: buffers/tabs  | Show buffer list                         | `F5`                         |
 |                       | Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
 |                       | Next buffer                              | `F7` (or `Ctrl+Alt+l`)       |
 |                       | Close the current buffer                 | `F8` (or `Ctrl+Alt+Shift+k`) |
@@ -30,7 +30,7 @@ Overall logic:
 |                       | Previous tab                             | `Shift+F6`                   |
 |                       | Next tab                                 | `Shift+F7`                   |
 |                       | Close the current tab                    | `Shift+F8`                   |
-| `F10-12`: others      | Remove trailing spaces                   | `F9`                         |
+| `F19-12`: others      | Remove trailing spaces                   | `F9`                         |
 |                       | Run the `make` command                   | `F10`                        |
 |                       | Toggle zoom the current window (splits)  | `F11` (or `<leader> z`)      |
 |                       | Toggle relative number                   | `F12`                        |
