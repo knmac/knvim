@@ -198,7 +198,7 @@ return {
             --         close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
             --     }
             -- )
-            -- require("lspconfig.ui.windows").default_options.border = "rounded"
+            require("lspconfig.ui.windows").default_options.border = "rounded"
 
             -- Diagnostic signs
             vim.fn.sign_define("DiagnosticSignError", { text = "󰅚 ", texthl = "DiagnosticSignError" }) -- x000f015a
