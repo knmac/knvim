@@ -13,6 +13,7 @@ return {
         config = function()
             local null_ls = require("null-ls")
             null_ls.setup({
+                border = "rounded",
                 sources = {
                     null_ls.builtins.diagnostics.cpplint,
                     null_ls.builtins.diagnostics.shellcheck,
