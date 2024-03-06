@@ -10,6 +10,8 @@ return {
         },
     },
     config = function()
+        local actions = require("telescope.actions")
+
         require("telescope").setup({
             defaults = {
                 -- Default configuration for telescope goes here:
@@ -20,9 +22,17 @@ return {
                         -- actions.which_key shows the mappings for your picker,
                         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
                         -- ['<C-h>'] = 'which_key'
-                        ["<C-j>"] = "preview_scrolling_down",
-                        ["<C-k>"] = "preview_scrolling_up",
-                    }
+                        ["<C-h>"] = actions.which_key,
+                        ["<C-j>"] = actions.preview_scrolling_down,
+                        ["<C-k>"] = actions.preview_scrolling_up,
+                        ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                    },
+                    n = {
+                        ["<C-h>"] = actions.which_key,
+                        ["<C-j>"] = actions.preview_scrolling_down,
+                        ["<C-k>"] = actions.preview_scrolling_up,
+                        ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                    },
                 },
                 vimgrep_arguments = {
                     "rg",
