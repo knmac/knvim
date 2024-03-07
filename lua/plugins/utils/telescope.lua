@@ -28,7 +28,7 @@ return {
                         ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
                     },
                     n = {
-                        ["<C-h>"] = actions.which_key,
+                        -- ["<C-h>"] = actions.which_key,
                         ["<C-j>"] = actions.preview_scrolling_down,
                         ["<C-k>"] = actions.preview_scrolling_up,
                         ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,

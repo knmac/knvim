@@ -59,6 +59,19 @@ All Telescope key-bindings start with `<space>`.
 | Fuzzy search in the current buffer  | `<space> /`       |
 | Fuzzy search for commands           | `<space> ?`       |
 
+Inside Telescope, after inputting something
+
+| Functionality               | Key-binding (insert mode) | Key-binding (normal mode) |
+| --------------------------- | ------------------------- | ------------------------- |
+| Go to the next line         | `Ctrl+n`                  | `j`                       |
+| Go to the previous line     | `Ctrl+p`                  | `k`                       |
+| Scroll down the doc         | `Ctrl+j` or `Ctrl+d`      | `Ctrl+j` or `Ctrl+d`      |
+| Scroll up the doc           | `Ctrl+k` or `Ctrl+u`      | `Ctrl+k` or `Ctrl+u`      |
+| Select multiple items       | `Tab`                     | `Tab`                     |
+| Send selection to quicklist | `Ctrl+w`                  | `Ctrl+w`                  |
+| Close Telescope             | `Ctrl+c`                  | `Esc`                     |
+| Show help (which-key)       | `Ctrl+h`                  | -                         |
+
 ### 1.3. LSP-related key-bindings
 
 | Group       | Functionality                                         | Key-binding   |
