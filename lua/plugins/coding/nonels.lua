@@ -4,7 +4,7 @@ return {
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         opts = {
-            ensure_installed = { "cpplint", "shellcheck", "prettier", },
+            ensure_installed = { "cpplint", "prettier", },
         },
     },
     -- Linter and formatter
@@ -16,7 +16,7 @@ return {
                 border = "rounded",
                 sources = {
                     null_ls.builtins.diagnostics.cpplint,
-                    null_ls.builtins.diagnostics.shellcheck,
+                    -- null_ls.builtins.diagnostics.shellcheck,
                     null_ls.builtins.formatting.prettier,
                     -- null_ls.builtins.formatting.black,
                 },
