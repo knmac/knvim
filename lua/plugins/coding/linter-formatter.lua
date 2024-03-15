@@ -31,7 +31,7 @@ return {
             {
                 "<leader>f",
                 function() require("conform").format({ lsp_fallback = true }) end,
-                desc = "Format",
+                desc = "LSP/Conform: Format the buffer",
             },
         },
         config = function()
@@ -39,6 +39,7 @@ return {
                 formatters_by_ft = {
                     css = { "prettier" },
                     html = { "prettier" },
+                    json = { "prettier" },
                     javascript = { "prettier" },
                     markdown = { "prettier" },
                     typescript = { "prettier" },
