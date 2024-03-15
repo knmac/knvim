@@ -4,7 +4,7 @@ return {
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         opts = {
-            ensure_installed = { "cpplint", "shellcheck", "black", "prettierd", },
+            ensure_installed = { "cpplint", "shellcheck", "prettier", },
         },
     },
     -- Linter
@@ -34,15 +34,17 @@ return {
                 desc = "Format",
             },
         },
-        opts = {
-            formatters_by_ft = {
-                python = { "black" },
-                javascript = { "prettierd" },
-                typescript = { "prettierd" },
-                html = { "prettierd" },
-                css = { "prettierd" },
-                yaml = { "prettierd" },
-            },
-        },
+        config = function()
+            require("conform").setup({
+                formatters_by_ft = {
+                    css = { "prettier" },
+                    html = { "prettier" },
+                    javascript = { "prettier" },
+                    markdown = { "prettier" },
+                    typescript = { "prettier" },
+                    yaml = { "prettier" },
+                },
+            })
+        end,
     },
 }
