@@ -171,9 +171,14 @@ return {
 
                     bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename variable under the cursor")
                     bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
-                    -- Use conform with lsp_fallback instead
-                    -- bufmap("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end,
-                    --     "Format the buffer")
+
+                    -- if has conform, use the key binding with lsp_fallback in conform, otherwise
+                    -- define keymap here
+                    local has_conform, _ = pcall(require, "conform")
+                    if not has_conform then
+                        bufmap("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end,
+                            "Format the buffer")
+                    end
 
                     bufmap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add workspace")
                     bufmap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove workspace")
