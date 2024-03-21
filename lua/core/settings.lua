@@ -12,6 +12,7 @@ local opt = vim.opt -- global/buffer/windows-scoped options
 ---------------------------------------------------------------------------------------------------
 local possible_python_paths = {
     -- Extend the list for possible python path. Will use the 1st possible one
+    "/Users/bqm/Library/Caches/pypoetry/virtualenvs/dev--gguq6YB-py3.12",
     os.getenv("HOME") .. "/.venvs/dev/bin/python",             -- Python3's venv (dev)
     os.getenv("HOME") .. "/opt/anaconda3/envs/dev/bin/python", -- MacOS's conda (dev)
     os.getenv("HOME") .. "/anaconda3/envs/dev/bin/python",     -- Linux's conda (dev)
