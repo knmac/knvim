@@ -1,3 +1,4 @@
+-- Render some parts of markdowm, similar to headlines.nvim
 return {
     "MeanderingProgrammer/markdown.nvim",
     name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
