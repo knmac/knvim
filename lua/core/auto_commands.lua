@@ -51,10 +51,10 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "md", "markdown", "tex", "norg", },
     group = user_cfgs_group,
     callback = function()
-        vim.keymap.set("n", "j", "gj", default_opts)
-        vim.keymap.set("n", "k", "gk", default_opts)
-        vim.keymap.set("n", "0", "g0", default_opts)
-        vim.keymap.set("n", "$", "g$", default_opts)
+        vim.keymap.set({"n", "v"}, "j", "gj", default_opts)
+        vim.keymap.set({"n", "v"}, "k", "gk", default_opts)
+        vim.keymap.set({"n", "v"}, "0", "g0", default_opts)
+        vim.keymap.set({"n", "v"}, "$", "g$", default_opts)
     end,
 })
 
