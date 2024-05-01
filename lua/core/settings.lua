@@ -111,3 +111,6 @@ opt.hidden = true -- enable background buffers
 -- opt.history = 100     -- remember n lines in history
 -- opt.lazyredraw = true -- faster scrolling
 -- opt.synmaxcol = 240   -- max column for syntax highlight
+
+-- Force latex instead of plaintex
+g.tex_flavor = "latex"  -- plain|context|latex

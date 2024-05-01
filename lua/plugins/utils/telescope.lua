@@ -93,9 +93,9 @@ return {
                 -- },
                 ["bibtex"] = {
                     -- Path to global bibliographies (placed outside of the project)
-                    global_files = {
-                        os.getenv("HOME") .. "/Documents/global.bib",
-                    },
+                    -- global_files = {
+                    --     os.getenv("HOME") .. "/Documents/global.bib",
+                    -- },
                     -- Use context awareness
                     context = true,
                     -- Use non-contextual behavior if no context found
