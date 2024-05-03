@@ -1,8 +1,8 @@
 -- Code completion
 return {
     "hrsh7th/nvim-cmp", -- code completion
-    event = "InsertEnter",
-    -- event = "VeryLazy",
+    -- event = "InsertEnter",
+    event = "VeryLazy",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",                -- source for neovim's built-in language server client
         "hrsh7th/cmp-buffer",                  -- source for buffer words
