@@ -2,6 +2,9 @@
 return {
     "simrat39/symbols-outline.nvim", -- show symbols of the current buffer
     event = "VeryLazy",
+    keys = {
+        { "<leader>o", "<CMD>SymbolsOutline<CR>", desc = "Toggle SymbolsOutline" },
+    },
     config = function()
         --- Return with with minimum threshold
         local width_with_min = function(ratio, min_width)

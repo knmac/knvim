@@ -1,11 +1,4 @@
 -- Debug adapter protocol
-
--- Wrapper function to set keymaps with default opts
-local map = function(mode, lhs, rhs, desc)
-    local opts = { noremap = true, silent = true, desc = "DAP: " .. desc }
-    vim.keymap.set(mode, lhs, rhs, opts)
-end
-
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
     event = "VeryLazy",
@@ -28,6 +21,33 @@ return {
             build = ":TSInstall dap_repl",
             opts = {},
         },
+    },
+    keys = {
+        { ",d", function() require("dapui").toggle() end,         desc = "DAP: Toggle UI" },
+        { ",D", function() require("dap").repl.toggle() end,      desc = "DAP: Open default REPL" },
+        { ",k", function() require("dap.ui.widgets").hover() end, desc = "DAP: Check variable value on hover" },
+        {
+            ",c",
+            function()
+                if vim.fn.filereadable(".vscode/launch.json") then
+                    require("dap.ext.vscode").load_launchjs()
+                end
+                require("dap").continue()
+            end,
+            desc = "DAP: Start/Continue debugging",
+        },
+        { ",l", function() require("dap").run_last() end,          desc = "DAP: Run the last debug adapter entry" },
+        { ",b", function() require("dap").toggle_breakpoint() end, desc = "DAP: Toggle breakpoint" },
+        {
+            ",B",
+            function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+            desc = "DAP: Toggle breakpoint with condition",
+        },
+        { ",n", function() require("dap").step_over() end, desc = "DAP: Step over" },
+        { ",s", function() require("dap").step_into() end, desc = "DAP: Step into" },
+        { ",u", function() require("dap").step_out() end,  desc = "DAP: Step out" },
+        { ",t", function() require("dap").terminate() end, desc = "DAP: Terminate debugging" },
+        -- { ",r", function() require("dap").run() end,       desc = "DAP: Run debugging" },
     },
     config = function()
         local dap = require("dap")
@@ -141,29 +161,5 @@ return {
         vim.fn.sign_define("DapStopped", { text = "👀", texthl = "", linehl = "debugPC", numhl = "" })
         vim.fn.sign_define("DapBreakpointRejected",
             { text = "🚫", texthl = "", linehl = "", numhl = "" })
-
-        -------------------------------------------------------------------------------------------
-        -- Set up keymaps
-        -------------------------------------------------------------------------------------------
-        map("n", ",d", function() dapui.toggle() end, "Toggle UI")
-        map("n", ",D", function() dap.repl.toggle() end, "Open default REPL")
-        map("n", ",k", function() require("dap.ui.widgets").hover() end,
-            "Check variable value on hover")
-
-        map("n", ",c", function()
-            if vim.fn.filereadable(".vscode/launch.json") then
-                require("dap.ext.vscode").load_launchjs()
-            end
-            dap.continue()
-        end, "Start/Continue debugging")
-        map("n", ",l", function() dap.run_last() end, "Run the last debug adapter entry")
-        map("n", ",b", function() dap.toggle_breakpoint() end, "Toggle breakpoint")
-        map("n", ",B", function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
-            "Toggle breakpoint with condition")
-        map("n", ",n", function() dap.step_over() end, "Step over")
-        map("n", ",s", function() dap.step_into() end, "Step into")
-        map("n", ",u", function() dap.step_out() end, "Step out")
-        map("n", ",t", function() dap.terminate() end, "Terminate debugging")
-        -- map("n", ",r", function() dap.run() end, "Run debugging")
     end
 }

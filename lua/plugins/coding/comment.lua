@@ -1,6 +1,13 @@
 -- Code commenter
 return {
     "numToStr/Comment.nvim", -- code commenter
+    keys = {
+        {
+            "<C-/>",
+            function() require("Comment.api").toggle.linewise.current() end,
+            desc = "Comment: toggle current line"
+        },
+    },
     opts = {
         ---Add a space b/w comment and the line
         ---@type boolean

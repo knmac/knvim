@@ -9,6 +9,20 @@ return {
             build = "make",
         },
     },
+    keys = {
+        { "<space><space>", "<cmd>Telescope<CR>",                           desc = "Telescope: open" },
+        { "<space>f",       "<cmd>Telescope find_files<CR>",                desc = "Telescope: find files" },
+        { "<space>t",       "<cmd>Telescope live_grep<CR>",                 desc = "Telescope: find text" },
+        { "<space>b",       "<cmd>Telescope buffers<CR>",                   desc = "Telescope: find buffer" },
+        { "<space>/",       "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Telescope: find in buffer" },
+        { "<space>c",       "<cmd>Telescope bibtex<CR>",                    desc = "Telescope: find bibtex" },
+        { "<space>v",       "<cmd>Telescope vim_options<CR>",               desc = "Telescope: find vim option" },
+        { "<space>w",       "<cmd>Telescope file_browser<CR>",              desc = "Telescope: file browser" },
+        { "<space>h",       "<cmd>Telescope help_tags<CR>",                 desc = "Telescope: find help" },
+        { "<space>k",       "<cmd>Telescope keymaps<CR>",                   desc = "Telescope: find key map" },
+        { "<space>?",       "<cmd>Telescope commands<CR>",                  desc = "Telescope: find command" },
+        { "<space>n",       "<cmd>Telescope notify<CR>",                    desc = "Telescope: find notification" },
+    },
     config = function()
         local actions = require("telescope.actions")
 

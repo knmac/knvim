@@ -2,6 +2,9 @@
 return {
     "akinsho/toggleterm.nvim",
     event = "VeryLazy",
+    keys = {
+        { "<leader>g", "<CMD>lua LazygitToggle()<CR>", desc = "Toggle Lazy git" },
+    },
     config = function()
         require("toggleterm").setup({
             -- size can be a number or function which is passed the current terminal
@@ -56,8 +59,5 @@ return {
                 vim.notify("lazygit is not installed", vim.log.levels.WARN)
             end
         end
-
-        vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua LazygitToggle()<CR>",
-            { noremap = true, silent = true })
     end,
 }

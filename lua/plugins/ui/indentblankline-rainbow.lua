@@ -1,3 +1,13 @@
+local custom_highlight = {
+    "RainbowDelimiterRed",
+    "RainbowDelimiterYellow",
+    "RainbowDelimiterBlue",
+    "RainbowDelimiterOrange",
+    "RainbowDelimiterGreen",
+    "RainbowDelimiterViolet",
+    "RainbowDelimiterCyan",
+}
+
 return {
     {
         "HiPhish/rainbow-delimiters.nvim", -- colorize parentheses
@@ -13,15 +23,7 @@ return {
                     [""] = "rainbow-delimiters",
                     lua = "rainbow-blocks",
                 },
-                highlight = {
-                    "RainbowDelimiterRed",
-                    "RainbowDelimiterYellow",
-                    "RainbowDelimiterBlue",
-                    "RainbowDelimiterOrange",
-                    "RainbowDelimiterGreen",
-                    "RainbowDelimiterViolet",
-                    "RainbowDelimiterCyan",
-                },
+                highlight = custom_highlight,
             }
         end,
     },
@@ -30,16 +32,6 @@ return {
         dependencies = "HiPhish/rainbow-delimiters.nvim", -- Use color from rainbow_delimiters
         main = "ibl",
         config = function()
-            local highlight = {
-                "RainbowDelimiterRed",
-                "RainbowDelimiterYellow",
-                "RainbowDelimiterBlue",
-                "RainbowDelimiterOrange",
-                "RainbowDelimiterGreen",
-                "RainbowDelimiterViolet",
-                "RainbowDelimiterCyan",
-            }
-
             -- vim.g.rainbow_delimiters = { highlight = highlight }
             require("ibl").setup({
                 -- indent = { char = '│', },
@@ -57,7 +49,7 @@ return {
                 },
                 scope = {
                     -- enabled = false,
-                    highlight = highlight,
+                    highlight = custom_highlight,
                 },
             })
 

@@ -2,6 +2,9 @@
 return {
     "folke/zen-mode.nvim",
     event = "VeryLazy",
+    keys = {
+        { "<leader>z", "<CMD>ZenMode<CR>", desc = "Toggle ZenMode" },
+    },
     config = function()
         -- local map = vim.keymap.set
         -- local default_opts = { noremap = true, silent = true }

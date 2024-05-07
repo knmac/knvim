@@ -10,6 +10,10 @@ return {
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
         },
+        keys = {
+            { "<leader>t", "<CMD>Neotree toggle<CR>", desc = "Toggle Neotree" },
+            { "<leader>T", "<CMD>Neotree reveal<CR>", desc = "Open Neotree at the current file" },
+        },
         config = function()
             vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
             require("neo-tree").setup({
@@ -60,7 +64,7 @@ return {
         opts = {
             autoselect_one = true,
             include_current = false,
-            selection_chars = "12334567890ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            selection_chars = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ",
             filter_rules = {
                 -- filter using buffer options
                 bo = {

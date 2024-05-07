@@ -1,6 +1,9 @@
 -- Environment switcher
 return {
     "AckslD/swenv.nvim",
+    keys = {
+        { "<space>e", function() require("swenv.api").pick_venv() end, desc = "Swenv: Switch python env" },
+    },
     opts = {
         -- Should return a list of tables with a `name` and a `path` entry each.
         -- Gets the argument `venvs_path` set below.
