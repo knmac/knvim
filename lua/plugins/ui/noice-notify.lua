@@ -83,17 +83,17 @@ return {
     -- Notify
     {
         "rcarriga/nvim-notify", -- A fancy, configurable, notification manager
+        keys = {
+            {
+                "<leader>n",
+                function() require("notify").dismiss() end,
+                desc = "Notify: Dismiss current notify message"
+            }
+        },
         config = function()
             require("notify").setup({
                 top_down = false,
             })
-
-            local map = function(mode, lhs, rhs, desc)
-                local opts = { noremap = true, silent = true, desc = "Noice: " .. desc }
-                vim.keymap.set(mode, lhs, rhs, opts)
-            end
-            map("n", "<leader>n", function() require("notify").dismiss() end,
-                "Dismiss current notify message")
         end,
     },
 }
