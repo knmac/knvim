@@ -51,10 +51,10 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "md", "markdown", "tex", "norg", },
     group = user_cfgs_group,
     callback = function()
-        vim.keymap.set({"n", "v"}, "j", "gj", default_opts)
-        vim.keymap.set({"n", "v"}, "k", "gk", default_opts)
-        vim.keymap.set({"n", "v"}, "0", "g0", default_opts)
-        vim.keymap.set({"n", "v"}, "$", "g$", default_opts)
+        vim.keymap.set({ "n", "v" }, "j", "gj", default_opts)
+        vim.keymap.set({ "n", "v" }, "k", "gk", default_opts)
+        vim.keymap.set({ "n", "v" }, "0", "g0", default_opts)
+        vim.keymap.set({ "n", "v" }, "$", "g$", default_opts)
     end,
 })
 
@@ -69,8 +69,10 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "python" },
     group = user_cmds_group,
     callback = function()
-        vim.keymap.set("n", "<leader>b", "obreakpoint()<esc>", default_opts)
-        vim.keymap.set("n", "<leader>B", "Obreakpoint()<esc>", default_opts)
+        vim.keymap.set("n", "<leader>b", "obreakpoint()<esc>",
+            { noremap = true, silent = true, desc = "Insert breakpoint below current line" })
+        vim.keymap.set("n", "<leader>B", "Obreakpoint()<esc>",
+            { noremap = true, silent = true, desc = "Insert breakpoint above current line" })
     end,
 })
 
