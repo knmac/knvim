@@ -1,9 +1,10 @@
 -- Show project outline
 return {
-    "simrat39/symbols-outline.nvim", -- show symbols of the current buffer
+    "hedyhli/outline.nvim", -- show symbols of the current buffer
     event = "VeryLazy",
     keys = {
-        { "<leader>o", "<CMD>SymbolsOutline<CR>", desc = "Toggle SymbolsOutline" },
+        { "<leader>o", "<CMD>Outline!<CR>", desc = "Toggle Outline" },
+        { "<leader>O", "<CMD>Outline<CR>",  desc = "Toggle Outline with focus" },
     },
     config = function()
         --- Return with with minimum threshold
@@ -13,10 +14,12 @@ return {
             return width
         end
 
-        require("symbols-outline").setup({
-            relative_width = false,
-            width = width_with_min(0.15, 50),
-            autofold_depth = 2,
+        require("outline").setup({
+            outline_window = {
+                relative_width = false,
+                width = width_with_min(0.15, 50),
+                -- autofold_depth = 2,
+            },
             symbols = {
                 File = { icon = "", hl = "@text.uri" },
                 Module = { icon = "", hl = "@namespace" },
