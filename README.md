@@ -173,7 +173,7 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
 }
 ```
 
-The above config uses Python as an example, but you can setup debugger for other languages similarly. For more information, visit [here](https://go.microsoft.com/fwlink/?linkid=830387).
+The above config uses Python as an example, but you can setup debugger for other languages similarly. The template for Python launcher can be generated with `,g`. For more information, visit [here](https://go.microsoft.com/fwlink/?linkid=830387).
 
 ### 6.3. Diffview (Intergate Diffview to git mergetool automatically)
 

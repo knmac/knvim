@@ -138,6 +138,7 @@ All DAP key-bindings start with `,`.
 | Step out                                  | `,o`        |
 | Terminate debugging                       | `,t`        |
 | Hover variable while debugging            | `,h`        |
+| Generate launcher for python              | `,g`        |
 
 ### 1.6. Vim matchup
 

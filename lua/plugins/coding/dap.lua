@@ -1,4 +1,38 @@
 -- Debug adapter protocol
+local generate_python_launcher = function()
+    local fname = ".vscode/launch.json"
+    local f = io.open(fname, "r")
+    if f ~= nil then
+        io.close(f)
+        return
+    end
+
+    local launch_content = [[
+{
+    "version": "0.2.0",
+        "configurations": [
+        {
+            "name": "launcher name",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": []
+        }
+    ]
+}]]
+
+    require("os").execute("mkdir -p .vscode")
+    local file, err = io.open(fname, "w")
+    if file then
+        file:write(launch_content)
+        file:close()
+        print(fname .. " generated")
+    else
+        print(err)
+    end
+end
+
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
     event = "VeryLazy",
@@ -48,6 +82,7 @@ return {
         { ",u", function() require("dap").step_out() end,  desc = "DAP: Step out" },
         { ",t", function() require("dap").terminate() end, desc = "DAP: Terminate debugging" },
         -- { ",r", function() require("dap").run() end,       desc = "DAP: Run debugging" },
+        { ",g", generate_python_launcher,                  desc = "DAP: generate launcher for Python" },
     },
     config = function()
         local dap = require("dap")
@@ -56,24 +91,6 @@ return {
         -------------------------------------------------------------------------------------------
         -- Configurations for each languages
         -------------------------------------------------------------------------------------------
-        -- NOTE: For per-project config, create .vscode/launch.json that looks something like this:
-        -- {
-        --   // Use IntelliSense to learn about possible attributes.
-        --   // Hover to view descriptions of existing attributes.
-        --   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-        --   "version": "0.2.0",
-        --   "configurations": [
-        --     {
-        --       "name": "NAME OF THE LAUNCH",
-        --       "type": "python",
-        --       "request": "launch",
-        --       "program": "${file}",
-        --       "console": "integratedTerminal",
-        --       "args": ["TOKEN1", "TOKEN2", ...]
-        --     }
-        --   ]
-        -- }
-
         -- Python - debugpy -----------------------------------------------------------------------
         dap.adapters.python = {
             type = "executable",
