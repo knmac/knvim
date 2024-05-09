@@ -160,7 +160,9 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | Insert `=` characters                           | `<leader> =`      |
 |            | Generate doc string for function                | `<leader> d`      |
 |            | Toggle file explorer                            | `<leader> t`      |
-|            | Toggle symbol outline view                      | `<leader> o`      |
+|            | Toggle file explorer (jump to current file)     | `<leader> T`      |
+|            | Toggle outline view                             | `<leader> o`      |
+|            | Toggle outline view (change focus)              | `<leader> O`      |
 |            | Toggle conceal level in the current buffer      | `<leader> cc`     |
 |            | Dismiss current notification message            | `<leader> n`      |
 |            | Open Lazygit (terminal)                         | `<leader> g`      |

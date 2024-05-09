@@ -76,7 +76,7 @@ map("n", "<F15>", "<cmd>Neotree dir=%:p:h<CR>", default_opts)
 
 -- <F4>: Show tags of current buffer
 -- map("n", "<F4>", ":Telescope current_buffer_tags<CR>", default_opts)
-map("n", "<F4>", "<cmd>SymbolsOutline<CR>", default_opts)
+map("n", "<F4>", "<cmd>Outline!<CR>", default_opts)
 -- <S-F4>: Show diagnostics
 map("n", "<F16>", "<cmd>Telescope diagnostics<CR>", default_opts)
 -- <S-F4>: Generate tags

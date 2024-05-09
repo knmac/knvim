@@ -15,7 +15,7 @@ Video demo with clickable lualine
 Config structure and cheatsheet
 ![demo1](./res/demo2.png)
 
-Editing a python file, with LSP, Tree-sitter, and Symbols-outline support
+Editing a python file, with LSP, Tree-sitter, and outline support
 ![demo2](./res/demo3.png)
 
 ## 2. Feature highlights
@@ -66,7 +66,7 @@ lua/
    │  ├── neo-tree.lua
    │  ├── obsidian.lua
    │  ├── swenv.lua
-   │  ├── symbols-outline.lua
+   │  ├── outline.lua
    │  ├── telescope.lua
    │  ├── todo-comments.lua
    │  ├── toggleterm.lua
