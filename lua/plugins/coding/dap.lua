@@ -156,15 +156,9 @@ return {
         -------------------------------------------------------------------------------------------
         -- Automatically open when a debug session is created
         -------------------------------------------------------------------------------------------
-        dap.listeners.after.event_initialized["dapui_config"] = function()
-            dapui.open()
-        end
-        dap.listeners.before.event_terminated["dapui_config"] = function()
-            dapui.close()
-        end
-        dap.listeners.before.event_exited["dapui_config"] = function()
-            dapui.close()
-        end
+        dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
+        dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
+        dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
 
         -------------------------------------------------------------------------------------------
         -- Set up signs and colors
@@ -175,7 +169,8 @@ return {
             { text = "🔶", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
         vim.fn.sign_define("DapLogPoint",
             { text = "📜", texthl = "DapLogPoint", linehl = "", numhl = "" })
-        vim.fn.sign_define("DapStopped", { text = "👀", texthl = "", linehl = "debugPC", numhl = "" })
+        vim.fn.sign_define("DapStopped",
+            { text = "👀", texthl = "", linehl = "debugPC", numhl = "" })
         vim.fn.sign_define("DapBreakpointRejected",
             { text = "🚫", texthl = "", linehl = "", numhl = "" })
     end
