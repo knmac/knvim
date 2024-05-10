@@ -19,10 +19,10 @@ vim.api.nvim_create_autocmd("WinLeave", {
 })
 
 -- Make sure colons do not mess up the indent in Python
-vim.cmd [[
-autocmd FileType python setlocal indentkeys-=<:>
-autocmd FileType python setlocal indentkeys-=:
-]]
+-- vim.cmd [[
+-- autocmd FileType python setlocal indentkeys-=<:>
+-- autocmd FileType python setlocal indentkeys-=:
+-- ]]
 
 -- Use tab instead of space for make files
 vim.api.nvim_create_autocmd("FileType", {
@@ -35,7 +35,6 @@ vim.api.nvim_create_autocmd("FileType", {
 -- 2 spaces for these file types
 vim.api.nvim_create_autocmd("FileType", {
     desc = "2 spaces for these files types",
-    -- pattern = { "xml", "html", "c", "cpp", "h", "hpp" },
     pattern = { "xml", "yaml", "json", "html", "css", "typescript", "scala" },
     group = user_cfgs_group,
     callback = function()
@@ -107,22 +106,37 @@ vim.api.nvim_create_user_command("ClearRegisters", function() ClearReg() end, {}
 -- ]]
 
 -- Fill the rest of line with characters
--- TODO: change to lua implementation
-vim.cmd [[
-function! FillLine( str )
-    " set tw to the desired total length
-    let tw = &textwidth
-    if tw==0 | let tw = (&colorcolumn - 1) | endif
-    " calculate total number of 'str's to insert
-    let reps = (tw - col("$")) / len(a:str)
-    " insert them, if there's room, removing trailing spaces (though forcing
-    " there to be one)
-    if reps > 0
-        .s/$/\=(' '.repeat(a:str, reps))/
-    endif
-endfunction
-]]
--- Fill with '-' characters
-vim.keymap.set("n", "<leader>-", ':call FillLine("-")<CR>', default_opts)
--- Fill with '=' characters
-vim.keymap.set("n", "<leader>=", ':call FillLine("=")<CR>', default_opts)
+function FillLine(ch)
+    ch = ch or "-"
+    local width = 100
+    local line_nr = vim.api.nvim_win_get_cursor(0)[1] - 1
+    local line = vim.api.nvim_buf_get_lines(0, line_nr, line_nr + 1, false)[1]
+
+    local line_len = string.len(line)
+    vim.api.nvim_buf_set_lines(0, line_nr, line_nr + 1, false,
+        { line .. " " .. string.rep(ch, width - line_len - 2) })
+end
+
+vim.keymap.set("n", "<leader>-", function() FillLine("-") end,
+    { desc = "Fill line with - characters", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>=", function() FillLine("=") end,
+    { desc = "Fill line with = characters", noremap = true, silent = true })
+
+-- vim.cmd [[
+-- function! FillLine( str )
+--     " set tw to the desired total length
+--     let tw = &textwidth
+--     if tw==0 | let tw = (&colorcolumn - 1) | endif
+--     " calculate total number of 'str's to insert
+--     let reps = (tw - col("$")) / len(a:str)
+--     " insert them, if there's room, removing trailing spaces (though forcing
+--     " there to be one)
+--     if reps > 0
+--         .s/$/\=(' '.repeat(a:str, reps))/
+--     endif
+-- endfunction
+-- ]]
+-- -- Fill with '-' characters
+-- vim.keymap.set("n", "<leader>-", ':call FillLine("-")<CR>', default_opts)
+-- -- Fill with '=' characters
+-- vim.keymap.set("n", "<leader>=", ':call FillLine("=")<CR>', default_opts)
