@@ -159,17 +159,17 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
 
 ```json
 {
-    "version": "0.2.0",
-        "configurations": [
-        {
-            "name": "NAME OF THE LAUNCH",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "args": ["ARG1", "ARG2", ...]
-        }
-    ]
+  "version": "0.2.0",
+    "configurations": [
+    {
+      "type": "python",
+      "request": "launch",
+      "name": "NAME OF THE LAUNCH",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": ["ARG1", "ARG2", ...]
+    }
+  ]
 }
 ```
 

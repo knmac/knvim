@@ -9,17 +9,19 @@ local generate_python_launcher = function()
 
     local launch_content = [[
 {
-    "version": "0.2.0",
-        "configurations": [
-        {
-            "name": "launcher name",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "args": []
-        }
-    ]
+  "version": "0.2.0",
+    "configurations": [
+    {
+      "type": "python",
+      "request": "launch",
+      "name": "launcher name",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "repl_lang": "javascript",
+      "args": []
+    }
+  ]
 }]]
 
     require("os").execute("mkdir -p .vscode")
@@ -99,9 +101,9 @@ return {
         }
         dap.configurations.python = {
             {
-                name = "[Default] Launch DAP (debugpy) for the current file",
                 type = "python",
                 request = "launch",
+                name = "[Default] Launch DAP (debugpy) for the current file",
                 program = "${file}",
                 console = "integratedTerminal",
                 cwd = "${workspaceFolder}",
@@ -109,9 +111,9 @@ return {
                 args = {},
             },
             {
-                name = "[Default] Launch DAP (debugpy) with file selection",
                 type = "python",
                 request = "launch",
+                name = "[Default] Launch DAP (debugpy) with file selection",
                 program = function()
                     return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
                 end,

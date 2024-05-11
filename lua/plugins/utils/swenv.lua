@@ -15,7 +15,14 @@ return {
         venvs_path = vim.fn.expand("~/.venvs"),
         -- venvs_path = vim.fn.getcwd(),
         -- Something to do after setting an environment, for example call vim.cmd.LspRestart
-        post_set_venv = function() vim.cmd.LspRestart() end,
+        post_set_venv = function()
+            vim.cmd.LspRestart()
+
+            local current_env = require("swenv.api").get_current_venv()
+            vim.g.python3_host_prog = current_env.path .. "/bin/python"
+
+            vim.cmd[[Lazy reload nvim-dap]]
+        end,
         -- post_set_venv = nil,
     }
 }
