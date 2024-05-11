@@ -118,12 +118,13 @@ return {
                 local swenv = require("swenv.api")
                 local current_env = "[-]" -- No environment
 
-                if swenv.get_current_venv() ~= nil then
-                    -- Environment loaded by swenv
-                    local _name = swenv.get_current_venv().name
-                    local _src = swenv.get_current_venv().source
-                    current_env = _name .. " (" .. _src .. ")"
-                elseif vim.g.python3_host_prog ~= nil then
+                -- if swenv.get_current_venv() ~= nil then
+                --     -- Environment loaded by swenv
+                --     local _name = swenv.get_current_venv().name
+                --     local _src = swenv.get_current_venv().source
+                --     current_env = _name .. " (" .. _src .. ")"
+                -- elseif vim.g.python3_host_prog ~= nil then
+                if vim.g.python3_host_prog ~= nil then
                     -- Default environment from python3_host_prog
                     local Path = require("plenary.path")
                     local tokens = Path._split(Path:new(vim.g.python3_host_prog))
