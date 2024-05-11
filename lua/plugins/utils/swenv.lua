@@ -22,6 +22,7 @@ return {
             vim.g.python3_host_prog = current_env.path .. "/bin/python"
 
             vim.cmd[[Lazy reload nvim-dap]]
+            vim.cmd[[Lazy reload nvim-dap-ui]]
         end,
         -- post_set_venv = nil,
     }
