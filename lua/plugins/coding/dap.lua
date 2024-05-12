@@ -140,9 +140,9 @@ return {
         }
         dap.configurations.cpp = {
             {
-                name = "[Default] Launch DAP (codelldb) with file selection",
                 type = "lldb",
                 request = "launch",
+                name = "[Default] Launch DAP (codelldb) with file selection",
                 program = function()
                     return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
                 end,

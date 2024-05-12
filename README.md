@@ -25,7 +25,32 @@ Editing a python file, with LSP, Tree-sitter, and outline support
 - Key-biddings that (_hopefully_) make sense
 - Fun (_for me_) to use!!!
 
-## 3. Config structure
+## 3. Content
+
+### 3.1. Configured servers
+
+| Language              | Name       | Category         |
+| --------------------- | ---------- | ---------------- |
+| Python                | pyright    | LSP              |
+|                       | ruff_lsp   | Linter/Formatter |
+|                       | debugpy    | DAP              |
+| Bash                  | bashls     | LSP              |
+|                       | shellcheck | Linter           |
+| C/C++                 | clangd     | LSP              |
+|                       | cpplint    | Linter           |
+|                       | codelldb   | DAP              |
+| Vimscript             | vim_ls     | LSP              |
+| Lua                   | lua_ls     | LSP              |
+| LaTex                 | texlab     | LSP              |
+| Markdown              | marksman   | LSP              |
+|                       | prettier   | LSP              |
+| YAML                  | yamlls     | LSP              |
+|                       | prettier   | Formatter        |
+| Typescript/Javascript | tsserver   | LSP              |
+|                       | prettier   | Formatter        |
+| HTML/CSS/Json         | prettier   | Formatter        |
+
+### 3.2. Config structure
 
 ```
 init.lua
@@ -81,9 +106,9 @@ The configs in `experimentals/` directories are not activated by default. To use
 { import = "plugins.experimentals", },
 ```
 
-## 3. Manual installation
+## 4. Manual installation
 
-### 3.1. Dependencies
+### 4.1. Dependencies
 
 The following dependencies are for manual installation.
 
@@ -94,7 +119,7 @@ The following dependencies are for manual installation.
 - (Optional) Python packages `pynvim` and `neovim` (installable with `pip`).
 - (Optional) [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [ToggleTerm](https://github.com/akinsho/toggleterm.nvim).
 
-### 3.2. Installation
+### 4.2. Installation
 
 Clone this repo to `$HOME/.config`:
 
@@ -108,11 +133,11 @@ Then add this command to `.bashrc` or `.zshrc`.
 export NVIM_APPNAME="knvim"
 ```
 
-### 3.3. Removing knvim
+### 4.3. Removing knvim
 
 Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/knvim`.
 
-## 4. Installation using nvim-lazyman
+## 5. Installation using nvim-lazyman
 
 [Nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
 
@@ -122,15 +147,15 @@ lazyman -L Knvim
 
 Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, boostrapping, and other cool features.
 
-## 5. Knvim Cheatsheet
+## 6. Knvim Cheatsheet
 
 Cheatsheet for knvim can be found [here](res/cheatsheet.md). You can also access cheatsheet from the start page.
 
-## 6. Extra configs (optional)
+## 7. Extra configs (optional)
 
 This section shows you how to set up extra configuration for knvim to work as you want (completely optional)
 
-### 6.1. Ruff (Python linter) and Black (Python formater)
+### 7.1. Ruff (Python linter) and Black (Python formater)
 
 Create the file `pyproject.toml` for each Python project, where the content looks something like this:
 
@@ -153,7 +178,7 @@ indent-style = "space"
 
 For more information, visit [here](https://docs.astral.sh/ruff/configuration/) and [here](https://python-poetry.org/docs/pyproject/).
 
-### 6.2. DAP (Debugging tool)
+### 7.2. DAP (Debugging tool)
 
 Create the file `.vscode/launch.json` for each project, where the content looks something like this:
 
@@ -175,7 +200,7 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
 
 The above config uses Python as an example, but you can setup debugger for other languages similarly. The template for Python launcher can be generated with `,g`. For more information, visit [here](https://go.microsoft.com/fwlink/?linkid=830387).
 
-### 6.3. Diffview (Intergate Diffview to git mergetool automatically)
+### 7.3. Diffview (Intergate Diffview to git mergetool automatically)
 
 Create the file `~/.gitconfig` globally, where the content looks something like this:
 
@@ -189,7 +214,7 @@ Create the file `~/.gitconfig` globally, where the content looks something like 
     cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\" -c DiffviewOpen"
 ```
 
-### 6.3. Marksman (LSP server for markdown)
+### 7.4. Marksman (LSP server for markdown)
 
 Create the file `.marksman.toml` for each project, where the (default) content looks something like this:
 
@@ -208,7 +233,7 @@ create_missing_file.enable = true
 wiki.style = "title-slug"
 ```
 
-## 7. FAQs
+## 8. FAQs
 
 _Q1: Why knvim is not working on Windows?_
 
@@ -218,7 +243,7 @@ _Q2: Why knvim does not include <this path> by default?_
 
 _A2:_ knvim is my personal config of Neovim, so it does not cover a wide range of different use cases. You are more than welcome (and recommended) to fork and customize knvim to your personal liking. That said, I will try to add some configs if they are commonly used. Cheers!
 
-## 8. TODO
+## 9. TODO
 
 - [ ] Automatically copy knvim to server for remote editing.
 - [ ] Image rendering (may only support Kitty and WezTerm terminal).
