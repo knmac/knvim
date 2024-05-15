@@ -1,31 +1,42 @@
 -- Writing and navigating an Obsidian vault
 return {
+    -- Render markdown
     {
         "MeanderingProgrammer/markdown.nvim",
         name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+        ft = "markdown",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
         },
         keys = {
-            { "<leader>m", "<CMD>RenderMarkdownToggle<CR>", desc = "Toggle render markdown" },
+            { "<leader>m", "<CMD>RenderMarkdownToggle<CR>", desc = "Toggle markdown rendering" },
         },
         config = function()
             require("render-markdown").setup({
                 -- Configure whether Markdown should be rendered by default or not
                 start_enabled = false,
+                -- Character to use for the bullet points in lists
+                bullets = { "", "", "◆", "◇" },
                 checkbox = {
                     -- Character that will replace the [ ] in unchecked checkboxes
                     unchecked = "󰄱 ",
                     -- Character that will replace the [x] in checked checkboxes
                     checked = "󰄲 ",
                 },
+                conceal = {
+                    -- conceallevel used for buffer when not being rendered, get user setting
+                    default = vim.opt.conceallevel:get(),
+                    -- conceallevel used for buffer when being rendered
+                    rendered = 2,
+                },
             })
         end,
     },
+    -- Obsidian helper
     {
         "epwalsh/obsidian.nvim",
         version = "*", -- recommended, use latest release instead of latest commit
-        lazy = true,
+        -- lazy = true,
         ft = "markdown",
         -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
         -- event = {
@@ -65,8 +76,9 @@ return {
                 },
             },
             ui = {
-                enable = false,
-                -- enable = true,
+                enable = true,
+                checkboxes = {},
+                bullets = {},
                 -- checkboxes = {
                 --     [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
                 --     ["x"] = { char = "󰄲", hl_group = "ObsidianDone" },
@@ -74,13 +86,13 @@ return {
                 -- reference_text = { hl_group = "ObsidianRefText" },
                 -- highlight_text = { hl_group = "ObsidianHighlightText" },
                 -- tags = { hl_group = "ObsidianTag" },
-                -- hl_groups = {
-                --     ObsidianTodo = { bold = true, fg = "#ed8796" },
-                --     ObsidianDone = { bold = true, fg = "#a6da95" },
-                --     ObsidianRefText = { underline = true, fg = "#b7bdf8" },
-                --     ObsidianTag = { italic = true, fg = "#7dc4e4" },
-                --     ObsidianHighlightText = { bg = "#eed49f", fg = "#24273a" },
-                -- },
+                hl_groups = {
+                    ObsidianTodo = { bold = true, fg = "#ed8796" },
+                    ObsidianDone = { bold = true, fg = "#a6da95" },
+                    ObsidianRefText = { underline = true, fg = "#b7bdf8" },
+                    ObsidianTag = { italic = true, fg = "#7dc4e4" },
+                    ObsidianHighlightText = { bg = "#eed49f", fg = "#24273a" },
+                },
             },
             daily_notes = {
                 folder = "journal",

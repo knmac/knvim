@@ -12,7 +12,7 @@ K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knm
 Video demo with clickable lualine
 ![demo3](./res/demo1.gif)
 
-Config structure and cheatsheet
+Config structure and cheatsheet (rendered)
 ![demo1](./res/demo2.png)
 
 Editing a python file, with LSP, Tree-sitter, and outline support
