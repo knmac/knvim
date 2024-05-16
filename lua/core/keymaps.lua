@@ -33,6 +33,12 @@ map("i", "<A-j>", "<Down>", default_opts)
 map("i", "<A-k>", "<Up>", default_opts)
 map("i", "<A-l>", "<Right>", default_opts)
 
+-- Window resize
+map("n", "<A-Up>", "<C-w>+", default_opts)
+map("n", "<A-Down>", "<C-w>-", default_opts)
+map("n", "<A-Left>", "<C-w><", default_opts)
+map("n", "<A-Right>", "<C-w>>", default_opts)
+
 -- Window swapping
 map("n", "<A-S-h>", "<C-w>h<C-w>x", default_opts)
 map("n", "<A-S-j>", "<C-w>j<C-w>x", default_opts)

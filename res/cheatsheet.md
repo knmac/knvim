@@ -112,6 +112,10 @@ Overall logic:
 |                     | Swap with the lower window    | `Alt+Shift+j`      |
 |                     | Swap with the upper window    | `Alt+Shift+k`      |
 |                     | Swap with the right window    | `Alt+Shift+l`      |
+|                     | Decrease window width         | `Alt+Left`         |
+|                     | Increase window width         | `Alt+Right`        |
+|                     | Decrease window height        | `Alt+Down`         |
+|                     | Increase window height        | `Alt+Up`           |
 | Buffer manipulation | Switch to the previous buffer | `Ctrl+Alt+h`       |
 |                     | Switch to the next buffer     | `Ctrl+Alt+l`       |
 |                     | *J*ump to a buffer            | `Ctrl+Alt+j`       |
