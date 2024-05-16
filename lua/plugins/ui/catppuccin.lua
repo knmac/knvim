@@ -53,6 +53,7 @@ return {
                     enabled = true,
                     enable_ui = true, -- enable nvim-dap-ui
                 },
+                window_picker = true,
             }
         })
 
