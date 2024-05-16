@@ -63,7 +63,6 @@ lua/
 └── plugins/
    ├── coding/
    │  ├── cmp.lua
-   │  ├── comment.lua
    │  ├── dap.lua
    │  ├── linter-formatter.lua
    │  ├── lspconfig-mason.lua
@@ -112,7 +111,7 @@ The configs in `experimentals/` directories are not activated by default. To use
 
 The following dependencies are for manual installation.
 
-- Neovim 0.9.5+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
+- Neovim 0.10.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
 - A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [WezTerm](https://wezfurlong.org/wezterm/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font).
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formaters).
 - [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).

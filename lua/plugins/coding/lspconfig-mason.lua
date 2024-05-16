@@ -116,18 +116,20 @@ return {
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            map("n", "<leader>e", function() vim.diagnostic.open_float({ border = "rounded" }) end,
+            map("n", "<C-W>d", function() vim.diagnostic.open_float({ border = "rounded" }) end,
                 "Show diagnostics of the current line")
-            map("n", "[e",
+            map("n", "<C-W><C-d>", function() vim.diagnostic.open_float({ border = "rounded" }) end,
+                "Show diagnostics of the current line")
+            map("n", "[d",
                 function() vim.diagnostic.goto_prev({ float = { border = "rounded" } }) end,
                 "Go to the previous diagnostic")
-            map("n", "]e",
+            map("n", "]d",
                 function() vim.diagnostic.goto_next({ float = { border = "rounded" } }) end,
                 "Go to the next diagnostic")
             if telescope_ok then
-                map("n", "<leader>E", telescope.diagnostics, "Show all diagnostics")
+                map("n", "<space>d", telescope.diagnostics, "Show all diagnostics")
             else
-                map("n", "<leader>E", function() vim.diagnostic.setloclist() end,
+                map("n", "<space>d", function() vim.diagnostic.setloclist() end,
                     "Show all diagnostics")
             end
 
