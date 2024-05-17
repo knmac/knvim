@@ -48,6 +48,13 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
+        keys = {
+            {
+                "<C-space>",
+                function() return require("obsidian").util.toggle_checkbox() end,
+                desc = "Toggle markdown checkboxes"
+            },
+        },
         opts = {
             workspaces = {
                 {
@@ -61,19 +68,19 @@ return {
             },
             mappings = {
                 -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-                ["gf"] = {
-                    action = function()
-                        return require("obsidian").util.gf_passthrough()
-                    end,
-                    opts = { noremap = false, expr = true, buffer = true },
-                },
-                -- Toggle check-boxes.
-                ["<C-space>"] = {
-                    action = function()
-                        return require("obsidian").util.toggle_checkbox()
-                    end,
-                    opts = { buffer = true },
-                },
+                -- ["gf"] = {
+                --     action = function()
+                --         return require("obsidian").util.gf_passthrough()
+                --     end,
+                --     opts = { noremap = false, expr = true, buffer = true },
+                -- },
+                -- Toggle check-boxes
+                -- ["<C-space>"] = {
+                --     action = function()
+                --         return require("obsidian").util.toggle_checkbox()
+                --     end,
+                --     opts = { buffer = true },
+                -- },
             },
             ui = {
                 enable = true,

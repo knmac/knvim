@@ -158,32 +158,33 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 
 ### 1.7. Other custom key-bindings
 
-| Group           | Functionality                                   | Key-binding     |
-| --------------- | ----------------------------------------------- | --------------- |
-| Misc            | Insert python breakpoint (on the next line)     | `<leader> b`    |
-|                 | Insert python breakpoint (on the previous line) | `<leader> B`    |
-|                 | Insert `-` characters                           | `<leader> -`    |
-|                 | Insert `=` characters                           | `<leader> =`    |
-|                 | Generate doc string for function                | `<leader> d`    |
-|                 | Toggle file explorer                            | `<leader> t`    |
-|                 | Toggle file explorer (jump to current file)     | `<leader> T`    |
-|                 | Toggle outline view                             | `<leader> o`    |
-|                 | Toggle outline view (change focus)              | `<leader> O`    |
-|                 | Dismiss current notification message            | `<leader> n`    |
-|                 | Open Lazygit (terminal)                         | `<leader> g`    |
-|                 | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`   |
-| Terminal        | Toggle terminal                                 | `<Ctrl+\>`      |
-|                 | Enter normal mode in terminal                   | `<Ctrl+Esc>`    |
-| Pounce          | Fuzzy motion mode                               | `s`             |
-| Git hunk        | Go to previous hunk of Git change               | `[h`            |
-|                 | Go to next hunk of Git change                   | `]h`            |
-|                 | Preview current hunk of Git change              | `<leader> h`    |
-|                 | Preview current hunk of Git change (inline)     | `<leader> H`    |
-| Easy-align      | Start easy align (in visual mode)               | `<leader> a`    |
-|                 | - Easy align by `\|`                            | `<leader> a*\|` |
-|                 | - Easy align by ` `                             | `<leader> a* `  |
-| Neogen          | Generate docstring                              | `<leader> d`    |
-| Render-Markdown | Toggle markdown render                          | `<leader> m`    |
+| Group      | Functionality                                   | Key-binding          |
+| ---------- | ----------------------------------------------- | -------------------- |
+| Misc       | Insert python breakpoint (on the next line)     | `<leader> b`         |
+|            | Insert python breakpoint (on the previous line) | `<leader> B`         |
+|            | Insert `-` characters                           | `<leader> -`         |
+|            | Insert `=` characters                           | `<leader> =`         |
+|            | Generate doc string for function                | `<leader> d`         |
+|            | Toggle file explorer                            | `<leader> t`         |
+|            | Toggle file explorer (jump to current file)     | `<leader> T`         |
+|            | Toggle outline view                             | `<leader> o`         |
+|            | Toggle outline view (change focus)              | `<leader> O`         |
+|            | Dismiss current notification message            | `<leader> n`         |
+|            | Open Lazygit (terminal)                         | `<leader> g`         |
+|            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
+| Terminal   | Toggle terminal                                 | `Ctrl+\`             |
+|            | Enter normal mode in terminal                   | `Ctrl+<Esc>`         |
+| Pounce     | Fuzzy motion mode                               | `s`                  |
+| Git hunk   | Go to previous hunk of Git change               | `[h`                 |
+|            | Go to next hunk of Git change                   | `]h`                 |
+|            | Preview current hunk of Git change              | `<leader> h`         |
+|            | Preview current hunk of Git change (inline)     | `<leader> H`         |
+| Easy-align | Start easy align (in visual mode)               | `<leader> a`         |
+|            | - _Example:_ align by `\|`                      | `<leader> a*\|`      |
+|            | - _Example:_ align by `<space>`                 | `<leader> a*<space>` |
+| Neogen     | Generate docstring                              | `<leader> d`         |
+| Markdown   | Toggle markdown render                          | `<leader> m`         |
+|            | Toggle checkboxes                               | `Ctrl+<space>`       |
 
 ## 2. Useful default vim key-bindings
 
