@@ -53,9 +53,20 @@ return {
             local lsp_settings = {
                 lua_ls = {
                     Lua = {
+                        runtime = {
+                            version = "LuaJIT",
+                            path = vim.split(package.path, ";"),
+                        },
                         diagnostics = {
-                            globals = { "vim", "use", }
-                        }
+                            globals = { "vim", }
+                        },
+                        workspace = {
+                            library= { vim.env.VIMRUNTIME },
+                            checkThirdParty = false,
+                        },
+                        telemetry = {
+                            enable = false,
+                        },
                     },
                 },
                 -- ltex = {
