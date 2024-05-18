@@ -18,7 +18,7 @@ return {
 
             for _, buf_nr in ipairs(vim.api.nvim_list_bufs()) do
                 local name = vim.api.nvim_buf_get_name(buf_nr)
-                local filetype = vim.api.nvim_buf_get_option(buf_nr, "filetype")
+                local filetype = vim.api.nvim_get_value_option("filetype", { buf = buf_nr })
 
                 local is_loaded = vim.api.nvim_buf_is_loaded(buf_nr)
                 local valid_name = name ~= ""
@@ -34,8 +34,8 @@ return {
 
         require("colorful-winsep").setup({
             no_exec_files = {
-                "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree",
-                "neo-tree", "Outline", "toggleterm",
+                -- "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree",
+                -- "neo-tree", "Outline", "toggleterm",
             },
             create_event = function()
                 local buf_n = count_valid_bufs()

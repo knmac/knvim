@@ -52,6 +52,16 @@ return {
                         }
                     },
                 },
+                default_component_configs = {
+                    diagnostics = {
+                        symbols = {
+                            hint = "󰌶",
+                            info = "󰋽",
+                            warn = "󰀪",
+                            error = "󰅚",
+                        },
+                    },
+                }
             })
         end,
     },

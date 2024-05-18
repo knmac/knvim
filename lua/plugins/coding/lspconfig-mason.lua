@@ -61,7 +61,7 @@ return {
                             globals = { "vim", }
                         },
                         workspace = {
-                            library= { vim.env.VIMRUNTIME },
+                            library = { vim.env.VIMRUNTIME },
                             checkThirdParty = false,
                         },
                         telemetry = {
@@ -151,6 +151,9 @@ return {
                 callback = function(args)
                     local bufnr = args.buf
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    if not client then
+                        return
+                    end
 
                     local bufmap = function(mode, lhs, rhs, desc)
                         local bufopts = {
@@ -228,11 +231,11 @@ return {
             -- Config diagnostics
             vim.diagnostic.config({
                 virtual_text = {
-                    source = "always", -- Or 'if_many'  -> show source of diagnostics
+                    source = true, -- Or 'if_many'  -> show source of diagnostics
                     -- prefix = '■', -- Could be '●', '▎', 'x'
                 },
                 float = {
-                    source = "always", -- Or 'if_many'  -> show source of diagnostics
+                    source = true, -- Or 'if_many'  -> show source of diagnostics
                 },
             })
         end,
