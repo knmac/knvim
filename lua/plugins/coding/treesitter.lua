@@ -4,10 +4,10 @@ return {
     build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensure_installed = { "python", "c", "cpp", "bash", "latex", "bibtex", "markdown",
-                "markdown_inline", "json", "yaml", "toml", "html", "css", "lua", "cmake",
-                "dockerfile", "regex", "sql", "vim", "vimdoc", "javascript", "typescript", "scala",
-                "dap_repl", "git_config",
+            ensure_installed = {
+                -- "bash", "c", "lua", "markdown", "markdown_inline", "python", "query", "vim", "vimdoc",
+                "bibtex", "cmake", "cpp", "css", "dap_repl", "dockerfile", "git_config", "html",
+                "javascript", "json", "latex", "regex", "scala", "sql", "toml", "typescript", "yaml",
             },
             highlight = {
                 enable = true,
