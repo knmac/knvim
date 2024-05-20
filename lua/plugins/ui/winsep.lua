@@ -18,7 +18,7 @@ return {
 
             for _, buf_nr in ipairs(vim.api.nvim_list_bufs()) do
                 local name = vim.api.nvim_buf_get_name(buf_nr)
-                local filetype = vim.api.nvim_get_value_option("filetype", { buf = buf_nr })
+                local filetype = vim.api.nvim_get_option_value("filetype", { buf = buf_nr })
 
                 local is_loaded = vim.api.nvim_buf_is_loaded(buf_nr)
                 local valid_name = name ~= ""
