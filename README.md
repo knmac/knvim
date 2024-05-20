@@ -84,13 +84,15 @@ lua/
    │  └── winsep.lua
    ├── utils/
    │  ├── diffview.lua
-   │  ├── extra.lua
+   │  ├── easy-align.lua
    │  ├── gitsigns.lua
    │  ├── matchup.lua
    │  ├── neo-tree.lua
+   │  ├── nvim-colorizer.lua
    │  ├── obsidian.lua
    │  ├── swenv.lua
    │  ├── outline.lua
+   │  ├── pounce.lua
    │  ├── telescope.lua
    │  ├── todo-comments.lua
    │  ├── toggleterm.lua
