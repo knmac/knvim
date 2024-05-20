@@ -167,8 +167,8 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | Generate doc string for function                | `<leader> d`         |
 |            | Toggle file explorer                            | `<leader> t`         |
 |            | Toggle file explorer (jump to current file)     | `<leader> T`         |
-|            | Toggle outline view                             | `<leader> o`         |
-|            | Toggle outline view (change focus)              | `<leader> O`         |
+|            | Toggle outline view (on the screen right side)  | `<leader> o`         |
+|            | Toggle outline view (beside current buffer)     | `<leader> O`         |
 |            | Dismiss current notification message            | `<leader> n`         |
 |            | Open Lazygit (terminal)                         | `<leader> g`         |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
