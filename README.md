@@ -244,13 +244,24 @@ _Q2: Why knvim does not include \<this and that\> by default?_
 
 _A2:_ knvim is my personal config of Neovim, so it does not cover a wide range of different use cases. You are more than welcome (and recommended) to fork and customize knvim to your personal liking. That said, I will try to add some configs if they are commonly used. Cheers!
 
-_Q3: Why knvim does not render strikethrough (markdown)?_
+_Q3: Why knvim does not render \<this and that\>?_
 
-_A3:_ Try to follow these [ref](https://github.com/neovim/neovim/discussions/24346):
+_A3:_ This is mostly how the terminal is configured. Here are some example use-cases (tested on Wezterm). Please inspect the code carefully before running.
+
+- Rendering undercurl [ref](https://wezfurlong.org/wezterm/faq.html#how-do-i-enable-undercurl-curly-underlines):
 
 ```bash
-infocmp $TERM > myterm.info
-vim myterm.info # add smxx=\E[9m, rmxx=\E[29m,
+tempfile=$(mktemp) \
+  && curl -o "$tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo" \
+  && tic -x -o ~/.terminfo "$tempfile" \
+  && rm "$tempfile"
+```
+
+- Rendering strikethrough [ref](https://github.com/neovim/neovim/discussions/24346):
+
+```bash
+infocmp "$TERM" > myterm.info
+nvim myterm.info # add smxx=\E[9m, rmxx=\E[29m,
 tic -x myterm.info
 ```
 
