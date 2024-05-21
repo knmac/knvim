@@ -244,6 +244,16 @@ _Q2: Why knvim does not include \<this and that\> by default?_
 
 _A2:_ knvim is my personal config of Neovim, so it does not cover a wide range of different use cases. You are more than welcome (and recommended) to fork and customize knvim to your personal liking. That said, I will try to add some configs if they are commonly used. Cheers!
 
+_Q3: Why knvim does not render strikethrough (markdown)?_
+
+_A3:_ Try to follow these [ref](https://github.com/neovim/neovim/discussions/24346):
+
+```bash
+infocmp $TERM > myterm.info
+vim myterm.info # add smxx=\E[9m, rmxx=\E[29m,
+tic -x myterm.info
+```
+
 ## 9. TODO
 
 - [ ] Automatically copy knvim to server for remote editing.
