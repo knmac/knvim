@@ -174,7 +174,8 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
 | Terminal   | Toggle terminal                                 | `Ctrl+\`             |
 |            | Enter normal mode in terminal                   | `Ctrl+<Esc>`         |
-| Pounce     | Fuzzy motion mode                               | `s`                  |
+| Leap       | Fuzzy motion forward                            | `s`                  |
+|            | Fuzzy motion backward                           | `S`                  |
 | Git hunk   | Go to previous hunk of Git change               | `[h`                 |
 |            | Go to next hunk of Git change                   | `]h`                 |
 |            | Preview current hunk of Git change              | `<leader> h`         |

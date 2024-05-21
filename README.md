@@ -86,13 +86,13 @@ lua/
    │  ├── diffview.lua
    │  ├── easy-align.lua
    │  ├── gitsigns.lua
+   │  ├── leap.lua
    │  ├── matchup.lua
    │  ├── neo-tree.lua
    │  ├── nvim-colorizer.lua
    │  ├── obsidian.lua
    │  ├── swenv.lua
    │  ├── outline.lua
-   │  ├── pounce.lua
    │  ├── telescope.lua
    │  ├── todo-comments.lua
    │  ├── toggleterm.lua
