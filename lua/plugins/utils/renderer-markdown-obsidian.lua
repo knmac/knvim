@@ -15,6 +15,9 @@ return {
             require("render-markdown").setup({
                 -- Configure whether Markdown should be rendered by default or not
                 start_enabled = false,
+                -- Characters that will replace the # at the start of headings
+                -- headings = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+                headings = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " },
                 -- Character to use for the bullet points in lists
                 bullets = { "", "", "◆", "◇" },
                 checkbox = {
