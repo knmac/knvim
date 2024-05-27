@@ -9,19 +9,15 @@ return {
     config = function()
         require("remote-nvim").setup({
             remote = {
+                app_name = "knvim",
                 copy_dirs = {
-                    -- What to copy to remote's Neovim config directory
                     config = {
-                        -- TODO: this is buggy because knvim config is ~/.config/knvim. But this
-                        -- will copy to ~/.remote-nvim/workspaces/[workspace_name]/.config/knvim and
-                        -- use the config from
-                        -- ~/.remote-nvim/workspaces/[workspace_name]/.confg/nvim, so we need to
-                        -- manually link the 2 folders on remote side. Futhermore, it will copy
-                        -- everything from .git/ folder, which is not necessary.
-                        -- Solution: (1) specify source and target dir, and (2) allow ignore
-                        -- files/dirs
-                        base = vim.fn.stdpath("config"),     -- Path from where data has to be copied
-                        dirs = { "*" }, -- Directories that should be copied over. "*" means all directories. To specify a subset, use a list like {"lazy", "mason"} where "lazy", "mason" are subdirectories
+                        base = vim.fn.stdpath("config"),
+                        dirs = "*",
+                        compression = {
+                            enabled = true,
+                            additional_opts = {}
+                        },
                     },
                 },
             },
