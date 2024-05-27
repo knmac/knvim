@@ -3,5 +3,10 @@ return {
     { import = "plugins.ui", },
     { import = "plugins.coding", },
     { import = "plugins.utils", },
-    -- { import = "plugins.experimentals", },
+    -- Uncomment the experimental plugins to try them out
+    -- { import = "plugins.experimentals.image" },
+    -- { import = "plugins.experimentals.img-clip" },
+    -- { import = "plugins.experimentals.neorg" },
+    -- { import = "plugins.experimentals.nonels" },
+    -- { import = "plugins.experimentals.remote-nvim" },
 }
