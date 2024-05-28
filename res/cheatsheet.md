@@ -85,8 +85,9 @@ Inside Telescope, after inputting something
 | Misc        | Show function documentation (on hover)                | `K`                           |
 |             | Show signature help (while typing function arguments) | `Ctrl+k`                      |
 |             | Rename variables                                      | `<leader> rn`                 |
-|             | Code action (if supported by the language server)     | `<leader> ca`                 |
-|             | Code formatting (if supported by the language server) | `<leader> f`                  |
+|             | Code action (if supported)                            | `<leader> ca`                 |
+|             | Code formatting (if supported)                        | `<leader> f`                  |
+|             | Toggle inlay-hint (if supported)                      | `<leader> i`                  |
 | Diagnostics | Open *d*iagnostic list (project-wise)                 | `<space> d`                   |
 |             | Show current line's diagnostics                       | `Ctrl+w d` or `Ctrl+w Ctrl+d` |
 |             | Go to previous diagnostic                             | `[d`                          |

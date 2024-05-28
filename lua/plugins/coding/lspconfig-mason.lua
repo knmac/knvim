@@ -143,6 +143,9 @@ return {
                 map("n", "<space>d", function() vim.diagnostic.setloclist() end,
                     "Show all diagnostics")
             end
+            map("n", "<leader>i",
+                function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+                "Toggle inlay hint")
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
