@@ -77,8 +77,8 @@ map("n", "<F14>", "<cmd>TodoTelescope<CR>", default_opts)
 -- <F3>: Show file tree explorer
 -- map("n", "<F3>", "<cmd>NvimTreeToggle<CR>", default_opts)
 map("n", "<F3>", "<cmd>Neotree toggle<CR>", default_opts)
--- <F3>: Show file tree at the current file dir
-map("n", "<F15>", "<cmd>Neotree dir=%:p:h<CR>", default_opts)
+-- <F3>: Show file tree at the current file
+map("n", "<F15>", "<cmd>Neotree reveal<CR>", default_opts)
 
 -- <F4>: Show tags of current buffer
 -- map("n", "<F4>", ":Telescope current_buffer_tags<CR>", default_opts)

@@ -10,19 +10,19 @@ Overall logic:
 
 - `F1-4`: toggle things
 - `F5-6`: buffers/tabs
-- `F10-12`: random frequently used things
+- `F9-12`: random frequently used things
 
 | Group                 | Functionality                            | Key-binding                  |
 | --------------------- | ---------------------------------------- | ---------------------------- |
-| `F1-4`: toggle things | Search for help                          | `F1`                         |
-|                       | Rename variables                         | `F2`                         |
+| `F1-4`: toggle things | Search for help                          | `F1` (or `<space> h`)        |
+|                       | Rename variables                         | `F2` (or `<leader> rn`)      |
 |                       | Toggle file explorer                     | `F3` (or `<leader> t`)       |
 |                       | Toggle symbol view                       | `F4` (or `<leader> o`)       |
-|                       | Show key-bindings                        | `Shift+F1`                   |
+|                       | Show key-bindings                        | `Shift+F1` (or `<space> k`)  |
 |                       | Open to-do list (project-wise)           | `Shift+F2`                   |
 |                       | Toggle file explorer at the current file | `Shift+F3` (or `<leader> T`) |
 |                       | Open diagnostic list (project-wise)      | `Shift+F4` (or `<space> d`)  |
-| `F5-8`: buffers/tabs  | Show buffer list                         | `F5`                         |
+| `F5-8`: buffers/tabs  | Show buffer list                         | `F5` (or `<space> b`)        |
 |                       | Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
 |                       | Next buffer                              | `F7` (or `Ctrl+Alt+l`)       |
 |                       | Close the current buffer                 | `F8` (or `Ctrl+Alt+Shift+k`) |
@@ -30,7 +30,7 @@ Overall logic:
 |                       | Previous tab                             | `Shift+F6`                   |
 |                       | Next tab                                 | `Shift+F7`                   |
 |                       | Close the current tab                    | `Shift+F8`                   |
-| `F19-12`: others      | Remove trailing spaces                   | `F9`                         |
+| `F9-12`: others       | Remove trailing spaces                   | `F9`                         |
 |                       | Run the `make` command                   | `F10`                        |
 |                       | Toggle zoom the current window (splits)  | `F11` (or `<leader> z`)      |
 |                       | Toggle relative number                   | `F12`                        |

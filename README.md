@@ -107,6 +107,13 @@ The configs in `experimentals/` directories are not activated by default. To use
 { import = "plugins.experimentals", },
 ```
 
+If you want to try individual experimental plugins instead of the all of them, uncomment a specific plugins, e.g.,
+
+```lua
+{ import = "plugins.experimentals.neorg", },
+{ import = "plugins.experimentals.remote-nvim", },
+```
+
 ## 4. Manual installation
 
 ### 4.1. Dependencies
@@ -267,6 +274,6 @@ tic -x myterm.info
 
 ## 9. TODO
 
-- [ ] Automatically copy knvim to server for remote editing.
-- [ ] Image rendering (may only support Kitty and WezTerm terminal).
+- [ ] Automatically copy knvim to server for remote editing. You can try the experimental config `plugins.experimentals.remote-nvim`.
+- [ ] Image rendering (may only support Kitty and WezTerm terminal). You can try the experimental config `plugins.experimental.image`.
 - [ ] Automatically switch path separator and EOL character, depending on the OS in use.

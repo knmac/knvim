@@ -3,7 +3,9 @@ return {
     { import = "plugins.ui", },
     { import = "plugins.coding", },
     { import = "plugins.utils", },
-    -- Uncomment the experimental plugins to try them out
+    -- Uncomment the following line to try all experimental plugins together
+    -- { import = "plugins.experimentals" },
+    -- Uncomment the individual experimental plugins to try them out
     -- { import = "plugins.experimentals.image" },
     -- { import = "plugins.experimentals.img-clip" },
     -- { import = "plugins.experimentals.neorg" },
