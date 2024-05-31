@@ -9,6 +9,14 @@ return {
         "sindrets/diffview.nvim",        -- Clickable diffthis
     },
     config = function()
+        local is_clickable = true
+        vim.api.nvim_create_user_command(
+            "ToggleClickableLualine",
+            function() is_clickable = not is_clickable end,
+            {}
+        )
+
+
         -- Custom components ----------------------------------------------------------------------
         -- Show notification
         local notify_stat = {
@@ -16,6 +24,8 @@ return {
                 return " "
             end,
             on_click = function(_, btn, _)
+                if not is_clickable then return end
+
                 if btn == "l" then
                     require("telescope").extensions.notify.notify()
                 elseif btn == "r" then
@@ -32,6 +42,8 @@ return {
                 return stat
             end,
             on_click = function()
+                if not is_clickable then return end
+
                 -- local spaces = tonumber(vim.fn.input('Local number of spaces per tab: '))
                 -- vim.opt_local.tabstop = spaces
                 -- vim.opt_local.softtabstop = spaces -- For editing
@@ -85,6 +97,7 @@ return {
         local fileformat_stat = {
             "fileformat",
             on_click = function()
+                if not is_clickable then return end
                 vim.ui.select(
                     { "unix", "mac", "dos" },
                     { prompt = "Select fileformat" },
@@ -148,6 +161,7 @@ return {
             end,
             icon = "󰌠",
             on_click = function()
+                if not is_clickable then return end
                 require("swenv.api").pick_venv()
             end,
         }
@@ -156,6 +170,7 @@ return {
         local filetype_stat = {
             "filetype", -- builtin filetype component
             on_click = function()
+                if not is_clickable then return end
                 require("telescope.builtin").filetypes()
                 vim.cmd.LspRestart()
             end,
@@ -165,6 +180,7 @@ return {
             "branch",
             icon = "󰘬",
             on_click = function()
+                if not is_clickable then return end
                 require("telescope.builtin").git_branches()
             end,
         }
@@ -172,6 +188,7 @@ return {
         local diagnostics_stat = {
             "diagnostics",
             on_click = function()
+                if not is_clickable then return end
                 require("telescope.builtin").diagnostics()
             end,
         }
@@ -180,6 +197,7 @@ return {
         local diff_stat = {
             "diff", -- builtin diff component
             on_click = function()
+                if not is_clickable then return end
                 vim.cmd("DiffviewOpen")
             end,
         }

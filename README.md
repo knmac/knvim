@@ -9,20 +9,20 @@ K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knm
 
 <!-- ![Screenshot](./res/screenshot.png) -->
 
-Video demo with clickable lualine
+Video demo with clickable lualine:
 ![demo3](./res/demo1.gif)
 
-Config structure and cheatsheet (rendered)
+Config structure and cheatsheet (rendered):
 ![demo1](./res/demo2.png)
 
-Editing a python file, with LSP, Tree-sitter, and outline support
+Editing a python file, with LSP, Tree-sitter, and outline support:
 ![demo2](./res/demo3.png)
 
 ## 2. Feature highlights
 
-- Targeting python, bash, latex, markdown, and (_some_) C/C++ usage
-- [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (_mostly_) clickable
-- Key-biddings that (_hopefully_) make sense
+- Targeting python, bash, latex, markdown, and (_some_) C/C++ usage.
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (_mostly_) clickable. (Toggle with the command `:ToggleClickableLualine`).
+- Key-biddings that (_hopefully_) make sense.
 - Fun (_for me_) to use!!!
 
 ## 3. Content
@@ -161,7 +161,7 @@ Cheatsheet for knvim can be found [here](res/cheatsheet.md). You can also access
 
 ## 7. Extra configs (optional)
 
-This section shows you how to set up extra configuration for knvim to work as you want (completely optional)
+This section shows you how to set up extra configuration for knvim to work as you want (completely optional).
 
 ### 7.1. Ruff (Python linter) and Black (Python formater)
 

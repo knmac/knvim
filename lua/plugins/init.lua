@@ -10,5 +10,5 @@ return {
     -- { import = "plugins.experimentals.img-clip" },
     -- { import = "plugins.experimentals.neorg" },
     -- { import = "plugins.experimentals.nonels" },
-    -- { import = "plugins.experimentals.remote-nvim" },
+    { import = "plugins.experimentals.remote-nvim" },
 }
