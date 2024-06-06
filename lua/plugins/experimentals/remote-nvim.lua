@@ -47,9 +47,8 @@ return {
 -- -- Custom components using remote
 -- local remote_stat = {
 --     function()
---         return vim.g.remote_neovim_host and vim.uv.os_gethostname() or ""
+--         return (vim.g.remote_neovim_host and vim.uv.os_gethostname()) or ""
 --     end,
 --     padding = { right = 1, left = 1 },
---     icon = "",
+--     icon = "",
 -- }
---

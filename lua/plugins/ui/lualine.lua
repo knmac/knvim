@@ -9,10 +9,19 @@ return {
         "sindrets/diffview.nvim",        -- Clickable diffthis
     },
     config = function()
-        local is_clickable = true
+        local is_clickable = false
         vim.api.nvim_create_user_command(
             "ToggleClickableLualine",
-            function() is_clickable = not is_clickable end,
+            function()
+                is_clickable = not is_clickable
+                local msg = ""
+                if is_clickable then
+                    msg = "󰍽 Lualine clickable on"
+                else
+                    msg = "󰍾 Lualin clickable off"
+                end
+                vim.notify(msg, vim.log.levels.INFO)
+            end,
             {}
         )
 
