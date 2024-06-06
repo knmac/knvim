@@ -177,10 +177,8 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | Enter normal mode in terminal                   | `Ctrl+<Esc>`         |
 | Leap       | Fuzzy motion forward                            | `s`                  |
 |            | Fuzzy motion backward                           | `S`                  |
-| Git hunk   | Go to previous hunk of Git change               | `[h`                 |
-|            | Go to next hunk of Git change                   | `]h`                 |
-|            | Preview current hunk of Git change              | `<leader> h`         |
-|            | Preview current hunk of Git change (inline)     | `<leader> H`         |
+| Git hunk   | Go to previous hunk of Git change               | `[c`                 |
+|            | Go to next hunk of Git change                   | `]c`                 |
 | Easy-align | Start easy align (in visual mode)               | `<leader> a`         |
 |            | - _Example:_ align by `\|`                      | `<leader> a*\|`      |
 |            | - _Example:_ align by `<space>`                 | `<leader> a*<space>` |
