@@ -166,9 +166,9 @@ return {
                     end
 
                     -- Enable completion triggered by <c-x><c-o>
-                    if client.server_capabilities.completionProvider then
-                        vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
-                    end
+                    -- if client.server_capabilities.completionProvider then
+                    --     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+                    -- end
 
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
