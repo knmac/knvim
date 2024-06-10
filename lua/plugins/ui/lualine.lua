@@ -211,6 +211,15 @@ return {
             end,
         }
 
+        -- Custom components using remote-nvim
+        local remote_stat = {
+            function()
+                return (vim.g.remote_neovim_host and vim.uv.os_gethostname()) or ""
+            end,
+            padding = { right = 1, left = 1 },
+            icon = "",
+        }
+
         -- Main config ----------------------------------------------------------------------------
         require("lualine").setup({
             options = {
@@ -232,6 +241,7 @@ return {
             },
             sections = {
                 lualine_a = {
+                    remote_stat,
                     { "mode", icon = "" },
                 },
                 lualine_b = {

@@ -1,3 +1,4 @@
+-- Neovim on remote machines
 return {
     "amitds1997/remote-nvim.nvim",
     version = "*",                       -- Pin to Github releases
@@ -13,7 +14,7 @@ return {
                 copy_dirs = {
                     config = {
                         base = vim.fn.stdpath("config"),
-                        dirs = "*",
+                        dirs = { "lua", "res", "init.lua" },
                         compression = {
                             enabled = true,
                             additional_opts = {}
@@ -42,13 +43,3 @@ return {
         })
     end,
 }
-
-
--- -- Custom components using remote
--- local remote_stat = {
---     function()
---         return (vim.g.remote_neovim_host and vim.uv.os_gethostname()) or ""
---     end,
---     padding = { right = 1, left = 1 },
---     icon = "",
--- }
