@@ -3,6 +3,7 @@ return {
     {
         "danymat/neogen", -- generate docstring
         dependencies = "nvim-treesitter/nvim-treesitter",
+        event = "VeryLazy",
         keys = {
             { "<leader>d", "<CMD>Neogen<CR>", desc = "Neogen: generate docstring" },
         },
@@ -13,8 +14,8 @@ return {
     },
     {
         "hrsh7th/nvim-cmp", -- code completion
-        -- event = "InsertEnter",
-        event = "VeryLazy",
+        event = { "CmdlineEnter", "InsertEnter" },
+        -- event = "VeryLazy",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp", -- source for neovim's built-in language server client
             "hrsh7th/cmp-buffer",   -- source for buffer words
@@ -29,9 +30,11 @@ return {
                 version = "v2.*",
                 build = "make install_jsregexp",
             },
-            "saadparwaiz1/cmp_luasnip",     -- snippets source for nvim-cmp
-            "rafamadriz/friendly-snippets", -- Snippets collection for a set of different programming languages
-            "danymat/neogen",               -- generate docstring
+            "saadparwaiz1/cmp_luasnip",         -- snippets source for nvim-cmp
+            {
+                "rafamadriz/friendly-snippets", -- Snippets collection for a set of different programming languages
+                event = { "CmdlineEnter", "InsertEnter" },
+            },
         },
         config = function()
             local cmp = require("cmp")
