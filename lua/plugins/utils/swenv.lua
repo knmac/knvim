@@ -21,8 +21,10 @@ return {
             local current_env = require("swenv.api").get_current_venv()
             vim.g.python3_host_prog = current_env.path .. "/bin/python"
 
-            vim.cmd[[Lazy reload nvim-dap]]
-            vim.cmd[[Lazy reload nvim-dap-ui]]
+            -- vim.cmd [[Lazy reload nvim-dap]]
+            -- vim.cmd [[Lazy reload nvim-dap-ui]]
+            require("lazy.core.loader").reload("nvim-dap")
+            require("lazy.core.loader").reload("nvim-dap-ui")
         end,
         -- post_set_venv = nil,
     }
