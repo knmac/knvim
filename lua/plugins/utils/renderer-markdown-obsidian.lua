@@ -61,15 +61,16 @@ return {
                     name = "personal",
                     path = "~/Documents/vaults/personal",
                 },
+                { name = "global", path = "~" },
             },
             mappings = {
                 -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-                -- ["gf"] = {
-                --     action = function()
-                --         return require("obsidian").util.gf_passthrough()
-                --     end,
-                --     opts = { noremap = false, expr = true, buffer = true },
-                -- },
+                ["gf"] = {
+                    action = function()
+                        return require("obsidian").util.gf_passthrough()
+                    end,
+                    opts = { noremap = false, expr = true, buffer = true },
+                },
                 -- Toggle check-boxes
                 ["<C-space>"] = {
                     action = function()

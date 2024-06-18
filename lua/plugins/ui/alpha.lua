@@ -27,30 +27,20 @@ return {
             -- Set menu
             local cfg_pth = vim.fn.stdpath("config")
             dashboard.section.buttons.val = {
-                dashboard.button("e", "󰝒  Edit a new file",
-                    ":ene<CR>"),
-                dashboard.button("r", "  Recent files",
-                    ":Telescope oldfiles<CR>"),
-                dashboard.button("s", "󰺄  Session manager",
-                    ":SessionManager load_session<CR>"),
-                dashboard.button("f", "󰱼  File finder",
-                    ":Telescope find_files<CR>"),
-                dashboard.button("t", "󱎸  Text finder",
-                    ":Telescope live_grep<CR>"),
-                dashboard.button("u", "󰏖  Update plugins",
-                    ":Lazy sync | TSUpdate | MasonUpdate<CR>"),
-                dashboard.button("l", "  Language servers",
-                    ":Mason<CR>"),
-                dashboard.button("h", "󰓙  Health checker",
-                    ":checkhealth<CR>"),
-                dashboard.button("c", "  Configurations",
-                    ":cd " .. cfg_pth .. " | e $MYVIMRC<CR>"),
+                dashboard.button("e", "󰝒  Edit a new file", ":ene<CR>"),
+                dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
+                dashboard.button("s", "󰺄  Session manager", ":SessionManager<CR>"),
+                dashboard.button("f", "󰱼  File finder", ":Telescope find_files<CR>"),
+                dashboard.button("t", "󱎸  Text finder", ":Telescope live_grep<CR>"),
+                dashboard.button("u", "󰏖  Update plugins", ":Lazy sync | TSUpdate | MasonUpdate<CR>"),
+                dashboard.button("l", "  Language servers", ":Mason<CR>"),
+                dashboard.button("h", "󰓙  Health checker", ":checkhealth<CR>"),
+                dashboard.button("c", "  Configurations", ":cd " .. cfg_pth .. " | e $MYVIMRC<CR>"),
                 dashboard.button("p", "  Pull knvim's configs",
                     ":!git --git-dir=" .. cfg_pth .. "/.git --work-tree=" .. cfg_pth .. " pull<CR>"),
                 dashboard.button("?", "  Cheatsheet",
                     ":e " .. cfg_pth .. "/res/cheatsheet.md | Outline!<CR>"),
-                dashboard.button("q", "󰍃  Quit",
-                    ":qa<CR>"),
+                dashboard.button("q", "󰍃  Quit", ":qa<CR>"),
             }
 
             -- Set footer
@@ -86,33 +76,33 @@ return {
         dependencies = "nvim-lua/plenary.nvim",
         event = "BufEnter",
         keys = {
-            { "<space>s", "<CMD>SessionManager load_session<CR>", desc = "Load session" },
+            { "<space>s", "<CMD>SessionManager<CR>", desc = "Session Manager" },
         },
         config = function()
             local Path = require("plenary.path")
+            local config = require("session_manager.config")
             require("session_manager").setup({
-                -- The directory where the session files will be saved.
-                sessions_dir = Path:new(vim.fn.stdpath("data"), "sessions"),
-                -- The character to which the path separator will be replaced for session files.
-                path_replacer = "__",
-                -- The character to which the colon symbol will be replaced for session files.
-                colon_replacer = "++",
-                -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
-                autoload_mode = require("session_manager.config").AutoloadMode.Disabled,
-                -- Automatically save last session on exit.
-                autosave_last_session = true,
-                -- Plugin will not save a session when no writable and listed buffers are opened.
-                autosave_ignore_not_normal = true,
-                -- A list of directories where the session will not be autosaved.
-                autosave_ignore_dirs = {},
-                -- All buffers of these file types will be closed before the session is saved.
-                autosave_ignore_filetypes = { "gitcommit", "toggleterm", "NvimTree", "neo-tree", "vista", "Outline", },
-                -- All buffers of these bufer types will be closed before the session is saved.
-                autosave_ignore_buftypes = {},
-                -- Always autosaves session. If true, only autosaves after a session is active.
-                autosave_only_in_session = false,
-                -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
-                max_path_length = 75,
+                sessions_dir = Path:new(vim.fn.stdpath("data"), "sessions"), -- The directory where the session files will be saved.
+                -- session_filename_to_dir = session_filename_to_dir, -- Function that replaces symbols into separators and colons to transform filename into a session directory.
+                -- dir_to_session_filename = dir_to_session_filename, -- Function that replaces separators and colons into special symbols to transform session directory into a filename. Should use `vim.uv.cwd()` if the passed `dir` is `nil`.
+                autoload_mode = config.AutoloadMode.Disabled, -- Define what to do when Neovim is started without arguments. See "Autoload mode" section below.
+                autosave_last_session = true,                 -- Automatically save last session on exit and on session switch.
+                autosave_ignore_not_normal = true,            -- Plugin will not save a session when no buffers are opened, or all of them aren't writable or listed.
+                autosave_ignore_dirs = {},                    -- A list of directories where the session will not be autosaved.
+                autosave_ignore_filetypes = {                 -- All buffers of these file types will be closed before the session is saved.
+                    "gitcommit",
+                    "gitrebase",
+                    "toggleterm",
+                    "neo-tree",
+                    "Outline",
+                },
+                autosave_ignore_buftypes = { -- All buffers of these bufer types will be closed before the session is saved.
+                    "toggleterm",
+                    "neo-tree",
+                    "Outline",
+                },
+                autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
+                max_path_length = 75,             -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
             })
         end,
     },
