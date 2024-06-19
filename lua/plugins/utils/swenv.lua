@@ -25,6 +25,8 @@ return {
             -- vim.cmd [[Lazy reload nvim-dap-ui]]
             require("lazy.core.loader").reload("nvim-dap")
             require("lazy.core.loader").reload("nvim-dap-ui")
+
+            vim.notify("Switched env to: " .. current_env.name .. " (" .. current_env.source .. ")")
         end,
         -- post_set_venv = nil,
     }
