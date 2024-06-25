@@ -278,3 +278,4 @@ tic -x myterm.info
 - [x] Automatically copy knvim to server for remote editing.
 - [ ] Image rendering (may only support Kitty and WezTerm terminal). You can try the experimental config `plugins.experimental.image`.
 - [ ] Automatically switch path separator and EOL character, depending on the OS in use.
+- [ ] Support python environment manager `poetry`.
