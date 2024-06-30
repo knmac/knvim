@@ -1,17 +1,26 @@
 -- Environment switcher
-local Path = require("plenary.path")
-local scan_dir = require("plenary.scandir").scan_dir
+-- Change this to include your own python environments
+local custom_python_envs = {
+    { base_path = vim.fn.expand("~/.venvs"), source = "venvs", },
+}
 
-local get_venvs_for = function(base_path, source, opts)
+-- Wrapper to get environment from a base path
+local get_venvs_wrapper = function(base_path, source, opts)
     local venvs = {}
     if base_path == nil then
         return venvs
     end
-    local paths = scan_dir(base_path,
-        vim.tbl_extend("force", { depth = 1, only_dirs = true, silent = true }, opts or {}))
+    local paths = require("plenary.scandir").scan_dir(
+        base_path,
+        vim.tbl_extend(
+            "force",
+            { depth = 1, only_dirs = true, silent = true },
+            opts or {}
+        )
+    )
     for _, path in ipairs(paths) do
         table.insert(venvs, {
-            name = Path:new(path):make_relative(base_path),
+            name = require("plenary.path"):new(path):make_relative(base_path),
             path = path,
             source = source,
         })
@@ -28,30 +37,32 @@ return {
         -- Should return a list of tables with a `name` and a `path` entry each.
         -- Gets the argument `venvs_path` set below.
         -- By default just lists the entries in `venvs_path`.
-        get_venvs = function(venvs_path)
-            -- return require("swenv.api").get_venvs(venvs_path)
+        -- get_venvs = function(venvs_path)
+        --     return require("swenv.api").get_venvs(venvs_path)
+        -- end,
+        get_venvs = function()
+            -- Default paths from environments
+            local venvs = require("swenv.api").get_venvs()
 
-            -- Default environment paths
-            local venvs = require("swenv.api").get_venvs(nil)
-
-            -- Loop through the paths in venvs_path and expand
-            for _, path in ipairs(venvs_path) do
-                vim.list_extend(venvs, get_venvs_for(path["base_path"], path["source"]))
+            -- Loop through the paths in custom_python_envs and expand
+            for _, path in ipairs(custom_python_envs) do
+                vim.list_extend(venvs, get_venvs_wrapper(path["base_path"], path["source"]))
             end
             return venvs
         end,
         -- Path passed to `get_venvs`.
-        venvs_path = {
-            { base_path = vim.fn.expand("~/.venvs"), source = "venvs", },
-        },
         -- venvs_path = vim.fn.getcwd(),
+        venvs_path = nil,
         -- Something to do after setting an environment, for example call vim.cmd.LspRestart
         post_set_venv = function()
+            -- Restart LSP
             vim.cmd.LspRestart()
 
+            -- Reset python path in nvim
             local current_env = require("swenv.api").get_current_venv()
             vim.g.python3_host_prog = current_env.path .. "/bin/python"
 
+            -- Restart DAP with new python path
             -- vim.cmd [[Lazy reload nvim-dap]]
             -- vim.cmd [[Lazy reload nvim-dap-ui]]
             require("lazy.core.loader").reload("nvim-dap")
