@@ -209,6 +209,8 @@ local remote_stat = {
     padding = { right = 1, left = 1 },
     icon = "",
 }
+
+-- Main config ------------------------------------------------------------------------------------
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
