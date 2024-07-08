@@ -127,22 +127,22 @@ return {
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            map("n", "<C-W>d", function() vim.diagnostic.open_float({ border = "rounded" }) end,
-                "Show diagnostics of the current line")
-            map("n", "<C-W><C-d>", function() vim.diagnostic.open_float({ border = "rounded" }) end,
-                "Show diagnostics of the current line")
-            map("n", "[d",
-                function() vim.diagnostic.goto_prev({ float = { border = "rounded" } }) end,
-                "Go to the previous diagnostic")
-            map("n", "]d",
-                function() vim.diagnostic.goto_next({ float = { border = "rounded" } }) end,
-                "Go to the next diagnostic")
-            if telescope_ok then
-                map("n", "<space>d", telescope.diagnostics, "Show all diagnostics")
-            else
-                map("n", "<space>d", function() vim.diagnostic.setloclist() end,
-                    "Show all diagnostics")
-            end
+            -- map("n", "<C-W>d", function() vim.diagnostic.open_float({ border = "rounded" }) end,
+            --     "Show diagnostics of the current line")
+            -- map("n", "<C-W><C-d>", function() vim.diagnostic.open_float({ border = "rounded" }) end,
+            --     "Show diagnostics of the current line")
+            -- map("n", "[d",
+            --     function() vim.diagnostic.goto_prev({ float = { border = "rounded" } }) end,
+            --     "Go to the previous diagnostic")
+            -- map("n", "]d",
+            --     function() vim.diagnostic.goto_next({ float = { border = "rounded" } }) end,
+            --     "Go to the next diagnostic")
+            map("n", "[d", function() vim.diagnostic.goto_prev() end, "Go to the previous diagnostic")
+            map("n", "]d", function() vim.diagnostic.goto_next() end, "Go to the next diagnostic")
+            map("n", "<space>d",
+                function()
+                    if telescope_ok then telescope.diagnostics() else vim.diagnostic.setloclist() end
+                end, "Show all diagnostics")
             map("n", "<leader>i",
                 function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
                 "Toggle inlay hint")
@@ -239,6 +239,7 @@ return {
                 },
                 float = {
                     source = true, -- Or 'if_many'  -> show source of diagnostics
+                    border = "rounded",
                 },
             })
         end,
