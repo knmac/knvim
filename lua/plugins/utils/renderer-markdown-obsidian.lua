@@ -13,24 +13,12 @@ return {
         },
         config = function()
             require("render-markdown").setup({
-                -- Configure whether Markdown should be rendered by default or not
-                start_enabled = false,
-                -- Characters that will replace the # at the start of headings
-                -- headings = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
-                headings = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " },
-                -- Character to use for the bullet points in lists
-                bullets = { "", "", "◆", "◇" },
-                checkbox = {
-                    -- Character that will replace the [ ] in unchecked checkboxes
-                    unchecked = "󰄱 ",
-                    -- Character that will replace the [x] in checked checkboxes
-                    checked = "󰄲 ",
+                enabled = false,
+                heading = {
+                    icons = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " },
                 },
-                conceal = {
-                    -- conceallevel used for buffer when not being rendered, get user setting
-                    default = vim.opt.conceallevel:get(),
-                    -- conceallevel used for buffer when being rendered
-                    rendered = 2,
+                bullet = {
+                    icons = { "", "", "◆", "◇" },
                 },
             })
         end,
