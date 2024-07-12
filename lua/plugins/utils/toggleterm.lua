@@ -3,7 +3,7 @@ return {
     "akinsho/toggleterm.nvim",
     event = "VeryLazy",
     keys = {
-        { "<leader>g", "<CMD>lua LazygitToggle()<CR>", desc = "Toggle Lazy git" },
+        { "<leader>g", "<CMD>lua LazygitToggle()<CR>", desc = "Toggleterm: Toggle Lazy git" },
     },
     config = function()
         require("toggleterm").setup({

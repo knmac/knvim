@@ -57,14 +57,14 @@ return {
                     action = function()
                         return require("obsidian").util.gf_passthrough()
                     end,
-                    opts = { noremap = false, expr = true, buffer = true },
+                    opts = { noremap = false, expr = true, buffer = true, desc = "Obsidian: Go to file under the cursor" },
                 },
                 -- Toggle check-boxes
                 ["<C-space>"] = {
                     action = function()
                         return require("obsidian").util.toggle_checkbox()
                     end,
-                    opts = { buffer = true },
+                    opts = { buffer = true, desc = "Obsidian: Toggle checkboxes" },
                 },
             },
             ui = {

@@ -3,7 +3,7 @@ return {
     "folke/zen-mode.nvim",
     event = "VeryLazy",
     keys = {
-        { "<leader>z", "<CMD>ZenMode<CR>", desc = "Toggle ZenMode" },
+        { "<leader>z", "<CMD>ZenMode<CR>", desc = "ZenMode: Toggle Zen mode" },
     },
     config = function()
         --- Return with with maximum threshold

@@ -1,3 +1,9 @@
+---
+id: cheatsheet
+aliases: []
+tags: []
+---
+
 # Knvim cheatsheet
 
 (The default `<leader>` is `\`)
@@ -172,6 +178,7 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | Toggle outline view (beside current buffer)     | `<leader> O`         |
 |            | Dismiss current notification message            | `<leader> n`         |
 |            | Open Lazygit (terminal)                         | `<leader> g`         |
+|            | Show local key-maps in the buffer               | `<leader> ?`         |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
 | Terminal   | Toggle terminal                                 | `Ctrl+\`             |
 |            | Enter normal mode in terminal                   | `Ctrl+<Esc>`         |

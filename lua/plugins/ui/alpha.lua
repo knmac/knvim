@@ -76,7 +76,7 @@ return {
         dependencies = "nvim-lua/plenary.nvim",
         event = "BufEnter",
         keys = {
-            { "<space>s", "<CMD>SessionManager<CR>", desc = "Session Manager" },
+            { "<space>s", "<CMD>SessionManager<CR>", desc = "SessionManager: Open" },
         },
         config = function()
             local Path = require("plenary.path")

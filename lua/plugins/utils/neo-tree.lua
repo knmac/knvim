@@ -11,8 +11,8 @@ return {
             "MunifTanjim/nui.nvim",
         },
         keys = {
-            { "<leader>t", "<CMD>Neotree toggle<CR>", desc = "Toggle Neotree" },
-            { "<leader>T", "<CMD>Neotree reveal<CR>", desc = "Open Neotree at the current file" },
+            { "<leader>t", "<CMD>Neotree toggle<CR>", desc = "Neotree: toggle file tree" },
+            { "<leader>T", "<CMD>Neotree reveal<CR>", desc = "Neotree: open tree at the current file" },
         },
         config = function()
             vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
