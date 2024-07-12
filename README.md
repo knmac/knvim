@@ -213,7 +213,7 @@ The above config uses Python as an example, but you can setup debugger for other
 
 Create the file `~/.gitconfig` globally, where the content looks something like this:
 
-```git_config
+```toml
 [merge]
     tool = nvim
 [mergetool]
