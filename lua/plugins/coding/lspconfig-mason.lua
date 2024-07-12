@@ -137,8 +137,8 @@ return {
             -- map("n", "]d",
             --     function() vim.diagnostic.goto_next({ float = { border = "rounded" } }) end,
             --     "Go to the next diagnostic")
-            map("n", "[d", function() vim.diagnostic.goto_prev() end, "Go to the previous diagnostic")
-            map("n", "]d", function() vim.diagnostic.goto_next() end, "Go to the next diagnostic")
+            map("n", "[d", function() vim.diagnostic.goto_prev() end, "Previous diagnostic")
+            map("n", "]d", function() vim.diagnostic.goto_next() end, "Next diagnostic")
             map("n", "<space>d",
                 function()
                     if telescope_ok then telescope.diagnostics() else vim.diagnostic.setloclist() end
