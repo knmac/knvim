@@ -9,7 +9,7 @@ return {
             "nvim-treesitter/nvim-treesitter",
         },
         keys = {
-            { "<leader>m", "<CMD>RenderMarkdownToggle<CR>", desc = "Toggle markdown rendering" },
+            { "<leader>m", "<CMD>RenderMarkdownToggle<CR>", desc = "RenderMarkdown: Toggle rendering" },
         },
         config = function()
             require("render-markdown").setup({

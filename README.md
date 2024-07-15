@@ -194,7 +194,7 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
 ```json
 {
   "version": "0.2.0",
-    "configurations": [
+  "configurations": [
     {
       "type": "python",
       "request": "launch",

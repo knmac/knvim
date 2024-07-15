@@ -12,6 +12,8 @@ return {
         },
     },
     opts = {
+        preset = "classic", -- classic | modern | helix
+        delay = 200,
         win = {
             border = "rounded",
         },

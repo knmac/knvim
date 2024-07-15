@@ -83,8 +83,8 @@ return {
         { ",s", function() require("dap").step_into() end, desc = "DAP: Step into" },
         { ",u", function() require("dap").step_out() end,  desc = "DAP: Step out" },
         { ",t", function() require("dap").terminate() end, desc = "DAP: Terminate debugging" },
+        { ",g", generate_python_launcher,                  desc = "DAP: Generate launcher for Python" },
         -- { ",r", function() require("dap").run() end,       desc = "DAP: Run debugging" },
-        { ",g", generate_python_launcher,                  desc = "DAP: generate launcher for Python" },
     },
     config = function()
         local dap = require("dap")
@@ -168,9 +168,21 @@ return {
         vim.fn.sign_define("DapBreakpoint",
             { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "DapBreakpoint" })
         vim.fn.sign_define("DapBreakpointCondition",
-            { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "DapBreakpointCondition" })
+            {
+                text = "",
+                texthl = "DapBreakpointCondition",
+                linehl = "",
+                numhl =
+                "DapBreakpointCondition"
+            })
         vim.fn.sign_define("DapBreakpointRejected",
-            { text = "", texthl = "DapBreakpointRejected", linehl = "", numhl = "DapBreakpointRejected" })
+            {
+                text = "",
+                texthl = "DapBreakpointRejected",
+                linehl = "",
+                numhl =
+                "DapBreakpointRejected"
+            })
         vim.fn.sign_define("DapLogPoint",
             { text = "", texthl = "DapLogPoint", linehl = "", numhl = "DapLogPoint" })
         vim.fn.sign_define("DapStopped",

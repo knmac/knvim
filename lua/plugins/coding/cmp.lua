@@ -5,7 +5,7 @@ return {
         dependencies = "nvim-treesitter/nvim-treesitter",
         event = "VeryLazy",
         keys = {
-            { "<leader>d", "<CMD>Neogen<CR>", desc = "Neogen: generate docstring" },
+            { "<leader>d", "<CMD>Neogen<CR>", desc = "Neogen: Generate docstring" },
         },
         opts = {
             enabled = true,
