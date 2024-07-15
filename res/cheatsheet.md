@@ -191,7 +191,7 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | - _Example:_ align by `<space>`                 | `<leader> a*<space>` |
 | Neogen     | Generate docstring                              | `<leader> d`         |
 | Markdown   | Toggle markdown render                          | `<leader> m`         |
-|            | Toggle checkboxes                               | `Ctrl+<space>`       |
+|            | Cycle through checkbox marks                    | `Ctrl+<space>`       |
 
 ## 2. Useful default vim key-bindings
 
