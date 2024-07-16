@@ -46,7 +46,9 @@ return {
             {
                 "<C-space>",
                 function()
-                    return toggle_checkbox({ " ", "x", "~" })
+                    if vim.bo.filetype == "markdown" then
+                        return toggle_checkbox({ " ", "x", "~" })
+                    end
                 end,
                 desc = "RenderMarkdown: Cycle through checkboxes"
             },
