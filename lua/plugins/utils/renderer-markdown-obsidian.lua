@@ -42,7 +42,15 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         keys = {
-            { "<leader>m", "<CMD>RenderMarkdownToggle<CR>", desc = "RenderMarkdown: Toggle rendering" },
+            {
+                "<leader>m",
+                function()
+                    if vim.bo.filetype == "markdown" then
+                        require("render-markdown").toggle()
+                    end
+                end,
+                desc = "RenderMarkdown: Toggle rendering"
+            },
             {
                 "<C-space>",
                 function()
