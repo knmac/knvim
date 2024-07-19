@@ -1,4 +1,4 @@
--- Colorscheme
+-- Colorschemecat
 return {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -29,6 +29,10 @@ return {
             integrations = {
                 barbar = true,
                 cmp = true,
+                colorful_winsep = {
+                    enabled = true,
+                    color = "mauve",
+                },
                 gitsigns = true,
                 leap = true,
                 neotree = true,
