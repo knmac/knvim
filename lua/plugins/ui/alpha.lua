@@ -25,6 +25,11 @@ return {
             }
 
             -- Set menu
+            local update_all = function()
+                vim.cmd[[Lazy sync]]
+                vim.cmd[[TSUpdateSync]]
+                vim.cmd[[MasonUpdate]]
+            end
             local cfg_pth = vim.fn.stdpath("config")
             dashboard.section.buttons.val = {
                 dashboard.button("e", "󰝒  Edit a new file", ":ene<CR>"),
@@ -32,7 +37,7 @@ return {
                 dashboard.button("s", "󰺄  Session manager", ":SessionManager<CR>"),
                 dashboard.button("f", "󰱼  File finder", ":Telescope find_files<CR>"),
                 dashboard.button("t", "󱎸  Text finder", ":Telescope live_grep<CR>"),
-                dashboard.button("u", "󰏖  Update plugins", ":Lazy sync | TSUpdate | MasonUpdate<CR>"),
+                dashboard.button("u", "󰏖  Update plugins", update_all),
                 dashboard.button("l", "  Language servers", ":Mason<CR>"),
                 dashboard.button("h", "󰓙  Health checker", ":checkhealth<CR>"),
                 dashboard.button("c", "  Configurations", ":cd " .. cfg_pth .. " | e $MYVIMRC<CR>"),
