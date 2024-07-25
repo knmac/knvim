@@ -33,8 +33,9 @@ return {
             local cfg_pth = vim.fn.stdpath("config")
             dashboard.section.buttons.val = {
                 dashboard.button("e", "󰝒  Edit a new file", ":ene<CR>"),
-                dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
+                dashboard.button("o", "  Old files", ":Telescope oldfiles<CR>"),
                 dashboard.button("s", "󰺄  Session manager", ":SessionManager<CR>"),
+                dashboard.button("r", "  Remote manager", ":RemoteStart<CR>"),
                 dashboard.button("f", "󰱼  File finder", ":Telescope find_files<CR>"),
                 dashboard.button("t", "󱎸  Text finder", ":Telescope live_grep<CR>"),
                 dashboard.button("u", "󰏖  Update plugins", update_all),
