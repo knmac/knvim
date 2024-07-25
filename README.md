@@ -22,7 +22,7 @@ Editing a python file, with LSP, Tree-sitter, and outline support:
 
 - Targeting python, bash, latex, markdown, and (_some_) C/C++ usage.
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (_mostly_) clickable. (Toggle with the command `:ToggleClickableLualine`).
-- Key-biddings that (_hopefully_) make sense.
+- Key-bindings that (_hopefully_) make sense.
 - Fun (_for me_) to use!!!
 
 ## 3. Content
@@ -102,7 +102,7 @@ lua/
    └── init.lua
 ```
 
-The configs in `experimentals/` directories are not activated by default. To use them, uncommment the following line in `lua/plugins/init.lua`:
+The configs in `experimentals/` directories are not activated by default. To use them, uncomment the following line in `lua/plugins/init.lua`:
 
 ```lua
 { import = "plugins.experimentals", },
@@ -148,17 +148,17 @@ Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/
 
 ## 5. Installation using nvim-lazyman
 
-[Nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the folling command to install knvim:
+[Nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the following command to install knvim:
 
 ```bash
 lazyman -L Knvim
 ```
 
-Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, boostrapping, and other cool features.
+Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, bootstrapping, and other cool features.
 
 ## 6. Knvim Cheatsheet
 
-Cheatsheet for knvim can be found [here](res/cheatsheet.md). You can also access cheatsheet from the start page.
+Cheatsheet for knvim can be found [here](cheatsheet.md). You can also access cheatsheet from the start page.
 
 ## 7. Extra configs (optional)
 

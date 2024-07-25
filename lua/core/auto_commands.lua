@@ -57,6 +57,16 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Auto check spelling for these file types
+vim.api.nvim_create_autocmd("FileType", {
+    desc = "Auto check spelling",
+    pattern = { "md", "markdown", "tex", "norg", },
+    group = user_cfgs_group,
+    callback = function()
+        vim.opt_local.spell = true
+    end,
+})
+
 ---------------------------------------------------------------------------------------------------
 -- Callable commands
 ---------------------------------------------------------------------------------------------------
