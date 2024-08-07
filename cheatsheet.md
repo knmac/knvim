@@ -59,7 +59,6 @@ All Telescope key-bindings start with `<space>`.
 | Fuzzy search for bibtex *c*itations | `<space> c`       |
 | Fuzzy search for *v*im options      | `<space> v`       |
 | Fuzzy search for *k*eymnaps         | `<space> k`       |
-| File bro*w*ser using Telescope      | `<space> w`       |
 | Switch python environment           | `<space> e`       |
 | Show *n*otification history         | `<space> n`       |
 | Fuzzy search in the current buffer  | `<space> /`       |
@@ -182,6 +181,8 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
 | Terminal   | Toggle terminal                                 | `Ctrl+\`             |
 |            | Enter normal mode in terminal                   | `Ctrl+<Esc>`         |
+| Yazi       | Open yazi file browswer                         | `<leader> y`         |
+|            | Toggle yazi at the previous location            | `<leader> Y`         |
 | Leap       | Fuzzy motion forward                            | `s`                  |
 |            | Fuzzy motion backward                           | `S`                  |
 | Git hunk   | Go to previous hunk of Git change               | `[c`                 |

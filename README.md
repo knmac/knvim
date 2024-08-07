@@ -98,6 +98,7 @@ lua/
    │  ├── todo-comments.lua
    │  ├── toggleterm.lua
    │  ├── which-key.lua
+   │  ├── yazi.lua
    │  └── zen-mode.lua
    └── init.lua
 ```
@@ -126,6 +127,7 @@ The following dependencies are for manual installation.
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formaters).
 - [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
 - (Optional) Python packages `pynvim`, `neovim`, and `pylatexenc` (installable with `pip`).
+- (Optional) [Yazi](https://yazi-rs.github.io/) for file browser.
 - (Optional) [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [ToggleTerm](https://github.com/akinsho/toggleterm.nvim).
 
 ### 4.2. Installation
