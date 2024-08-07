@@ -1,7 +1,6 @@
 return {
-    "knmac/yazi.nvim",
+    "mikavilpas/yazi.nvim",
     event = "VeryLazy",
-    commit = "7b853dc6",
     keys = {
         { "<leader>y", "<cmd>Yazi<cr>",        desc = "Open yazi at the current file", },
         { "<leader>Y", "<cmd>Yazi toggle<cr>", desc = "Resume the last yazi session", },
