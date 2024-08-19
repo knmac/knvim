@@ -37,9 +37,9 @@ local notify_stat = {
 local click_stat = {
     function()
         if is_clickable then
-            return "󰍽"
+            return "󰍽 "
         end
-        return "󰍾"
+        return "󰍾 "
     end,
     on_click = function()
         is_clickable = not is_clickable
@@ -273,12 +273,12 @@ return {
                     filetype_stat,
                 },
                 lualine_y = {
-                    env_stat,
                     progress_stat,
                 },
                 lualine_z = {
+                    env_stat,
                     click_stat,
-                    notify_stat,
+                    -- notify_stat,
                 },
             },
             inactive_sections = {
