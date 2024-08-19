@@ -8,7 +8,7 @@ vim.api.nvim_create_user_command(
         if is_clickable then
             msg = "󰍽 Lualine clickable on"
         else
-            msg = "󰍾 Lualin clickable off"
+            msg = "󰍾 Lualine clickable off"
         end
         vim.notify(msg, vim.log.levels.INFO)
     end,
@@ -30,6 +30,19 @@ local notify_stat = {
         elseif btn == "r" then
             require("notify").dismiss()
         end
+    end,
+}
+
+-- Show click
+local click_stat = {
+    function()
+        if is_clickable then
+            return "󰍽"
+        end
+        return "󰍾"
+    end,
+    on_click = function()
+        is_clickable = not is_clickable
     end,
 }
 
@@ -260,6 +273,7 @@ return {
                     filetype_stat,
                 },
                 lualine_y = {
+                    click_stat,
                     progress_stat,
                 },
                 lualine_z = {
