@@ -162,7 +162,7 @@ local env_stat = {
                 -- Check if python3_host_prog is registered in swenv and get its source
                 for _, v in ipairs(swenv.get_venvs()) do
                     if v.name == current_env then
-                        current_env = current_env .. " [" .. v.source .. "]"
+                        current_env = current_env .. "[" .. v.source .. "]"
                         break
                     end
                 end
@@ -273,11 +273,11 @@ return {
                     filetype_stat,
                 },
                 lualine_y = {
-                    click_stat,
+                    env_stat,
                     progress_stat,
                 },
                 lualine_z = {
-                    env_stat,
+                    click_stat,
                     notify_stat,
                 },
             },
