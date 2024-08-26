@@ -57,9 +57,9 @@ return {
                             version = "LuaJIT",
                             path = vim.split(package.path, ";"),
                         },
-                        diagnostics = {
-                            globals = { "vim", }
-                        },
+                        -- diagnostics = {
+                        --     globals = { "vim", }
+                        -- },
                         workspace = {
                             library = { vim.env.VIMRUNTIME },
                             checkThirdParty = false,
