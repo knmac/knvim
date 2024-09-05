@@ -122,5 +122,13 @@ return {
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("bibtex")
         require("telescope").load_extension("notify")
+
+        -- Wrap lines in previewer
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "TelescopePreviewerLoaded",
+            callback = function(args)
+                vim.wo.wrap = true
+            end,
+        })
     end,
 }
