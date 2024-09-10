@@ -108,29 +108,31 @@ Overall logic:
 - `Alt`: for split manipulation (with `Shift` to swap)
 - `Ctrl+Alt`: for buffer manipulation (with `Shift` for extra functionalities)
 
-| Group               | Functionality                 | Key-binding        |
-| ------------------- | ----------------------------- | ------------------ |
-| Split manipulation  | Switch to the left window     | `Alt+h`            |
-|                     | Switch to the lower window    | `Alt+j`            |
-|                     | Switch to the upper window    | `Alt+k`            |
-|                     | Switch to the right window    | `Alt+l`            |
-|                     | Swap with the left window     | `Alt+Shift+h`      |
-|                     | Swap with the lower window    | `Alt+Shift+j`      |
-|                     | Swap with the upper window    | `Alt+Shift+k`      |
-|                     | Swap with the right window    | `Alt+Shift+l`      |
-|                     | Decrease window width         | `Alt+Left`         |
-|                     | Increase window width         | `Alt+Right`        |
-|                     | Decrease window height        | `Alt+Down`         |
-|                     | Increase window height        | `Alt+Up`           |
-| Buffer manipulation | Switch to the previous buffer | `Ctrl+Alt+h`       |
-|                     | Switch to the next buffer     | `Ctrl+Alt+l`       |
-|                     | *J*ump to a buffer            | `Ctrl+Alt+j`       |
-|                     | *K*ill a buffer               | `Ctrl+Alt+k`       |
-|                     | Swap with the previous buffer | `Ctrl+Alt+Shift+h` |
-|                     | Swap with the next buffer     | `Ctrl+Alt+Shift+l` |
-|                     | Restore a closed buffer       | `Ctrl+Alt+Shift+j` |
-|                     | Kill the current buffer       | `Ctrl+Alt+Shift+k` |
-|                     | Pin/unpin the current buffer  | `Ctrl+Alt+p`       |
+| Group               | Functionality                 | Key-binding         |
+| ------------------- | ----------------------------- | ------------------- |
+| Split manipulation  | Switch to the left window     | `Alt+h`             |
+|                     | Switch to the lower window    | `Alt+j`             |
+|                     | Switch to the upper window    | `Alt+k`             |
+|                     | Switch to the right window    | `Alt+l`             |
+|                     | Swap with the left window     | `Alt+Shift+h`       |
+|                     | Swap with the lower window    | `Alt+Shift+j`       |
+|                     | Swap with the upper window    | `Alt+Shift+k`       |
+|                     | Swap with the right window    | `Alt+Shift+l`       |
+|                     | Decrease window width         | `Alt+Left`          |
+|                     | Increase window width         | `Alt+Right`         |
+|                     | Decrease window height        | `Alt+Down`          |
+|                     | Increase window height        | `Alt+Up`            |
+| Buffer manipulation | Switch to the previous buffer | `Ctrl+Alt+h`        |
+|                     | Switch to the next buffer     | `Ctrl+Alt+l`        |
+|                     | *J*ump to a buffer            | `Ctrl+Alt+j`        |
+|                     | *K*ill a buffer               | `Ctrl+Alt+k`        |
+|                     | Swap with the previous buffer | `Ctrl+Alt+Shift+h`  |
+|                     | Swap with the next buffer     | `Ctrl+Alt+Shift+l`  |
+|                     | Restore a closed buffer       | `Ctrl+Alt+Shift+j`  |
+|                     | Kill the current buffer       | `Ctrl+Alt+Shift+k`  |
+|                     | Pin/unpin the current buffer  | `Ctrl+Alt+p`        |
+| Tab manipulation    | Switch to the next tab        | `Ctrl+Alt+PageDown` |
+| (vim default)       | Switch to the previous tab    | `Ctrl+Alt+PageUp`   |
 
 ### 1.5. DAP key-bindings
 
