@@ -35,7 +35,8 @@ return {
                                 local node = state.tree:get_node()
                                 local filepath = node.path
                                 -- local ostype = os.getenv("OS")
-                                local ostype = vim.loop.os_uname().sysname
+                                ---@diagnostic disable-next-line: undefined-field
+                                local ostype = vim.uv.os_uname().sysname
 
                                 local command
 

@@ -18,20 +18,20 @@ vim.api.nvim_create_user_command(
 
 -- Custom components ----------------------------------------------------------------------
 -- Show notification
-local notify_stat = {
-    function()
-        return " "
-    end,
-    on_click = function(_, btn, _)
-        if not is_clickable then return end
-
-        if btn == "l" then
-            require("telescope").extensions.notify.notify()
-        elseif btn == "r" then
-            require("notify").dismiss()
-        end
-    end,
-}
+-- local notify_stat = {
+--     function()
+--         return " "
+--     end,
+--     on_click = function(_, btn, _)
+--         if not is_clickable then return end
+--
+--         if btn == "l" then
+--             require("telescope").extensions.notify.notify()
+--         elseif btn == "r" then
+--             require("notify").dismiss()
+--         end
+--     end,
+-- }
 
 -- Show click
 local click_stat = {

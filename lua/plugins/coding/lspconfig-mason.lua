@@ -89,6 +89,7 @@ return {
             }
 
             local utf16_cap = vim.lsp.protocol.make_client_capabilities()
+            ---@diagnostic disable-next-line: inject-field
             utf16_cap.offsetEncoding = { "utf-16" }
             local lsp_capabilities = {
                 clangd = { utf16_cap },

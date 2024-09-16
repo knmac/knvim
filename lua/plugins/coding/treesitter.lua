@@ -12,15 +12,18 @@ return {
             highlight = {
                 enable = true,
                 -- disable = {},
-                disable = function(_, bufnr)
+                disable = function(_, buf) -- function(lang, buf)
                     -- Disable in large number of line
-                    if vim.api.nvim_buf_line_count(bufnr) > 50000 then
+                    local max_n_lines = 50000
+                    if vim.api.nvim_buf_line_count(buf) > max_n_lines then
                         return true
                     end
 
                     -- Disable in large buffer size
-                    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
-                    if ok and stats and stats.size > 100 * 1024 then
+                    local max_filesize = 100 * 1024 -- 100 KB
+                    ---@diagnostic disable-next-line: undefined-field
+                    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                    if ok and stats and stats.size > max_filesize then
                         return true
                     end
                 end,
