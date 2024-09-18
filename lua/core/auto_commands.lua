@@ -96,7 +96,15 @@ function ClearReg()
     vim.notify("All registers cleared", vim.log.levels.INFO)
 end
 
-vim.api.nvim_create_user_command("ClearRegisters", function() ClearReg() end, {})
+vim.api.nvim_create_user_command("ClearAllRegisters", function() ClearReg() end, {})
+
+-- Clear all markers
+function ClearMark()
+    vim.cmd [[:delm! | delm A-Z0-9]]
+    vim.notify("All marks cleared", vim.log.levels.INFO)
+end
+
+vim.api.nvim_create_user_command("ClearAllMarks", function() ClearMark() end, {})
 
 -- Toggle zoom the current window
 -- vim.cmd [[
