@@ -60,10 +60,6 @@ return {
                     path = "~/Documents/vaults/work",
                 },
                 {
-                    name = "personal",
-                    path = "~/Documents/vaults/personal",
-                },
-                {
                     name = "no-vault",
                     path = function()
                         -- alternatively use the CWD:
