@@ -48,9 +48,11 @@ local click_stat = {
 
 -- Show and change the number of spaces per tab of the local buffer
 local fmt_stat = {
+    icon = "󱁐",
     function()
         local stat = ""
-        stat = stat .. "Spaces:" .. vim.opt_local.tabstop:get()
+        -- stat = stat .. "Spaces:" .. vim.opt_local.tabstop:get()
+        stat = vim.opt_local.tabstop:get()
         return stat
     end,
     on_click = function()
