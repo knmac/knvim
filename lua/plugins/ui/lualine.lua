@@ -210,6 +210,7 @@ local diagnostics_stat = {
 -- Custom components using gitsigns
 local diff_stat = {
     "diff", -- builtin diff component
+    symbols = { added = " ", modified = " ", removed = " " },
     on_click = function()
         if not is_clickable then return end
         vim.cmd("DiffviewOpen")
