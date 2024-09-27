@@ -1,4 +1,4 @@
 [*.lua]
 # Full template: https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig
 quote_style = double
-max_line_length = 100
+max_line_length = 120
