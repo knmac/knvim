@@ -3,6 +3,7 @@ return {
     -- Ensure install for linter and formatter
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
+        event = "VeryLazy",
         opts = {
             ensure_installed = { "cpplint", "shellcheck", "prettier", },
         },
@@ -10,6 +11,7 @@ return {
     -- Linter
     {
         "mfussenegger/nvim-lint",
+        event = "VeryLazy",
         config = function()
             require("lint").linters_by_ft = {
                 sh = { "shellcheck", },
@@ -27,6 +29,7 @@ return {
     -- Formatter
     {
         "stevearc/conform.nvim",
+        event = "VeryLazy",
         keys = {
             {
                 "<leader>f",

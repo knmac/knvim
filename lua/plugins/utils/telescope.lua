@@ -1,10 +1,15 @@
 -- Fuzzy finder for multiple things
 return {
-    "nvim-telescope/telescope.nvim",                    -- fuzzy finder for multiple things
+    "nvim-telescope/telescope.nvim", -- fuzzy finder for multiple things
+    event = "VeryLazy",
     dependencies = {
-        "nvim-telescope/telescope-bibtex.nvim",         -- fuzzy finder for bibtex entries
+        {
+            "nvim-telescope/telescope-bibtex.nvim", -- fuzzy finder for bibtex entries
+            event = "VeryLazy",
+        },
         {
             "nvim-telescope/telescope-fzf-native.nvim", -- use fzf sorter for telescope
+            event = "VeryLazy",
             build = "make",
         },
     },

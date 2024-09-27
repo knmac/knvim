@@ -39,13 +39,18 @@ return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
     event = "VeryLazy",
     dependencies = {
-        "nvim-treesitter/nvim-treesitter",
+        {
+            "nvim-treesitter/nvim-treesitter",
+            event = "VeryLazy",
+        },
         {
             "rcarriga/nvim-dap-ui", -- UI for nvim-dap
+            -- event = "VeryLazy",
             opts = {},
         },
         {
             "jay-babu/mason-nvim-dap.nvim", -- bridges mason.nvim and nvim-dap
+            event = "VeryLazy",
             opts = {
                 ensure_installed = { "python", "codelldb" },
                 automatic_installation = true,
@@ -53,6 +58,7 @@ return {
         },
         {
             "LiadOz/nvim-dap-repl-highlights", -- syntax highlights to nvim-dap REPL
+            event = "VeryLazy",
             dependencies = "nvim-treesitter/nvim-treesitter",
             build = ":TSInstall dap_repl",
             opts = {},

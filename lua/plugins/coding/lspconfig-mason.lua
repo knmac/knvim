@@ -6,6 +6,7 @@ return {
     -- Mason
     {
         "williamboman/mason.nvim",
+        event = "VeryLazy",
         build = ":MasonUpdate",
         opts = {
             ui = {
@@ -22,6 +23,7 @@ return {
     -- Ensure install for Mason's LSP
     {
         "williamboman/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
+        event = "VeryLazy",
         opts = {
             -- Install the LSP servers automatically using mason-lspconfig
             ensure_installed = {
@@ -35,6 +37,7 @@ return {
     -- LSP config
     {
         "neovim/nvim-lspconfig",
+        event = "VeryLazy",
         dependencies = {
             -- UI improvement for vim.ui.select and vim.ui.input
             -- Good for renaming prompt (appear at the variable location)
@@ -43,7 +46,10 @@ return {
                 event = "VeryLazy",
             },
             -- statusline/winbar component using lsp
-            "SmiteshP/nvim-navic",
+            {
+                "SmiteshP/nvim-navic",
+                event = "VeryLazy",
+            },
         },
         config = function()
             ---------------------------------------------------------------------------------------

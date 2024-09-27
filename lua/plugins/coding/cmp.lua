@@ -17,20 +17,42 @@ return {
         event = { "CmdlineEnter", "InsertEnter" },
         -- event = "VeryLazy",
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp", -- source for neovim's built-in language server client
-            "hrsh7th/cmp-buffer",   -- source for buffer words
-            "hrsh7th/cmp-path",     -- source for filesystem paths
-            "hrsh7th/cmp-cmdline",  -- source for vim's cmdline
-            -- "hrsh7th/cmp-nvim-lsp-signature-help", -- source for displaying function signatures with the current parameter emphasized
-            "hrsh7th/cmp-calc",     -- source for math calculation
-            "onsails/lspkind-nvim", -- pictogram for LSP
+            {
+                "hrsh7th/cmp-nvim-lsp", -- source for neovim's built-in language server client
+                event = { "CmdlineEnter", "InsertEnter" },
+            },
+            {
+                "hrsh7th/cmp-buffer", -- source for buffer words
+                event = { "CmdlineEnter", "InsertEnter" },
+            },
+            {
+                "hrsh7th/cmp-path", -- source for filesystem paths
+                event = { "CmdlineEnter", "InsertEnter" },
+            },
+            {
+                "hrsh7th/cmp-cmdline", -- source for vim's cmdline
+                event = { "CmdlineEnter", "InsertEnter" },
+            },
+            {
+                -- "hrsh7th/cmp-nvim-lsp-signature-help", -- source for displaying function signatures with the current parameter emphasized
+                "hrsh7th/cmp-calc", -- source for math calculation
+                event = { "CmdlineEnter", "InsertEnter" },
+            },
+            {
+                "onsails/lspkind-nvim", -- pictogram for LSP
+                event = { "CmdlineEnter", "InsertEnter" },
+            },
             {
                 -- snippets plugin
                 "L3MON4D3/LuaSnip",
+                event = { "CmdlineEnter", "InsertEnter" },
                 version = "v2.*",
                 build = "make install_jsregexp",
             },
-            "saadparwaiz1/cmp_luasnip",         -- snippets source for nvim-cmp
+            {
+                "saadparwaiz1/cmp_luasnip", -- snippets source for nvim-cmp
+                event = { "CmdlineEnter", "InsertEnter" },
+            },
             {
                 "rafamadriz/friendly-snippets", -- Snippets collection for a set of different programming languages
                 event = { "CmdlineEnter", "InsertEnter" },

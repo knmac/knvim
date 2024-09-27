@@ -227,6 +227,7 @@ local remote_stat = {
 -- Main config ------------------------------------------------------------------------------------
 return {
     "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
         "nvim-telescope/telescope.nvim", -- Switch filetype and git branches
