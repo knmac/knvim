@@ -1,13 +1,6 @@
 -- Neovim settings
 
 ---------------------------------------------------------------------------------------------------
--- Neovim API aliases
----------------------------------------------------------------------------------------------------
-local g = vim.g     -- global variables
-local opt = vim.opt -- global/buffer/windows-scoped options
-
-
----------------------------------------------------------------------------------------------------
 -- Setup python path
 ---------------------------------------------------------------------------------------------------
 local possible_python_paths = {
@@ -22,7 +15,7 @@ local possible_python_paths = {
 }
 for _, python_path in pairs(possible_python_paths) do
     if io.open(python_path, "r") ~= nil then
-        g.python3_host_prog = python_path
+        vim.g.python3_host_prog = python_path
         break
     end
 end
@@ -31,24 +24,24 @@ end
 ---------------------------------------------------------------------------------------------------
 -- Deactivate unused providers
 ---------------------------------------------------------------------------------------------------
-g.loaded_ruby_provider = 0
-g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
 
 
 ---------------------------------------------------------------------------------------------------
 -- General
 ---------------------------------------------------------------------------------------------------
--- g.mapleader = ','
-opt.mouse = "a"                    -- enable mouse support
-opt.clipboard = "unnamedplus"      -- copy/paste to system clipboard
-opt.swapfile = false               -- don't use swapfile
-opt.wildmenu = true                -- enhance mode of command-line completion
-opt.wildmode = "longest:full,full" -- completion mode config
-opt.backspace = "indent,eol,start" -- resolve the problem that backspace not working
-opt.encoding = "utf-8"             -- use Unicode
-opt.spelllang = "en_us"            -- set spell language as US english
-opt.spellfile = vim.fn.stdpath("data") ..
-    "/spelling/en.utf-8.add"       -- file to store custom spelling
+-- vim.g.mapleader = ','
+vim.opt.mouse = "a"                    -- enable mouse support
+vim.opt.clipboard = "unnamedplus"      -- copy/paste to system clipboard
+vim.opt.swapfile = false               -- don't use swapfile
+vim.opt.wildmenu = true                -- enhance mode of command-line completion
+vim.opt.wildmode = "longest:full,full" -- completion mode config
+vim.opt.backspace = "indent,eol,start" -- resolve the problem that backspace not working
+vim.opt.encoding = "utf-8"             -- use Unicode
+vim.opt.spelllang = "en_us"            -- set spell language as US english
+vim.opt.spellfile = vim.fn.stdpath("data") ..
+    "/spelling/en.utf-8.add"           -- file to store custom spelling
 
 -- vim.cmd [[ set path+=** ]]         -- provide tab-completion for file-related tasks, e.g., gf
 
@@ -56,61 +49,69 @@ opt.spellfile = vim.fn.stdpath("data") ..
 ---------------------------------------------------------------------------------------------------
 -- Neovim UI
 ---------------------------------------------------------------------------------------------------
-opt.termguicolors = true  -- enable 24-bit RGB color in the TUI
-opt.ls = 2                -- always show status bar
-opt.number = true         -- show line number
-opt.relativenumber = true -- use relative number
-opt.numberwidth = 5       -- width of line numbers
-opt.showcmd = true        -- show command in bottom bar
-opt.cursorline = true     -- highlight current line
-opt.colorcolumn = "100"   -- line length marker at 100 columns
-opt.showmatch = true      -- highlight matching parenthesis
-opt.smartcase = true      -- ignore lowercase for the whole pattern
-opt.linebreak = true      -- wrap on word boundary
-opt.signcolumn = "yes"    -- always show the sign column to not shift the text
+vim.opt.termguicolors = true  -- enable 24-bit RGB color in the TUI
+vim.opt.ls = 2                -- always show status bar
+vim.opt.number = true         -- show line number
+vim.opt.relativenumber = true -- use relative number
+vim.opt.numberwidth = 5       -- width of line numbers
+vim.opt.showcmd = true        -- show command in bottom bar
+vim.opt.cursorline = true     -- highlight current line
+vim.opt.colorcolumn = "100"   -- line length marker at 100 columns
+vim.opt.showmatch = true      -- highlight matching parenthesis
+vim.opt.smartcase = true      -- ignore lowercase for the whole pattern
+vim.opt.linebreak = true      -- wrap on word boundary
+vim.opt.signcolumn = "yes"    -- always show the sign column to not shift the text
 
 -- Marking special characters
-opt.list = true                  -- list mode to mark special characters
-opt.listchars = "tab:>-,trail:." -- mark <Tab> as >-, trailing <Space> as .
+vim.opt.list = true                  -- list mode to mark special characters
+vim.opt.listchars = "tab:>-,trail:." -- mark <Tab> as >-, trailing <Space> as .
 
 -- Splitting
-opt.splitright = true -- vertical split to the right
-opt.splitbelow = true -- orizontal split to the bottom
+vim.opt.splitright = true -- vertical split to the right
+vim.opt.splitbelow = true -- orizontal split to the bottom
 
 -- Folding (refer to lua/plugins/ui/fold.lua)
--- opt.foldenable = true   -- enable folding
--- opt.foldlevelstart = 10 -- open most folds by default
--- opt.foldnestmax = 10    -- 10 nested fold max
--- opt.foldmethod = 'indent' -- set folding method by looking at indent
+-- vim.opt.foldenable = true   -- enable folding
+-- vim.opt.foldlevelstart = 10 -- open most folds by default
+-- vim.opt.foldnestmax = 10    -- 10 nested fold max
+-- vim.opt.foldmethod = "indent" -- set folding method by looking at indent
+
+-- Fold column options
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.o.foldcolumn = "1"        -- '0' is not bad | Number of different visible folding levels
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.foldnestmax = 10
 
 
 ---------------------------------------------------------------------------------------------------
 -- Searching and substitution
 ---------------------------------------------------------------------------------------------------
-opt.ignorecase = true -- ignore case letters when search
-opt.incsearch = true  -- search as characters are entered
-opt.hlsearch = true   -- highlight matches
--- opt.inccommand = 'nosplit' -- show substitution results live
+vim.opt.ignorecase = true -- ignore case letters when search
+vim.opt.incsearch = true  -- search as characters are entered
+vim.opt.hlsearch = true   -- highlight matches
+-- vim.opt.inccommand = 'nosplit' -- show substitution results live
 
 
 ---------------------------------------------------------------------------------------------------
 -- Tabs, indent
 ---------------------------------------------------------------------------------------------------
-opt.expandtab = true  -- use spaces instead of tabs
-opt.tabstop = 4       -- change the width of the <Tab> key
-opt.softtabstop = 4   -- affect what happens when press <Tab> or <BS>
-opt.shiftwidth = 4    -- affect what happens when press >>, <<, or ==
-opt.smarttab = true   -- affects how <Tab> are interpreted based on cursor location
-opt.autoindent = true -- copy the indent from the prev line to a new line
+vim.opt.expandtab = true  -- use spaces instead of tabs
+vim.opt.tabstop = 4       -- change the width of the <Tab> key
+vim.opt.softtabstop = 4   -- affect what happens when press <Tab> or <BS>
+vim.opt.shiftwidth = 4    -- affect what happens when press >>, <<, or ==
+vim.opt.smarttab = true   -- affects how <Tab> are interpreted based on cursor location
+vim.opt.autoindent = true -- copy the indent from the prev line to a new line
 
 
 ---------------------------------------------------------------------------------------------------
 -- Others
 ---------------------------------------------------------------------------------------------------
-opt.hidden = true -- enable background buffers
--- opt.history = 100     -- remember n lines in history
--- opt.lazyredraw = true -- faster scrolling
--- opt.synmaxcol = 240   -- max column for syntax highlight
+vim.opt.hidden = true -- enable background buffers
+-- vim.opt.history = 100     -- remember n lines in history
+-- vim.opt.lazyredraw = true -- faster scrolling
+-- vim.opt.synmaxcol = 240   -- max column for syntax highlight
 
 -- Force latex instead of plaintex
-g.tex_flavor = "latex"  -- plain|context|latex
+vim.g.tex_flavor = "latex" -- plain|context|latex
