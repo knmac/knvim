@@ -25,6 +25,7 @@ return {
         { "<space>k",       "<CMD>Telescope keymaps<CR>",                   desc = "Telescope: Find key map" },
         { "<space>?",       "<CMD>Telescope commands<CR>",                  desc = "Telescope: Find command" },
         { "<space>n",       "<CMD>Telescope notify<CR>",                    desc = "Telescope: Find notification" },
+        { "<space>m",       "<CMD>Telescope marks<CR>",                     desc = "Telescope: Find marks" },
     },
     config = function()
         local actions = require("telescope.actions")

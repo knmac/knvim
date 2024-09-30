@@ -59,6 +59,7 @@ All Telescope key-bindings start with `<space>`.
 | Fuzzy search for bibtex *c*itations | `<space> c`       |
 | Fuzzy search for *v*im options      | `<space> v`       |
 | Fuzzy search for *k*eymnaps         | `<space> k`       |
+| Fuzzy search for *m*arks            | `<space> m`       |
 | Switch python environment           | `<space> e`       |
 | Show *n*otification history         | `<space> n`       |
 | Fuzzy search in the current buffer  | `<space> /`       |
