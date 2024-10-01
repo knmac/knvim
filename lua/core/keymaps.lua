@@ -109,7 +109,7 @@ vim.keymap.set("n", "<F20>", "<cmd>tabclose<CR>", opts)
 -- <F9>: Remove trailing spaces
 vim.keymap.set("n", "<F9>", [[<cmd>%s/\s\+$//e<CR>]], opts)
 -- <S-F9>: Clear registers
-vim.keymap.set("n", "<F21>", "<cmd>ClearRegisters<CR>", opts)
+vim.keymap.set("n", "<F21>", "<cmd>ClearAllRegisters<CR>", opts)
 
 -- <F10>: Run make file
 vim.keymap.set("n", "<F10>", "<cmd>make<CR>", opts)
