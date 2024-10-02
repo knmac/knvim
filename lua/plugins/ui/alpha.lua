@@ -45,7 +45,7 @@ return {
                 dashboard.button("p", "  Pull knvim's configs",
                     ":!git --git-dir=" .. cfg_pth .. "/.git --work-tree=" .. cfg_pth .. " pull<CR>"),
                 dashboard.button("?", "  Cheatsheet",
-                    ":e " .. cfg_pth .. "/res/cheatsheet.md | Outline!<CR>"),
+                    ":e " .. cfg_pth .. "/cheatsheet.md | Outline!<CR>"),
                 dashboard.button("q", "󰍃  Quit", ":qa<CR>"),
             }
 
