@@ -218,18 +218,6 @@ return {
             ---------------------------------------------------------------------------------------
             -- Setup UI
             ---------------------------------------------------------------------------------------
-            -- -- Popped up window borders
-            -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-            --     vim.lsp.handlers.hover, {
-            --         border = "rounded",
-            --     }
-            -- )
-            -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-            --     vim.lsp.handlers.signature_help, {
-            --         border = "rounded",
-            --         close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
-            --     }
-            -- )
             require("lspconfig.ui.windows").default_options.border = "rounded"
 
             -- Diagnostic signs
