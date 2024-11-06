@@ -27,7 +27,7 @@ return {
         opts = {
             -- Install the LSP servers automatically using mason-lspconfig
             ensure_installed = {
-                "pyright", "ruff_lsp", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman",
+                "pyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman",
                 "ts_ls", "yamlls",
                 -- 'ltex',
             },
@@ -110,7 +110,7 @@ return {
                     settings = lsp_settings[lsp],
                     capabilities = lsp_capabilities[lsp],
                     on_attach = function(client, bufnr)
-                        if lsp == "ruff_lsp" then
+                        if lsp == "ruff" then
                             -- Turn off hover for ruff
                             client.server_capabilities.hoverProvider = false
                         else
