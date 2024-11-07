@@ -136,9 +136,9 @@ function FillLine(ch)
 end
 
 vim.keymap.set("n", "<leader>-", function() FillLine("─") end,
-    { desc = "Fill line with `-` characters", noremap = true, silent = true })
+    { desc = "Fill line with `─` characters", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>=", function() FillLine("━") end,
-    { desc = "Fill line with `=` characters", noremap = true, silent = true })
+    { desc = "Fill line with `━` characters", noremap = true, silent = true })
 
 -- vim.cmd [[
 -- function! FillLine( str )

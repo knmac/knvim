@@ -171,8 +171,8 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 | ---------- | ----------------------------------------------- | -------------------- |
 | Misc       | Insert python breakpoint (on the next line)     | `<leader> b`         |
 |            | Insert python breakpoint (on the previous line) | `<leader> B`         |
-|            | Insert `-` characters                           | `<leader> -`         |
-|            | Insert `=` characters                           | `<leader> =`         |
+|            | Fill line with `─` characters                   | `<leader> -`         |
+|            | Fill line with `━` characters                   | `<leader> =`         |
 |            | Generate doc string for function                | `<leader> d`         |
 |            | Toggle file explorer                            | `<leader> t`         |
 |            | Toggle file explorer (jump to current file)     | `<leader> T`         |
