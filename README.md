@@ -67,6 +67,7 @@ lua/
    │  ├── linter-formatter.lua
    │  ├── lspconfig-mason.lua
    │  ├── metals.lua
+   │  ├── neogen.lua
    │  ├── neotest.lua
    │  └── treesitter.lua
    ├── experimentals/
