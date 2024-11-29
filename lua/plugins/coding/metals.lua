@@ -22,9 +22,9 @@ return {
         -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
         metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-        -------------------------------------------------------------------------------------------
+        -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Debug settings if you're using nvim-dap
-        -------------------------------------------------------------------------------------------
+        -- ────────────────────────────────────────────────────────────────────────────────────────
         local dap = require("dap")
 
         dap.configurations.scala = {

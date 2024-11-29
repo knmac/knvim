@@ -96,10 +96,10 @@ return {
         local dap = require("dap")
         local dapui = require("dapui")
 
-        -------------------------------------------------------------------------------------------
+        -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Configurations for each languages
-        -------------------------------------------------------------------------------------------
-        -- Python - debugpy -----------------------------------------------------------------------
+        -- ────────────────────────────────────────────────────────────────────────────────────────
+        -- Python - debugpy
         dap.adapters.python = {
             type = "executable",
             command = vim.g.python3_host_prog,
@@ -130,7 +130,7 @@ return {
             },
         }
 
-        -- C/C++ - codelldb -----------------------------------------------------------------------
+        -- C/C++ - codelldb
         -- NOTE:your code has to be compiled first, e.g., using
         -- g++ -g main.cpp -o [output_name]
         -- Then provide [output_name] as the program name
@@ -161,16 +161,16 @@ return {
         dap.configurations.c = dap.configurations.cpp
         dap.configurations.rust = dap.configurations.cpp
 
-        -------------------------------------------------------------------------------------------
+        -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Automatically open when a debug session is created
-        -------------------------------------------------------------------------------------------
+        -- ────────────────────────────────────────────────────────────────────────────────────────
         dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
         dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
         dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
 
-        -------------------------------------------------------------------------------------------
+        -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Set up signs and colors
-        -------------------------------------------------------------------------------------------
+        -- ────────────────────────────────────────────────────────────────────────────────────────
         vim.fn.sign_define("DapBreakpoint",
             { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "DapBreakpoint" })
         vim.fn.sign_define("DapBreakpointCondition",
