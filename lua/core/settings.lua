@@ -10,10 +10,11 @@ local possible_python_paths = {
     os.getenv("HOME") .. "/.venvs/knvim/bin/python",             -- Python3's venv (knvim)
     os.getenv("HOME") .. "/opt/anaconda3/envs/knvim/bin/python", -- MacOS's conda (knvim)
     os.getenv("HOME") .. "/anaconda3/envs/knvim/bin/python",     -- Linux's conda (knvim)
+    os.getenv("HOME") .. "/miniconda3/envs/knvim/bin/python",    -- Linux's conda (knvim)
     os.getenv("HOME") .. "/.conda/envs/knvim/bin/python",        -- Linux's alternative conda (knvim)
-    os.getenv("HOME") .. "/.pyenv/shims/python",               -- pyenv's default path
-    "/usr/bin/python3",                                        -- System default python3
-    "/usr/bin/python",                                         -- System default python
+    os.getenv("HOME") .. "/.pyenv/shims/python",                 -- pyenv's default path
+    "/usr/bin/python3",                                          -- System default python3
+    "/usr/bin/python",                                           -- System default python
 }
 for _, python_path in pairs(possible_python_paths) do
     if io.open(python_path, "r") ~= nil then
@@ -80,7 +81,7 @@ vim.opt.splitbelow = true -- orizontal split to the bottom
 
 -- Fold column options
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-vim.o.foldcolumn = "1"        -- '0' is not bad | Number of different visible folding levels
+vim.o.foldcolumn = "1" -- '0' is not bad | Number of different visible folding levels
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
