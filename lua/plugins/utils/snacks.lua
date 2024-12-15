@@ -32,12 +32,11 @@ return {
                 keys = {
                     --
                     { icon = "󰝒 ", key = "e", desc = "Edit a new file", action = ":ene | startinsert" },
-                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":SessionManager" },
-                    { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
-                    --
                     { icon = " ", key = "o", desc = "Open an old file", action = ":lua Snacks.dashboard.pick('oldfiles')" },
                     { icon = "󰱼 ", key = "f", desc = "Find file", action = ":lua Snacks.dashboard.pick('files')" },
                     { icon = "󱎸 ", key = "g", desc = "Grep text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":SessionManager" },
+                    { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
                     --
                     { icon = "󰓙 ", key = "h", desc = "Health check", action = ":checkhealth" },
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
@@ -90,7 +89,7 @@ return {
         },
         indent = { enabled = true },
         -- ────────────────────────────────────────────────────────────────────────────────────────
-        input = { enabled = true },
+        -- input = { enabled = true },
         notifier = { enabled = true, top_down = false, },
         quickfile = { enabled = true },
         scroll = { enabled = true },
