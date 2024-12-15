@@ -24,7 +24,7 @@ return {
         { "<space>h",       "<CMD>Telescope help_tags<CR>",                 desc = "Telescope: Find help" },
         { "<space>k",       "<CMD>Telescope keymaps<CR>",                   desc = "Telescope: Find key map" },
         { "<space>?",       "<CMD>Telescope commands<CR>",                  desc = "Telescope: Find command" },
-        { "<space>n",       "<CMD>Telescope notify<CR>",                    desc = "Telescope: Find notification" },
+        -- { "<space>n",       "<CMD>Telescope notify<CR>",                    desc = "Telescope: Find notification" },
         { "<space>m",       "<CMD>Telescope marks<CR>",                     desc = "Telescope: Find marks" },
     },
     config = function()
@@ -127,7 +127,7 @@ return {
         -- Load other telescope extensions
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("bibtex")
-        require("telescope").load_extension("notify")
+        -- require("telescope").load_extension("notify")
 
         -- Wrap lines in previewer
         vim.api.nvim_create_autocmd("User", {

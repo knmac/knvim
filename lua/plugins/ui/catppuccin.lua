@@ -39,6 +39,7 @@ return {
                 noice = true,
                 notify = true,
                 nvimtree = true,
+                snacks = true,
                 symbols_outline = true,
                 telescope = true,
                 treesitter = true,

@@ -101,7 +101,7 @@ local progress_stat = {
         -- Progress bar
         local sbar = {}
         if vim.g.neovide then
-            sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' } -- lower one eigth block -> full block
+            sbar = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" } -- lower one eigth block -> full block
         else
             sbar = { "▔", "🮂", "🮃", "▀", "🮄", "🮅", "🮆", "█" } -- upper one eigth block -> full block
         end
@@ -258,6 +258,7 @@ return {
                 component_separators = { left = "", right = "" },
                 section_separators = { left = "", right = "" },
                 disabled_filetypes = {
+                    -- statusline = { "snacks_dashboard" },
                     statusline = {},
                     winbar = {
                         "NvimTree", "neo-tree", "Outline", "toggleterm", "alpha", "dap-repl",

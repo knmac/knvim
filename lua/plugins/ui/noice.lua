@@ -81,19 +81,19 @@ return {
         end
     },
     -- Notify
-    {
-        "rcarriga/nvim-notify", -- A fancy, configurable, notification manager
-        keys = {
-            {
-                "<leader>n",
-                function() require("notify").dismiss() end,
-                desc = "Notify: Dismiss current notify message"
-            }
-        },
-        config = function()
-            require("notify").setup({
-                top_down = false,
-            })
-        end,
-    },
+    -- {
+    --     "rcarriga/nvim-notify", -- A fancy, configurable, notification manager
+    --     keys = {
+    --         {
+    --             "<leader>n",
+    --             function() require("notify").dismiss() end,
+    --             desc = "Notify: Dismiss current notify message"
+    --         }
+    --     },
+    --     config = function()
+    --         require("notify").setup({
+    --             top_down = false,
+    --         })
+    --     end,
+    -- },
 }
