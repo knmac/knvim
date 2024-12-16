@@ -173,11 +173,13 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 |            | Toggle outline view (on the screen right side)  | `<leader> o`         |
 |            | Toggle outline view (beside current buffer)     | `<leader> O`         |
 |            | Dismiss current notification message            | `<leader> n`         |
+|            | Show previous notification messages             | `<leader> N`         |
 |            | Open Lazygit (terminal)                         | `<leader> g`         |
 |            | Show local key-maps in the buffer               | `<leader> ?`         |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
 | Terminal   | Toggle terminal                                 | `Ctrl+\`             |
 |            | Enter normal mode in terminal                   | `Ctrl+<Esc>`         |
+|            | Exit terminal (enter normal mode then `q`)      | `Ctrl+<Esc>` `q`     |
 | Yazi       | Open yazi file browswer                         | `<leader> y`         |
 |            | Toggle yazi at the previous location            | `<leader> Y`         |
 | Leap       | Fuzzy motion forward                            | `s`                  |

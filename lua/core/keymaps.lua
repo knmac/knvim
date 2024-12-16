@@ -117,11 +117,11 @@ vim.keymap.set("n", "<F10>", "<cmd>make<CR>", opts)
 vim.keymap.set("n", "<F22>", "<cmd>make clean<CR>", opts)
 
 -- <F11>: Toggle zoom the current window (from custom functions)
-vim.keymap.set("n", "<F11>", "<cmd>ZenMode<CR>", opts)
+vim.keymap.set("n", "<F11>", function() require("snacks").zen.zoom() end, opts)
 -- <S-F11>: Toggle colorizer
 vim.keymap.set("n", "<F23>", "<cmd>ColorizerToggle<CR>", opts)
 
 -- <F12>: Toggle relative number
 vim.keymap.set("n", "<F12>", "<cmd>set nu rnu!<CR>", opts)
 -- <S-F11>: Toggle welcome screen
-vim.keymap.set("n", "<F24>", "<cmd>Alpha<CR>", opts)
+vim.keymap.set("n", "<F24>", function() require("snacks").dashboard() end, opts)
