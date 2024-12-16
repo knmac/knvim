@@ -66,22 +66,19 @@ lua/
    │  ├── dap.lua
    │  ├── linter-formatter.lua
    │  ├── lspconfig-mason.lua
-   │  ├── metals.lua
    │  ├── neogen.lua
    │  ├── neotest.lua
    │  └── treesitter.lua
    ├── experimentals/
    │  └── ...
    ├── ui/
-   │  ├── alpha.lua
    │  ├── barbar.lua
    │  ├── catppuccin.lua
    │  ├── fold.lua
    │  ├── illuminate.lua
-   │  ├── indentblankline-rainbow.lua
    │  ├── lualine.lua
    │  ├── navic-barbecue.lua
-   │  ├── noice-notify.lua
+   │  ├── noice.lua
    │  └── winsep.lua
    ├── utils/
    │  ├── diffview.lua
@@ -91,16 +88,15 @@ lua/
    │  ├── matchup.lua
    │  ├── neo-tree.lua
    │  ├── nvim-colorizer.lua
-   │  ├── obsidian.lua
-   │  ├── swenv.lua
    │  ├── outline.lua
    │  ├── remote-nvim.lua
+   │  ├── renderer-markdown-obsidian.lua
+   │  ├── snacks.lua
+   │  ├── swenv.lua
    │  ├── telescope.lua
    │  ├── todo-comments.lua
-   │  ├── toggleterm.lua
    │  ├── which-key.lua
    │  ├── yazi.lua
-   │  └── zen-mode.lua
    └── init.lua
 ```
 
