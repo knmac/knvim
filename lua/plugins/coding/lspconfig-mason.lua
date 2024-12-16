@@ -39,12 +39,6 @@ return {
         "neovim/nvim-lspconfig",
         event = "VeryLazy",
         dependencies = {
-            -- UI improvement for vim.ui.select and vim.ui.input
-            -- Good for renaming prompt (appear at the variable location)
-            {
-                "stevearc/dressing.nvim",
-                event = "VeryLazy",
-            },
             -- statusline/winbar component using lsp
             {
                 "SmiteshP/nvim-navic",

@@ -3,6 +3,7 @@ return {
     "nvim-telescope/telescope.nvim", -- fuzzy finder for multiple things
     event = "VeryLazy",
     dependencies = {
+        { "nvim-telescope/telescope-ui-select.nvim", event = "VeryLazy" },
         {
             "nvim-telescope/telescope-bibtex.nvim", -- fuzzy finder for bibtex entries
             event = "VeryLazy",
@@ -97,6 +98,11 @@ return {
                 --   extension_config_key = value,
                 -- }
                 -- please take a look at the readme of the extension you want to configure
+                ["ui-select"] = {
+                    require("telescope.themes").get_dropdown {
+                        -- even more opts
+                    }
+                },
                 ["fzf"] = {
                     fuzzy = true,                   -- false will only do exact matching
                     override_generic_sorter = true, -- override the generic sorter
@@ -104,11 +110,6 @@ return {
                     case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
                     -- the default case_mode is "smart_case"
                 },
-                -- ['ui-select'] = {
-                --     require('telescope.themes').get_dropdown {
-                --         -- even more opts
-                --     }
-                -- },
                 ["bibtex"] = {
                     -- Path to global bibliographies (placed outside of the project)
                     -- global_files = {
@@ -125,6 +126,7 @@ return {
         })
 
         -- Load other telescope extensions
+        require("telescope").load_extension("ui-select")
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("bibtex")
         -- require("telescope").load_extension("notify")

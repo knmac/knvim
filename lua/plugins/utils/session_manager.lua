@@ -5,10 +5,15 @@ return {
             "nvim-lua/plenary.nvim",
             event = "VeryLazy",
         },
-        {
-            "stevearc/dressing.nvim",
-            event = "VeryLazy",
-        },
+        -- -- UI improvement for vim.ui.select and vim.ui.input
+        -- {
+        --     "stevearc/dressing.nvim",
+        --     event = "VeryLazy",
+        --     opts = {
+        --         input = { enabled = false },  -- Use Snacks.input instead
+        --         select = { enabled = true },
+        --     }
+        -- },
     },
     event = "BufEnter",
     keys = {

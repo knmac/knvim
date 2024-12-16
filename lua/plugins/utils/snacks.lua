@@ -89,7 +89,7 @@ return {
         },
         indent = { enabled = true },
         -- ────────────────────────────────────────────────────────────────────────────────────────
-        -- input = { enabled = true },
+        input = { enabled = true },
         notifier = { enabled = true, top_down = false, },
         quickfile = { enabled = true },
         scroll = { enabled = true },
