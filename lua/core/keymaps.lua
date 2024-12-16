@@ -44,7 +44,7 @@ vim.keymap.set("n", "<A-S-k>", "<C-w>k<C-w>x", opts)
 vim.keymap.set("n", "<A-S-l>", "<C-w>l<C-w>x", opts)
 
 -- Navigation from terminal
-vim.keymap.set("t", "<C-esc>", [[<C-\><C-n>]], opts)
+-- vim.keymap.set("t", "<C-esc>", [[<C-\><C-n>]], opts)
 vim.keymap.set("t", "<A-h>", [[<C-\><C-n><C-w>h]], opts)
 vim.keymap.set("t", "<A-j>", [[<C-\><C-n><C-w>j]], opts)
 vim.keymap.set("t", "<A-k>", [[<C-\><C-n><C-w>k]], opts)
