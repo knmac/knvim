@@ -1,4 +1,6 @@
 -- A vim-vinegar like file explorer that lets you edit your filesystem like a normal Neovim buffer.
+local detail = false
+
 return {
     "stevearc/oil.nvim",
     event = "VeryLazy",
@@ -16,6 +18,17 @@ return {
         },
         keymaps = {
             ["q"] = { "actions.close", mode = "n" },
+            ["gd"] = {
+                desc = "Toggle file detail view",
+                callback = function()
+                    detail = not detail
+                    if detail then
+                        require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
+                    else
+                        require("oil").set_columns({ "icon" })
+                    end
+                end,
+            },
         }
     },
 }
