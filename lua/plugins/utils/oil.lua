@@ -4,8 +4,18 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-        { "-", function() require("oil").toggle_float() end, desc = "Oil: toggle floating window" },
-        { "_", function() require("oil").open() end,         desc = "Oil: open in the current buffer" },
+        { "-", function() require("oil").open_float() end, desc = "Oil: open floating window" },
+        { "_", function() require("oil").open() end,       desc = "Oil: open in the current buffer" },
     },
-    opts = {},
+    opts = {
+        float = {
+            padding = 2,
+        },
+        view_options = {
+            show_hidden = true,
+        },
+        keymaps = {
+            ["q"] = { "actions.close", mode = "n" },
+        }
+    },
 }
