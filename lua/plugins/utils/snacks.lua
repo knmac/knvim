@@ -3,12 +3,12 @@ return {
     priority = 1000,
     lazy = false,
     keys = {
-        { "<leader>z", function() require("snacks").zen() end,                   desc = "Toggle Zen Mode" },
-        { "<leader>Z", function() require("snacks").zen.zoom() end,              desc = "Toggle Zoom" },
-        { "<leader>n", function() require("snacks").notifier.hide() end,         desc = "Dismiss All Notifications" },
-        { "<leader>N", function() require("snacks").notifier.show_history() end, desc = "Notification History" },
-        { "<C-\\>",    function() require("snacks").terminal() end,              desc = "Toggle Terminal" },
-        { "<leader>g", function() require("snacks").lazygit() end,               desc = "Lazygit" },
+        { "<leader>z", function() require("snacks").zen() end,                   desc = "Snacks: Toggle Zen Mode" },
+        { "<leader>Z", function() require("snacks").zen.zoom() end,              desc = "Snacks: Toggle Zoom" },
+        { "<leader>n", function() require("snacks").notifier.hide() end,         desc = "Snacks: Dismiss All Notifications" },
+        { "<leader>N", function() require("snacks").notifier.show_history() end, desc = "Snacks: Notification History" },
+        { "<C-\\>",    function() require("snacks").terminal() end,              desc = "Snacks: Toggle Terminal" },
+        { "<leader>g", function() require("snacks").lazygit() end,               desc = "Snacks: Lazygit" },
     },
     opts = {
         -- ────────────────────────────────────────────────────────────────────────────────────────

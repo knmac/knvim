@@ -88,6 +88,7 @@ lua/
    │  ├── matchup.lua
    │  ├── neo-tree.lua
    │  ├── nvim-colorizer.lua
+   │  ├── oil.lua
    │  ├── outline.lua
    │  ├── remote-nvim.lua
    │  ├── renderer-markdown-obsidian.lua
@@ -95,8 +96,7 @@ lua/
    │  ├── swenv.lua
    │  ├── telescope.lua
    │  ├── todo-comments.lua
-   │  ├── which-key.lua
-   │  ├── yazi.lua
+   │  └── which-key.lua
    └── init.lua
 ```
 

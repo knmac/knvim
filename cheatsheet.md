@@ -180,8 +180,9 @@ Navigate to begining/end of a function. Convenient for long functions. This is t
 | Terminal   | Open terminal                                   | `Ctrl+\`             |
 |            | Enter normal mode in terminal                   | `<Esc><Esc>`         |
 |            | Exit terminal (after switching to normal mode)  | `q`                  |
-| Yazi       | Open yazi file browswer                         | `<leader> y`         |
-|            | Toggle yazi at the previous location            | `<leader> Y`         |
+| Oil        | Open oil in floating window                     | `-`                  |
+|            | Open oil in the current buffer                  | `_`                  |
+|            | Close oil and return to the previous buffer     | `Ctrl+c` or `:q`     |
 | Leap       | Fuzzy motion forward                            | `s`                  |
 |            | Fuzzy motion backward                           | `S`                  |
 | Git hunk   | Go to previous hunk of Git change               | `[c`                 |
