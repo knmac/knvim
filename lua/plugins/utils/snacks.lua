@@ -20,6 +20,8 @@ return {
                 vim.cmd([[NoMatchParen]])
                 require("snacks").util.wo(0, { foldmethod = "manual", statuscolumn = "", conceallevel = 0 })
                 vim.b.minianimate_disable = true
+                vim.b.snacks_scroll = false
+                vim.b.snacks_dim = false
                 vim.schedule(function()
                     vim.bo[ctx.buf].syntax = ctx.ft
                 end)
