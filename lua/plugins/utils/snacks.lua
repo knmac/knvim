@@ -82,12 +82,17 @@ return {
         },
         lazygit = { enabled = true },
         -- ────────────────────────────────────────────────────────────────────────────────────────
-        scope = {
+        indent = {
             enabled = true,
-            underline = true,    -- underline the start of the scope
-            only_current = true, -- only show scope in the current window
+            scope = {
+                enabled = true,
+                priority = 200,
+                char = "│",
+                -- char = "▎",
+                underline = true, -- underline the start of the scope
+                only_current = true, -- only show scope in the current window
+            },
         },
-        indent = { enabled = true },
         -- ────────────────────────────────────────────────────────────────────────────────────────
         input = { enabled = true },
         notifier = { enabled = true, top_down = false, },

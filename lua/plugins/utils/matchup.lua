@@ -7,7 +7,7 @@ return {
         require("nvim-treesitter.configs").setup({
             matchup = {
                 enable = true,
-                disable = {},
+                disable = { "bigfile" },
             },
         })
     end,
