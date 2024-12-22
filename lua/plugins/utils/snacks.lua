@@ -91,7 +91,7 @@ return {
                 priority = 200,
                 char = "│",
                 -- char = "▎",
-                underline = true, -- underline the start of the scope
+                underline = true,    -- underline the start of the scope
                 only_current = true, -- only show scope in the current window
             },
         },

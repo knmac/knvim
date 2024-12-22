@@ -103,6 +103,7 @@ return {
                 require("lspconfig")[lsp].setup({
                     settings = lsp_settings[lsp],
                     capabilities = lsp_capabilities[lsp],
+                    -- capabilities = require('blink.cmp').get_lsp_capabilities(lsp_capabilities[lsp]),
                     on_attach = function(client, bufnr)
                         if lsp == "ruff" then
                             -- Turn off hover for ruff

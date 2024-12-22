@@ -28,6 +28,7 @@ return {
             },
             integrations = {
                 barbar = true,
+                blink_cmp = true,
                 cmp = true,
                 colorful_winsep = {
                     enabled = true,
