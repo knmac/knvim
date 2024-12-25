@@ -124,7 +124,6 @@ The following dependencies are for manual installation.
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formaters).
 - [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
 - (Optional) Python packages `pynvim`, `neovim`, and `pylatexenc` (installable with `pip`).
-- (Optional) [Yazi](https://yazi-rs.github.io/) for file browser.
 - (Optional) [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [ToggleTerm](https://github.com/akinsho/toggleterm.nvim).
 
 ### 4.2. Installation
@@ -200,13 +199,15 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
       "name": "NAME OF THE LAUNCH",
       "program": "${file}",
       "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "repl_lang": "javascript",
       "args": ["ARG1", "ARG2", ...]
     }
   ]
 }
 ```
 
-The above config uses Python as an example, but you can setup debugger for other languages similarly. The template for Python launcher can be generated with `,g`. For more information, visit [here](https://go.microsoft.com/fwlink/?linkid=830387).
+The above config uses Python as an example, but you can setup debugger for other languages similarly. The template for Python launcher can be generated with `,g`. If you want to specify a file for a launch instead of the current file, you can also set `cwd` as `${workspaceFolder}/path/to/the/file`. For more information, visit [here](https://go.microsoft.com/fwlink/?linkid=830387).
 
 ### 7.3. Diffview (Intergate Diffview to git mergetool automatically)
 

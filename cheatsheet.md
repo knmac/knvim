@@ -150,7 +150,7 @@ All DAP key-bindings start with `,`.
 
 ### 1.6. Vim matchup
 
-Navigate to begining/end of a function. Convenient for long functions. This is the default key-bindings from the plugins, but I'm too lazy to make a different section :P
+Navigate to beginning/end of a function. Convenient for long functions. This is the default key-bindings from the plugins, but I'm too lazy to make a different section :P
 
 | Functionality                             | Key-binding |
 | ----------------------------------------- | ----------- |
@@ -298,7 +298,7 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 
 ### 2.6. Spelling
 
-Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath("data") .. "/spelling/en.utf-8.add"`). To turn spellchecking on, use the commmand: `:set spell` (turning off with `:set nospell`). You can specify which language as (e.g., en_us, en_gb, ...) `:set spell spelllang=en_us`. For more information, see `:h spell`.
+Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath("data") .. "/spelling/en.utf-8.add"`). To turn spellchecking on, use the command: `:set spell` (turning off with `:set nospell`). You can specify which language as (e.g., en_us, en_gb, ...) `:set spell spelllang=en_us`. For more information, see `:h spell`.
 
 | Functionality             | Key-binding |
 | ------------------------- | ----------- |
