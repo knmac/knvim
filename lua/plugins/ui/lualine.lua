@@ -170,7 +170,7 @@ local env_stat = {
                 -- Check if python3_host_prog is registered in swenv and get its source
                 for _, v in ipairs(swenv.get_venvs()) do
                     if v.name == current_env then
-                        current_env = current_env .. "[" .. v.source .. "]"
+                        current_env = current_env .. " (" .. v.source .. ")"
                         break
                     end
                 end
