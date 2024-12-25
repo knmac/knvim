@@ -71,9 +71,9 @@ return {
         {
             ",c",
             function()
-                if vim.fn.filereadable(".vscode/launch.json") then
-                    require("dap.ext.vscode").load_launchjs()
-                end
+                -- if vim.fn.filereadable(".vscode/launch.json") then
+                --     require("dap.ext.vscode").load_launchjs()
+                -- end
                 require("dap").continue()
             end,
             desc = "DAP: Start/Continue debugging",
