@@ -37,7 +37,7 @@ return {
                     { icon = " ", key = "o", desc = "Open an old file", action = ":lua Snacks.dashboard.pick('oldfiles')" },
                     { icon = "󰱼 ", key = "f", desc = "Find file", action = ":lua Snacks.dashboard.pick('files')" },
                     { icon = "󱎸 ", key = "g", desc = "Grep text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":SessionManager" },
+                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":Telescope persisted" },
                     { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
                     --
                     { icon = "󰓙 ", key = "h", desc = "Health check", action = ":checkhealth" },

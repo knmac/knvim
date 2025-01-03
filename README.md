@@ -93,6 +93,7 @@ lua/
    │  ├── nvim-colorizer.lua
    │  ├── oil.lua
    │  ├── outline.lua
+   │  ├── persisted.lua
    │  ├── remote-nvim.lua
    │  ├── renderer-markdown-obsidian.lua
    │  ├── snacks.lua

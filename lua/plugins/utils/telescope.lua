@@ -122,6 +122,9 @@ return {
                     context_fallback = true,
                     citation_format = "{{author}} {{title}}. {{booktitle}}{{journal}}. {{year}}.",
                 },
+                ["persisted"] = {
+                    layout_config = { width = 0.55, height = 0.55 }
+                }
             }
         })
 
@@ -130,6 +133,7 @@ return {
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("bibtex")
         -- require("telescope").load_extension("notify")
+        require("telescope").load_extension("persisted")
 
         -- Wrap lines in previewer
         vim.api.nvim_create_autocmd("User", {
