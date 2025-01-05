@@ -6,8 +6,23 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-        { "-", function() require("oil").open_float() end, desc = "Oil: open floating window" },
-        { "_", function() require("oil").open() end,       desc = "Oil: open in the current buffer" },
+        {
+            "-",
+            function()
+                local oil = require("oil")
+                oil.open_float()
+
+                -- Wait until oil has opened, for a maximum of 1 second.
+                vim.wait(1000, function()
+                    return oil.get_cursor_entry() ~= nil
+                end)
+                if oil.get_cursor_entry() then
+                    oil.open_preview()
+                end
+            end,
+            desc = "Oil: open floating window"
+        },
+        { "_", function() require("oil").open() end, desc = "Oil: open in the current buffer" },
     },
     opts = {
         float = {
