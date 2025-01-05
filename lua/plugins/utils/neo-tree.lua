@@ -1,4 +1,4 @@
--- File explorer
+-- File explorer tree
 return {
     -- Neo-tree
     {

@@ -1,3 +1,4 @@
+-- Collection of some nvim utilities
 return {
     "folke/snacks.nvim",
     priority = 1000,

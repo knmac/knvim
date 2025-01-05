@@ -1,4 +1,4 @@
--- colorize color code
+-- Colorize color code
 return {
     "NvChad/nvim-colorizer.lua",
     config = function()
