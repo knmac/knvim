@@ -29,6 +29,14 @@ return {
                 end
                 return true
             end,
+
+            telescope = {
+                mappings = { -- Mappings for managing sessions in Telescope
+                    copy_session = "<C-y>",
+                    change_branch = "<C-b>",
+                    delete_session = "<C-d>",
+                },
+            },
         })
     end,
 }
