@@ -74,9 +74,9 @@ vim.opt.splitright = true -- vertical split to the right
 vim.opt.splitbelow = true -- orizontal split to the bottom
 
 -- Folding (refer to lua/plugins/ui/fold.lua)
--- vim.opt.foldenable = true   -- enable folding
--- vim.opt.foldlevelstart = 10 -- open most folds by default
--- vim.opt.foldnestmax = 10    -- 10 nested fold max
+vim.opt.foldenable = true   -- enable folding
+vim.opt.foldlevelstart = 10 -- open most folds by default
+vim.opt.foldnestmax = 10    -- 10 nested fold max
 -- vim.opt.foldmethod = "indent" -- set folding method by looking at indent
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
