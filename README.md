@@ -77,7 +77,6 @@ lua/
    ├── ui/
    │  ├── barbar.lua
    │  ├── catppuccin.lua
-   │  ├── fold.lua
    │  ├── illuminate.lua
    │  ├── lualine.lua
    │  ├── navic-barbecue.lua

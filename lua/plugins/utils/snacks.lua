@@ -80,11 +80,6 @@ return {
             },
         },
         -- ────────────────────────────────────────────────────────────────────────────────────────
-        terminal = {
-            enabled = true,
-        },
-        lazygit = { enabled = true },
-        -- ────────────────────────────────────────────────────────────────────────────────────────
         indent = {
             enabled = true,
             scope = {
@@ -97,12 +92,21 @@ return {
             },
         },
         -- ────────────────────────────────────────────────────────────────────────────────────────
+        statuscolumn = {
+            enabled = true,
+            folds = {
+                open = true,   -- show open fold icons
+                git_hl = true, -- use Git Signs hl for fold icons
+            },
+        },
+        -- ────────────────────────────────────────────────────────────────────────────────────────
+        terminal = { enabled = true, },
+        lazygit = { enabled = true },
         input = { enabled = true },
         notifier = { enabled = true, top_down = false, },
         quickfile = { enabled = true },
         scroll = { enabled = true },
-        -- statuscolumn = { enabled = true },
-        -- words = { enabled = true },
         zen = { enabled = true },
+        -- words = { enabled = true },
     },
 }
