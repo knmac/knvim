@@ -75,7 +75,8 @@ vim.opt.splitbelow = true -- orizontal split to the bottom
 
 -- Folding (refer to lua/plugins/ui/fold.lua)
 vim.opt.foldenable = true   -- enable folding
-vim.opt.foldlevelstart = 10 -- open most folds by default
+vim.opt.foldlevel = 99      -- set fold level
+vim.opt.foldlevelstart = 99 -- open most folds by default
 vim.opt.foldnestmax = 10    -- 10 nested fold max
 -- vim.opt.foldmethod = "indent" -- set folding method by looking at indent
 vim.opt.foldmethod = "expr"
@@ -84,10 +85,6 @@ vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- Fold column options
 -- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 -- vim.o.foldcolumn = "1" -- '0' is not bad | Number of different visible folding levels
--- vim.o.foldlevel = 99
--- vim.o.foldlevelstart = 99
--- vim.o.foldenable = true
--- vim.o.foldnestmax = 10
 
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
