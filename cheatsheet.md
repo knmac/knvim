@@ -177,7 +177,7 @@ Navigate to beginning/end of a function. Convenient for long functions. This is 
 |            | Open Lazygit (terminal)                         | `<leader> g`         |
 |            | Show local key-maps in the buffer               | `<leader> ?`         |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
-| Terminal   | Open terminal                                   | `Ctrl+\`             |
+| Terminal   | Toggle terminal                                 | `Ctrl+\`             |
 |            | Enter normal mode in terminal                   | `<Esc><Esc>`         |
 |            | Exit terminal (after switching to normal mode)  | `q`                  |
 | Oil        | Open oil in floating window                     | `-`                  |

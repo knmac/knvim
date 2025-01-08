@@ -4,12 +4,15 @@ return {
     priority = 1000,
     lazy = false,
     keys = {
-        { "<leader>z", function() require("snacks").zen() end,                   desc = "Snacks: Toggle Zen Mode" },
-        { "<leader>Z", function() require("snacks").zen.zoom() end,              desc = "Snacks: Toggle Zoom" },
-        { "<leader>n", function() require("snacks").notifier.hide() end,         desc = "Snacks: Dismiss All Notifications" },
-        { "<leader>N", function() require("snacks").notifier.show_history() end, desc = "Snacks: Notification History" },
-        { "<C-\\>",    function() require("snacks").terminal() end,              desc = "Snacks: Toggle Terminal" },
-        { "<leader>g", function() require("snacks").lazygit() end,               desc = "Snacks: Lazygit" },
+        { "<leader>z", function() Snacks.zen() end,                       desc = "Snacks: Toggle Zen Mode" },
+        { "<leader>Z", function() Snacks.zen.zoom() end,                  desc = "Snacks: Toggle Zoom" },
+        { "<leader>n", function() Snacks.notifier.hide() end,             desc = "Snacks: Dismiss All Notifications" },
+        { "<leader>N", function() Snacks.notifier.show_history() end,     desc = "Snacks: Notification History" },
+        { "<leader>g", function() Snacks.lazygit() end,                   desc = "Snacks: Lazygit" },
+        { "<leader>s", function() Snacks.scratch() end,                   desc = "Snacks: Toggle Scratch Buffer" },
+        { "<leader>S", function() Snacks.scratch.select() end,            desc = "Snacks: Select Scratch Buffer" },
+        { "<C-\\>",    function() Snacks.terminal() end,                  desc = "Snacks: Toggle Terminal",          mode = { "n", "t" } },
+        { "<C-y>",     function() Snacks.terminal.toggle({ "yazi" }) end, desc = "Snacks: Open Yazi" },
     },
     opts = {
         -- ────────────────────────────────────────────────────────────────────────────────────────
@@ -19,7 +22,7 @@ return {
             notify = true,
             setup = function(ctx)
                 vim.cmd([[NoMatchParen]])
-                require("snacks").util.wo(0, { foldmethod = "manual", statuscolumn = "", conceallevel = 0 })
+                Snacks.util.wo(0, { foldmethod = "manual", statuscolumn = "", conceallevel = 0 })
                 vim.b.minianimate_disable = true
                 vim.b.snacks_scroll = false
                 vim.b.snacks_dim = false
