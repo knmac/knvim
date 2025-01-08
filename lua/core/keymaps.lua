@@ -108,8 +108,8 @@ vim.keymap.set("n", "<F20>", "<cmd>tabclose<CR>", opts)
 
 -- <F9>: Remove trailing spaces
 vim.keymap.set("n", "<F9>", [[<cmd>%s/\s\+$//e<CR>]], opts)
--- <S-F9>: Clear registers
-vim.keymap.set("n", "<F21>", "<cmd>ClearAllRegisters<CR>", opts)
+-- <S-F9>: Format smart single ‘’ and double “” quotes
+vim.keymap.set("n", "<F21>", [[:%s/[‘’]/'/g | %s/[“”]/"/g<CR>]], opts)
 
 -- <F10>: Run make file
 vim.keymap.set("n", "<F10>", "<cmd>make<CR>", opts)
@@ -117,11 +117,11 @@ vim.keymap.set("n", "<F10>", "<cmd>make<CR>", opts)
 vim.keymap.set("n", "<F22>", "<cmd>make clean<CR>", opts)
 
 -- <F11>: Toggle zoom the current window (from custom functions)
-vim.keymap.set("n", "<F11>", function() require("snacks").zen.zoom() end, opts)
+vim.keymap.set("n", "<F11>", function() Snacks.zen.zoom() end, opts)
 -- <S-F11>: Toggle colorizer
 vim.keymap.set("n", "<F23>", "<cmd>ColorizerToggle<CR>", opts)
 
 -- <F12>: Toggle relative number
 vim.keymap.set("n", "<F12>", "<cmd>set nu rnu!<CR>", opts)
 -- <S-F11>: Toggle welcome screen
-vim.keymap.set("n", "<F24>", function() require("snacks").dashboard() end, opts)
+vim.keymap.set("n", "<F24>", function() Snacks.dashboard() end, opts)
