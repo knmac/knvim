@@ -1,5 +1,18 @@
 -- Session manager
 
+-- Saving the current session before clearing all of the open buffers
+vim.api.nvim_create_autocmd("User", {
+    pattern = "PersistedTelescopeLoadPre",
+    ---@diagnostic disable-next-line: unused-local
+    callback = function(session)
+        -- Save the currently loaded session using the global variable
+        require("persisted").save({ session = vim.g.persisted_loaded_session })
+
+        -- Delete all of the open buffers
+        vim.api.nvim_input("<ESC>:%bd!<CR>")
+    end,
+})
+
 -- Avoid saving some buffers with specific types
 vim.api.nvim_create_autocmd("User", {
     pattern = "PersistedSavePre",
