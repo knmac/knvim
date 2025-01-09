@@ -1,4 +1,15 @@
 -- Collection of some nvim utilities
+
+-- Disable indent for markdown
+vim.api.nvim_create_autocmd("FileType", {
+    desc = "Disable indent for markdown",
+    pattern = { "markdown" },
+    group = vim.api.nvim_create_augroup("snacks_group", { clear = false }),
+    callback = function()
+        vim.b.snacks_indent = false
+    end,
+})
+
 return {
     "folke/snacks.nvim",
     priority = 1000,
