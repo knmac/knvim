@@ -67,11 +67,11 @@ return {
         completion = {
             keyword = { range = "full" },
             accept = { auto_brackets = { enabled = false }, },
-            list = {
-                selection = function(ctx)
-                    return ctx.mode == "cmdline" and "auto_insert" or "preselect"
-                end,
-            },
+            -- list = {
+            --     selection = function(ctx)
+            --         return ctx.mode == "cmdline" and "auto_insert" or "preselect"
+            --     end,
+            -- },
             menu = {
                 auto_show = true,
                 draw = {
