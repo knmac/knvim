@@ -9,24 +9,24 @@ local custom_highlight = {
 }
 
 return {
-    {
-        "HiPhish/rainbow-delimiters.nvim", -- colorize parentheses
-        config = function()
-            local rainbow_delimiters = require("rainbow-delimiters")
-
-            vim.g.rainbow_delimiters = {
-                strategy = {
-                    [""] = rainbow_delimiters.strategy["global"],
-                    vim = rainbow_delimiters.strategy["local"],
-                },
-                query = {
-                    [""] = "rainbow-delimiters",
-                    lua = "rainbow-blocks",
-                },
-                highlight = custom_highlight,
-            }
-        end,
-    },
+    -- {
+    --     "HiPhish/rainbow-delimiters.nvim", -- colorize parentheses
+    --     config = function()
+    --         local rainbow_delimiters = require("rainbow-delimiters")
+    --
+    --         vim.g.rainbow_delimiters = {
+    --             strategy = {
+    --                 [""] = rainbow_delimiters.strategy["global"],
+    --                 vim = rainbow_delimiters.strategy["local"],
+    --             },
+    --             query = {
+    --                 [""] = "rainbow-delimiters",
+    --                 lua = "rainbow-blocks",
+    --             },
+    --             highlight = custom_highlight,
+    --         }
+    --     end,
+    -- },
     {
         "lukas-reineke/indent-blankline.nvim",            -- show indent line
         dependencies = "HiPhish/rainbow-delimiters.nvim", -- Use color from rainbow_delimiters
