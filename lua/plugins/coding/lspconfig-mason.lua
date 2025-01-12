@@ -38,13 +38,6 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = "VeryLazy",
-        dependencies = {
-            -- statusline/winbar component using lsp
-            {
-                "SmiteshP/nvim-navic",
-                event = "VeryLazy",
-            },
-        },
         config = function()
             -- ────────────────────────────────────────────────────────────────────────────────────
             -- Set up LSP servers
@@ -108,9 +101,6 @@ return {
                         if lsp == "ruff" then
                             -- Turn off hover for ruff
                             client.server_capabilities.hoverProvider = false
-                        else
-                            -- Use navic for non-ruff
-                            require("nvim-navic").attach(client, bufnr)
                         end
                     end,
                 })

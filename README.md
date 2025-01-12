@@ -77,9 +77,9 @@ lua/
    ├── ui/
    │  ├── barbar.lua
    │  ├── catppuccin.lua
+   │  ├── dropbar.lua
    │  ├── illuminate.lua
    │  ├── lualine.lua
-   │  ├── navic-barbecue.lua
    │  ├── noice.lua
    │  └── winsep.lua
    ├── utils/

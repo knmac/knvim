@@ -130,21 +130,6 @@ local fileformat_stat = {
     end,
 }
 
--- Custom components using nvim-navic
--- local navic_stat = {
---     function()
---         local loc = require('nvim-navic').get_location()
---         if loc ~= '' then
---             return '〉' .. loc
---         end
---         return loc
---     end,
---     cond = function()
---         return require('nvim-navic').is_available()
---     end,
---     color = { bg = 'NONE' },
--- }
-
 -- Custom components using swenv
 local env_stat = {
     function()
@@ -242,7 +227,6 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
         "nvim-telescope/telescope.nvim", -- Switch filetype and git branches
-        "SmiteshP/nvim-navic",           -- Show navic status
         "AckslD/swenv.nvim",             -- Show and switch python env
         "sindrets/diffview.nvim",        -- Clickable diffthis
     },
