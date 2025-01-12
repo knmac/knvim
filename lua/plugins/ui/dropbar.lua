@@ -13,6 +13,13 @@ return {
             { "];",        function() require("dropbar.api").select_next_context() end, desc = "Dropbar: Select next context" },
         },
         config = function()
+            require("dropbar").setup({
+                menu = {
+                    win_configs = {
+                        border = "rounded",
+                    },
+                },
+            })
         end,
     },
 }
