@@ -176,10 +176,11 @@ Navigate to beginning/end of a function. Convenient for long functions. This is 
 |            | Show previous notification messages             | `<leader> N`         |
 |            | Open Lazygit (terminal)                         | `<leader> g`         |
 |            | Show local key-maps in the buffer               | `<leader> ?`         |
+|            | Open scratch buffer                             | `<leader> s`         |
+|            | Select scratch buffer                           | `<leader> S`         |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
 | Terminal   | Toggle terminal                                 | `Ctrl+\`             |
 |            | Enter normal mode in terminal                   | `<Esc><Esc>`         |
-|            | Exit terminal (after switching to normal mode)  | `q`                  |
 | Oil        | Open oil in floating window                     | `-`                  |
 |            | Open oil in the current buffer                  | `_`                  |
 |            | Close oil and return to the previous buffer     | `Ctrl+c` or `:q`     |
