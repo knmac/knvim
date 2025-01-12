@@ -3,17 +3,17 @@
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 
-K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username knmac.
+K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username `knmac`.
 
 ## 1. Demo
 
 <!-- ![Screenshot](./res/screenshot.png) -->
 
-Video demo with clickable lualine:
+Video demo with clickable `lualine`:
 
 ![demo3](./res/demo1.gif)
 
-Config structure and cheatsheet (rendered):
+Config structure and cheat sheet (rendered):
 
 ![demo1](./res/demo2.png)
 
@@ -124,9 +124,9 @@ The following dependencies are for manual installation.
 
 - Neovim 0.10.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
 - A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [WezTerm](https://wezfurlong.org/wezterm/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font).
-- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formaters).
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) (package manager for LSPs, DAPs, linters, and formatters).
 - [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
-- (Optional) Python packages `pynvim`, `neovim`, and `pylatexenc` (installable with `pip`).
+- (Optional) Python packages `pynvim`, `neovim`, and `pylatexenc` (can be installed with `pip`).
 - (Optional) [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [ToggleTerm](https://github.com/akinsho/toggleterm.nvim).
 
 ### 4.2. Installation
@@ -157,15 +157,15 @@ lazyman -L Knvim
 
 Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, bootstrapping, and other cool features.
 
-## 6. Knvim Cheatsheet
+## 6. Knvim Cheat Sheet
 
-Cheatsheet for knvim can be found [here](cheatsheet.md). You can also access cheatsheet from the start page.
+Cheat sheet for knvim can be found [here](cheatsheet.md). You can also access cheat sheet from the start page.
 
 ## 7. Extra configs (optional)
 
 This section shows you how to set up extra configuration for knvim to work as you want (completely optional).
 
-### 7.1. Ruff (Python linter) and Black (Python formater)
+### 7.1. Ruff (Python linter and formatter)
 
 Create the file `pyproject.toml` for each Python project, where the content looks something like this:
 
@@ -249,7 +249,7 @@ wiki.style = "title-slug"
 
 _Q1: Why knvim is not working on Windows?_
 
-_A1:_ knvim config targets Unix-based OS (e.g., Linux and MacOS) and is not fully tested on Windows. Some common problems include different path separator (`/` on Unix vs `\` on Windows) and EOL character (`LF` on Unix and `CR LF` on Windows). You may want to change these characters manually if you want to try knvim on Windows machines.
+_A1:_ knvim config targets Unix-based OS (e.g., Linux and MacOS) and is not fully tested on Windows. Some common problems include different path separator (`/` on Unix vs `\` on Windows) and `EOL` character (`LF` on Unix and `CR LF` on Windows). You may want to change these characters manually if you want to try knvim on Windows machines.
 
 _Q2: Why knvim does not include \<this and that\> by default?_
 
@@ -268,7 +268,7 @@ tempfile=$(mktemp) \
   && rm "$tempfile"
 ```
 
-- Rendering strikethrough [ref](https://github.com/neovim/neovim/discussions/24346):
+- Rendering strike-throughs [ref](https://github.com/neovim/neovim/discussions/24346):
 
 ```bash
 infocmp "$TERM" > myterm.info
@@ -280,5 +280,5 @@ tic -x myterm.info
 
 - [x] ~Automatically~ copy knvim to server for remote editing.
 - [ ] Image rendering (may only support Kitty and WezTerm terminal). You can try the experimental config `plugins.experimental.image`.
-- [ ] Automatically switch path separator and EOL character, depending on the OS in use.
+- [ ] Automatically switch path separator and `EOL` character, depending on the OS in use.
 - [ ] Support python environment manager `poetry`.
