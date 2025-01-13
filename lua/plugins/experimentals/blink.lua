@@ -29,49 +29,10 @@ return {
             ["<C-u>"] = { "scroll_documentation_up", "fallback" },
             ["<C-d>"] = { "scroll_documentation_down", "fallback" },
         },
-        appearance = {
-            use_nvim_cmp_as_default = false,
-            nerd_font_variant = "mono"
-        },
-        sources = {
-            default = { "lsp", "path", "snippets", "buffer" },
-            cmdline = function()
-                local type = vim.fn.getcmdtype()
-                -- Search forward and backward
-                if type == "/" or type == "?" then
-                    return { "buffer" }
-                end
-                -- Commands
-                if type == ":" then
-                    return { "cmdline" }
-                end
-                return {}
-            end,
-            providers = {
-                lsp = {
-                    min_keyword_length = 0, -- Number of characters to trigger porvider
-                    score_offset = 0,       -- Boost/penalize the score of the items
-                },
-                path = {
-                    min_keyword_length = 0,
-                },
-                snippets = {
-                    min_keyword_length = 2,
-                },
-                buffer = {
-                    min_keyword_length = 5,
-                    max_items = 5,
-                },
-            },
-        },
         completion = {
             keyword = { range = "full" },
             accept = { auto_brackets = { enabled = false }, },
-            -- list = {
-            --     selection = function(ctx)
-            --         return ctx.mode == "cmdline" and "auto_insert" or "preselect"
-            --     end,
-            -- },
+            list = { selection = { preselect = false, auto_insert = true } },
             menu = {
                 auto_show = true,
                 draw = {
@@ -114,27 +75,7 @@ return {
         -- Experimental signature help support
         signature = {
             enabled = false,
-            trigger = {
-                blocked_trigger_characters = {},
-                blocked_retrigger_characters = {},
-                -- When true, will show the signature help window when the cursor comes after a trigger character when entering insert mode
-                show_on_insert_on_trigger_character = true,
-            },
-            window = {
-                min_width = 1,
-                max_width = 100,
-                max_height = 10,
-                border = "rounded",
-                winblend = 0,
-                winhighlight = "Normal:BlinkCmpSignatureHelp,FloatBorder:BlinkCmpSignatureHelpBorder",
-                scrollbar = true, -- Note that the gutter will be disabled when border ~= 'none'
-                -- Which directions to show the window,
-                -- falling back to the next direction when there's not enough space,
-                -- or another window is in the way
-                direction_priority = { "n", "s" },
-                -- Disable if you run into performance issues
-                treesitter_highlighting = true,
-            },
+            window = { border = "rounded", },
         }
     },
     opts_extend = { "sources.default" }
