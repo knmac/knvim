@@ -6,6 +6,7 @@ require("core")
 -- Overwrite some custom paths if needed (already defined in lua/core/settings.lua)
 -- vim.g.python3_host_prog = ""
 -- vim.opt.spellfile = ""
+vim.g.knvim_completion_engine = "blink"  -- cmp | blink
 
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────

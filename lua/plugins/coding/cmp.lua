@@ -1,6 +1,7 @@
 -- Code completion
 return {
     "hrsh7th/nvim-cmp", -- code completion
+    enabled = function() return vim.g.knvim_completion_engine == "cmp" end,
     event = { "CmdlineEnter", "InsertEnter" },
     -- event = "VeryLazy",
     dependencies = {

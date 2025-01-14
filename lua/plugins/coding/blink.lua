@@ -1,8 +1,16 @@
 return {
     "saghen/blink.cmp",
+    enabled = function() return vim.g.knvim_completion_engine == "blink" end,
+    event = { "CmdlineEnter", "InsertEnter" },
     dependencies = {
-        "rafamadriz/friendly-snippets",
-        "onsails/lspkind.nvim",
+        {
+            "rafamadriz/friendly-snippets",
+            event = { "CmdlineEnter", "InsertEnter" },
+        },
+        {
+            "onsails/lspkind.nvim",
+            event = { "CmdlineEnter", "InsertEnter" },
+        },
     },
     version = "*",
     opts = {
