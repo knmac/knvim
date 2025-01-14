@@ -43,22 +43,21 @@ Overall logic:
 
 All Telescope key-bindings start with `<space>`.
 
-| Functionality                       | Key-binding       |
-| ----------------------------------- | ----------------- |
-| Open Telescope                      | `<space> <space>` |
-| Fuzzy search for *f*ilename         | `<space> f`       |
-| Fuzzy search for *t*ext             | `<space> t`       |
-| Fuzzy search for active *b*uffer    | `<space> b`       |
-| Fuzzy search for *s*ession          | `<space> s`       |
-| Fuzzy search for bibtex *c*itations | `<space> c`       |
-| Fuzzy search for *v*im options      | `<space> v`       |
-| Fuzzy search for *k*eymnaps         | `<space> k`       |
-| Fuzzy search for *m*arks            | `<space> m`       |
-| Switch python environment           | `<space> e`       |
-| Show *n*otification history         | `<space> n`       |
-| Fuzzy search in the current buffer  | `<space> /`       |
-| Fuzzy search for commands           | `<space> ?`       |
-| Fuzzy search for diagnostics        | `<space> d`       |
+| Functionality                         | Key-binding       |
+| ------------------------------------- | ----------------- |
+| Open Telescope                        | `<space> <space>` |
+| Fuzzy search for *f*ilename           | `<space> f`       |
+| Fuzzy search for *t*ext               | `<space> t`       |
+| Fuzzy search for active *b*uffer      | `<space> b`       |
+| Fuzzy search for *s*ession            | `<space> s`       |
+| Fuzzy search for bibtex *c*itations   | `<space> c`       |
+| Fuzzy search for *v*im options        | `<space> v`       |
+| Fuzzy search for *k*eymnaps           | `<space> k`       |
+| Fuzzy search for *m*arks              | `<space> m`       |
+| Fuzzy search for python *e*nvironment | `<space> e`       |
+| Fuzzy search in the current buffer    | `<space> /`       |
+| Fuzzy search for commands             | `<space> ?`       |
+| Fuzzy search for *d*iagnostics        | `<space> d`       |
 
 Inside Telescope, after inputting something
 
@@ -73,7 +72,7 @@ Inside Telescope, after inputting something
 | Close Telescope             | `Ctrl+c`                  | `Esc`                     |
 | Show help (which-key)       | `Ctrl+h`                  | -                         |
 
-### 1.3. LSP-related key-bindings
+### 1.3. LSP key-bindings
 
 | Group       | Functionality                                         | Key-binding                   |
 | ----------- | ----------------------------------------------------- | ----------------------------- |
@@ -142,10 +141,10 @@ All DAP key-bindings start with `,`.
 | Continue DAP debugging                    | `,c`        |
 | Run last DAP launcher (if there are many) | `,l`        |
 | Step over                                 | `,n`        |
-| Step into                                 | `,i`        |
-| Step out                                  | `,o`        |
+| Step into                                 | `,s`        |
+| Step out                                  | `,u`        |
 | Terminate debugging                       | `,t`        |
-| Hover variable while debugging            | `,h`        |
+| Hover variable while debugging            | `,k`        |
 | Generate launcher for python              | `,g`        |
 
 ### 1.6. Vim matchup
@@ -163,29 +162,30 @@ Navigate to beginning/end of a function. Convenient for long functions. This is 
 
 | Group      | Functionality                                   | Key-binding          |
 | ---------- | ----------------------------------------------- | -------------------- |
-| Misc       | Insert python breakpoint (on the next line)     | `<leader> b`         |
+| Misc       | **Show local key-maps in the buffer**           | `<leader> ?`         |
+|            | Insert python breakpoint (on the next line)     | `<leader> b`         |
 |            | Insert python breakpoint (on the previous line) | `<leader> B`         |
 |            | Fill line with `─` characters                   | `<leader> -`         |
 |            | Fill line with `━` characters                   | `<leader> =`         |
 |            | Generate doc string for function                | `<leader> d`         |
-|            | Toggle file explorer                            | `<leader> t`         |
-|            | Toggle file explorer (jump to current file)     | `<leader> T`         |
+|            | Toggle file-tree                                | `<leader> t`         |
+|            | Toggle file-tree and jump to current file       | `<leader> T`         |
 |            | Toggle outline view (on the screen right side)  | `<leader> o`         |
 |            | Toggle outline view (beside current buffer)     | `<leader> O`         |
+|            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
+| Snacks     | Toggle Zen-mode                                 | `<leader> z`         |
+|            | Toggle zoom of the current window               | `<leader> Z`         |
 |            | Dismiss current notification message            | `<leader> n`         |
-|            | Show previous notification messages             | `<leader> N`         |
-|            | Open Lazygit (terminal)                         | `<leader> g`         |
-|            | Show local key-maps in the buffer               | `<leader> ?`         |
+|            | Show history of notification messages           | `<leader> N`         |
+|            | Open Lazygit                                    | `<leader> g`         |
 |            | Open scratch buffer                             | `<leader> s`         |
 |            | Select scratch buffer                           | `<leader> S`         |
-|            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
-| Terminal   | Toggle terminal                                 | `Ctrl+\`             |
+|            | Toggle terminal                                 | `Ctrl+\`             |
 |            | Enter normal mode in terminal                   | `<Esc><Esc>`         |
+|            | Open Yazi                                       | `Ctrl+y`             |
 | Oil        | Open oil in floating window                     | `-`                  |
 |            | Open oil in the current buffer                  | `_`                  |
-|            | Close oil and return to the previous buffer     | `Ctrl+c` or `:q`     |
-| Leap       | Fuzzy motion forward                            | `s`                  |
-|            | Fuzzy motion backward                           | `S`                  |
+|            | Close oil and return to the previous buffer     | `Ctrl+c` or `q`      |
 | Git hunk   | Go to previous hunk of Git change               | `[c`                 |
 |            | Go to next hunk of Git change                   | `]c`                 |
 | Easy-align | Start easy align (in visual mode)               | `<leader> a`         |
