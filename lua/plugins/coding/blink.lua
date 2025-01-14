@@ -40,7 +40,14 @@ return {
         completion = {
             keyword = { range = "full" },
             accept = { auto_brackets = { enabled = false }, },
-            list = { selection = { preselect = false, auto_insert = true } },
+            list = {
+                selection = {
+                    -- preselect = false,
+                    -- auto_insert = true,
+                    preselect = function(ctx) return ctx.mode ~= "cmdline" end,
+                    auto_insert = function(ctx) return ctx.mode ~= "cmdline" end,
+                },
+            },
             menu = {
                 auto_show = true,
                 draw = {
@@ -54,19 +61,6 @@ return {
                                 local kind = require("lspkind").symbol_map[item.kind] or ""
                                 return kind .. " "
                             end,
-                            highlight = "CmpItemKind",
-                        },
-                        label = {
-                            text = function(item)
-                                return item.label
-                            end,
-                            highlight = "CmpItemAbbr",
-                        },
-                        kind = {
-                            text = function(item)
-                                return item.kind
-                            end,
-                            highlight = "CmpItemKind",
                         },
                     },
                 },
@@ -75,7 +69,6 @@ return {
             documentation = {
                 auto_show = true,
                 auto_show_delay_ms = 100,
-                treesitter_highlighting = true,
                 window = { border = "rounded" },
             },
             ghost_text = { enabled = true },
