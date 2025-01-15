@@ -53,3 +53,7 @@ require("lazy").setup({
         border = "rounded",
     },
 })
+
+-- Disable background of some highlights
+vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = nil })
+vim.api.nvim_set_hl(0, "PMenu", { ctermbg = nil })

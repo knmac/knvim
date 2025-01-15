@@ -79,5 +79,5 @@ return {
             window = { border = "rounded", },
         }
     },
-    opts_extend = { "sources.default" }
+    -- opts_extend = { "sources.default" }
 }

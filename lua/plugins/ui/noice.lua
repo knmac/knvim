@@ -63,9 +63,6 @@ return {
                 },
             })
 
-            -- Remove background for NormalFloat
-            vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = nil })
-
             -- Scroll for lsp docs and signature helps
             vim.keymap.set({ "n", "i", "s" }, "<c-j>", function()
                 if not require("noice.lsp").scroll(4) then
