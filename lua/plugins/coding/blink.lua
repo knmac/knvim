@@ -42,10 +42,10 @@ return {
             accept = { auto_brackets = { enabled = false }, },
             list = {
                 selection = {
-                    -- preselect = false,
-                    -- auto_insert = true,
-                    preselect = function(ctx) return ctx.mode ~= "cmdline" end,
-                    auto_insert = function(ctx) return ctx.mode ~= "cmdline" end,
+                    preselect = false,
+                    auto_insert = true,
+                    -- preselect = function(ctx) return ctx.mode ~= "cmdline" end,
+                    -- auto_insert = function(ctx) return ctx.mode ~= "cmdline" end,
                 },
             },
             menu = {
