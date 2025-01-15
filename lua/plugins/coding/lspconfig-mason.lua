@@ -109,7 +109,7 @@ return {
             -- ────────────────────────────────────────────────────────────────────────────────────
             -- Set up key-bindings
             -- ────────────────────────────────────────────────────────────────────────────────────
-            local telescope_ok, telescope = pcall(require, "telescope.builtin")
+            -- local telescope_ok, telescope = pcall(require, "telescope.builtin")
 
             -- Wrapper for keymapping with default opts
             local map = function(mode, lhs, rhs, desc)
@@ -131,10 +131,10 @@ return {
             --     "Go to the next diagnostic")
             map("n", "[d", function() vim.diagnostic.goto_prev() end, "Previous diagnostic")
             map("n", "]d", function() vim.diagnostic.goto_next() end, "Next diagnostic")
-            map("n", "<space>d",
-                function()
-                    if telescope_ok then telescope.diagnostics() else vim.diagnostic.setloclist() end
-                end, "Show all diagnostics")
+            -- map("n", "<space>d",
+            --     function()
+            --         if telescope_ok then telescope.diagnostics() else vim.diagnostic.setloclist() end
+            --     end, "Show all diagnostics")
             map("n", "<leader>i",
                 function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
                 "Toggle inlay hint")
@@ -164,19 +164,19 @@ return {
 
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
-                    if telescope_ok then
-                        bufmap("n", "gd", telescope.lsp_definitions, "Go to definition")
-                        bufmap("n", "gi", telescope.lsp_implementations, "Go to implementation")
-                        bufmap("n", "gr", telescope.lsp_references, "Go to references")
-                        bufmap("n", "gy", telescope.lsp_type_definitions, "Go to type definition")
-                    else
-                        bufmap("n", "gd", vim.lsp.buf.definition, "Go to definition")
-                        bufmap("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
-                        bufmap("n", "gr", vim.lsp.buf.references, "Go to references")
-                        bufmap("n", "gy", vim.lsp.buf.type_definition, "Go to type definition")
-                    end
+                    -- if telescope_ok then
+                    --     bufmap("n", "gd", telescope.lsp_definitions, "Go to definition")
+                    --     bufmap("n", "gi", telescope.lsp_implementations, "Go to implementation")
+                    --     bufmap("n", "gr", telescope.lsp_references, "Go to references")
+                    --     bufmap("n", "gy", telescope.lsp_type_definitions, "Go to type definition")
+                    -- else
+                    --     bufmap("n", "gd", vim.lsp.buf.definition, "Go to definition")
+                    --     bufmap("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
+                    --     bufmap("n", "gr", vim.lsp.buf.references, "Go to references")
+                    --     bufmap("n", "gy", vim.lsp.buf.type_definition, "Go to type definition")
+                    -- end
 
-                    bufmap("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
+                    -- bufmap("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
                     bufmap("n", "K", vim.lsp.buf.hover, "Show docstring of the item under the cursor")
                     -- bufmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Show signature help")
 
