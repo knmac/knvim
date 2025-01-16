@@ -63,31 +63,29 @@ vim.keymap.set("t", "<A-l>", [[<C-\><C-n><C-w>l]], opts)
 -- Function key bindings
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- <F1>: Show help
-vim.keymap.set("n", "<F1>", "<cmd>Telescope help_tags<CR>", opts)
+vim.keymap.set("n", "<F1>", function() Snacks.picker.help() end, opts)
 -- <S-F1>: Show keymaps
-vim.keymap.set("n", "<F13>", "<cmd>Telescope keymaps<CR>", opts)
+vim.keymap.set("n", "<F13>", function() Snacks.picker.keymaps() end, opts)
 
 -- <F2>: Rename (check lspconfig)
-vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
 -- <S-F2>: Show task list
-vim.keymap.set("n", "<F14>", "<cmd>TodoTelescope<CR>", opts)
+vim.keymap.set("n", "<F14>", function() Snacks.picker.todo_comments() end, opts)
 
 -- <F3>: Show file tree explorer
--- vim.keymap.set("n", "<F3>", "<cmd>NvimTreeToggle<CR>", default_opts)
 vim.keymap.set("n", "<F3>", "<cmd>Neotree toggle<CR>", opts)
 -- <F3>: Show file tree at the current file
 vim.keymap.set("n", "<F15>", "<cmd>Neotree reveal<CR>", opts)
 
 -- <F4>: Show tags of current buffer
--- vim.keymap.set("n", "<F4>", ":Telescope current_buffer_tags<CR>", default_opts)
 vim.keymap.set("n", "<F4>", "<cmd>Outline!<CR>", opts)
 -- <S-F4>: Show diagnostics
-vim.keymap.set("n", "<F16>", "<cmd>Telescope diagnostics<CR>", opts)
+vim.keymap.set("n", "<F16>", function() Snacks.picker.diagnostics() end, opts)
 -- <S-F4>: Generate tags
 -- vim.keymap.set("n", "<F16>", ":!ctags -R --links=no . <CR>", default_opts)
 
 -- <F5>: Show and switch buffer
-vim.keymap.set("n", "<F5>", "<cmd>Telescope buffers<CR>", opts)
+vim.keymap.set("n", "<F5>", function() Snacks.picker.buffers() end, opts)
 -- <S-F5>: Show and switch tab
 vim.keymap.set("n", "<F17>", "<cmd>tabs<CR>", opts)
 
