@@ -19,22 +19,6 @@ vim.api.nvim_create_user_command(
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- Custom components
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
--- Show notification
--- local notify_stat = {
---     function()
---         return " "
---     end,
---     on_click = function(_, btn, _)
---         if not is_clickable then return end
---
---         if btn == "l" then
---             require("telescope").extensions.notify.notify()
---         elseif btn == "r" then
---             require("notify").dismiss()
---         end
---     end,
--- }
-
 -- Show click
 local click_stat = {
     function()
@@ -176,7 +160,7 @@ local filetype_stat = {
     "filetype", -- builtin filetype component
     on_click = function()
         if not is_clickable then return end
-        require("telescope.builtin").filetypes()
+        require("telescope.builtin").filetypes() -- TODO: remove telescope dependencies
         vim.cmd.LspRestart()
     end,
 }
@@ -186,7 +170,7 @@ local branch_stat = {
     icon = "󰘬",
     on_click = function()
         if not is_clickable then return end
-        require("telescope.builtin").git_branches()
+        require("telescope.builtin").git_branches() -- TODO: remove telescope dependencies
     end,
 }
 
@@ -194,7 +178,8 @@ local diagnostics_stat = {
     "diagnostics",
     on_click = function()
         if not is_clickable then return end
-        require("telescope.builtin").diagnostics()
+        -- require("telescope.builtin").diagnostics()
+        Snacks.picker.diagnostics_buffer()
     end,
 }
 

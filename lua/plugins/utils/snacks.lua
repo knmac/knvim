@@ -143,7 +143,7 @@ return {
             ui_select = true, -- replace `vim.ui.select` with the snacks picker
         },
         -- ────────────────────────────────────────────────────────────────────────────────────────
-        terminal = { enabled = true, },
+        terminal = { enabled = true },
         lazygit = { enabled = true },
         input = { enabled = true },
         notifier = { enabled = true, top_down = false, },
