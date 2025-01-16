@@ -194,14 +194,14 @@ local diff_stat = {
 }
 
 -- Custom components using remote-nvim
-local remote_stat = {
-    function()
-        ---@diagnostic disable-next-line: undefined-field
-        return (vim.g.remote_neovim_host and vim.uv.os_gethostname()) or ""
-    end,
-    padding = { right = 1, left = 1 },
-    icon = "",
-}
+-- local remote_stat = {
+--     function()
+--         ---@diagnostic disable-next-line: undefined-field
+--         return (vim.g.remote_neovim_host and vim.uv.os_gethostname()) or ""
+--     end,
+--     padding = { right = 1, left = 1 },
+--     icon = "",
+-- }
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- Main config
@@ -239,7 +239,7 @@ return {
             },
             sections = {
                 lualine_a = {
-                    remote_stat,
+                    -- remote_stat,
                     { "mode", icon = "" },
                 },
                 lualine_b = {
