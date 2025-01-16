@@ -45,12 +45,14 @@ return {
         },
         {
             "rcarriga/nvim-dap-ui", -- UI for nvim-dap
+            event = { "BufReadPre", "BufNewFile" },
             -- event = "VeryLazy",
             opts = {},
         },
         {
             "jay-babu/mason-nvim-dap.nvim", -- bridges mason.nvim and nvim-dap
-            event = "VeryLazy",
+            event = { "BufReadPre", "BufNewFile" },
+            -- event = "VeryLazy",
             opts = {
                 ensure_installed = { "python", "codelldb" },
                 automatic_installation = true,
@@ -58,7 +60,8 @@ return {
         },
         {
             "LiadOz/nvim-dap-repl-highlights", -- syntax highlights to nvim-dap REPL
-            event = "VeryLazy",
+            event = { "BufReadPre", "BufNewFile" },
+            -- event = "VeryLazy",
             dependencies = "nvim-treesitter/nvim-treesitter",
             build = ":TSInstall dap_repl",
             opts = {},

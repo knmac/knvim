@@ -6,7 +6,7 @@ require("core")
 -- Overwrite some custom paths if needed (already defined in lua/core/settings.lua)
 -- vim.g.python3_host_prog = ""
 -- vim.opt.spellfile = ""
-vim.g.knvim_completion_engine = "blink"  -- cmp | blink
+vim.g.knvim_completion_engine = "blink" -- cmp | blink
 
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
@@ -44,7 +44,7 @@ require("lazy").setup({
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
     install = {
-        colorscheme = { "catppuccin-macchiato", "habamax" },
+        colorscheme = { "catppuccin-macchiato" },
     },
     -- automatically check for plugin updates
     checker = { enabled = true },

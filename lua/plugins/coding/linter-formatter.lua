@@ -3,6 +3,7 @@ return {
     -- Ensure install for linter and formatter
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
+        -- event = { "BufReadPre", "BufNewFile" },
         -- event = "VeryLazy",
         opts = {
             ensure_installed = { "cpplint", "shellcheck", "prettier", },

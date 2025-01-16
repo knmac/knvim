@@ -6,7 +6,8 @@ return {
     -- Mason
     {
         "williamboman/mason.nvim",
-        event = "VeryLazy",
+        event = { "BufReadPre", "BufNewFile" },
+        -- event = "VeryLazy",
         build = ":MasonUpdate",
         opts = {
             ui = {
@@ -23,7 +24,8 @@ return {
     -- Ensure install for Mason's LSP
     {
         "williamboman/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
-        event = "VeryLazy",
+        event = { "BufReadPre", "BufNewFile" },
+        -- event = "VeryLazy",
         opts = {
             -- Install the LSP servers automatically using mason-lspconfig
             ensure_installed = {
