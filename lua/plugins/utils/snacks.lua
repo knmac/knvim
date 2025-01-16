@@ -76,6 +76,7 @@ return {
                     { icon = "󰱼 ", key = "f", desc = "Find file", action = ":lua Snacks.dashboard.pick('files')" },
                     { icon = "󱎸 ", key = "g", desc = "Grep text", action = ":lua Snacks.dashboard.pick('live_grep')" },
                     { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":SessionManager" },
+                    -- { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":lua Snacks.dashboard.pick('projects')" },
                     -- { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
                     --
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
