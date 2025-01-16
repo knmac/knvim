@@ -75,8 +75,7 @@ return {
                     { icon = " ", key = "r", desc = "Open a recent file", action = ":lua Snacks.dashboard.pick('recent')" },
                     { icon = "󰱼 ", key = "f", desc = "Find file", action = ":lua Snacks.dashboard.pick('files')" },
                     { icon = "󱎸 ", key = "g", desc = "Grep text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-                    -- { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":Telescope persisted" },
-                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":lua require('persisted').select()" },
+                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":SessionManager" },
                     -- { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
                     --
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
