@@ -72,15 +72,16 @@ return {
                 keys = {
                     --
                     { icon = "󰝒 ", key = "e", desc = "Edit a new file", action = ":ene | startinsert" },
-                    { icon = " ", key = "o", desc = "Open an old file", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+                    { icon = " ", key = "r", desc = "Open a recent file", action = ":lua Snacks.dashboard.pick('recent')" },
                     { icon = "󰱼 ", key = "f", desc = "Find file", action = ":lua Snacks.dashboard.pick('files')" },
                     { icon = "󱎸 ", key = "g", desc = "Grep text", action = ":lua Snacks.dashboard.pick('live_grep')" },
                     -- { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":Telescope persisted" },
                     { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":lua require('persisted').select()" },
-                    { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
+                    -- { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
                     --
-                    { icon = "󰓙 ", key = "h", desc = "Health check", action = ":checkhealth" },
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+                    { icon = " ", key = "m", desc = "Mason", action = ":Mason" },
+                    { icon = "󰓙 ", key = "h", desc = "Health check", action = ":checkhealth" },
                     --
                     { icon = " ", key = "c", desc = "Config", action = ":cd " .. vim.fn.stdpath("config") .. " | e $MYVIMRC" },
                     {

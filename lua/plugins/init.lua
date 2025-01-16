@@ -14,4 +14,5 @@ return {
     -- { import = "plugins.experimentals.neorg" },
     -- { import = "plugins.experimentals.neovide" },
     -- { import = "plugins.experimentals.nonels" },
+    -- { import = "plugins.experimentals.remote-nvim" },
 }
