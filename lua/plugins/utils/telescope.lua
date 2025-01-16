@@ -4,15 +4,15 @@ return {
     event = "VeryLazy",
     dependencies = {
         { "nvim-telescope/telescope-ui-select.nvim", event = "VeryLazy" },
-        {
-            "nvim-telescope/telescope-bibtex.nvim", -- fuzzy finder for bibtex entries
-            event = "VeryLazy",
-        },
-        {
-            "nvim-telescope/telescope-fzf-native.nvim", -- use fzf sorter for telescope
-            event = "VeryLazy",
-            build = "make",
-        },
+        -- {
+        --     "nvim-telescope/telescope-bibtex.nvim", -- fuzzy finder for bibtex entries
+        --     event = "VeryLazy",
+        -- },
+        -- {
+        --     "nvim-telescope/telescope-fzf-native.nvim", -- use fzf sorter for telescope
+        --     event = "VeryLazy",
+        --     build = "make",
+        -- },
     },
     -- keys = {
     --     { "<space><space>", "<CMD>Telescope<CR>",                           desc = "Telescope: Open builtin" },
@@ -130,8 +130,8 @@ return {
 
         -- Load other telescope extensions
         require("telescope").load_extension("ui-select")
-        require("telescope").load_extension("fzf")
-        require("telescope").load_extension("bibtex")
+        -- require("telescope").load_extension("fzf")
+        -- require("telescope").load_extension("bibtex")
         -- require("telescope").load_extension("notify")
         require("telescope").load_extension("persisted")
 

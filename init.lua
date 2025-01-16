@@ -54,6 +54,8 @@ require("lazy").setup({
     },
 })
 
--- Disable background of some highlights
+-- ────────────────────────────────────────────────────────────────────────────────────────────────
+-- Disable background of some highlights (affects loaded plugins)
+-- ────────────────────────────────────────────────────────────────────────────────────────────────
 vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = nil })
 vim.api.nvim_set_hl(0, "PMenu", { ctermbg = nil })
