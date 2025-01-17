@@ -8,6 +8,6 @@ return {
     },
     opts = {
         enabled = true,
-        snippet_engine = "luasnip",
+        snippet_engine = "nvim",
     },
 }

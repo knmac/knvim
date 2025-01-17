@@ -2,6 +2,7 @@
 return {
     "andymass/vim-matchup",
     dependencies = "nvim-treesitter/nvim-treesitter",
+    event = "VeryLazy",
     config = function()
         -- Treesitter integration
         require("nvim-treesitter.configs").setup({
