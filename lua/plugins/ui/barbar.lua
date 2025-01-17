@@ -5,7 +5,8 @@ return {
         "lewis6991/gitsigns.nvim",     -- OPTIONAL: for git status
         "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
     },
-    event = "BufEnter",
+    -- event = "BufEnter",
+    event = "VeryLazy",
     init = function() vim.g.barbar_auto_setup = false end,
     keys = {
         { "<C-A-h>",   "<CMD>BufferPrevious<CR>",     desc = "Barbar: previous buffer" },
