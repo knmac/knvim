@@ -170,7 +170,8 @@ local branch_stat = {
     icon = "󰘬",
     on_click = function()
         if not is_clickable then return end
-        require("telescope.builtin").git_branches() -- TODO: remove telescope dependencies
+        -- require("telescope.builtin").git_branches()
+        Snacks.lazygit()
     end,
 }
 
