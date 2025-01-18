@@ -1,4 +1,6 @@
 -- Debug adapter protocol
+
+--- Generate template launcher for python code.
 local generate_python_launcher = function()
     local fname = ".vscode/launch.json"
     local f = io.open(fname, "r")
@@ -35,6 +37,17 @@ local generate_python_launcher = function()
     end
 end
 
+--- Set breakpoint with condition.
+local bkpt_w_condition = function()
+    vim.ui.input(
+        { prompt = "Breakpoint condition: " },
+        function(input)
+            require("dap").set_breakpoint(input)
+        end
+    )
+end
+
+
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
     event = "VeryLazy",
@@ -68,31 +81,18 @@ return {
         },
     },
     keys = {
-        { ",d", function() require("dapui").toggle() end,         desc = "DAP: Toggle UI" },
-        { ",D", function() require("dap").repl.toggle() end,      desc = "DAP: Open default REPL" },
-        { ",k", function() require("dap.ui.widgets").hover() end, desc = "DAP: Check variable value on hover" },
-        {
-            ",c",
-            function()
-                -- if vim.fn.filereadable(".vscode/launch.json") then
-                --     require("dap.ext.vscode").load_launchjs()
-                -- end
-                require("dap").continue()
-            end,
-            desc = "DAP: Start/Continue debugging",
-        },
+        { ",d", function() require("dapui").toggle() end,          desc = "DAP: Toggle UI" },
+        { ",D", function() require("dap").repl.toggle() end,       desc = "DAP: Open default REPL" },
+        { ",k", function() require("dap.ui.widgets").hover() end,  desc = "DAP: Check variable value on hover" },
+        { ",c", function() require("dap").continue() end,          desc = "DAP: Start/Continue debugging", },
         { ",l", function() require("dap").run_last() end,          desc = "DAP: Run the last debug adapter entry" },
         { ",b", function() require("dap").toggle_breakpoint() end, desc = "DAP: Toggle breakpoint" },
-        {
-            ",B",
-            function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
-            desc = "DAP: Toggle breakpoint with condition",
-        },
-        { ",n", function() require("dap").step_over() end, desc = "DAP: Step over" },
-        { ",s", function() require("dap").step_into() end, desc = "DAP: Step into" },
-        { ",u", function() require("dap").step_out() end,  desc = "DAP: Step out" },
-        { ",t", function() require("dap").terminate() end, desc = "DAP: Terminate debugging" },
-        { ",g", generate_python_launcher,                  desc = "DAP: Generate launcher for Python" },
+        { ",B", bkpt_w_condition,                                  desc = "DAP: Toggle breakpoint with condition", },
+        { ",n", function() require("dap").step_over() end,         desc = "DAP: Step over" },
+        { ",s", function() require("dap").step_into() end,         desc = "DAP: Step into" },
+        { ",u", function() require("dap").step_out() end,          desc = "DAP: Step out" },
+        { ",t", function() require("dap").terminate() end,         desc = "DAP: Terminate debugging" },
+        { ",g", generate_python_launcher,                          desc = "DAP: Generate launcher for Python" },
         -- { ",r", function() require("dap").run() end,       desc = "DAP: Run debugging" },
     },
     config = function()
