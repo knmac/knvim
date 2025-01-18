@@ -82,6 +82,7 @@ lua/
    │  ├── illuminate.lua
    │  ├── lualine.lua
    │  ├── noice.lua
+   │  ├── rainbow_delimiters.lua
    │  └── winsep.lua
    ├── utils/
    │  ├── diffview.lua
@@ -94,11 +95,10 @@ lua/
    │  ├── oil.lua
    │  ├── outline.lua
    │  ├── persisted.lua
-   │  ├── remote-nvim.lua
    │  ├── renderer-markdown-obsidian.lua
+   │  ├── session_manager.lua
    │  ├── snacks.lua
    │  ├── swenv.lua
-   │  ├── telescope.lua
    │  ├── todo-comments.lua
    │  └── which-key.lua
    └── init.lua
@@ -126,7 +126,7 @@ The following dependencies are for manual installation.
 - Neovim 0.10.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
 - A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [Ghostty](https://ghostty.org/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font). Knvim is also tested with [WezTerm](https://wezfurlong.org/wezterm/).
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) and [mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) (package managers for LSPs, DAPs, linters, and formatters).
-- [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (fuzzy finder).
+- [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for fuzzy finder (`Snacks.picker`).
 
 Optional dependencies:
 
@@ -289,6 +289,6 @@ _A4:_ Image rendering is partially tested with Ghostty and WezTerm terminals. Yo
 
 ## 9. TODO
 
-- [x] ~Automatically~ copy knvim to server for remote editing.
+- [x] ~Automatically~ copy knvim to server for remote editing. You can try the experimental config `plugins.experimental.remote-nvim`.
 - [x] Image rendering (partially tested).
 - [ ] Automatically switch path separator and EOL character, depending on the OS (Linux/MacOS/Windows). This will not be considered in the short run because I do not have a Windows machine to test :)
