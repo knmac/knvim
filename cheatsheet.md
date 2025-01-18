@@ -39,38 +39,57 @@ Overall logic:
 |                       | Toggle color code colorizing (e.g., CSS)  | `Shift+F11`                  |
 |                       | Toggle welcome screen                     | `Shift+F12`                  |
 
-### 1.2. Telescope key-bindings
+### 1.2. Snacks key-bindings
 
-All Telescope key-bindings start with `<space>`.
+#### 1.2.1 Snacks.picker (fuzzy finder) key-bindings
 
-| Functionality                         | Key-binding       |
-| ------------------------------------- | ----------------- |
-| Open Telescope                        | `<space> <space>` |
-| Fuzzy search for *f*ilename           | `<space> f`       |
-| Fuzzy search for *t*ext               | `<space> t`       |
-| Fuzzy search for active *b*uffer      | `<space> b`       |
-| Fuzzy search for *s*ession            | `<space> s`       |
-| Fuzzy search for bibtex *c*itations   | `<space> c`       |
-| Fuzzy search for *v*im options        | `<space> v`       |
-| Fuzzy search for *k*eymnaps           | `<space> k`       |
-| Fuzzy search for *m*arks              | `<space> m`       |
-| Fuzzy search for python *e*nvironment | `<space> e`       |
-| Fuzzy search in the current buffer    | `<space> /`       |
-| Fuzzy search for commands             | `<space> ?`       |
-| Fuzzy search for *d*iagnostics        | `<space> d`       |
+All picker key-bindings start with `<space>`.
 
-Inside Telescope, after inputting something
+| Functionality             | Key-binding       |
+| ------------------------- | ----------------- |
+| Open Snacks picker        | `<space> <space>` |
+| Find *f*iles              | `<space> f`       |
+| Find *t*ext (grep)        | `<space> t`       |
+| Find *b*uffer             | `<space> b`       |
+| Find *h*elp               | `<space> h`       |
+| Find *k*eymap             | `<space> k`       |
+| Find *c*ommands           | `<space> c`       |
+| Find *m*arks              | `<space> m`       |
+| Find *r*egisters          | `<space> r`       |
+| Find *d*iagnostics        | `<space> d`       |
+| Find Python *e*nvironment | `<space> e`       |
+| Find hovered word         | `<space> *`       |
+| Find in open buffers      | `<space> /`       |
+
+Inside the picker:
 
 | Functionality               | Key-binding (insert mode) | Key-binding (normal mode) |
 | --------------------------- | ------------------------- | ------------------------- |
 | Go to the next line         | `Ctrl+n`                  | `j`                       |
 | Go to the previous line     | `Ctrl+p`                  | `k`                       |
-| Scroll down the doc         | `Ctrl+j` or `Ctrl+d`      | `Ctrl+j` or `Ctrl+d`      |
-| Scroll up the doc           | `Ctrl+k` or `Ctrl+u`      | `Ctrl+k` or `Ctrl+u`      |
+| Scroll down the doc         | `Ctrl+b`                  | `Ctrl+b`                  |
+| Scroll up the doc           | `Ctrl+f`                  | `Ctrl+f`                  |
 | Select multiple items       | `Tab`                     | `Tab`                     |
-| Send selection to quicklist | `Ctrl+w`                  | `Ctrl+w`                  |
-| Close Telescope             | `Ctrl+c`                  | `Esc`                     |
-| Show help (which-key)       | `Ctrl+h`                  | -                         |
+| Send selection to quicklist | `Ctrl+q`                  | `Ctrl+q`                  |
+| Close                       | `Ctrl+c`                  | `Esc`                     |
+| Show help (which-key)       | -                         | `?`                       |
+
+For the complete key-bindings, see Snacks picker's [doc](https://github.com/folke/snacks.nvim/blob/main/docs/picker.md).
+
+#### 1.2.2. Other Snacks key-bindings
+
+| Functionality                         | Key-binding  |
+| ------------------------------------- | ------------ |
+| Toggle Zen-mode                       | `<leader> z` |
+| Toggle zoom of the current window     | `<leader> Z` |
+| Dismiss current notification message  | `<leader> n` |
+| Show history of notification messages | `<leader> N` |
+| Open Lazygit                          | `<leader> g` |
+| Open scratch buffer                   | `<leader> s` |
+| Select scratch buffer                 | `<leader> S` |
+| Toggle terminal                       | `Ctrl+\`     |
+| Enter normal mode in terminal         | `<Esc><Esc>` |
+| Open Yazi                             | `Ctrl+y`     |
 
 ### 1.3. LSP key-bindings
 
@@ -173,16 +192,6 @@ Navigate to beginning/end of a function. Convenient for long functions. This is 
 |            | Toggle outline view (on the screen right side)  | `<leader> o`         |
 |            | Toggle outline view (beside current buffer)     | `<leader> O`         |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
-| Snacks     | Toggle Zen-mode                                 | `<leader> z`         |
-|            | Toggle zoom of the current window               | `<leader> Z`         |
-|            | Dismiss current notification message            | `<leader> n`         |
-|            | Show history of notification messages           | `<leader> N`         |
-|            | Open Lazygit                                    | `<leader> g`         |
-|            | Open scratch buffer                             | `<leader> s`         |
-|            | Select scratch buffer                           | `<leader> S`         |
-|            | Toggle terminal                                 | `Ctrl+\`             |
-|            | Enter normal mode in terminal                   | `<Esc><Esc>`         |
-|            | Open Yazi                                       | `Ctrl+y`             |
 | Oil        | Open oil in floating window                     | `-`                  |
 |            | Open oil in the current buffer                  | `_`                  |
 |            | Close oil and return to the previous buffer     | `Ctrl+c` or `q`      |
