@@ -32,8 +32,6 @@ return {
         { "<space>b",       function() Snacks.picker.buffers() end,              desc = "Picker: Find buffer" },
         { "<space>*",       function() Snacks.picker.grep_word() end,            desc = "Picker: Find hovered word" },
         { "<space>/",       function() Snacks.picker.grep_buffers() end,         desc = "Picker: Find in open buffers" },
-        -- { "<space>c",       "<CMD>Telescope bibtex<CR>",                       desc = "Snacks: Find bibtex" },
-        -- { "<space>v",       "<CMD>Telescope vim_options<CR>",                  desc = "Snacks: Find vim option" },
         { "<space>h",       function() Snacks.picker.help() end,                 desc = "Picker: Find help" },
         { "<space>k",       function() Snacks.picker.keymaps() end,              desc = "Picker: Find key map" },
         { "<space>c",       function() Snacks.picker.commands() end,             desc = "Picker: Find command" },

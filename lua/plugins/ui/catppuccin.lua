@@ -34,6 +34,10 @@ return {
                     enabled = true,
                     color = "mauve",
                 },
+                dropbar = {
+                    enabled = true,
+                    color_mode = true,
+                },
                 gitsigns = true,
                 leap = true,
                 neotree = true,
@@ -42,7 +46,6 @@ return {
                 nvimtree = true,
                 snacks = true,
                 symbols_outline = true,
-                telescope = true,
                 treesitter = true,
                 rainbow_delimiters = true,
                 which_key = true,

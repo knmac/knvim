@@ -151,12 +151,11 @@ local env_stat = {
     end,
 }
 
--- Custom components using telescope
+-- Custom components
 local filetype_stat = {
     "filetype", -- builtin filetype component
     on_click = function()
         if not is_clickable then return end
-        -- require("telescope.builtin").filetypes()
         vim.ui.select(
             vim.fn.getcompletion("", "filetype"),
             { prompt = "Select file type: " },
@@ -171,7 +170,6 @@ local branch_stat = {
     icon = "󰘬",
     on_click = function()
         if not is_clickable then return end
-        -- require("telescope.builtin").git_branches()
         Snacks.lazygit()
     end,
 }
@@ -180,7 +178,6 @@ local diagnostics_stat = {
     "diagnostics",
     on_click = function()
         if not is_clickable then return end
-        -- require("telescope.builtin").diagnostics()
         Snacks.picker.diagnostics_buffer()
     end,
 }
@@ -213,7 +210,6 @@ return {
     event = "VeryLazy",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "nvim-telescope/telescope.nvim", -- Switch filetype and git branches
         "AckslD/swenv.nvim",             -- Show and switch python env
         "sindrets/diffview.nvim",        -- Clickable diffthis
     },

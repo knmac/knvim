@@ -33,10 +33,7 @@ return {
         end
 
         require("colorful-winsep").setup({
-            no_exec_files = {
-                -- "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree",
-                -- "neo-tree", "Outline", "toggleterm",
-            },
+            no_exec_files = {},
             create_event = function()
                 local buf_n = count_valid_bufs()
                 if buf_n <= 1 then
