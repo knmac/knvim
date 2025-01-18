@@ -156,7 +156,12 @@ local filetype_stat = {
     "filetype", -- builtin filetype component
     on_click = function()
         if not is_clickable then return end
-        require("telescope.builtin").filetypes() -- TODO: remove telescope dependencies
+        -- require("telescope.builtin").filetypes()
+        vim.ui.select(
+            vim.fn.getcompletion("", "filetype"),
+            { prompt = "Select file type: " },
+            function(choice) vim.bo.filetype = choice end
+        )
         vim.cmd.LspRestart()
     end,
 }
