@@ -170,7 +170,7 @@ local branch_stat = {
     icon = "󰘬",
     on_click = function()
         if not is_clickable then return end
-        Snacks.lazygit()
+        Snacks.picker.git_branches()
     end,
 }
 
