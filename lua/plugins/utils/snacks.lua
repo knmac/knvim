@@ -24,7 +24,7 @@ return {
         { "<leader>s",      function() Snacks.scratch() end,                     desc = "Snacks: Toggle Scratch Buffer" },
         { "<leader>S",      function() Snacks.scratch.select() end,              desc = "Snacks: Select Scratch Buffer" },
         { "<C-\\>",         function() Snacks.terminal() end,                    desc = "Snacks: Toggle Terminal",          mode = { "n", "t" } },
-        { "<C-y>",          function() Snacks.terminal.toggle({ "yazi" }) end,   desc = "Snacks: Open Yazi" },
+        { "<C-S-y>",        function() Snacks.terminal.toggle({ "yazi" }) end,   desc = "Snacks: Open Yazi" },
         -- Pickers ────────────────────────────────────────────────────────────────────────────────
         { "<space><space>", function() Snacks.picker() end,                      desc = "Picker: pickers" },
         { "<space>f",       function() Snacks.picker.files() end,                desc = "Picker: Find files" },
