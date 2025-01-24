@@ -57,6 +57,9 @@ All picker key-bindings start with `<space>`.
 | Find *m*arks              | `<space> m`       |
 | Find *r*egisters          | `<space> r`       |
 | Find *d*iagnostics        | `<space> d`       |
+| Find in *j*ndo tree       | `<space> j`       |
+| Find in *u*ndo tree       | `<space> u`       |
+| Find spelling             | `<space> z`       |
 | Find Python *e*nvironment | `<space> e`       |
 | Find hovered word         | `<space> *`       |
 | Find in open buffers      | `<space> /`       |
