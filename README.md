@@ -9,7 +9,7 @@ K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username `kn
 
 <!-- ![Screenshot](./res/screenshot.png) -->
 
-Video demo with clickable lualine:
+Video demo with clickable `lualine`:
 
 ![demo3](./res/demo1.gif)
 
@@ -130,7 +130,7 @@ The following dependencies are for manual installation.
 
 Optional dependencies:
 
-- Python packages `pynvim` and `neovim` (installable with `pip install pynvim neovim`).
+- Python packages `pynvim` and `neovim` (can be installed with `pip install pynvim neovim`).
 - [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [Snacks.nvim](https://github.com/folke/snacks.nvim).
 - A virtual environment (`conda` or `pyenv`) with the name `knvim`.
 
@@ -256,7 +256,7 @@ wiki.style = "title-slug"
 
 _Q1: Why knvim is not working on Windows?_
 
-_A1:_ knvim config targets Unix-based OS (e.g., Linux and MacOS) and is not fully tested on Windows. Some common problems include different path separator (`/` on Unix vs `\` on Windows) and EOL character (`LF` on Unix and `CR LF` on Windows). You may want to change these characters manually if you want to try knvim on Windows machines.
+_A1:_ knvim config targets Unix-based OS (e.g., Linux and MacOS) and is not fully tested on Windows. Some common problems include different path separator (`/` on Unix vs `\` on Windows) and `EOL` character (`LF` on Unix and `CR LF` on Windows). You may want to change these characters manually if you want to try knvim on Windows machines.
 
 _Q2: Why knvim does not include (this and that) by default?_
 
@@ -266,7 +266,7 @@ _Q3: Why knvim does not render markdown correctly (using markdown preview)?_
 
 _A3:_ This is mostly how the terminal is configured. I find Ghostty supports most of the features out-of-the box. For WezTerm, some features need additional setup. Please inspect the code carefully before running.
 
-- Rendering undercurl [ref](https://wezfurlong.org/wezterm/faq.html#how-do-i-enable-undercurl-curly-underlines):
+- Rendering under-curl [ref](https://wezfurlong.org/wezterm/faq.html#how-do-i-enable-undercurl-curly-underlines):
 
 ```bash
 tempfile=$(mktemp) \
@@ -275,7 +275,7 @@ tempfile=$(mktemp) \
   && rm "$tempfile"
 ```
 
-- Rendering strikethrough [ref](https://github.com/neovim/neovim/discussions/24346):
+- Rendering strike-through [ref](https://github.com/neovim/neovim/discussions/24346):
 
 ```bash
 infocmp "$TERM" > myterm.info
@@ -291,4 +291,4 @@ _A4:_ Image rendering is partially tested with Ghostty and WezTerm terminals. Yo
 
 - [x] ~Automatically~ copy knvim to server for remote editing. You can try the experimental config `plugins.experimental.remote-nvim`.
 - [x] Image rendering (partially tested).
-- [ ] Automatically switch path separator and EOL character, depending on the OS (Linux/MacOS/Windows). This will not be considered in the short run because I do not have a Windows machine to test :)
+- [ ] Automatically switch path separator and `EOL` character, depending on the OS (Linux/MacOS/Windows). This will not be considered in the short run because I do not have a Windows machine to test :)
