@@ -2,8 +2,8 @@
 
 -- Disable indent for markdown
 vim.api.nvim_create_autocmd("FileType", {
-    desc = "Disable indent for markdown",
-    pattern = { "markdown" },
+    desc = "Disable indent for some file types",
+    pattern = { "markdown", "help" },
     group = vim.api.nvim_create_augroup("snacks_group", { clear = false }),
     callback = function()
         vim.b.snacks_indent = false
@@ -152,6 +152,7 @@ return {
         quickfile = { enabled = true },
         scroll = { enabled = true },
         zen = { enabled = true },
+        scope = { enabled = true },
         -- words = { enabled = true },
     },
 }

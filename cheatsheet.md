@@ -169,18 +169,7 @@ All DAP key-bindings start with `,`.
 | Hover variable while debugging            | `,k`        |
 | Generate launcher for python              | `,g`        |
 
-### 1.6. Vim matchup
-
-Navigate to beginning/end of a function. Convenient for long functions. This is the default key-bindings from the plugins, but I'm too lazy to make a different section :P
-
-| Functionality                             | Key-binding |
-| ----------------------------------------- | ----------- |
-| Cycle to next matching word               | `%`         |
-| Go to {count}-th previous outer open word | `[%`        |
-| Go to {count}-th next outer open word     | `]%`        |
-| Go to inside {count}-th nearest block     | `z%`        |
-
-### 1.7. Other custom key-bindings
+### 1.6. Other custom key-bindings
 
 | Group      | Functionality                                   | Key-binding          |
 | ---------- | ----------------------------------------------- | -------------------- |
