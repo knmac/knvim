@@ -1,3 +1,13 @@
+-- Session manager
+
+vim.api.nvim_create_autocmd({ "User" }, {
+    pattern = "SessionLoadPost",
+    group = vim.api.nvim_create_augroup("SessionGroup", {}),
+    callback = function()
+        vim.cmd("Lazy reload colorful-winsep.nvim")
+    end,
+})
+
 return {
     "Shatur/neovim-session-manager",
     dependencies = {
