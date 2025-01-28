@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
     pattern = "SessionLoadPost",
     group = vim.api.nvim_create_augroup("SessionGroup", {}),
     callback = function()
-        require("lazy.core.loader").reload("colorful-winsep.nvim")
+        vim.cmd[[Lazy reload colorful-winsep.nvim]]
     end,
 })
 
