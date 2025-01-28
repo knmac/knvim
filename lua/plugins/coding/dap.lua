@@ -56,10 +56,15 @@ return {
             "nvim-treesitter/nvim-treesitter",
             event = "VeryLazy",
         },
+        -- {
+        --     "rcarriga/nvim-dap-ui", -- UI for nvim-dap
+        --     event = { "BufReadPre", "BufNewFile" },
+        --     -- event = "VeryLazy",
+        --     opts = {},
+        -- },
         {
-            "rcarriga/nvim-dap-ui", -- UI for nvim-dap
-            event = { "BufReadPre", "BufNewFile" },
-            -- event = "VeryLazy",
+            "igorlfs/nvim-dap-view",
+            event = "VeryLazy",
             opts = {},
         },
         {
@@ -81,9 +86,11 @@ return {
         },
     },
     keys = {
-        { ",d", function() require("dapui").toggle() end,          desc = "DAP: Toggle UI" },
+        -- { ",d", function() require("dapui").toggle() end,          desc = "DAP: Toggle UI" },
+        { ",d", function() require("dap-view").toggle() end,       desc = "DAP: Toggle UI" },
         { ",D", function() require("dap").repl.toggle() end,       desc = "DAP: Open default REPL" },
-        { ",k", function() require("dap.ui.widgets").hover() end,  desc = "DAP: Check variable value on hover" },
+        { ",k", function() require("dap-view").add_expr() end,     desc = "DAP: Add expression to watch" },
+        -- { ",k", function() require("dap.ui.widgets").hover() end,  desc = "DAP: Check variable value on hover" },
         { ",c", function() require("dap").continue() end,          desc = "DAP: Start/Continue debugging", },
         { ",l", function() require("dap").run_last() end,          desc = "DAP: Run the last debug adapter entry" },
         { ",b", function() require("dap").toggle_breakpoint() end, desc = "DAP: Toggle breakpoint" },
@@ -97,7 +104,7 @@ return {
     },
     config = function()
         local dap = require("dap")
-        local dapui = require("dapui")
+        -- local dapui = require("dapui")
 
         -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Configurations for each languages
@@ -167,9 +174,9 @@ return {
         -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Automatically open when a debug session is created
         -- ────────────────────────────────────────────────────────────────────────────────────────
-        dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
-        dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
-        dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
+        -- dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
+        -- dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
+        -- dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
 
         -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Set up signs and colors
