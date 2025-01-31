@@ -73,9 +73,9 @@ vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
 vim.keymap.set("n", "<F14>", function() Snacks.picker.todo_comments() end, opts)
 
 -- <F3>: Show file tree explorer
-vim.keymap.set("n", "<F3>", "<cmd>Neotree toggle<CR>", opts)
+vim.keymap.set("n", "<F3>", function() Snacks.picker.explorer() end, opts)
 -- <F3>: Show file tree at the current file
-vim.keymap.set("n", "<F15>", "<cmd>Neotree reveal<CR>", opts)
+-- vim.keymap.set("n", "<F15>", "<cmd>Neotree reveal<CR>", opts)
 
 -- <F4>: Show tags of current buffer
 vim.keymap.set("n", "<F4>", "<cmd>Outline!<CR>", opts)

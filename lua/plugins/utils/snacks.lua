@@ -23,6 +23,7 @@ return {
         { "<leader>g",      function() Snacks.lazygit() end,                     desc = "Snacks: Lazygit" },
         { "<leader>s",      function() Snacks.scratch() end,                     desc = "Snacks: Toggle Scratch Buffer" },
         { "<leader>S",      function() Snacks.scratch.select() end,              desc = "Snacks: Select Scratch Buffer" },
+        { "<leader>t",      function() Snacks.picker.explorer() end,             desc = "Snacks: File explorer" },
         { "<C-\\>",         function() Snacks.terminal() end,                    desc = "Snacks: Toggle Terminal",          mode = { "n", "t" } },
         { "<C-S-y>",        function() Snacks.terminal.toggle({ "yazi" }) end,   desc = "Snacks: Open Yazi" },
         -- Pickers ────────────────────────────────────────────────────────────────────────────────

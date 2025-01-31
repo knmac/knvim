@@ -89,7 +89,6 @@ lua/
    │  ├── easy-align.lua
    │  ├── gitsigns.lua
    │  ├── leap.lua
-   │  ├── neo-tree.lua
    │  ├── nvim-colorizer.lua
    │  ├── oil.lua
    │  ├── outline.lua

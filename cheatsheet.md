@@ -20,7 +20,6 @@ Overall logic:
 |                       | Toggle symbol view                        | `F4` (or `<leader> o`)       |
 |                       | Show key-bindings                         | `Shift+F1` (or `<space> k`)  |
 |                       | Open to-do list (project-wise)            | `Shift+F2`                   |
-|                       | Toggle file explorer at the current file  | `Shift+F3` (or `<leader> T`) |
 |                       | Open diagnostic list (project-wise)       | `Shift+F4` (or `<space> d`)  |
 | `F5-8`: buffers/tabs  | Show buffer list                          | `F5` (or `<space> b`)        |
 |                       | Previous buffer                           | `F6` (or `Ctrl+Alt+h`)       |
@@ -180,7 +179,6 @@ All DAP key-bindings start with `,`.
 |            | Fill line with `━` characters                   | `<leader> =`         |
 |            | Generate doc string for function                | `<leader> d`         |
 |            | Toggle file-tree                                | `<leader> t`         |
-|            | Toggle file-tree and jump to current file       | `<leader> T`         |
 |            | Toggle outline view (on the screen right side)  | `<leader> o`         |
 |            | Toggle outline view (beside current buffer)     | `<leader> O`         |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
