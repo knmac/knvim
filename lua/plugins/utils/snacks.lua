@@ -155,6 +155,7 @@ return {
         -- ────────────────────────────────────────────────────────────────────────────────────────
         notifier = { enabled = true, top_down = false, },
         lazygit = { enabled = true },
+        explorer = { enabled = true },
         input = { enabled = true },
         quickfile = { enabled = true },
         scroll = { enabled = true },
