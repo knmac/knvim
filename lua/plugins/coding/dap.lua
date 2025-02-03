@@ -47,6 +47,13 @@ local bkpt_w_condition = function()
     )
 end
 
+-- Map q to quit in `nvim-dap-view` filetypes
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "dap-view", "dap-view-term", "dap-repl" }, -- dap-repl is set by `nvim-dap`
+    callback = function(evt)
+        vim.keymap.set("n", "q", "<C-w>q", { silent = true, buffer = evt.buf })
+    end,
+})
 
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
@@ -88,7 +95,7 @@ return {
     keys = {
         -- { ",d", function() require("dapui").toggle() end,          desc = "DAP: Toggle UI" },
         { ",d", function() require("dap-view").toggle() end,       desc = "DAP: Toggle UI" },
-        { ",D", function() require("dap").repl.toggle() end,       desc = "DAP: Open default REPL" },
+        -- { ",D", function() require("dap").repl.toggle() end,       desc = "DAP: Open default REPL" },
         { ",k", function() require("dap-view").add_expr() end,     desc = "DAP: Add expression to watch" },
         -- { ",k", function() require("dap.ui.widgets").hover() end,  desc = "DAP: Check variable value on hover" },
         { ",c", function() require("dap").continue() end,          desc = "DAP: Start/Continue debugging", },

@@ -34,9 +34,7 @@ return {
                         todo = { raw = "[~]", rendered = "󰥔 ", highlight = "@markup.raw" },
                     },
                 },
-                indent = {
-                    enabled = true,
-                },
+                -- indent = { enabled = true, },
             })
         end,
     },

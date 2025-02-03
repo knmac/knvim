@@ -210,8 +210,8 @@ return {
     event = "VeryLazy",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "AckslD/swenv.nvim",             -- Show and switch python env
-        "sindrets/diffview.nvim",        -- Clickable diffthis
+        "AckslD/swenv.nvim",      -- Show and switch python env
+        "sindrets/diffview.nvim", -- Clickable diffthis
     },
     config = function()
         require("lualine").setup({
@@ -247,7 +247,7 @@ return {
                 },
                 lualine_c = {
                     { "filename", path = 3, },
-                    { "searchcount", icon = "󰍉", },
+                    { "searchcount", icon = "󰍉", cond = function() return vim.fn.searchcount().total>0 end},
                 },
                 lualine_x = {
                     fmt_stat,
