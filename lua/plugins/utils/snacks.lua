@@ -10,6 +10,9 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Disable python mapping as it interferes with Snacks.words jumping
+vim.g.no_python_maps = true
+
 return {
     "folke/snacks.nvim",
     priority = 1000,
@@ -26,6 +29,8 @@ return {
         { "<leader>t",      function() Snacks.picker.explorer() end,             desc = "Snacks: File explorer" },
         { "<C-\\>",         function() Snacks.terminal() end,                    desc = "Snacks: Toggle Terminal",          mode = { "n", "t" } },
         { "<C-S-y>",        function() Snacks.terminal.toggle({ "yazi" }) end,   desc = "Snacks: Open Yazi" },
+        { "]]",             function() Snacks.words.jump(vim.v.count1) end,      desc = "Next Reference",                   mode = { "n", "t" } },
+        { "[[",             function() Snacks.words.jump(-vim.v.count1) end,     desc = "Prev Reference",                   mode = { "n", "t" } },
         -- Pickers ────────────────────────────────────────────────────────────────────────────────
         { "<space><space>", function() Snacks.picker() end,                      desc = "Picker: pickers" },
         { "<space>f",       function() Snacks.picker.files() end,                desc = "Picker: Find files" },
@@ -161,6 +166,6 @@ return {
         scroll = { enabled = true },
         zen = { enabled = true },
         scope = { enabled = true },
-        -- words = { enabled = true },
+        words = { enabled = true },
     },
 }

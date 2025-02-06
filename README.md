@@ -79,7 +79,6 @@ lua/
    │  ├── barbar.lua
    │  ├── catppuccin.lua
    │  ├── dropbar.lua
-   │  ├── illuminate.lua
    │  ├── lualine.lua
    │  ├── noice.lua
    │  ├── rainbow_delimiters.lua
