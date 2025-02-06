@@ -73,6 +73,9 @@ return {
             },
             ghost_text = { enabled = true },
         },
+        sources = {
+            default = { "lsp", "path", "snippets", "buffer" },
+        },
         -- Experimental signature help support
         signature = {
             enabled = false,

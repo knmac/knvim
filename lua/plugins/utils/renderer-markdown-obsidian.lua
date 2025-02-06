@@ -1,4 +1,6 @@
 -- Writing and navigating an Obsidian vault
+local palettes = require("catppuccin.palettes").get_palette()
+
 return {
     -- Render markdown
     {
@@ -106,11 +108,11 @@ return {
                 -- highlight_text = { hl_group = "ObsidianHighlightText" },
                 -- tags = { hl_group = "ObsidianTag" },
                 hl_groups = {
-                    ObsidianTodo = { bold = true, fg = "#ed8796" },
-                    ObsidianDone = { bold = true, fg = "#a6da95" },
-                    ObsidianRefText = { underline = true, fg = "#b7bdf8" },
-                    ObsidianTag = { italic = true, fg = "#7dc4e4" },
-                    ObsidianHighlightText = { bg = "#eed49f", fg = "#24273a" },
+                    ObsidianTodo = { bold = true, fg = palettes.red },
+                    ObsidianDone = { bold = true, fg = palettes.green },
+                    ObsidianRefText = { underline = true, fg = palettes.lavender },
+                    ObsidianTag = { italic = true, fg = palettes.sapphire },
+                    ObsidianHighlightText = { bg = palettes.yellow, fg = palettes.base },
                 },
             },
             -- daily_notes = {
