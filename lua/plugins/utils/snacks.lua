@@ -13,6 +13,14 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Disable python mapping as it interferes with Snacks.words jumping
 vim.g.no_python_maps = true
 
+
+-- Special command to open vertical terminal
+vim.api.nvim_create_user_command(
+    "TermVert",
+    function() Snacks.terminal.open(nil, { win = { position = "right" } }) end,
+    {}
+)
+
 return {
     "folke/snacks.nvim",
     priority = 1000,
