@@ -27,6 +27,7 @@ return {
     lazy = false,
     keys = {
         -- Misc ───────────────────────────────────────────────────────────────────────────────────
+        -- { "<leader>I",      function() Snacks.image.hover() end,                 desc = "Snacks: Show image on hover" },
         { "<leader>z",      function() Snacks.zen() end,                         desc = "Snacks: Toggle Zen Mode" },
         { "<leader>Z",      function() Snacks.zen.zoom() end,                    desc = "Snacks: Toggle Zoom" },
         { "<leader>n",      function() Snacks.notifier.hide() end,               desc = "Snacks: Dismiss All Notifications" },
@@ -167,8 +168,8 @@ return {
         },
         -- ────────────────────────────────────────────────────────────────────────────────────────
         notifier = { enabled = true, top_down = false, },
+        image = { enabled = false },
         explorer = { enabled = true },
-        image = { enabled = true },
         input = { enabled = true },
         lazygit = { enabled = true },
         quickfile = { enabled = true },
