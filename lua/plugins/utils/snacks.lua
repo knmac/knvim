@@ -167,13 +167,14 @@ return {
         },
         -- ────────────────────────────────────────────────────────────────────────────────────────
         notifier = { enabled = true, top_down = false, },
-        lazygit = { enabled = true },
         explorer = { enabled = true },
+        image = { enabled = true },
         input = { enabled = true },
+        lazygit = { enabled = true },
         quickfile = { enabled = true },
-        scroll = { enabled = true },
-        zen = { enabled = true },
         scope = { enabled = true },
+        scroll = { enabled = true },
         words = { enabled = true },
+        zen = { enabled = true },
     },
 }
