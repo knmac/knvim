@@ -168,7 +168,7 @@ return {
         },
         -- ────────────────────────────────────────────────────────────────────────────────────────
         notifier = { enabled = true, top_down = false, },
-        image = { enabled = false },
+        image = { enabled = true, doc = { inline = false, float = true } },
         explorer = { enabled = true },
         input = { enabled = true },
         lazygit = { enabled = true },
