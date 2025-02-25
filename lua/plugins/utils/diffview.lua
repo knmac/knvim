@@ -15,7 +15,7 @@ return {
         view = {
             merge_tool = {
                 -- layout = "diff3_mixed",
-                layout = "diff3_vertical",
+                layout = "diff3_horizontal",
             },
         }
     },
