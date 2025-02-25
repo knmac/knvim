@@ -2,7 +2,8 @@
 return {
     "nvim-zh/colorful-winsep.nvim",
     config = true,
-    event = { "WinLeave" },
+    event = { "BufReadPre", "BufNewFile" },
+    -- event = { "WinLeave" },
 }
 
 -- return {

@@ -3,7 +3,8 @@ local detail = false
 
 return {
     "stevearc/oil.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+    -- event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
         {

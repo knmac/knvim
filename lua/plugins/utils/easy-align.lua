@@ -1,7 +1,8 @@
 -- A simple, easy-to-use Vim alignment plugin
 return {
     "junegunn/vim-easy-align",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+    -- event = "VeryLazy",
     keys = {
         -- Start interactive EasyAlign in visual mode (e.g. vip\a)
         { "<leader>a", "<Plug>(EasyAlign)", mode = "x", desc = "EasyAlign: Start interactive EasyAlign in visual mode" },

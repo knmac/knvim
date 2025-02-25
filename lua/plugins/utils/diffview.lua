@@ -9,11 +9,13 @@
 --     cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\" -c DiffviewOpen"
 return {
     "sindrets/diffview.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+    -- event = "VeryLazy",
     opts = {
         view = {
             merge_tool = {
-                layout = "diff3_mixed",
+                -- layout = "diff3_mixed",
+                layout = "diff3_vertical",
             },
         }
     },
