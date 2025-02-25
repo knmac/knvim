@@ -207,7 +207,8 @@ local diff_stat = {
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 return {
     "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+    -- event = "VeryLazy",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
         "AckslD/swenv.nvim",      -- Show and switch python env

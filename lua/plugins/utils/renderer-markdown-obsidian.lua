@@ -97,7 +97,7 @@ return {
                 },
             },
             ui = {
-                enable = true,
+                enable = false,
                 checkboxes = {},
                 bullets = {},
                 -- checkboxes = {

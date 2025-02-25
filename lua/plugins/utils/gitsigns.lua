@@ -1,7 +1,8 @@
 -- Git diff signs
 return {
     "lewis6991/gitsigns.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+    -- event = "VeryLazy",
     opts = {
         on_attach = function(bufnr)
             local gitsigns = require("gitsigns")

@@ -1,7 +1,8 @@
 -- Code tester
 return {
     "nvim-neotest/neotest",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+    -- event = "VeryLazy",
     dependencies = {
         {
             "nvim-lua/plenary.nvim",
@@ -13,7 +14,8 @@ return {
         },
         {
             "nvim-neotest/neotest-python",
-            event = "VeryLazy",
+            event = { "BufReadPre", "BufNewFile" },
+            -- event = "VeryLazy",
         },
     },
     config = function()
