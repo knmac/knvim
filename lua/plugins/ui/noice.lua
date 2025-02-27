@@ -24,15 +24,10 @@ return {
                         -- override cmp documentation with Noice (needs the other options to work)
                         ["cmp.entry.get_documentation"] = true,
                     },
-                    hover = {
-                        enabled = true,
-                    },
-                    signature = {
-                        enabled = true,
-                    },
-                    message = {
-                        enabled = true,
-                    },
+                    hover = { enabled = true, },
+                    signature = { enabled = false, },
+                    -- signature = { enabled = true, },
+                    message = { enabled = true, },
                 },
                 messages = {
                     enabled = true,
@@ -77,20 +72,4 @@ return {
             end, { silent = true, expr = true })
         end
     },
-    -- Notify
-    -- {
-    --     "rcarriga/nvim-notify", -- A fancy, configurable, notification manager
-    --     keys = {
-    --         {
-    --             "<leader>n",
-    --             function() require("notify").dismiss() end,
-    --             desc = "Notify: Dismiss current notify message"
-    --         }
-    --     },
-    --     config = function()
-    --         require("notify").setup({
-    --             top_down = false,
-    --         })
-    --     end,
-    -- },
 }

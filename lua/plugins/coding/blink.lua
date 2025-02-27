@@ -174,11 +174,11 @@ return {
             ghost_text = { enabled = true },
         },
         sources = {
-            default = { "lsp", "path", "snippets", "buffer" },
+            default = { "lsp", "path", "snippets", "buffer", "cmdline", "omni" },
         },
         -- Experimental signature help support
         signature = {
-            enabled = false,
+            enabled = true,
             window = { border = "rounded", },
         }
     },
