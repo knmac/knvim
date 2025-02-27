@@ -167,6 +167,14 @@ return {
             },
         },
         -- ────────────────────────────────────────────────────────────────────────────────────────
+        scroll = {
+            enabled = true,
+            filter = function(buf)
+                return vim.g.snacks_scroll ~= false and vim.b[buf].snacks_scroll ~= false and
+                    vim.bo[buf].buftype ~= "terminal" and vim.bo[buf].buftype ~= "prompt"
+            end,
+        },
+        -- ────────────────────────────────────────────────────────────────────────────────────────
         notifier = { enabled = true, top_down = false, },
         image = { enabled = true, doc = { inline = false, float = true } },
         explorer = { enabled = true },
@@ -174,7 +182,6 @@ return {
         lazygit = { enabled = true },
         quickfile = { enabled = true },
         scope = { enabled = true },
-        scroll = { enabled = true },
         words = { enabled = true },
         zen = { enabled = true },
     },
