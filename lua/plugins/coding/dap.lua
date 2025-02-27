@@ -10,7 +10,8 @@
 
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+    -- event = "VeryLazy",
     dependencies = {
         {
             "rcarriga/nvim-dap-ui", -- UI for nvim-dap
