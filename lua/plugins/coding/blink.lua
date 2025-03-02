@@ -1,6 +1,5 @@
 return {
     "saghen/blink.cmp",
-    enabled = function() return vim.g.knvim_completion_engine == "blink" end,
     event = { "CmdlineEnter", "InsertEnter" },
     dependencies = {
         {
