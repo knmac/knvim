@@ -1,12 +1,15 @@
 -- Debug adapter protocol
+local viewer = "nvim-dap-ui" -- nvim-dap-ui | nvim-dap-view
 
 -- Map q to quit in `nvim-dap-view` filetypes
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---     pattern = { "dap-view", "dap-view-term", "dap-repl" }, -- dap-repl is set by `nvim-dap`
---     callback = function(evt)
---         vim.keymap.set("n", "q", "<C-w>q", { silent = true, buffer = evt.buf })
---     end,
--- })
+if viewer == "nvim-dap-view" then
+    vim.api.nvim_create_autocmd({ "FileType" }, {
+        pattern = { "dap-view", "dap-view-term", "dap-repl" }, -- dap-repl is set by `nvim-dap`
+        callback = function(evt)
+            vim.keymap.set("n", "q", "<C-w>q", { silent = true, buffer = evt.buf })
+        end,
+    })
+end
 
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
@@ -15,6 +18,7 @@ return {
     dependencies = {
         {
             "rcarriga/nvim-dap-ui", -- UI for nvim-dap
+            enabled = function() return viewer == "nvim-dap-ui" end,
             event = { "BufReadPre", "BufNewFile" },
             -- event = "VeryLazy",
             keys = {
@@ -22,14 +26,15 @@ return {
             },
             opts = {},
         },
-        -- {
-        --     "igorlfs/nvim-dap-view",
-        --     event = "VeryLazy",
-        --     keys = {
-        --         { ",d", function() require("dap-view").toggle() end, desc = "DAP: Toggle UI" },
-        --     },
-        --     opts = {},
-        -- },
+        {
+            "igorlfs/nvim-dap-view",
+            enabled = function() return viewer == "nvim-dap-view" end,
+            event = "VeryLazy",
+            keys = {
+                { ",d", function() require("dap-view").toggle() end, desc = "DAP: Toggle UI" },
+            },
+            opts = {},
+        },
         {
             "jay-babu/mason-nvim-dap.nvim", -- bridges mason.nvim and nvim-dap
             event = { "BufReadPre", "BufNewFile" },
@@ -195,10 +200,12 @@ return {
         -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Automatically open when a debug session is created
         -- ────────────────────────────────────────────────────────────────────────────────────────
-        local dapui = require("dapui")
-        dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
-        dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
-        dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
+        if viewer == "nvim-dap-ui" then
+            local dapui = require("dapui")
+            dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
+            dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
+            dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
+        end
 
         -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Set up signs and colors
