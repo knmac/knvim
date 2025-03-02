@@ -98,14 +98,14 @@ For the complete key-bindings, see Snacks picker's [doc](https://github.com/folk
 | Group       | Functionality                                         | Key-binding                   |
 | ----------- | ----------------------------------------------------- | ----------------------------- |
 | Navigation  | Go to *d*efinitions                                   | `gd`                          |
-|             | Go to *i*mplementation                                | `gi`                          |
-|             | Go to *r*eference                                     | `gr`                          |
-|             | Go to t*y*pe definition                               | `gy`                          |
 |             | Go to *f*ile path (not LSP, vim default)              | `gf`                          |
-| Misc        | Show function documentation (on hover)                | `K`                           |
+|             | Go to t*y*pe definition                               | `gy`                          |
+|             | Go to *r*eference                                     | `grr`                         |
+|             | Go to *i*mplementation                                | `gri`                         |
+| Misc        | Re*n*ame variables                                    | `grn`                         |
+|             | Code *a*ction (if supported)                          | `gra`                         |
+|             | Show function documentation (on hover)                | `K`                           |
 |             | Show signature help (while typing function arguments) | `Ctrl+k`                      |
-|             | Rename variables                                      | `<leader> rn`                 |
-|             | Code action (if supported)                            | `<leader> ca`                 |
 |             | Code formatting (if supported)                        | `<leader> f`                  |
 |             | Toggle inlay-hint (if supported)                      | `<leader> i`                  |
 | Diagnostics | Open *d*iagnostic list (project-wise)                 | `<space> d`                   |
