@@ -66,7 +66,6 @@ lua/
 └── plugins/
    ├── coding/
    │  ├── blink.lua
-   │  ├── cmp.lua
    │  ├── dap.lua
    │  ├── linter-formatter.lua
    │  ├── lspconfig-mason.lua
@@ -91,7 +90,6 @@ lua/
    │  ├── nvim-colorizer.lua
    │  ├── oil.lua
    │  ├── outline.lua
-   │  ├── persisted.lua
    │  ├── renderer-markdown-obsidian.lua
    │  ├── session_manager.lua
    │  ├── snacks.lua
