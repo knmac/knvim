@@ -159,7 +159,13 @@ return {
         signature = {
             enabled = true,
             window = { border = "rounded", },
-        }
+        },
+        cmdline = {
+            completion = {
+                menu = { auto_show = true },
+                ghost_text = { enabled = false },
+            },
+        },
     },
     -- opts_extend = { "sources.default" }
 }
