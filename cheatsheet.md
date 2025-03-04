@@ -99,6 +99,7 @@ For the complete key-bindings, see Snacks picker's [doc](https://github.com/folk
 | ----------- | ----------------------------------------------------- | ----------------------------- |
 | Navigation  | Go to *d*efinitions                                   | `gd`                          |
 |             | Go to *f*ile path (not LSP, vim default)              | `gf`                          |
+|             | Go to *f*ile path in a new vertical split             | `gF`                          |
 |             | Go to t*y*pe definition                               | `gy`                          |
 |             | Go to *r*eference                                     | `grr`                         |
 |             | Go to *i*mplementation                                | `gri`                         |

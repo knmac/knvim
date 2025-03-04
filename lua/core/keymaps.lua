@@ -50,6 +50,9 @@ vim.keymap.set("t", "<A-j>", [[<C-\><C-n><C-w>j]], opts)
 vim.keymap.set("t", "<A-k>", [[<C-\><C-n><C-w>k]], opts)
 vim.keymap.set("t", "<A-l>", [[<C-\><C-n><C-w>l]], opts)
 
+-- Open file in a new split
+vim.keymap.set("n", "gF", "<C-w>vgf", opts)
+
 -- Toggle conceal level between 0 and 2
 -- vim.keymap.set("n", "<leader>cc",
 --     function()
