@@ -11,6 +11,7 @@ local possible_python_paths = {
     os.getenv("HOME") .. "/opt/anaconda3/envs/knvim/bin/python", -- MacOS's conda (knvim)
     os.getenv("HOME") .. "/anaconda3/envs/knvim/bin/python",     -- Linux's conda (knvim)
     os.getenv("HOME") .. "/miniconda3/envs/knvim/bin/python",    -- Linux's conda (knvim)
+    os.getenv("HOME") .. "/miniconda/envs/knvim/bin/python",     -- Linux's conda (knvim)
     os.getenv("HOME") .. "/.conda/envs/knvim/bin/python",        -- Linux's alternative conda (knvim)
     os.getenv("HOME") .. "/.pyenv/shims/python",                 -- pyenv's default path
     "/usr/bin/python3",                                          -- System default python3
