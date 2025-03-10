@@ -124,9 +124,7 @@ return {
 ██║  ██╗██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
 ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]] ..
-                    "───── Neovim v" ..
-                    vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch ..
-                    " ─────",
+                    "───── NVIM v" .. tostring(vim.version()) .. " ─────",
             },
             sections = {
                 { section = "header" },
