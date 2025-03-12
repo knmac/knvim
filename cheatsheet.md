@@ -182,6 +182,7 @@ All DAP key-bindings start with `,`.
 |            | Toggle file-tree                                | `<leader> t`         |
 |            | Toggle outline view (on the screen right side)  | `<leader> o`         |
 |            | Toggle outline view (beside current buffer)     | `<leader> O`         |
+|            | Toggle Diffview                                 | `<leader>v`          |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
 | Oil        | Open oil in floating window                     | `-`                  |
 |            | Open oil in the current buffer                  | `_`                  |
