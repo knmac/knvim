@@ -200,43 +200,46 @@ All DAP key-bindings start with `,`.
 
 ### 2.1. Standard navigation
 
-| Group             | Functionality                                    | Key-binding              | Command   |
-| ----------------- | ------------------------------------------------ | ------------------------ | --------- |
-| Line navigation   | Go left/down/up/right                            | `h`/`j`/`k`/`l`          | -         |
-|                   | Go next/previous (useful for menu items)         | `Ctrl+n`/`Ctrl+p`        | -         |
-|                   | Go to start/end of current line                  | `0`/`$`                  | -         |
-|                   | Go to non-blank start/end of current line        | `^`/`g_`                 | -         |
-| Word navigation   | Go to next/previous beginning of a word          | `w`/`b`                  | -         |
-|                   | Go to next/previous beginning of a WORD          | `W`/`B`                  | -         |
-|                   | Go to end of a word                              | `e`                      | -         |
-|                   | Go to end of a WORD                              | `E`                      | -         |
-| Screen navigation | Go to first/last line                            | `gg`/`G`                 | -         |
-|                   | Go to `i`-th line                                | `<i>gg` or `<i>G`        | `:<i>`    |
-|                   | Move screen upward/downward (w.o. moving cursor) | `Ctrl+e`/`Ctrl+y`        | -         |
-|                   | Go half-page up/down                             | `Ctrl+u`/`Ctrl+d`        | -         |
-|                   | Go full-page backward/forward                    | `Ctrl+b`/`Ctrl+f`        | -         |
-|                   | Go to top of the screen (high)                   | `H`                      | -         |
-|                   | Go to middle of the screen (middle)              | `M`                      | -         |
-|                   | Go to bottom of the screen (low)                 | `L`                      | -         |
-|                   | Move current line to top of the screen           | `zt`                     | -         |
-|                   | Move current line to middle of the screen        | `zz`                     | -         |
-|                   | Move current line to bottom of the screen        | `zb`                     | -         |
-| Search navigation | Search (forward) for pattern                     | `/<pattern>`             | -         |
-|                   | Search (backward) for pattern                    | `?<pattern>`             | -         |
-|                   | Go to next/previous matching pattern             | `n`/`N`                  | -         |
-|                   | Clear search                                     | `Ctrl+l` (Neovim only)   | `:nohl`   |
-| Split navigation  | Create a horizontal split                        | `Ctrl+w` `s`             | `:split`  |
-|                   | Create a vertical split                          | `Ctrl+w` `v`             | `:vsplit` |
-|                   | Go to left/down/up/right split                   | `Ctrl+w` `h`/`j`/`k`/`l` | -         |
-|                   | Move current split to the far left/down/up/right | `Ctrl+w` `H`/`J`/`K`/`L` | -         |
-|                   | Swap current split with the next                 | `Ctrl+w` `x`             | -         |
-|                   | Increase/decrease height                         | `Ctrl+w` `+`/`-`         | -         |
-|                   | Increase/decrease width                          | `Ctrl+w` `>`/`<`         | -         |
-|                   | Max out height                                   | `Ctrl+w` `_`             | -         |
-|                   | Max out width                                    | `Ctrl+w` `\|`            | -         |
-|                   | Equal height/width for all splits                | `Ctrl+w` `=`             | -         |
-| Other navigation  | Go to next/previous item in jumplist             | `Ctrl+i`/`Ctrl+o`        | -         |
-|                   | Go to next/previous item in tab (tab != buffer)  | `gt`/`gT`                | -         |
+| Group             | Functionality                                    | Key-binding               | Command   |
+| ----------------- | ------------------------------------------------ | ------------------------- | --------- |
+| Line navigation   | Go left/down/up/right                            | `h`/`j`/`k`/`l`           | -         |
+|                   | Go next/previous (useful for menu items)         | `Ctrl+n`/`Ctrl+p`         | -         |
+|                   | Go to start/end of current line                  | `0`/`$`                   | -         |
+|                   | Go to non-blank start/end of current line        | `^`/`g_`                  | -         |
+| Word navigation   | Go to next/previous beginning of a word          | `w`/`b`                   | -         |
+|                   | Go to next/previous beginning of a WORD          | `W`/`B`                   | -         |
+|                   | Go to end of a word                              | `e`                       | -         |
+|                   | Go to end of a WORD                              | `E`                       | -         |
+| Screen navigation | Go to first/last line                            | `gg`/`G`                  | -         |
+|                   | Go to `i`-th line                                | `<i>gg` or `<i>G`         | `:<i>`    |
+|                   | Move screen upward/downward (w.o. moving cursor) | `Ctrl+e`/`Ctrl+y`         | -         |
+|                   | Go half-page up/down                             | `Ctrl+u`/`Ctrl+d`         | -         |
+|                   | Go full-page backward/forward                    | `Ctrl+b`/`Ctrl+f`         | -         |
+|                   | Go to top of the screen (high)                   | `H`                       | -         |
+|                   | Go to middle of the screen (middle)              | `M`                       | -         |
+|                   | Go to bottom of the screen (low)                 | `L`                       | -         |
+|                   | Move current line to top of the screen           | `zt`                      | -         |
+|                   | Move current line to middle of the screen        | `zz`                      | -         |
+|                   | Move current line to bottom of the screen        | `zb`                      | -         |
+| Search navigation | Search (forward) for pattern                     | `/<pattern>`              | -         |
+|                   | Search (backward) for pattern                    | `?<pattern>`              | -         |
+|                   | Go to next/previous matching pattern             | `n`/`N`                   | -         |
+|                   | Clear search                                     | `Ctrl+l` (Neovim only)    | `:nohl`   |
+| Split navigation  | Create a horizontal split                        | `Ctrl+w` `s`              | `:split`  |
+|                   | Create a vertical split                          | `Ctrl+w` `v`              | `:vsplit` |
+|                   | Go to left/down/up/right split                   | `Ctrl+w` `h`/`j`/`k`/`l`  | -         |
+|                   | Move current split to the far left/down/up/right | `Ctrl+w` `H`/`J`/`K`/`L`  | -         |
+|                   | Switch to the top-left split                     | `Ctrl+w` `t`              | -         |
+|                   | Switch from (two) vertical to horizontal splits  | `Ctrl+w` `t` `Ctrl+w` `K` | -         |
+|                   | Switch from (two) horizontal to vertical splits  | `Ctrl+w` `t` `Ctrl+w` `H` | -         |
+|                   | Swap current split with the next                 | `Ctrl+w` `x`              | -         |
+|                   | Increase/decrease height                         | `Ctrl+w` `+`/`-`          | -         |
+|                   | Increase/decrease width                          | `Ctrl+w` `>`/`<`          | -         |
+|                   | Max out height                                   | `Ctrl+w` `_`              | -         |
+|                   | Max out width                                    | `Ctrl+w` `\|`             | -         |
+|                   | Equal height/width for all splits                | `Ctrl+w` `=`              | -         |
+| Other navigation  | Go to next/previous item in jumplist             | `Ctrl+i`/`Ctrl+o`         | -         |
+|                   | Go to next/previous item in tab (tab != buffer)  | `gt`/`gT`                 | -         |
 
 ### 2.2. Buffers manipulation
 
