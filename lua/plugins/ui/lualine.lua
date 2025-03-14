@@ -273,6 +273,7 @@ return {
                     "encoding",
                     fileformat_stat,
                     filetype_stat,
+                    "lsp_status",
                 },
                 lualine_y = {
                     progress_stat,
