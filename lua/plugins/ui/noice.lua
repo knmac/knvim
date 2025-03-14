@@ -73,7 +73,9 @@ return {
                     ["^%s*(Usages:)"] = "@text.title",
                     ["^%s*(Example:)"] = "@text.title",
                     ["^%s*(Examples:)"] = "@text.title",
-                    ["^%S*:"] = "@parameter",
+                    -- ["^%S*:"] = "@parameter",
+                    -- optional leading tabs or spaces -> non-whitespace word -> optional spaces before colon -> : -> non-whitespace after :
+                    ["^[%s\t]*(%S+)%s*:%s*%S"] = "@parameter",
                 },
             }
         },
