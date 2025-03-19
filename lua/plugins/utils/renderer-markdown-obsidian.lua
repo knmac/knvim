@@ -115,12 +115,12 @@ return {
                     ObsidianHighlightText = { bg = palettes.yellow, fg = palettes.base },
                 },
             },
-            -- daily_notes = {
-            --     folder = "journal",
-            --     date_format = "%Y-%m-%d",
-            --     alias_format = "%B %-d, %Y",
-            --     template = nil,
-            -- },
+            daily_notes = {
+                folder = "journal",
+                date_format = "%Y-%m-%d",
+                alias_format = "%B %-d, %Y",
+                template = nil,
+            },
             templates = {
                 folder = "templates",
             },
