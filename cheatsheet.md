@@ -179,7 +179,7 @@ All DAP key-bindings start with `,`.
 |            | Fill line with `─` characters                   | `<leader> -`         |
 |            | Fill line with `━` characters                   | `<leader> =`         |
 |            | Generate doc string for function                | `<leader> d`         |
-|            | Toggle file-tree                                | `<leader> t`         |
+|            | Toggle file explorer                            | `<leader> e`         |
 |            | Toggle outline view (on the screen right side)  | `<leader> o`         |
 |            | Toggle outline view (beside current buffer)     | `<leader> O`         |
 |            | Toggle Diffview                                 | `<leader>v`          |
