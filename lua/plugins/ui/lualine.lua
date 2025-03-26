@@ -110,18 +110,11 @@ local fileformat_stat = {
     end,
 }
 
--- Custom components using swenv
+-- Custom components to show current python environment
 local env_stat = {
     function()
-        local swenv = require("swenv.api")
         local current_env = "[-]" -- No environment
 
-        -- if swenv.get_current_venv() ~= nil then
-        --     -- Environment loaded by swenv
-        --     local _name = swenv.get_current_venv().name
-        --     local _src = swenv.get_current_venv().source
-        --     current_env = _name .. " (" .. _src .. ")"
-        -- elseif vim.g.python3_host_prog ~= nil then
         if vim.g.python3_host_prog ~= nil then
             -- Default environment from python3_host_prog
             local Path = require("plenary.path")
@@ -131,24 +124,16 @@ local env_stat = {
             if #tokens > 2 then
                 -- Standard path is .../[name]/bin/python, so get the third last token
                 current_env = tokens[#tokens - 2]
-
-                -- Check if python3_host_prog is registered in swenv and get its source
-                for _, v in ipairs(swenv.get_venvs()) do
-                    if v.name == current_env then
-                        current_env = current_env .. " (" .. v.source .. ")"
-                        break
-                    end
-                end
             end
         end
 
         return current_env
     end,
     icon = "󰌠",
-    on_click = function()
-        if not is_clickable then return end
-        require("swenv.api").pick_venv()
-    end,
+    -- on_click = function()
+    --     if not is_clickable then return end
+    --     require("swenv.api").pick_venv()
+    -- end,
 }
 
 -- Custom component using session_manager
@@ -228,7 +213,6 @@ return {
     -- event = "VeryLazy",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "AckslD/swenv.nvim",      -- Show and switch python env
         "sindrets/diffview.nvim", -- Clickable diffthis
     },
     config = function()

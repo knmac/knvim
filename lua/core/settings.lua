@@ -8,19 +8,30 @@
 local possible_python_paths = {
     -- Extend the list for possible python path. Will use the 1st possible one
     os.getenv("HOME") .. "/.venvs/knvim/bin/python",             -- Python3's venv (knvim)
-    os.getenv("HOME") .. "/opt/anaconda3/envs/knvim/bin/python", -- MacOS's conda (knvim)
-    os.getenv("HOME") .. "/anaconda3/envs/knvim/bin/python",     -- Linux's conda (knvim)
     os.getenv("HOME") .. "/miniconda3/envs/knvim/bin/python",    -- Linux's conda (knvim)
     os.getenv("HOME") .. "/miniconda/envs/knvim/bin/python",     -- Linux's conda (knvim)
+    os.getenv("HOME") .. "/opt/anaconda3/envs/knvim/bin/python", -- MacOS's conda (knvim)
+    os.getenv("HOME") .. "/anaconda3/envs/knvim/bin/python",     -- Linux's conda (knvim)
     os.getenv("HOME") .. "/.conda/envs/knvim/bin/python",        -- Linux's alternative conda (knvim)
-    os.getenv("HOME") .. "/.pyenv/shims/python",                 -- pyenv's default path
+    -- os.getenv("HOME") .. "/.pyenv/shims/python",                 -- pyenv's default path
     "/usr/bin/python3",                                          -- System default python3
     "/usr/bin/python",                                           -- System default python
 }
-for _, python_path in pairs(possible_python_paths) do
-    if io.open(python_path, "r") ~= nil then
-        vim.g.python3_host_prog = python_path
-        break
+
+-- Use python from the default environment
+if vim.env.CONDA_PREFIX then
+    vim.g.python3_host_prog = vim.env.CONDA_PREFIX .. "/bin/python"
+elseif vim.env.PYENV_VERSION then
+    vim.g.python3_host_prog = vim.env.PYENV_VERSION .. "/bin/python"
+elseif vim.env.VIRTUAL_ENV then
+    vim.g.python3_host_prog = vim.env.VIRTUAL_ENV .. "/bin/python"
+else
+    -- Use the predefined knvim environemt
+    for _, python_path in pairs(possible_python_paths) do
+        if io.open(python_path, "r") ~= nil then
+            vim.g.python3_host_prog = python_path
+            break
+        end
     end
 end
 
