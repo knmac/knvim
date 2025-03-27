@@ -93,7 +93,6 @@ lua/
    │  ├── renderer-markdown-obsidian.lua
    │  ├── session_manager.lua
    │  ├── snacks.lua
-   │  ├── swenv.lua
    │  ├── todo-comments.lua
    │  └── which-key.lua
    └── init.lua
