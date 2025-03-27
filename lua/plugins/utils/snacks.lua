@@ -1,26 +1,4 @@
 -- Collection of some nvim utilities
-
--- Disable indent for markdown
-vim.api.nvim_create_autocmd("FileType", {
-    desc = "Disable indent for some file types",
-    pattern = { "markdown", "help" },
-    group = vim.api.nvim_create_augroup("snacks_group", { clear = false }),
-    callback = function()
-        vim.b.snacks_indent = false
-    end,
-})
-
--- Disable python mapping as it interferes with Snacks.words jumping
-vim.g.no_python_maps = true
-
-
--- Special command to open vertical terminal
-vim.api.nvim_create_user_command(
-    "TermVert",
-    function() Snacks.terminal.open(nil, { win = { position = "right" } }) end,
-    {}
-)
-
 return {
     "folke/snacks.nvim",
     priority = 1000,
@@ -64,6 +42,28 @@ return {
         { "gy",             function() Snacks.picker.lsp_type_definitions() end, desc = "LSP: Go to type definition" },
         { "gs",             function() Snacks.picker.lsp_symbols() end,          desc = "LSP: Go to symbols" },
     },
+    init = function()
+        -- Disable indent for markdown
+        vim.api.nvim_create_autocmd("FileType", {
+            desc = "Disable indent for some file types",
+            pattern = { "markdown", "help" },
+            group = vim.api.nvim_create_augroup("snacks_group", { clear = false }),
+            callback = function()
+                vim.b.snacks_indent = false
+            end,
+        })
+
+        -- Disable python mapping as it interferes with Snacks.words jumping
+        vim.g.no_python_maps = true
+
+
+        -- Special command to open vertical terminal
+        vim.api.nvim_create_user_command(
+            "TermVert",
+            function() Snacks.terminal.open(nil, { win = { position = "right" } }) end,
+            {}
+        )
+    end,
     opts = {
         -- ────────────────────────────────────────────────────────────────────────────────────────
         bigfile = {

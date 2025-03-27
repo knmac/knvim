@@ -1,12 +1,4 @@
 -- Debug adapter protocol
--- Map q to quit in `nvim-dap-view` filetypes
-vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "dap-view", "dap-view-term", "dap-repl" }, -- dap-repl is set by `nvim-dap`
-    callback = function(evt)
-        vim.keymap.set("n", "q", "<C-w>q", { silent = true, buffer = evt.buf })
-    end,
-})
-
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
     event = { "BufReadPre", "BufNewFile" },
@@ -198,6 +190,14 @@ return {
         -- dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
         -- dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
         -- dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
+
+        -- Map q to quit in `nvim-dap-view` filetypes
+        vim.api.nvim_create_autocmd({ "FileType" }, {
+            pattern = { "dap-view", "dap-view-term", "dap-repl" }, -- dap-repl is set by `nvim-dap`
+            callback = function(evt)
+                vim.keymap.set("n", "q", "<C-w>q", { silent = true, buffer = evt.buf })
+            end,
+        })
 
         -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Set up signs and colors

@@ -1,17 +1,17 @@
 -- UI improvement for messages, cmdline, and popupmenu
 
 -- Scroll for lsp docs and signature helps
-vim.keymap.set({ "n", "i", "s" }, "<c-j>", function()
-    if not require("noice.lsp").scroll(4) then
-        return "<c-j>"
-    end
-end, { silent = true, expr = true })
-
-vim.keymap.set({ "n", "i", "s" }, "<c-k>", function()
-    if not require("noice.lsp").scroll(-4) then
-        return "<c-k>"
-    end
-end, { silent = true, expr = true })
+-- vim.keymap.set({ "n", "i", "s" }, "<c-j>", function()
+--     if not require("noice.lsp").scroll(4) then
+--         return "<c-j>"
+--     end
+-- end, { silent = true, expr = true })
+--
+-- vim.keymap.set({ "n", "i", "s" }, "<c-k>", function()
+--     if not require("noice.lsp").scroll(-4) then
+--         return "<c-k>"
+--     end
+-- end, { silent = true, expr = true })
 
 return {
     {

@@ -1,13 +1,4 @@
 -- Session manager
-
-vim.api.nvim_create_autocmd({ "User" }, {
-    pattern = "SessionLoadPost",
-    group = vim.api.nvim_create_augroup("SessionGroup", {}),
-    callback = function()
-        vim.cmd [[Lazy reload colorful-winsep.nvim]]
-    end,
-})
-
 return {
     "Shatur/neovim-session-manager",
     dependencies = {
@@ -43,6 +34,14 @@ return {
             },
             autosave_only_in_session = true,
             max_path_length = 75,
+        })
+
+        vim.api.nvim_create_autocmd({ "User" }, {
+            pattern = "SessionLoadPost",
+            group = vim.api.nvim_create_augroup("SessionGroup", {}),
+            callback = function()
+                vim.cmd [[Lazy reload colorful-winsep.nvim]]
+            end,
         })
     end,
 }
