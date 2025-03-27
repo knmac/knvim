@@ -112,63 +112,63 @@ return {
             -- Set up key-bindings
             -- ────────────────────────────────────────────────────────────────────────────────────
             -- Wrapper for keymapping with default opts
-            local map = function(mode, lhs, rhs, desc)
-                local opts = { noremap = true, silent = true, desc = "LSP: " .. desc }
-                vim.keymap.set(mode, lhs, rhs, opts)
-            end
+            -- local map = function(mode, lhs, rhs, desc)
+            --     local opts = { noremap = true, silent = true, desc = "LSP: " .. desc }
+            --     vim.keymap.set(mode, lhs, rhs, opts)
+            -- end
 
             -- Global mappings.
-            map("n", "[d", function() vim.diagnostic.goto_prev() end, "Previous diagnostic")
-            map("n", "]d", function() vim.diagnostic.goto_next() end, "Next diagnostic")
-            map("n", "<leader>i",
-                function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
-                "Toggle inlay hint")
+            -- map("n", "[d", function() vim.diagnostic.goto_prev() end, "Previous diagnostic")
+            -- map("n", "]d", function() vim.diagnostic.goto_next() end, "Next diagnostic")
+            -- map("n", "<leader>i",
+            --     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+            --     "Toggle inlay hint")
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
-            vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-                callback = function(args)
-                    local bufnr = args.buf
-                    local client = vim.lsp.get_client_by_id(args.data.client_id)
-                    if not client then
-                        return
-                    end
-
-                    local bufmap = function(mode, lhs, rhs, desc)
-                        local bufopts = {
-                            noremap = true, silent = true, buffer = bufnr, desc = "LSP: " .. desc
-                        }
-                        vim.keymap.set(mode, lhs, rhs, bufopts)
-                    end
-
-                    -- Enable completion triggered by <c-x><c-o>
-                    -- if client.server_capabilities.completionProvider then
-                    --     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
-                    -- end
-
-                    -- Buffer local mappings.
-                    -- See `:help vim.lsp.*` for documentation on any of the below functions
-                    -- bufmap("n", "K", vim.lsp.buf.hover, "Show docstring of the item under the cursor")
-                    -- bufmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Show signature help")
-                    bufmap("n", "grn", vim.lsp.buf.rename, "Rename variable under the cursor")
-                    bufmap({ "n", "v" }, "gra", vim.lsp.buf.code_action, "Code action")
-
-                    -- if has conform, use the key binding with lsp_fallback in conform, otherwise
-                    -- define keymap here
-                    -- local has_conform, _ = pcall(require, "conform")
-                    -- if not has_conform then
-                    --     bufmap("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end,
-                    --         "Format the buffer")
-                    -- end
-
-                    bufmap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add workspace")
-                    bufmap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove workspace")
-                    bufmap("n", "<leader>wl",
-                        function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
-                        "List workspaces")
-                end,
-            })
+            -- vim.api.nvim_create_autocmd("LspAttach", {
+            --     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+            --     callback = function(args)
+            --         local bufnr = args.buf
+            --         local client = vim.lsp.get_client_by_id(args.data.client_id)
+            --         if not client then
+            --             return
+            --         end
+            --
+            --         local bufmap = function(mode, lhs, rhs, desc)
+            --             local bufopts = {
+            --                 noremap = true, silent = true, buffer = bufnr, desc = "LSP: " .. desc
+            --             }
+            --             vim.keymap.set(mode, lhs, rhs, bufopts)
+            --         end
+            --
+            --         -- Enable completion triggered by <c-x><c-o>
+            --         -- if client.server_capabilities.completionProvider then
+            --         --     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+            --         -- end
+            --
+            --         -- Buffer local mappings.
+            --         -- See `:help vim.lsp.*` for documentation on any of the below functions
+            --         -- bufmap("n", "K", vim.lsp.buf.hover, "Show docstring of the item under the cursor")
+            --         -- bufmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Show signature help")
+            --         -- bufmap("n", "grn", vim.lsp.buf.rename, "Rename variable under the cursor")
+            --         -- bufmap({ "n", "v" }, "gra", vim.lsp.buf.code_action, "Code action")
+            --
+            --         -- if has conform, use the key binding with lsp_fallback in conform, otherwise
+            --         -- define keymap here
+            --         -- local has_conform, _ = pcall(require, "conform")
+            --         -- if not has_conform then
+            --         --     bufmap("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end,
+            --         --         "Format the buffer")
+            --         -- end
+            --
+            --         bufmap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add workspace")
+            --         bufmap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove workspace")
+            --         bufmap("n", "<leader>wl",
+            --             function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
+            --             "List workspaces")
+            --     end,
+            -- })
 
 
             -- ────────────────────────────────────────────────────────────────────────────────────

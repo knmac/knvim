@@ -59,7 +59,6 @@ All picker key-bindings start with `<space>`.
 | Find in *j*ndo tree       | `<space> j`       |
 | Find in *u*ndo tree       | `<space> u`       |
 | Find spelling             | `<space> z`       |
-| Find Python *e*nvironment | `<space> e`       |
 | Find hovered word         | `<space> *`       |
 | Find in open buffers      | `<space> /`       |
 
@@ -113,9 +112,6 @@ For the complete key-bindings, see Snacks picker's [doc](https://github.com/folk
 |             | Show current line's diagnostics                       | `Ctrl+w d` or `Ctrl+w Ctrl+d` |
 |             | Go to previous diagnostic                             | `[d`                          |
 |             | Go to next diagnostic                                 | `]d`                          |
-| Workspace   | *A*dd *w*orkspace folder                              | `<leader> wa`                 |
-|             | *R*emove *w*orkspace folder                           | `<leader> wr`                 |
-|             | *L*ist *w*orkspace folder                             | `<leader> wl`                 |
 
 ### 1.4. Window and buffer navigation
 
