@@ -164,6 +164,12 @@ return {
             completion = {
                 menu = { auto_show = true },
                 ghost_text = { enabled = false },
+                list = {
+                    selection = {
+                        preselect = false,
+                        auto_insert = true,
+                    },
+                },
             },
         },
     },
