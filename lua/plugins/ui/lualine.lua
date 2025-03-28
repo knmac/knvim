@@ -209,8 +209,8 @@ local diff_stat = {
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 return {
     "nvim-lualine/lualine.nvim",
-    event = { "BufReadPre", "BufNewFile", "BufEnter" },
-    -- event = "VeryLazy",
+    -- event = { "BufReadPre", "BufNewFile", "BufEnter" },
+    event = "VeryLazy",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
         "sindrets/diffview.nvim", -- Clickable diffthis
