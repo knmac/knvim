@@ -215,85 +215,79 @@ return {
         "nvim-tree/nvim-web-devicons",
         "sindrets/diffview.nvim", -- Clickable diffthis
     },
-    config = function()
-        require("lualine").setup({
-            options = {
-                icons_enabled = true,
-                theme = "auto",
-                -- component_separators = {left='', right=''},
-                -- section_separators = {left='', right=''},
-                -- component_separators = { left = "", right = "" },
-                -- section_separators = { left = "", right = "" },
-                component_separators = { left = "", right = "" },
-                section_separators = { left = "", right = "" },
-                disabled_filetypes = {
-                    -- statusline = { "snacks_dashboard" },
-                    statusline = {},
-                    winbar = {
-                        "NvimTree", "neo-tree", "Outline", "toggleterm", "alpha", "dap-repl",
-                        "packer",
-                    },
-                },
-                always_divide_middle = true,
-                globalstatus = true,
+    opts = {
+        options = {
+            icons_enabled = true,
+            theme = "auto",
+            -- component_separators = {left='', right=''},
+            -- section_separators = {left='', right=''},
+            -- component_separators = { left = "", right = "" },
+            -- section_separators = { left = "", right = "" },
+            component_separators = { left = "", right = "" },
+            section_separators = { left = "", right = "" },
+            disabled_filetypes = {
+                statusline = { "snacks_dashboard" },
+                winbar = { "NvimTree", "neo-tree", "Outline", "toggleterm", "alpha", "dap-repl", "packer" },
             },
-            sections = {
-                lualine_a = {
-                    -- remote_stat,
-                    { "mode", icon = "" },
-                },
-                lualine_b = {
-                    branch_stat,
-                    diff_stat,
-                    diagnostics_stat,
-                },
-                lualine_c = {
-                    { "filename", path = 3, },
-                    { "searchcount", icon = "󰍉", cond = function() return vim.fn.searchcount().total > 0 end },
-                    sess_stat,
-                },
-                lualine_x = {
-                    fmt_stat,
-                    "encoding",
-                    fileformat_stat,
-                    filetype_stat,
-                    "lsp_status",
-                },
-                lualine_y = {
-                    progress_stat,
-                },
-                lualine_z = {
-                    env_stat,
-                    click_stat,
-                    -- notify_stat,
-                },
+            always_divide_middle = true,
+            globalstatus = true,
+        },
+        sections = {
+            lualine_a = {
+                -- remote_stat,
+                { "mode", icon = "" },
             },
-            inactive_sections = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = { "filename" },
-                lualine_x = { "location" },
-                lualine_y = {},
-                lualine_z = {}
+            lualine_b = {
+                branch_stat,
+                diff_stat,
+                diagnostics_stat,
             },
-            -- winbar = {
-            --     lualine_a = {},
-            --     lualine_b = {},
-            --     lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, navic_stat, },
-            --     lualine_x = {},
-            --     lualine_y = {},
-            --     lualine_z = {}
-            -- },
-            -- inactive_winbar = {
-            --     lualine_a = {},
-            --     lualine_b = {},
-            --     lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, },
-            --     lualine_x = {},
-            --     lualine_y = {},
-            --     lualine_z = {}
-            -- },
-            tabline = {},
-            -- extensions = { 'nvim-tree', 'neo-tree', 'quickfix', 'fugitive', 'symbols-outline', 'toggleterm', 'nvim-dap-ui' }
-        })
-    end,
+            lualine_c = {
+                { "filename", path = 3, },
+                { "searchcount", icon = "󰍉", cond = function() return vim.fn.searchcount().total > 0 end },
+                sess_stat,
+            },
+            lualine_x = {
+                fmt_stat,
+                "encoding",
+                fileformat_stat,
+                filetype_stat,
+                "lsp_status",
+            },
+            lualine_y = {
+                progress_stat,
+            },
+            lualine_z = {
+                env_stat,
+                click_stat,
+                -- notify_stat,
+            },
+        },
+        inactive_sections = {
+            lualine_a = {},
+            lualine_b = {},
+            lualine_c = { "filename" },
+            lualine_x = { "location" },
+            lualine_y = {},
+            lualine_z = {}
+        },
+        -- winbar = {
+        --     lualine_a = {},
+        --     lualine_b = {},
+        --     lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, navic_stat, },
+        --     lualine_x = {},
+        --     lualine_y = {},
+        --     lualine_z = {}
+        -- },
+        -- inactive_winbar = {
+        --     lualine_a = {},
+        --     lualine_b = {},
+        --     lualine_c = { { 'filename', path = 1, color = { bg = 'NONE' } }, },
+        --     lualine_x = {},
+        --     lualine_y = {},
+        --     lualine_z = {}
+        -- },
+        tabline = {},
+        -- extensions = { 'nvim-tree', 'neo-tree', 'quickfix', 'fugitive', 'symbols-outline', 'toggleterm', 'nvim-dap-ui' }
+    },
 }
