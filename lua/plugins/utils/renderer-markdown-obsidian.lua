@@ -71,10 +71,9 @@ return {
                     end,
                     overrides = {
                         notes_subdir = vim.NIL, -- have to use 'vim.NIL' instead of 'nil'
+                        daily_notes = { folder = vim.NIL },
                         new_notes_location = "current_dir",
-                        templates = {
-                            folder = vim.NIL,
-                        },
+                        templates = { folder = vim.NIL },
                         disable_frontmatter = true,
                     },
                 },
