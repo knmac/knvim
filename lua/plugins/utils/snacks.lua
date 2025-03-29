@@ -168,8 +168,11 @@ return {
         scroll = {
             enabled = true,
             filter = function(buf)
-                return vim.g.snacks_scroll ~= false and vim.b[buf].snacks_scroll ~= false and
-                    vim.bo[buf].buftype ~= "terminal" and vim.bo[buf].buftype ~= "prompt"
+                return vim.g.snacks_scroll ~= false
+                    and vim.b[buf].snacks_scroll ~= false
+                    and vim.bo[buf].buftype ~= "terminal"
+                    and vim.bo[buf].buftype ~= "prompt"
+                    and vim.bo[buf].filetype ~= "blink-cmp-menu"
             end,
         },
         -- ────────────────────────────────────────────────────────────────────────────────────────
