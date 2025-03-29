@@ -31,7 +31,8 @@ return {
                     ["vim.lsp.util.stylize_markdown"] = true,
                     ["cmp.entry.get_documentation"] = false, -- requires hrsh7th/nvim-cmp
                 },
-                progress = { enabled = true, },
+                progress = { enabled = false, },
+                -- progress = { enabled = true, },
                 hover = { enabled = true, },
                 signature = { enabled = false, },
                 -- signature = { enabled = true, },
