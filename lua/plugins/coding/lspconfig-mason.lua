@@ -29,9 +29,7 @@ return {
         opts = {
             -- Install the LSP servers automatically using mason-lspconfig
             ensure_installed = {
-                "pyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman",
-                "ts_ls", "yamlls",
-                -- 'ltex',
+                "pyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman", "ts_ls", "yamlls",
             },
             automatic_installation = true,
         },
@@ -52,9 +50,6 @@ return {
                             version = "LuaJIT",
                             path = vim.split(package.path, ";"),
                         },
-                        -- diagnostics = {
-                        --     globals = { "vim", }
-                        -- },
                         workspace = {
                             library = { vim.env.VIMRUNTIME },
                             checkThirdParty = false,
@@ -64,23 +59,6 @@ return {
                         },
                     },
                 },
-                -- ltex = {
-                --     ltex = {
-                --         -- disable spell check of ltex (use vim spellcheck instead)
-                --         disabledRules = {
-                --             ['en']    = { 'MORFOLOGIK_RULE_EN' },
-                --             ['en-AU'] = { 'MORFOLOGIK_RULE_EN_AU' },
-                --             ['en-CA'] = { 'MORFOLOGIK_RULE_EN_CA' },
-                --             ['en-GB'] = { 'MORFOLOGIK_RULE_EN_GB' },
-                --             ['en-NZ'] = { 'MORFOLOGIK_RULE_EN_NZ' },
-                --             ['en-US'] = { 'MORFOLOGIK_RULE_EN_US' },
-                --             ['en-ZA'] = { 'MORFOLOGIK_RULE_EN_ZA' },
-                --             ['es']    = { 'MORFOLOGIK_RULE_ES' },
-                --             ['it']    = { 'MORFOLOGIK_RULE_IT_IT' },
-                --             ['de']    = { 'MORFOLOGIK_RULE_DE_DE' },
-                --         },
-                --     },
-                -- },
             }
 
             local utf16_cap = vim.lsp.protocol.make_client_capabilities()
@@ -98,7 +76,6 @@ return {
                 require("lspconfig")[lsp].setup({
                     settings = lsp_settings[lsp],
                     capabilities = lsp_capabilities[lsp],
-                    -- capabilities = require('blink.cmp').get_lsp_capabilities(lsp_capabilities[lsp]),
                     on_attach = function(client, bufnr)
                         if lsp == "ruff" then
                             -- Turn off hover for ruff
@@ -107,69 +84,6 @@ return {
                     end,
                 })
             end
-
-            -- ────────────────────────────────────────────────────────────────────────────────────
-            -- Set up key-bindings
-            -- ────────────────────────────────────────────────────────────────────────────────────
-            -- Wrapper for keymapping with default opts
-            -- local map = function(mode, lhs, rhs, desc)
-            --     local opts = { noremap = true, silent = true, desc = "LSP: " .. desc }
-            --     vim.keymap.set(mode, lhs, rhs, opts)
-            -- end
-
-            -- Global mappings.
-            -- map("n", "[d", function() vim.diagnostic.goto_prev() end, "Previous diagnostic")
-            -- map("n", "]d", function() vim.diagnostic.goto_next() end, "Next diagnostic")
-            -- map("n", "<leader>i",
-            --     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
-            --     "Toggle inlay hint")
-
-            -- Use LspAttach autocommand to only map the following keys
-            -- after the language server attaches to the current buffer
-            -- vim.api.nvim_create_autocmd("LspAttach", {
-            --     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-            --     callback = function(args)
-            --         local bufnr = args.buf
-            --         local client = vim.lsp.get_client_by_id(args.data.client_id)
-            --         if not client then
-            --             return
-            --         end
-            --
-            --         local bufmap = function(mode, lhs, rhs, desc)
-            --             local bufopts = {
-            --                 noremap = true, silent = true, buffer = bufnr, desc = "LSP: " .. desc
-            --             }
-            --             vim.keymap.set(mode, lhs, rhs, bufopts)
-            --         end
-            --
-            --         -- Enable completion triggered by <c-x><c-o>
-            --         -- if client.server_capabilities.completionProvider then
-            --         --     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
-            --         -- end
-            --
-            --         -- Buffer local mappings.
-            --         -- See `:help vim.lsp.*` for documentation on any of the below functions
-            --         -- bufmap("n", "K", vim.lsp.buf.hover, "Show docstring of the item under the cursor")
-            --         -- bufmap({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, "Show signature help")
-            --         -- bufmap("n", "grn", vim.lsp.buf.rename, "Rename variable under the cursor")
-            --         -- bufmap({ "n", "v" }, "gra", vim.lsp.buf.code_action, "Code action")
-            --
-            --         -- if has conform, use the key binding with lsp_fallback in conform, otherwise
-            --         -- define keymap here
-            --         -- local has_conform, _ = pcall(require, "conform")
-            --         -- if not has_conform then
-            --         --     bufmap("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end,
-            --         --         "Format the buffer")
-            --         -- end
-            --
-            --         bufmap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "Add workspace")
-            --         bufmap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove workspace")
-            --         bufmap("n", "<leader>wl",
-            --             function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
-            --             "List workspaces")
-            --     end,
-            -- })
-
 
             -- ────────────────────────────────────────────────────────────────────────────────────
             -- Setup UI
