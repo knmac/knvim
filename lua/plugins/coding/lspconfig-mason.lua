@@ -90,14 +90,24 @@ return {
             -- ────────────────────────────────────────────────────────────────────────────────────
             require("lspconfig.ui.windows").default_options.border = "rounded"
 
-            -- Diagnostic signs
-            vim.fn.sign_define("DiagnosticSignError", { text = "󰅚 ", texthl = "DiagnosticSignError" }) -- x000f015a
-            vim.fn.sign_define("DiagnosticSignWarn", { text = "󰀪 ", texthl = "DiagnosticSignWarn" }) -- x000f002a
-            vim.fn.sign_define("DiagnosticSignInfo", { text = "󰋽 ", texthl = "DiagnosticSignInfo" }) -- x000f02fd
-            vim.fn.sign_define("DiagnosticSignHint", { text = "󰌶 ", texthl = "DiagnosticSignHint" }) -- x000f0336
-
-            -- Config diagnostics
             vim.diagnostic.config({
+                -- LSP Diagnostic signs
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = "󰅚 ",
+                        [vim.diagnostic.severity.WARN] = "󰀪 ",
+                        [vim.diagnostic.severity.INFO] = "󰋽 ",
+                        [vim.diagnostic.severity.HINT] = "󰌶 ",
+                    },
+                    texthl = {
+                        [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+                        [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+                        [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+                        [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+                    },
+                    -- linehl = {},
+                },
+                -- Virtual text and float
                 virtual_text = {
                     source = true, -- Or 'if_many'  -> show source of diagnostics
                     -- prefix = '■', -- Could be '●', '▎', 'x'
