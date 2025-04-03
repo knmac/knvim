@@ -26,6 +26,10 @@ return {
                     if ok and stats and stats.size > max_filesize then
                         return true
                     end
+
+                    -- Disable in checkhealth
+                    local bufname = vim.api.nvim_buf_get_name(buf)
+                    return vim.bo[buf].filetype == "checkhealth" or bufname:match("health://")
                 end,
             },
             indent = {
