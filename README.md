@@ -94,7 +94,8 @@ lua/
    │  ├── session_manager.lua
    │  ├── snacks.lua
    │  ├── todo-comments.lua
-   │  └── which-key.lua
+   │  ├── which-key.lua
+   │  └── yazi.lua
    └── init.lua
 ```
 
