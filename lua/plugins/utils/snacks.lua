@@ -124,7 +124,7 @@ return {
 ██║  ██╗██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
 ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]] ..
-                    "───── NVIM v" .. tostring(vim.version()) .. " ─────",
+                    "───── NVIM " .. tostring(vim.version().build) .. " ─────",
             },
             sections = {
                 { section = "header" },
