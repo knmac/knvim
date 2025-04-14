@@ -1,4 +1,9 @@
 -- Collection of some nvim utilities
+local vim_version = vim.version().build
+if vim_version == vim.NIL then
+    vim_version = vim.version()
+end
+
 return {
     "folke/snacks.nvim",
     priority = 1000,
@@ -124,7 +129,7 @@ return {
 ██║  ██╗██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
 ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]] ..
-                    "───── NVIM " .. tostring(vim.version().build) .. " ─────",
+                    "───── NVIM " .. tostring(vim_version) .. " ─────",
             },
             sections = {
                 { section = "header" },
