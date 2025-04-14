@@ -6,7 +6,7 @@ return {
         -- event = { "BufReadPre", "BufNewFile" },
         -- event = "VeryLazy",
         opts = {
-            ensure_installed = { "cpplint", "shellcheck", "prettier", },
+            ensure_installed = { "cpplint", "shellcheck", "prettier", "bibtex-tidy" },
         },
     },
     -- Linter
@@ -56,6 +56,7 @@ return {
                     markdown = { "prettier" },
                     typescript = { "prettier" },
                     yaml = { "prettier" },
+                    bib = { "bibtex-tidy" },
                 },
             })
         end,
