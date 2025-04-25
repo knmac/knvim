@@ -198,19 +198,5 @@ return {
                 vim.keymap.set("n", "q", "<C-w>q", { silent = true, buffer = evt.buf })
             end,
         })
-
-        -- ────────────────────────────────────────────────────────────────────────────────────────
-        -- Set up signs and colors
-        -- ────────────────────────────────────────────────────────────────────────────────────────
-        vim.fn.sign_define("DapBreakpoint",
-            { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "DapBreakpoint" })
-        vim.fn.sign_define("DapBreakpointCondition",
-            { text = "", texthl = "DapBreakpointCondition", linehl = "", numhl = "DapBreakpointCondition" })
-        vim.fn.sign_define("DapBreakpointRejected",
-            { text = "", texthl = "DapBreakpointRejected", linehl = "", numhl = "DapBreakpointRejected" })
-        vim.fn.sign_define("DapLogPoint",
-            { text = "", texthl = "DapLogPoint", linehl = "", numhl = "DapLogPoint" })
-        vim.fn.sign_define("DapStopped",
-            { text = "", texthl = "DapStopped", linehl = "debugPC", numhl = "DapStopped" })
     end
 }

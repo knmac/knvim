@@ -57,12 +57,15 @@ Editing a python file, with LSP, Tree-sitter, and outline support:
 
 ```
 init.lua
+lsp/
+└── ...
 lua/
 ├── core/
 │  ├── auto_commands.lua
 │  ├── init.lua
 │  ├── keymaps.lua
-│  └── settings.lua
+│  ├── settings.lua
+│  └── symbols.lua
 └── plugins/
    ├── coding/
    │  ├── blink.lua

@@ -1,7 +1,4 @@
 -- Neovim Language Server Protocol
--- Ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
--- Ref: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
--- Ref: https://github.com/wookayin/dotfiles/blob/master/nvim/lua/config/lsp.lua
 return {
     -- Mason
     {
@@ -88,62 +85,10 @@ return {
             -- Enable servers installed by Mason
             vim.lsp.enable(require("mason-lspconfig").get_installed_servers())
 
-            -- Override parts of the default config
-            vim.lsp.config("lua_ls", {
-                settings = {
-                    Lua = {
-                        runtime = {
-                            version = "LuaJIT",
-                            path = vim.split(package.path, ";"),
-                        },
-                        workspace = {
-                            library = { vim.env.VIMRUNTIME },
-                            checkThirdParty = false,
-                        },
-                        telemetry = {
-                            enable = false,
-                        },
-                    },
-                },
-            })
-            vim.lsp.config("clangd", {
-                capabilities = {
-                    offsetEncoding = { "utf-8", "utf-16" },
-                },
-            })
-
             -- ────────────────────────────────────────────────────────────────────────────────────
             -- Setup UI
             -- ────────────────────────────────────────────────────────────────────────────────────
             require("lspconfig.ui.windows").default_options.border = "rounded"
-
-            vim.diagnostic.config({
-                -- LSP Diagnostic signs
-                signs = {
-                    text = {
-                        [vim.diagnostic.severity.ERROR] = "󰅚 ",
-                        [vim.diagnostic.severity.WARN] = "󰀪 ",
-                        [vim.diagnostic.severity.INFO] = "󰋽 ",
-                        [vim.diagnostic.severity.HINT] = "󰌶 ",
-                    },
-                    texthl = {
-                        [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-                        [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
-                        [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
-                        [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
-                    },
-                    -- linehl = {},
-                },
-                -- Virtual text and float
-                virtual_text = {
-                    source = true, -- Or 'if_many'  -> show source of diagnostics
-                    -- prefix = '■', -- Could be '●', '▎', 'x'
-                },
-                float = {
-                    source = true, -- Or 'if_many'  -> show source of diagnostics
-                    border = "rounded",
-                },
-            })
         end,
     },
 }
