@@ -18,7 +18,7 @@ return {
             event = { "BufReadPre", "BufNewFile" },
             -- event = "VeryLazy",
             opts = {
-                ensure_installed = { "python", "codelldb" },
+                ensure_installed = { "python", "codelldb", "bash" },
                 automatic_installation = true,
             },
         },
@@ -157,8 +157,9 @@ return {
         -- g++ -g main.cpp -o [output_name]
         -- Then provide [output_name] as the program name
         dap.adapters.lldb = {
-            type = "server",
-            port = "${port}",
+            -- type = "server",
+            -- port = "${port}",
+            type = "executable",
             executable = {
                 command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/codelldb",
                 args = { "--port", "${port}" },
@@ -174,7 +175,6 @@ return {
                 program = function()
                     return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
                 end,
-                console = "integratedTerminal",
                 cwd = "${workspaceFolder}",
                 stopOnEntry = false,
                 args = {},
@@ -182,6 +182,34 @@ return {
         }
         dap.configurations.c = dap.configurations.cpp
         dap.configurations.rust = dap.configurations.cpp
+
+        -- Bash - bashdb
+        dap.adapters.bashdb = {
+            type = "executable",
+            command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
+            name = "bashdb",
+        }
+        dap.configurations.sh = {
+            {
+                type = "bashdb",
+                request = "launch",
+                name = "Launch file",
+                showDebugOutput = true,
+                pathBashdb = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
+                pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
+                trace = true,
+                file = "${file}",
+                program = "${file}",
+                cwd = "${workspaceFolder}",
+                pathCat = "cat",
+                pathBash = "bash",
+                pathMkfifo = "mkfifo",
+                pathPkill = "pkill",
+                args = {},
+                env = {},
+                terminalKind = "integrated",
+            }
+        }
 
         -- ────────────────────────────────────────────────────────────────────────────────────────
         -- Automatically open when a debug session is created
