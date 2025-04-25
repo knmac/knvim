@@ -26,7 +26,7 @@ return {
                 icons = {
                     File = { icon = "", hl = "Identifier" },
                     Module = { icon = "", hl = "Include" },
-                    Namespace = { icon = vim.g.knvim_symbol_map["Namespace"], hl = "Include" },
+                    Namespace = { icon = "", hl = "Include" },
                     Package = { icon = "", hl = "Include" },
                     Class = { icon = "", hl = "Type" },
                     Method = { icon = "", hl = "Function" },
