@@ -4,23 +4,15 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     -- event = "VeryLazy",
     dependencies = {
-        {
-            -- "rcarriga/nvim-dap-ui", -- UI for nvim-dap
-            -- event = { "BufReadPre", "BufNewFile" },
-            -- -- event = "VeryLazy",
-            -- keys = {
-            --     { ",d", function() require("dapui").toggle() end, desc = "DAP: Toggle UI" },
-            -- },
-            -- opts = {},
-        },
-        {
-            "igorlfs/nvim-dap-view",
-            event = "VeryLazy",
-            keys = {
-                { ",d", function() require("dap-view").toggle() end, desc = "DAP: Toggle UI" },
-            },
-            opts = {},
-        },
+        -- {
+        --     "rcarriga/nvim-dap-ui", -- UI for nvim-dap
+        --     event = { "BufReadPre", "BufNewFile" },
+        --     -- event = "VeryLazy",
+        --     keys = {
+        --         { ",d", function() require("dapui").toggle() end, desc = "DAP: Toggle UI" },
+        --     },
+        --     opts = {},
+        -- },
         {
             "jay-babu/mason-nvim-dap.nvim", -- bridges mason.nvim and nvim-dap
             event = { "BufReadPre", "BufNewFile" },
@@ -29,6 +21,14 @@ return {
                 ensure_installed = { "python", "codelldb" },
                 automatic_installation = true,
             },
+        },
+        {
+            "igorlfs/nvim-dap-view",
+            event = "VeryLazy",
+            keys = {
+                { ",d", function() require("dap-view").toggle() end, desc = "DAP: Toggle UI" },
+            },
+            opts = {},
         },
         {
             "LiadOz/nvim-dap-repl-highlights", -- syntax highlights to nvim-dap REPL
