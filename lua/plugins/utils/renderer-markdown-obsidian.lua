@@ -22,23 +22,21 @@ return {
                 desc = "RenderMarkdown: Toggle rendering"
             },
         },
-        config = function()
-            require("render-markdown").setup({
-                enabled = false,
-                heading = {
-                    icons = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " },
+        opts = {
+            enabled = false, -- Only render markdown on <leader>m
+            heading = {
+                icons = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " },
+            },
+            bullet = {
+                icons = { "", "", "◆", "◇" },
+            },
+            checkbox = {
+                custom = {
+                    todo = { raw = "[~]", rendered = "󰥔 ", highlight = "@markup.raw" },
                 },
-                bullet = {
-                    icons = { "", "", "◆", "◇" },
-                },
-                checkbox = {
-                    custom = {
-                        todo = { raw = "[~]", rendered = "󰥔 ", highlight = "@markup.raw" },
-                    },
-                },
-                -- indent = { enabled = true, },
-            })
-        end,
+            },
+            -- indent = { enabled = true, },
+        },
     },
     -- Obsidian helper
     {
@@ -97,8 +95,8 @@ return {
             },
             ui = {
                 enable = false,
-                checkboxes = {},
-                bullets = {},
+                -- checkboxes = {},
+                -- bullets = {},
                 -- checkboxes = {
                 --     [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
                 --     ["x"] = { char = "󰄲", hl_group = "ObsidianDone" },
@@ -106,13 +104,13 @@ return {
                 -- reference_text = { hl_group = "ObsidianRefText" },
                 -- highlight_text = { hl_group = "ObsidianHighlightText" },
                 -- tags = { hl_group = "ObsidianTag" },
-                hl_groups = {
-                    ObsidianTodo = { bold = true, fg = palettes.red },
-                    ObsidianDone = { bold = true, fg = palettes.green },
-                    ObsidianRefText = { underline = true, fg = palettes.lavender },
-                    ObsidianTag = { italic = true, fg = palettes.sapphire },
-                    ObsidianHighlightText = { bg = palettes.yellow, fg = palettes.base },
-                },
+                -- hl_groups = {
+                --     ObsidianTodo = { bold = true, fg = palettes.red },
+                --     ObsidianDone = { bold = true, fg = palettes.green },
+                --     ObsidianRefText = { underline = true, fg = palettes.lavender },
+                --     ObsidianTag = { italic = true, fg = palettes.sapphire },
+                --     ObsidianHighlightText = { bg = palettes.yellow, fg = palettes.base },
+                -- },
             },
             daily_notes = {
                 folder = "journal",

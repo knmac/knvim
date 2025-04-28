@@ -121,7 +121,7 @@ If you want to try individual experimental plugins instead of the all of them, u
 
 The following dependencies are for manual installation.
 
-- Neovim 0.10.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
+- Neovim 0.11.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
 - A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [Ghostty](https://ghostty.org/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font). Knvim is also tested with [WezTerm](https://wezfurlong.org/wezterm/).
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) and [mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) (package managers for LSPs, DAPs, linters, and formatters).
 - [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for fuzzy finder (`Snacks.picker`).
