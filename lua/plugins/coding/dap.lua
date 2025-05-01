@@ -157,15 +157,9 @@ return {
         -- g++ -g main.cpp -o [output_name]
         -- Then provide [output_name] as the program name
         dap.adapters.lldb = {
-            -- type = "server",
-            -- port = "${port}",
             type = "executable",
-            executable = {
-                command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/codelldb",
-                args = { "--port", "${port}" },
-                -- On windows you may have to uncomment this:
-                -- detached = false,
-            }
+            command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/codelldb",
+            name = "lldb",
         }
         dap.configurations.cpp = {
             {
