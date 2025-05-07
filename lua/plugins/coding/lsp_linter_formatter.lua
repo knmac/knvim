@@ -1,6 +1,8 @@
 -- Neovim Language Server Protocol
 return {
-    -- Mason
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
+    -- LSP manager: mason
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
     {
         "williamboman/mason.nvim",
         event = { "BufReadPre", "BufNewFile" },
@@ -18,43 +20,36 @@ return {
             }
         },
     },
-    -- Ensure install for Mason's LSP
-    {
-        "williamboman/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
-        event = { "BufReadPre", "BufNewFile" },
-        -- event = "VeryLazy",
-        opts = {
-            -- Install the LSP servers automatically using mason-lspconfig
-            ensure_installed = {
-                "pyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman", "ts_ls", "yamlls",
-            },
-            automatic_installation = true,
-        },
-    },
-    -- Ensure install for linter and formatter
-    {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        -- event = { "BufReadPre", "BufNewFile" },
-        -- event = "VeryLazy",
-        opts = {
-            ensure_installed = { "cpplint", "shellcheck", "prettier", "bibtex-tidy", "shfmt" },
-        },
-    },
-    -- LSP config: using the predefined config for some LSP
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
+    -- LSP: nvim-lspconfig + mason-lspconfig
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
     {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         -- event = "VeryLazy",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
+            opts = {
+                ensure_installed = { "pyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman", "ts_ls", "yamlls" },
+                automatic_installation = true,
+            },
+        },
         init = function()
-            -- Enable servers installed by Mason
+            -- Enable servers installed by mason-lspconfig
             vim.lsp.enable(require("mason-lspconfig").get_installed_servers())
         end,
     },
-    -- Linter
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
+    -- Linter: nvim-lint + mason-tool-installer
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
     {
         "mfussenegger/nvim-lint",
         event = { "BufReadPre", "BufNewFile" },
-        config = function()
+        dependencies = {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+            opts = { ensure_installed = { "cpplint", "shellcheck" } },
+        },
+        init = function()
             require("lint").linters_by_ft = {
                 sh = { "shellcheck", },
                 c = { "cpplint", },
@@ -76,7 +71,9 @@ return {
             })
         end,
     },
-    -- Formatter
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
+    -- Formatter: conform + mason-tool-installer
+    -- ────────────────────────────────────────────────────────────────────────────────────────────
     {
         "stevearc/conform.nvim",
         event = { "BufReadPre", "BufNewFile" },
@@ -87,20 +84,22 @@ return {
                 desc = "LSP/Conform: Format the buffer",
             },
         },
-        config = function()
-            require("conform").setup({
-                formatters_by_ft = {
-                    html = { "prettier" },
-                    css = { "prettier" },
-                    json = { "prettier" },
-                    javascript = { "prettier" },
-                    markdown = { "prettier" },
-                    typescript = { "prettier" },
-                    yaml = { "prettier" },
-                    bib = { "bibtex-tidy" },
-                    sh = { "shfmt" },
-                },
-            })
-        end,
+        dependencies = {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+            opts = { ensure_installed = { "prettier", "bibtex-tidy", "shfmt" }, },
+        },
+        opts = {
+            formatters_by_ft = {
+                html = { "prettier" },
+                css = { "prettier" },
+                json = { "prettier" },
+                javascript = { "prettier" },
+                markdown = { "prettier" },
+                typescript = { "prettier" },
+                yaml = { "prettier" },
+                bib = { "bibtex-tidy" },
+                sh = { "shfmt" },
+            },
+        }
     },
 }
