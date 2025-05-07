@@ -67,6 +67,28 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Use relative number only for normal and visual modes
+local linenumber_augroup = vim.api.nvim_create_augroup("linenumber", { clear = true })
+-- vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+    group = linenumber_augroup,
+    callback = function()
+        if vim.opt_local.number then
+            vim.opt_local.relativenumber = true
+        end
+    end,
+})
+-- vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter" }, {
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+    group = linenumber_augroup,
+    callback = function()
+        if vim.opt_local.number then
+            vim.opt_local.relativenumber = false
+        end
+    end,
+})
+
+
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- Callable commands
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
