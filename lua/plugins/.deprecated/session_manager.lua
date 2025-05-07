@@ -8,9 +8,9 @@ return {
         },
     },
     event = "BufEnter",
-    keys = {
-        { "<space>s", "<CMD>SessionManager<CR>", desc = "SessionManager: Open" },
-    },
+    -- keys = {
+    --     { "<space>s", "<CMD>SessionManager<CR>", desc = "SessionManager: Open" },
+    -- },
     config = function()
         local Path = require("plenary.path")
         local config = require("session_manager.config")

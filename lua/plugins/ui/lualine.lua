@@ -137,21 +137,21 @@ local env_stat = {
 }
 
 -- Custom component using session_manager
-local sess_stat = {
-    function()
-        local sess_utils = require("session_manager.utils")
-        if sess_utils.exists_in_session() then
-            return " "
-        end
-        return " "
-    end,
-    on_click = function()
-        if not is_clickable then return end
-        local sess = require("session_manager")
-        sess.save_current_session()
-        vim.notify("Session saved", vim.log.levels.INFO)
-    end,
-}
+-- local sess_stat = {
+--     function()
+--         local sess_utils = require("session_manager.utils")
+--         if sess_utils.exists_in_session() then
+--             return " "
+--         end
+--         return " "
+--     end,
+--     on_click = function()
+--         if not is_clickable then return end
+--         local sess = require("session_manager")
+--         sess.save_current_session()
+--         vim.notify("Session saved", vim.log.levels.INFO)
+--     end,
+-- }
 
 -- Custom components
 local filetype_stat = {
@@ -245,7 +245,7 @@ return {
             lualine_c = {
                 { "filename", path = 3, },
                 { "searchcount", icon = "󰍉", cond = function() return vim.fn.searchcount().total > 0 end },
-                sess_stat,
+                -- sess_stat,
             },
             lualine_x = {
                 fmt_stat,

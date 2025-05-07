@@ -68,10 +68,9 @@ lua/
 │  └── symbols.lua
 └── plugins/
    ├── coding/
-   │  ├── blink.lua
+   │  ├── blink_cmp.lua
    │  ├── dap.lua
-   │  ├── linter-formatter.lua
-   │  ├── lspconfig-mason.lua
+   │  ├── lsp_linter_formatter.lua
    │  ├── neogen.lua
    │  ├── neotest.lua
    │  └── treesitter.lua
@@ -93,8 +92,8 @@ lua/
    │  ├── nvim-colorizer.lua
    │  ├── oil.lua
    │  ├── outline.lua
+   │  ├── persistence.lua
    │  ├── renderer-markdown-obsidian.lua
-   │  ├── session_manager.lua
    │  ├── snacks.lua
    │  ├── todo-comments.lua
    │  ├── which-key.lua
