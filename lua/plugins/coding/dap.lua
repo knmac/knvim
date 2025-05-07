@@ -1,4 +1,40 @@
 -- Debug adapter protocol
+local python_launcher_template = [[
+{
+  "version": "0.2.0",
+    "configurations": [
+    {
+      "type": "python",
+      "request": "launch",
+      "name": "launcher name",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "repl_lang": "javascript",
+      "args": []
+    }
+  ]
+}]]
+
+local generate_python_launher = function()
+    local fname = ".vscode/launch.json"
+    local f = io.open(fname, "r")
+    if f ~= nil then
+        io.close(f)
+        return
+    end
+
+    require("os").execute("mkdir -p .vscode")
+    local file, err = io.open(fname, "w")
+    if file then
+        file:write(python_launcher_template)
+        file:close()
+        print(fname .. " generated")
+    else
+        print(err)
+    end
+end
+
 return {
     "mfussenegger/nvim-dap", -- debug adapter protocol
     event = { "BufReadPre", "BufNewFile" },
@@ -60,50 +96,10 @@ return {
             end,
             desc = "DAP: Toggle breakpoint with condition",
         },
-        {
-            ",g",
-            function()
-                local fname = ".vscode/launch.json"
-                local f = io.open(fname, "r")
-                if f ~= nil then
-                    io.close(f)
-                    return
-                end
-
-                local launch_content = [[
-{
-  "version": "0.2.0",
-    "configurations": [
-    {
-      "type": "python",
-      "request": "launch",
-      "name": "launcher name",
-      "program": "${file}",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}",
-      "repl_lang": "javascript",
-      "args": []
-    }
-  ]
-}]]
-
-                require("os").execute("mkdir -p .vscode")
-                local file, err = io.open(fname, "w")
-                if file then
-                    file:write(launch_content)
-                    file:close()
-                    print(fname .. " generated")
-                else
-                    print(err)
-                end
-            end,
-            desc = "DAP: Generate launcher for Python"
-        },
+        { ",g", generate_python_launher, desc = "DAP: Generate launcher for Python" },
         {
             ",k",
-            function()
-                require("dap.ui.widgets").hover(nil, { border = "rounded" })
-            end,
+            function() require("dap.ui.widgets").hover(nil, { border = "rounded" }) end,
             desc = "DAP: Check variable value on hover",
         },
         {
