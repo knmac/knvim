@@ -44,23 +44,25 @@ Overall logic:
 
 All picker key-bindings start with `<space>`.
 
-| Functionality             | Key-binding       |
-| ------------------------- | ----------------- |
-| Open Snacks picker        | `<space> <space>` |
-| Find *f*iles              | `<space> f`       |
-| Find *t*ext (grep)        | `<space> t`       |
-| Find *b*uffer             | `<space> b`       |
-| Find *h*elp               | `<space> h`       |
-| Find *k*eymap             | `<space> k`       |
-| Find *c*ommands           | `<space> c`       |
-| Find *m*arks              | `<space> m`       |
-| Find *r*egisters          | `<space> r`       |
-| Find *d*iagnostics        | `<space> d`       |
-| Find in *j*ndo tree       | `<space> j`       |
-| Find in *u*ndo tree       | `<space> u`       |
-| Find spelling             | `<space> z`       |
-| Find hovered word         | `<space> *`       |
-| Find in open buffers      | `<space> /`       |
+| Functionality        | Key-binding       |
+| -------------------- | ----------------- |
+| Open Snacks picker   | `<space> <space>` |
+| Find *f*iles         | `<space> f`       |
+| Find *t*ext (grep)   | `<space> t`       |
+| Find *b*uffer        | `<space> b`       |
+| Find *h*elp          | `<space> h`       |
+| Find *k*eymap        | `<space> k`       |
+| Find *c*ommands      | `<space> c`       |
+| Find *m*arks         | `<space> m`       |
+| Find *r*egisters     | `<space> r`       |
+| Find *d*iagnostics   | `<space> d`       |
+| Find in *j*ndo tree  | `<space> j`       |
+| Find in *u*ndo tree  | `<space> u`       |
+| Find spelling        | `<space> z`       |
+| Find hovered word    | `<space> *`       |
+| Find in open buffers | `<space> /`       |
+| Find *s*ession       | `<space> s`       |
+| Delete session       | `<space> S`       |
 
 Inside the picker:
 
@@ -178,7 +180,7 @@ All DAP key-bindings start with `,`.
 |            | Toggle file explorer                            | `<leader> e`         |
 |            | Toggle outline view (on the screen right side)  | `<leader> o`         |
 |            | Toggle outline view (beside current buffer)     | `<leader> O`         |
-|            | Toggle Diffview                                 | `<leader>v`          |
+|            | Toggle Diffview                                 | `<leader> v`         |
 |            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
 | Oil        | Open oil in floating window                     | `-`                  |
 |            | Open oil in the current buffer                  | `_`                  |
