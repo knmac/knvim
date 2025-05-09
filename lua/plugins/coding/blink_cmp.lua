@@ -18,7 +18,8 @@ return {
             ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
             ["<C-y>"] = { "select_and_accept" },
             ["<C-c>"] = { "hide", "fallback" },
-            ["<CR>"] = { "accept", "fallback" },
+            ["<CR>"] = { "select_and_accept", "fallback" },
+            -- ["<CR>"] = { "accept", "fallback" },
             ["<Tab>"] = {
                 function(cmp) return cmp.select_next() end,
                 "snippet_forward",
