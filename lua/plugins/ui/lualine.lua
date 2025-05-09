@@ -15,12 +15,11 @@ vim.api.nvim_create_user_command(
     {}
 )
 
-
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- Custom components
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- Show click
-local click_stat = {
+local click_status = {
     function()
         if is_clickable then
             return "󰍽 "
@@ -33,11 +32,12 @@ local click_stat = {
 }
 
 -- Show and change the number of spaces per tab of the local buffer
-local fmt_stat = {
+local space_status = {
     icon = "󱁐",
     function()
         local stat = ""
         -- stat = stat .. "Spaces:" .. vim.opt_local.tabstop:get()
+        ---@diagnostic disable-next-line: undefined-field
         stat = vim.opt_local.tabstop:get()
         return stat
     end,
@@ -59,7 +59,7 @@ local fmt_stat = {
 }
 
 -- Fancier version of the builtin 'location' and 'progress' components
-local progress_stat = {
+local progress_status = {
     function()
         -- Location
         local curr_line = vim.api.nvim_win_get_cursor(0)[1]
@@ -93,25 +93,8 @@ local progress_stat = {
     -- icon = '',
 }
 
--- Clickable version of builtin 'fileformat'
-local fileformat_stat = {
-    "fileformat",
-    on_click = function()
-        if not is_clickable then return end
-        vim.ui.select(
-            { "unix", "mac", "dos" },
-            { prompt = "Select fileformat" },
-            function(ff)
-                if ff ~= nil then
-                    vim.opt_local.fileformat = ff
-                end
-            end
-        )
-    end,
-}
-
 -- Custom components to show current python environment
-local env_stat = {
+local env_status = {
     function()
         local current_env = "[-]" -- No environment
 
@@ -137,7 +120,7 @@ local env_stat = {
 }
 
 -- Custom component using session_manager
--- local sess_stat = {
+-- local sess_status = {
 --     function()
 --         local sess_utils = require("session_manager.utils")
 --         if sess_utils.exists_in_session() then
@@ -153,8 +136,20 @@ local env_stat = {
 --     end,
 -- }
 
--- Custom components
-local filetype_stat = {
+-- Custom components using remote-nvim
+-- local remote_status = {
+--     function()
+--         ---@diagnostic disable-next-line: undefined-field
+--         return (vim.g.remote_neovim_host and vim.uv.os_gethostname()) or ""
+--     end,
+--     padding = { right = 1, left = 1 },
+--     icon = "",
+-- }
+
+-- ────────────────────────────────────────────────────────────────────────────────────────────────
+-- Modified status from builtin
+-- ────────────────────────────────────────────────────────────────────────────────────────────────
+local filetype_mod = {
     "filetype", -- builtin filetype component
     on_click = function()
         if not is_clickable then return end
@@ -167,7 +162,23 @@ local filetype_stat = {
     end,
 }
 
-local branch_stat = {
+local fileformat_mod = {
+    "fileformat",
+    on_click = function()
+        if not is_clickable then return end
+        vim.ui.select(
+            { "unix", "mac", "dos" },
+            { prompt = "Select fileformat" },
+            function(ff)
+                if ff ~= nil then
+                    vim.opt_local.fileformat = ff
+                end
+            end
+        )
+    end,
+}
+
+local branch_mod = {
     "branch",
     icon = "󰘬",
     on_click = function()
@@ -176,7 +187,7 @@ local branch_stat = {
     end,
 }
 
-local diagnostics_stat = {
+local diagnostics_mod = {
     "diagnostics",
     on_click = function()
         if not is_clickable then return end
@@ -184,8 +195,7 @@ local diagnostics_stat = {
     end,
 }
 
--- Custom components using gitsigns
-local diff_stat = {
+local diff_mod = {
     "diff", -- builtin diff component
     symbols = { added = " ", modified = " ", removed = " " },
     on_click = function()
@@ -194,15 +204,14 @@ local diff_stat = {
     end,
 }
 
--- Custom components using remote-nvim
--- local remote_stat = {
---     function()
---         ---@diagnostic disable-next-line: undefined-field
---         return (vim.g.remote_neovim_host and vim.uv.os_gethostname()) or ""
---     end,
---     padding = { right = 1, left = 1 },
---     icon = "",
--- }
+local lsp_status_mod = {
+    "lsp_status", -- builtin lsp status
+    on_click = function()
+        if not is_clickable then return end
+        Snacks.picker.lsp_config()
+    end,
+
+}
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- Main config
@@ -234,32 +243,32 @@ return {
         },
         sections = {
             lualine_a = {
-                -- remote_stat,
+                -- remote_status,
                 { "mode", icon = "" },
             },
             lualine_b = {
-                branch_stat,
-                diff_stat,
-                diagnostics_stat,
+                branch_mod,
+                diff_mod,
+                diagnostics_mod,
             },
             lualine_c = {
                 { "filename", path = 3, },
                 { "searchcount", icon = "󰍉", cond = function() return vim.fn.searchcount().total > 0 end },
-                -- sess_stat,
+                -- sess_status,
             },
             lualine_x = {
-                fmt_stat,
+                space_status,
                 "encoding",
-                fileformat_stat,
-                filetype_stat,
-                "lsp_status",
+                fileformat_mod,
+                filetype_mod,
+                lsp_status_mod,
             },
             lualine_y = {
-                progress_stat,
+                progress_status,
             },
             lualine_z = {
-                env_stat,
-                click_stat,
+                env_status,
+                click_status,
                 -- notify_stat,
             },
         },
