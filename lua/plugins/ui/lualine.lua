@@ -200,7 +200,11 @@ local diff_mod = {
     symbols = { added = " ", modified = " ", removed = " " },
     on_click = function()
         if not is_clickable then return end
-        vim.cmd("DiffviewOpen")
+        if next(require("diffview.lib").views) == nil then
+            vim.cmd("DiffviewOpen")
+        else
+            vim.cmd("DiffviewClose")
+        end
     end,
 }
 
@@ -211,6 +215,16 @@ local lsp_status_mod = {
         Snacks.picker.lsp_config()
     end,
 
+}
+
+local searchcount_mod = {
+    "searchcount", -- builtin searchcount
+    icon = "󰍉",
+    cond = function() return vim.fn.searchcount().total > 0 end,
+    on_click = function()
+        if not is_clickable then return end
+        vim.cmd("nohlsearch")
+    end,
 }
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
@@ -253,7 +267,6 @@ return {
             },
             lualine_c = {
                 { "filename", path = 3, },
-                { "searchcount", icon = "󰍉", cond = function() return vim.fn.searchcount().total > 0 end },
                 -- sess_status,
             },
             lualine_x = {
@@ -264,6 +277,7 @@ return {
                 lsp_status_mod,
             },
             lualine_y = {
+                searchcount_mod,
                 progress_status,
             },
             lualine_z = {
