@@ -169,30 +169,29 @@ All DAP key-bindings start with `,`.
 
 ### 1.6. Other custom key-bindings
 
-| Group      | Functionality                                   | Key-binding          |
-| ---------- | ----------------------------------------------- | -------------------- |
-| Misc       | **Show local key-maps in the buffer**           | `<leader> ?`         |
-|            | Insert python breakpoint (on the next line)     | `<leader> b`         |
-|            | Insert python breakpoint (on the previous line) | `<leader> B`         |
-|            | Fill line with `─` characters                   | `<leader> -`         |
-|            | Fill line with `━` characters                   | `<leader> =`         |
-|            | Generate doc string for function                | `<leader> d`         |
-|            | Toggle file explorer                            | `<leader> e`         |
-|            | Toggle outline view (on the screen right side)  | `<leader> o`         |
-|            | Toggle outline view (beside current buffer)     | `<leader> O`         |
-|            | Toggle Diffview                                 | `<leader> v`         |
-|            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
-| Oil        | Open oil in floating window                     | `-`                  |
-|            | Open oil in the current buffer                  | `_`                  |
-|            | Close oil and return to the previous buffer     | `Ctrl+c` or `q`      |
-| Git hunk   | Go to previous hunk of Git change               | `[c`                 |
-|            | Go to next hunk of Git change                   | `]c`                 |
-| Easy-align | Start easy align (in visual mode)               | `<leader> a`         |
-|            | - _Example:_ align by `\|`                      | `<leader> a*\|`      |
-|            | - _Example:_ align by `<space>`                 | `<leader> a*<space>` |
-| Neogen     | Generate docstring                              | `<leader> d`         |
-| Markdown   | Toggle markdown render                          | `<leader> m`         |
-|            | Cycle through checkbox marks                    | `Ctrl+<space>`       |
+| Group        | Functionality                                   | Key-binding          |
+| ------------ | ----------------------------------------------- | -------------------- |
+| Misc         | **Show local key-maps in the buffer**           | `<leader> ?`         |
+|              | Insert python breakpoint (on the next line)     | `<leader> b`         |
+|              | Insert python breakpoint (on the previous line) | `<leader> B`         |
+|              | Fill line with `─` characters                   | `<leader> -`         |
+|              | Fill line with `━` characters                   | `<leader> =`         |
+|              | Generate doc string for function                | `<leader> d`         |
+|              | Toggle file explorer                            | `<leader> e`         |
+|              | Toggle outline view (on the screen right side)  | `<leader> o`         |
+|              | Toggle outline view (beside current buffer)     | `<leader> O`         |
+|              | Toggle Diffview                                 | `<leader> v`         |
+|              | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
+| File Manager | Open Yazi                                       | `-`                  |
+|              | Open oil                                        | `_`                  |
+| Git hunk     | Go to previous hunk of Git change               | `[c`                 |
+|              | Go to next hunk of Git change                   | `]c`                 |
+| Easy-align   | Start easy align (in visual mode)               | `<leader> a`         |
+|              | - _Example:_ align by `\|`                      | `<leader> a*\|`      |
+|              | - _Example:_ align by `<space>`                 | `<leader> a*<space>` |
+| Neogen       | Generate docstring                              | `<leader> d`         |
+| Markdown     | Toggle markdown render                          | `<leader> m`         |
+|              | Cycle through checkbox marks                    | `Ctrl+<space>`       |
 
 ## 2. Useful default vim key-bindings
 

@@ -8,7 +8,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
         {
-            "-",
+            "_",
             function()
                 local oil = require("oil")
                 oil.open_float()
@@ -23,7 +23,7 @@ return {
             end,
             desc = "Oil: open floating window"
         },
-        { "_", function() require("oil").open() end, desc = "Oil: open in the current buffer" },
+        -- { "_", function() require("oil").open() end, desc = "Oil: open in the current buffer" },
     },
     opts = {
         float = {
