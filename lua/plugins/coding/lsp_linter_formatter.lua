@@ -1,10 +1,11 @@
 -- Neovim Language Server Protocol
 return {
     -- ────────────────────────────────────────────────────────────────────────────────────────────
-    -- LSP manager: mason
+    -- LSP manager: mason + mason-lspconfig + mason-tool-installer
     -- ────────────────────────────────────────────────────────────────────────────────────────────
     {
-        "williamboman/mason.nvim",
+        -- "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         event = { "BufReadPre", "BufNewFile" },
         -- event = "VeryLazy",
         build = ":MasonUpdate",
@@ -20,6 +21,23 @@ return {
             }
         },
     },
+    {
+        -- "williamboman/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
+        "mason-org/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
+        opts = {
+            ensure_installed = { "pyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman", "ts_ls", "yamlls" },
+            automatic_installation = true,
+        },
+    },
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        opts = {
+            ensure_installed = {
+                "cpplint", "shellcheck",            -- linter
+                "prettier", "bibtex-tidy", "shfmt", -- formatter
+            },
+        },
+    },
     -- ────────────────────────────────────────────────────────────────────────────────────────────
     -- LSP: nvim-lspconfig + mason-lspconfig
     -- ────────────────────────────────────────────────────────────────────────────────────────────
@@ -27,13 +45,6 @@ return {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         -- event = "VeryLazy",
-        dependencies = {
-            "williamboman/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
-            opts = {
-                ensure_installed = { "pyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman", "ts_ls", "yamlls" },
-                automatic_installation = true,
-            },
-        },
         init = function()
             -- Enable servers installed by mason-lspconfig
             vim.lsp.enable(require("mason-lspconfig").get_installed_servers())
@@ -44,11 +55,7 @@ return {
     -- ────────────────────────────────────────────────────────────────────────────────────────────
     {
         "mfussenegger/nvim-lint",
-        event = { "BufReadPre", "BufNewFile" },
-        dependencies = {
-            "WhoIsSethDaniel/mason-tool-installer.nvim",
-            opts = { ensure_installed = { "cpplint", "shellcheck" } },
-        },
+        -- event = { "BufReadPre", "BufNewFile" },
         init = function()
             require("lint").linters_by_ft = {
                 sh = { "shellcheck", },
@@ -83,10 +90,6 @@ return {
                 function() require("conform").format({ lsp_fallback = true }) end,
                 desc = "LSP/Conform: Format the buffer",
             },
-        },
-        dependencies = {
-            "WhoIsSethDaniel/mason-tool-installer.nvim",
-            opts = { ensure_installed = { "prettier", "bibtex-tidy", "shfmt" }, },
         },
         opts = {
             formatters_by_ft = {
