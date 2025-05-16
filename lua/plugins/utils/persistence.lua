@@ -1,4 +1,6 @@
 -- Session manager
+local session_dir = vim.fn.stdpath("state") .. "/sessions/"
+
 return {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -9,7 +11,16 @@ return {
             function()
                 vim.ui.select(
                     require("persistence").list(),
-                    { prompt = "Select session to delete" },
+                    {
+                        prompt = "Select session to delete",
+                        format_item = function(item)
+                            item = item:gsub(session_dir, "") -- Remove the session dir path
+                            item = item:gsub(".vim$", "") -- Remove .vim extension at the end
+                            item = item:gsub("%%%%", " | 󰘬") -- Format the git branch name
+                            item = item:gsub("%%", "/") -- Convert to the standard path
+                            return item
+                        end,
+                    },
                     function(choice)
                         if choice == nil then return end
                         vim.fn.system("rm " .. choice)
@@ -22,6 +33,7 @@ return {
     },
     opts = {
         -- add any custom options here
+        dir = session_dir,
     },
     init = function()
         -- vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,terminal"
