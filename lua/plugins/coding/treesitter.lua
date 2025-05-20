@@ -2,11 +2,12 @@
 return {
     "nvim-treesitter/nvim-treesitter", -- code parser generator for syntax highlighting
     build = ":TSUpdate",
-    config = function()
+    init = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
-                "bash", "c", "lua", "markdown", "markdown_inline", "python", "query", "vim", "vimdoc",
-                "bibtex", "cmake", "cpp", "css", "dap_repl", "dockerfile", "git_config", "html",
+                -- default in nvim
+                -- "c", "lua", "markdown", "markdown_inline", "query", "vim", "vimdoc",
+                "bash", "python", "bibtex", "cmake", "cpp", "css", "dap_repl", "dockerfile", "git_config", "html",
                 "javascript", "json", "latex", "regex", "scala", "sql", "toml", "typescript", "yaml",
             },
             highlight = {
