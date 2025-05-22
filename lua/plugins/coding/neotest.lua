@@ -18,7 +18,7 @@ return {
             -- event = "VeryLazy",
         },
     },
-    init = function()
+    config = function()
         require("neotest").setup({
             adapters = {
                 require("neotest-python")({
