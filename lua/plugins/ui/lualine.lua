@@ -80,11 +80,12 @@ local progress_status = {
 
         -- Progress bar
         local sbar = {}
-        if vim.g.neovide then
-            sbar = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" } -- lower one eigth block -> full block
-        else
-            sbar = { "▔", "🮂", "🮃", "▀", "🮄", "🮅", "🮆", "█" } -- upper one eigth block -> full block
-        end
+        -- if vim.g.neovide then
+        --     sbar = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" } -- lower one eigth block -> full block
+        -- else
+        --     sbar = { "▔", "🮂", "🮃", "▀", "🮄", "🮅", "🮆", "█" } -- upper one eigth block -> full block
+        -- end
+        sbar = { "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥" }
         local i = math.floor((curr_line - 1) / lines * #sbar) + 1
         local progress_bar = string.rep(sbar[i], 1)
 
