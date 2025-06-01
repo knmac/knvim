@@ -14,11 +14,12 @@ return {
                     {
                         prompt = "Select session to delete",
                         format_item = function(item)
-                            item = item:gsub(session_dir, "") -- Remove the session dir path
-                            item = item:gsub(".vim$", "") -- Remove .vim extension at the end
-                            item = item:gsub("%%%%", " | 󰘬") -- Format the git branch name
-                            item = item:gsub("%%", "/") -- Convert to the standard path
                             return item
+                                :gsub(session_dir, "") -- Remove the session dir path
+                                :gsub(".vim$", "") -- Remove .vim extension at the end
+                                :gsub("%%%%", " | 󰘬") -- Format the git branch name
+                                :gsub("%%", "/") -- Convert to the standard path
+                                :gsub(vim.env.HOME, "~") -- Shorten home path to ~
                         end,
                     },
                     function(choice)
