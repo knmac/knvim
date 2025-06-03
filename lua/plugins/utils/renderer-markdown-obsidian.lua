@@ -22,21 +22,25 @@ return {
                 desc = "RenderMarkdown: Toggle rendering"
             },
         },
-        opts = {
-            enabled = false, -- Only render markdown on <leader>m
-            heading = {
-                icons = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " },
-            },
-            bullet = {
-                icons = { "", "", "◆", "◇" },
-            },
-            checkbox = {
-                custom = {
-                    todo = { raw = "[~]", rendered = "󰥔 ", highlight = "@markup.raw" },
+        init = function()
+            require("render-markdown").setup({
+                enabled = false, -- Only render markdown on <leader>m
+                heading = {
+                    icons = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " },
                 },
-            },
-            -- indent = { enabled = true, },
-        },
+                bullet = {
+                    icons = { "", "", "◆", "◇" },
+                },
+                checkbox = {
+                    custom = {
+                        inprogress = { raw = "[~]", rendered = "󰏭 ", highlight = "RenderMarkdownInfo" },
+                        urgent = { raw = "[!]", rendered = "󰳤 ", highlight = "RenderMarkdownWarn" },
+                        postponed = { raw = "[>]", rendered = "󱋭 ", highlight = "RenderMarkdownError", scope_highlight = "markdownStrikeDelimiter" },
+                    },
+                },
+                -- indent = { enabled = true, },
+            })
+        end,
     },
     -- Obsidian helper
     {
@@ -78,22 +82,22 @@ return {
                 },
             },
             -- { name = "global", path = "~" },
-            mappings = {
-                -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-                ["gf"] = {
-                    action = function()
-                        return require("obsidian").util.gf_passthrough()
-                    end,
-                    opts = { noremap = false, expr = true, buffer = true, desc = "Obsidian: Go to file under the cursor" },
-                },
-                -- Toggle check-boxes
-                ["<C-space>"] = {
-                    action = function()
-                        return require("obsidian").util.toggle_checkbox({ " ", "x", "~" })
-                    end,
-                    opts = { buffer = true, desc = "Obsidian: Toggle checkboxes" },
-                },
-            },
+            -- mappings = {
+            --     -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+            --     ["gf"] = {
+            --         action = function()
+            --             return require("obsidian").util.gf_passthrough()
+            --         end,
+            --         opts = { noremap = false, expr = true, buffer = true, desc = "Obsidian: Go to file under the cursor" },
+            --     },
+            --     -- Toggle check-boxes
+            --     ["<C-space>"] = {
+            --         action = function()
+            --             return require("obsidian").util.toggle_checkbox({ " ", "x", "~" })
+            --         end,
+            --         opts = { buffer = true, desc = "Obsidian: Toggle checkboxes" },
+            --     },
+            -- },
             ui = {
                 enable = false,
                 -- checkboxes = {},
