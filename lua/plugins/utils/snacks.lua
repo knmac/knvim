@@ -121,7 +121,11 @@ return {
                         icon = " ",
                         key = "?",
                         desc = "Cheatsheet",
-                        action = ":e " .. vim.fn.stdpath("config") .. "/cheatsheet.md | Outline!"
+                        action = function()
+                            vim.cmd(":e" .. vim.fn.stdpath("config") .. "/cheatsheet.md")
+                            vim.cmd[[Outline!]]
+                            vim.cmd[[RenderMarkdown buf_enable]]
+                        end,
                     },
                     --
                     { icon = " ", key = "q", desc = "Quit", action = ":qa" },

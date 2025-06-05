@@ -38,7 +38,7 @@ return {
                         postponed = { raw = "[>]", rendered = "󱋭 ", highlight = "RenderMarkdownError", scope_highlight = "markdownStrikeDelimiter" },
                     },
                 },
-                -- indent = { enabled = true, },
+                -- indent = { enabled = true, icon = "│" },
             })
         end,
     },
