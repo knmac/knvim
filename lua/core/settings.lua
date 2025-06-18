@@ -101,13 +101,13 @@ function _G.custom_fold_text()
     return line_start .. " ... " .. line_end .. " [" .. num_lines .. " lines] "
 end
 
--- Fold column options
--- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
--- vim.o.foldcolumn = "1" -- '0' is not bad | Number of different visible folding levels
-
 -- Set foldtext to call the Lua function
 vim.opt.foldtext = "v:lua.custom_fold_text()"
 vim.opt.fillchars:append({ fold = "─" })
+
+-- Fold column options
+-- vim.o.foldcolumn = "1" -- '0' is not bad | Number of different visible folding levels
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
