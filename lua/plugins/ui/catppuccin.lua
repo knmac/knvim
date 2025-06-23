@@ -39,7 +39,10 @@ return {
                 -- },
                 -- noice = true,
                 -- notify = true,
-                -- snacks = true,
+                snacks = {
+                    enabled = true,
+                    indent_scope_color = "lavender",
+                },
                 -- symbols_outline = true,
                 rainbow_delimiters = true,
                 -- which_key = true,
