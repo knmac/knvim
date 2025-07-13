@@ -98,13 +98,14 @@ local progress_status = {
 local env_status = {
     function()
         local current_env = "[-]" -- No environment
+        local python_path = require("venv-selector").python() or vim.g.python3_host_prog
 
-        if vim.g.python3_host_prog ~= nil then
-            -- Default environment from python3_host_prog
+        if python_path ~= nil then
+            -- Default environment from python path
             local Path = require("plenary.path")
-            local tokens = Path._split(Path:new(vim.g.python3_host_prog))
+            local tokens = Path._split(Path:new(python_path))
 
-            -- Get the environment name from python3_host_prog
+            -- Get the environment name from python path
             if #tokens > 2 then
                 -- Standard path is .../[name]/bin/python, so get the third last token
                 current_env = tokens[#tokens - 2]
@@ -114,10 +115,11 @@ local env_status = {
         return current_env
     end,
     icon = "󰌠",
-    -- on_click = function()
-    --     if not is_clickable then return end
-    --     require("swenv.api").pick_venv()
-    -- end,
+    on_click = function()
+        if not is_clickable then return end
+        -- require("swenv.api").pick_venv()
+        vim.cmd [[VenvSelect]]
+    end,
 }
 
 -- Custom component using session_manager

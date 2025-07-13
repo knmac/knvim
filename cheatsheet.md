@@ -44,25 +44,26 @@ Overall logic:
 
 All picker key-bindings start with `<space>`.
 
-| Functionality        | Key-binding       |
-| -------------------- | ----------------- |
-| Open Snacks picker   | `<space> <space>` |
-| Find *f*iles         | `<space> f`       |
-| Find *t*ext (grep)   | `<space> t`       |
-| Find *b*uffer        | `<space> b`       |
-| Find *h*elp          | `<space> h`       |
-| Find *k*eymap        | `<space> k`       |
-| Find *c*ommands      | `<space> c`       |
-| Find *m*arks         | `<space> m`       |
-| Find *r*egisters     | `<space> r`       |
-| Find *d*iagnostics   | `<space> d`       |
-| Find in *j*ndo tree  | `<space> j`       |
-| Find in *u*ndo tree  | `<space> u`       |
-| Find spelling        | `<space> z`       |
-| Find hovered word    | `<space> *`       |
-| Find in open buffers | `<space> /`       |
-| Find *s*ession       | `<space> s`       |
-| Delete session       | `<space> S`       |
+| Functionality                     | Key-binding       |
+| --------------------------------- | ----------------- |
+| Open Snacks picker                | `<space> <space>` |
+| Find *f*iles                      | `<space> f`       |
+| Find *t*ext (grep)                | `<space> t`       |
+| Find *b*uffer                     | `<space> b`       |
+| Find *h*elp                       | `<space> h`       |
+| Find *k*eymap                     | `<space> k`       |
+| Find *c*ommands                   | `<space> c`       |
+| Find *m*arks                      | `<space> m`       |
+| Find *r*egisters                  | `<space> r`       |
+| Find *d*iagnostics                | `<space> d`       |
+| Find in *j*ndo tree               | `<space> j`       |
+| Find in *u*ndo tree               | `<space> u`       |
+| Find spelling                     | `<space> z`       |
+| Find hovered word                 | `<space> *`       |
+| Find in open buffers              | `<space> /`       |
+| Find python virtual *e*nvironment | `<space> e`       |
+| Find *s*ession                    | `<space> s`       |
+| Delete session                    | `<space> S`       |
 
 Inside the picker:
 
