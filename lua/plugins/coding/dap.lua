@@ -147,7 +147,7 @@ return {
                 else
                     cb({
                         type = "executable",
-                        command = vim.g.python3_host_prog,
+                        command = require("venv-selector").python() or vim.g.python3_host_prog,
                         args = { "-m", "debugpy.adapter" },
                         options = {
                             source_filetype = "python",
