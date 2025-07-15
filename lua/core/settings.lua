@@ -57,8 +57,7 @@ vim.opt.encoding = "utf-8"             -- use Unicode
 vim.opt.spelllang = "en_us"            -- set spell language as US english
 vim.opt.spellfile = vim.fn.stdpath("data") ..
     "/spelling/en.utf-8.add"           -- file to store custom spelling
-
--- vim.cmd [[ set path+=** ]]         -- provide tab-completion for file-related tasks, e.g., gf
+vim.opt.path:append("**")              -- provide tab-completion for file-related tasks, e.g., gf
 
 
 -- ────────────────────────────────────────────────────────────────────────────────────────────────

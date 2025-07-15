@@ -178,3 +178,17 @@ vim.keymap.set("n", "<leader>=", function() FillLine("━") end,
 -- vim.keymap.set("n", "<leader>-", ':call FillLine("-")<CR>', default_opts)
 -- -- Fill with '=' characters
 -- vim.keymap.set("n", "<leader>=", ':call FillLine("=")<CR>', default_opts)
+
+
+-- Normalize quotes
+function NormalizeQuotes()
+    local mode = vim.fn.mode()
+    if mode == "v" or mode == "V" then
+        vim.cmd([['<,'>s/[‘’]/'/g]])
+        vim.cmd([['<,'>s/[“”]/"/g]])
+    else
+        vim.cmd([[%s/[‘’]/'/g]])
+        vim.cmd([[%s/[“”]/"/g]])
+    end
+end
+-- vim.api.nvim_create_user_command("NormalizeQuotes", NormalizeQuotes, { range = true })
