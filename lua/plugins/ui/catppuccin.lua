@@ -6,6 +6,7 @@ return {
         require("catppuccin").setup({
             flavour = "macchiato", -- latte, frappe, macchiato, mocha
             transparent_background = false,
+            show_end_of_buffer = true,
             term_colors = true,
             -- dim_inactive = {
             --     enabled = false,
@@ -27,6 +28,15 @@ return {
                 operators = {},
             },
             integrations = {
+                native_lsp = {
+                    enabled = true,
+                    underlines = {
+                        errors = { "undercurl" },
+                        hints = { "undercurl" },
+                        warnings = { "undercurl" },
+                        information = { "undercurl" },
+                    },
+                },
                 barbar = true,
                 blink_cmp = true,
                 colorful_winsep = {
