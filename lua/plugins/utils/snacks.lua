@@ -63,7 +63,7 @@ return {
 
         -- Special command to open vertical terminal
         vim.api.nvim_create_user_command(
-            "TermVert",
+            "KnvimTermVert",
             function() Snacks.terminal.open(nil, { win = { position = "right" } }) end,
             {}
         )

@@ -116,7 +116,7 @@ function ClearReg()
     vim.notify("All registers cleared", vim.log.levels.INFO)
 end
 
-vim.api.nvim_create_user_command("ClearAllRegisters", function() ClearReg() end, {})
+vim.api.nvim_create_user_command("KnvimClearRegisters", function() ClearReg() end, {})
 
 -- Clear all markers
 function ClearMark()
@@ -124,7 +124,7 @@ function ClearMark()
     vim.notify("All marks cleared", vim.log.levels.INFO)
 end
 
-vim.api.nvim_create_user_command("ClearAllMarks", function() ClearMark() end, {})
+vim.api.nvim_create_user_command("KnvimClearMarks", function() ClearMark() end, {})
 
 -- Toggle zoom the current window
 -- vim.cmd [[
@@ -191,4 +191,4 @@ function NormalizeQuotes()
         vim.cmd([[%s/[“”]/"/g]])
     end
 end
--- vim.api.nvim_create_user_command("NormalizeQuotes", NormalizeQuotes, { range = true })
+vim.api.nvim_create_user_command("KnvimNormalizeQuotes", NormalizeQuotes, { range = true })

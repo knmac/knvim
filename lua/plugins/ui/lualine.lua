@@ -1,7 +1,7 @@
 -- Statusline at the bottom
 local is_clickable = false
 vim.api.nvim_create_user_command(
-    "ToggleClickableLualine",
+    "KnvimToggleClickableLualine",
     function()
         is_clickable = not is_clickable
         local msg = ""
