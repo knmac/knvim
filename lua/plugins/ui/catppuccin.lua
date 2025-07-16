@@ -50,6 +50,12 @@ return {
         })
 
         vim.cmd.colorscheme("catppuccin")
-        vim.cmd.highlight("DiagnosticUnderlineError gui=undercurl") -- use undercurl for error, if supported by terminal
+
+        -- use undercurl, if supported by terminal
+        vim.cmd.highlight("DiagnosticUnderlineOk gui=undercurl")
+        vim.cmd.highlight("DiagnosticUnderlineHint gui=undercurl")
+        vim.cmd.highlight("DiagnosticUnderlineInfo gui=undercurl")
+        vim.cmd.highlight("DiagnosticUnderlineWarn gui=undercurl")
+        vim.cmd.highlight("DiagnosticUnderlineError gui=undercurl")
     end,
 }
