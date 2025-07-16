@@ -23,6 +23,8 @@ vim.diagnostic.config({
         source = true, -- Or 'if_many'  -> show source of diagnostics
         -- prefix = '■', -- Could be '●', '▎', 'x'
     },
+    -- virtual_lines = true,
+    -- virtual_lines = { current_line = true },
     float = {
         source = true, -- Or 'if_many'  -> show source of diagnostics
         border = "rounded",
