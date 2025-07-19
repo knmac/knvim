@@ -87,6 +87,7 @@ lua/
    ├── utils/
    │  ├── diffview.lua
    │  ├── easy-align.lua
+   │  ├── flash.lua
    │  ├── gitsigns.lua
    │  ├── leap.lua
    │  ├── nvim-colorizer.lua
