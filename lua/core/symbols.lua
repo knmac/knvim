@@ -19,11 +19,11 @@ vim.diagnostic.config({
         -- linehl = {},
     },
     -- Virtual text / line
-    -- virtual_text = {
-    --     source = true, -- Or 'if_many'  -> show source of diagnostics
-    --     -- prefix = '■', -- Could be '●', '▎', 'x'
-    -- },
-    virtual_lines = { current_line = true },
+    virtual_text = {
+        source = true, -- Or 'if_many'  -> show source of diagnostics
+        -- prefix = '■', -- Could be '●', '▎', 'x'
+    },
+    -- virtual_lines = { current_line = true },
     -- Float
     float = {
         source = true, -- Or 'if_many'  -> show source of diagnostics
