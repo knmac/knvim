@@ -10,6 +10,7 @@ return {
     -- Uncomment the individual experimental plugins to try them out
     -- { import = "plugins.experimentals.image" },
     -- { import = "plugins.experimentals.img-clip" },
+    -- { import = "plugins.experimentals.jupynium" },
     -- { import = "plugins.experimentals.metals" },
     -- { import = "plugins.experimentals.neorg" },
     -- { import = "plugins.experimentals.neovide" },
