@@ -56,9 +56,10 @@ return {
         --   "BufReadPre path/to/my-vault/**.md",
         --   "BufNewFile path/to/my-vault/**.md",
         -- },
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
+        -- dependencies = {
+        --     "nvim-lua/plenary.nvim",
+        -- },
+        --
         opts = {
             workspaces = {
                 {

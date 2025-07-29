@@ -12,6 +12,7 @@ return {
     -- { import = "plugins.experimentals.img-clip" },
     -- { import = "plugins.experimentals.jupynium" },
     -- { import = "plugins.experimentals.metals" },
+    -- { import = "plugins.experimentals.neopyter" },
     -- { import = "plugins.experimentals.neorg" },
     -- { import = "plugins.experimentals.neovide" },
     -- { import = "plugins.experimentals.nonels" },
