@@ -61,6 +61,7 @@ return {
         -- },
         --
         opts = {
+            legacy_commands = false,
             workspaces = {
                 {
                     name = "work",

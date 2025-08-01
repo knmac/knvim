@@ -55,3 +55,4 @@ require("lazy").setup({
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = nil })
 vim.api.nvim_set_hl(0, "PMenu", { ctermbg = nil })
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = vim.api.nvim_get_hl(0, { name = "FloatBorder" }).fg, bg = nil })
