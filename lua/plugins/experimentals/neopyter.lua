@@ -5,8 +5,6 @@ return {
         "nvim-treesitter/nvim-treesitter", -- neopyter don't depend on `nvim-treesitter`, but does depend on treesitter parser of python
         "AbaoFromCUG/websocket.nvim",      -- for mode='direct'
     },
-
-    ---@type neopyter.Option
     opts = {
         mode = "direct",
         remote_address = "127.0.0.1:9001",
