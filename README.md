@@ -128,9 +128,10 @@ The following dependencies are for manual installation.
 
 Optional dependencies:
 
-- Python packages `pynvim` and `neovim` (can be installed with `pip install pynvim neovim`).
+- Python package `pynvim` (can be installed with `pip install pynvim`).
 - [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [Snacks.nvim](https://github.com/folke/snacks.nvim).
-- A virtual environment (`conda` or `pyenv`) with the name `knvim`.
+- [Yazi](https://yazi-rs.github.io/) for file explorer.
+- A virtual environment (e.g., `conda`, `pyenv`, etc.) with the name `knvim`.
 
 ### 4.2. Installation
 
@@ -281,12 +282,12 @@ nvim myterm.info # add smxx=\E[9m, rmxx=\E[29m,
 tic -x myterm.info
 ```
 
-_Q4: Image rendering in Knvim?_
+_Q4: Image rendering in knvim?_
 
-_A4:_ Image rendering is partially tested with Ghostty and WezTerm terminals. You can try the experimental config `plugins.experimental.image`. I do not turn this feature on by default as I find it substantially slows down my workflow.
+_A4:_ Corresponding configuration can be found in `lua/plugins/utils/snacks.lua`. For more information, refer to [Snacks.nvim/image](https://github.com/folke/snacks.nvim/blob/main/docs/image.md).
 
 ## 9. TODO
 
+- [x] Image rendering.
 - [x] ~Automatically~ copy knvim to server for remote editing. You can try the experimental config `plugins.experimental.remote-nvim`.
-- [x] Image rendering (partially tested).
 - [ ] Automatically switch path separator and `EOL` character, depending on the OS (Linux/MacOS/Windows). This will not be considered in the short run because I do not have a Windows machine to test :)

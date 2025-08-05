@@ -97,7 +97,8 @@ return {
                     { icon = "󱎸 ", key = "t", desc = "Grep text", action = ":lua Snacks.dashboard.pick('live_grep')" },
                     -- { icon = "󰺄 ", key = "s", desc = "Find session", action = ":SessionManager load_session" },
                     -- { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":lua Snacks.dashboard.pick('projects')" },
-                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = function() require("persistence").select() end },
+                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = function() require("persistence")
+                            .select() end },
                     -- { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
                     --
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
@@ -118,8 +119,8 @@ return {
                         desc = "Cheatsheet",
                         action = function()
                             vim.cmd(":e" .. vim.fn.stdpath("config") .. "/cheatsheet.md")
-                            vim.cmd[[Outline!]]
-                            vim.cmd[[RenderMarkdown buf_enable]]
+                            vim.cmd [[Outline!]]
+                            vim.cmd [[RenderMarkdown buf_enable]]
                         end,
                     },
                     --
@@ -186,7 +187,8 @@ return {
         -- ────────────────────────────────────────────────────────────────────────────────────────
         notifier = { enabled = true, top_down = false, },
         -- image = { enabled = true, doc = { inline = false, float = true } },
-        image = { enabled = false },
+        -- image = { enabled = false },
+        image = { enabled = true },
         explorer = { enabled = true },
         input = { enabled = true },
         lazygit = { enabled = true },
