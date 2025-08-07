@@ -39,6 +39,7 @@ return {
                     },
                 },
                 -- indent = { enabled = true, icon = "│" },
+                indent = { enabled = true, icon = "" },
             })
         end,
     },
