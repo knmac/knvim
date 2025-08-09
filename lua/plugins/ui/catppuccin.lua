@@ -60,5 +60,17 @@ return {
         })
 
         vim.cmd.colorscheme("catppuccin")
+
+        -- ────────────────────────────────────────────────────────────────────────────────────────
+        -- Disable background of some highlights (affects loaded plugins)
+        -- ────────────────────────────────────────────────────────────────────────────────────────
+        local rm_bg = function(hl_name)
+            local old_fg = vim.api.nvim_get_hl(0, { name = hl_name }).fg
+            vim.api.nvim_set_hl(0, hl_name, { fg = old_fg, bg = nil })
+        end
+
+        for _, hl_name in ipairs({ "NormalFloat", "PMenu", "FloatBorder", "BlinkCmpMenuBorder" }) do
+            rm_bg(hl_name)
+        end
     end,
 }

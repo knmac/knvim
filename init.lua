@@ -55,11 +55,11 @@ require("lazy").setup({
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = nil })
 -- vim.api.nvim_set_hl(0, "PMenu", { ctermbg = nil })
-local rm_bg = function(hl_name)
-    local old_fg = vim.api.nvim_get_hl(0, { name = hl_name }).fg
-    vim.api.nvim_set_hl(0, hl_name, { fg = old_fg, bg = nil })
-end
-
-for _, hl_name in ipairs({ "NormalFloat", "PMenu", "FloatBorder", "BlinkCmpMenuBorder" }) do
-    rm_bg(hl_name)
-end
+-- local rm_bg = function(hl_name)
+--     local old_fg = vim.api.nvim_get_hl(0, { name = hl_name }).fg
+--     vim.api.nvim_set_hl(0, hl_name, { fg = old_fg, bg = nil })
+-- end
+--
+-- for _, hl_name in ipairs({ "NormalFloat", "PMenu", "FloatBorder", "BlinkCmpMenuBorder" }) do
+--     rm_bg(hl_name)
+-- end
