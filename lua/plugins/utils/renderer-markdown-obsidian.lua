@@ -25,6 +25,7 @@ return {
         init = function()
             require("render-markdown").setup({
                 enabled = false, -- Only render markdown on <leader>m
+                anti_conceal = { enabled = false },
                 heading = {
                     icons = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " },
                 },
