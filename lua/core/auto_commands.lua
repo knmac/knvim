@@ -184,11 +184,12 @@ vim.keymap.set("n", "<leader>=", function() FillLine("━") end,
 function NormalizeQuotes()
     local mode = vim.fn.mode()
     if mode == "v" or mode == "V" then
-        vim.cmd([['<,'>s/[‘’]/'/g]])
-        vim.cmd([['<,'>s/[“”]/"/g]])
+        pcall(function() vim.cmd([['<,'>s/[‘’]/'/g]]) end)
+        pcall(function() vim.cmd([['<,'>s/[“”]/"/g]]) end)
     else
-        vim.cmd([[%s/[‘’]/'/g]])
-        vim.cmd([[%s/[“”]/"/g]])
+        pcall(function() vim.cmd([[%s/[‘’]/'/g]]) end)
+        pcall(function() vim.cmd([[%s/[“”]/"/g]]) end)
     end
 end
+
 vim.api.nvim_create_user_command("KnvimNormalizeQuotes", NormalizeQuotes, { range = true })
