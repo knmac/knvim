@@ -33,7 +33,7 @@ return {
                 end,
             },
             indent = {
-                enable = false, -- treesitter's indent is buggy
+                enable = true, -- treesitter's indent is buggy
                 disable = {},
             },
         })
