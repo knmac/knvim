@@ -6,7 +6,7 @@ return {
         require("catppuccin").setup({
             flavour = "macchiato", -- latte, frappe, macchiato, mocha
             transparent_background = false,
-            show_end_of_buffer = true,
+            -- show_end_of_buffer = true,
             term_colors = true,
             -- dim_inactive = {
             --     enabled = false,
