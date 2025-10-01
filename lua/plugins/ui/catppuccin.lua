@@ -72,5 +72,11 @@ return {
         for _, hl_name in ipairs({ "NormalFloat", "PMenu", "FloatBorder", "BlinkCmpMenuBorder" }) do
             rm_bg(hl_name)
         end
+
+        vim.cmd[[hi DiagnosticUnderlineOk gui=undercurl]]
+        vim.cmd[[hi DiagnosticUnderlineHint gui=undercurl]]
+        vim.cmd[[hi DiagnosticUnderlineInfo gui=undercurl]]
+        vim.cmd[[hi DiagnosticUnderlineWarn gui=undercurl]]
+        vim.cmd[[hi DiagnosticUnderlineError gui=undercurl]]
     end,
 }

@@ -85,7 +85,7 @@ local progress_status = {
         -- else
         --     sbar = { "▔", "🮂", "🮃", "▀", "🮄", "🮅", "🮆", "█" } -- upper one eigth block -> full block
         -- end
-        sbar = { "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥" }
+        sbar = { "󰪞 ", "󰪟 ", "󰪠 ", "󰪡 ", "󰪢 ", "󰪣 ", "󰪤 ", "󰪥 " }
         local i = math.floor((curr_line - 1) / lines * #sbar) + 1
         local progress_bar = string.rep(sbar[i], 1)
 
