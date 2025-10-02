@@ -25,7 +25,10 @@ return {
         -- "williamboman/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
         "mason-org/mason-lspconfig.nvim", -- bridges mason.nvim and nvim-lspconfig
         opts = {
-            ensure_installed = { "basedpyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman", "ts_ls", "yamlls", "jsonls" },
+            ensure_installed = {
+                "basedpyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman",
+                "ts_ls", "yamlls", "jsonls", "copilot"
+            },
             automatic_installation = true,
         },
     },
