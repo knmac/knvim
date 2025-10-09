@@ -36,7 +36,7 @@ return {
                     },
                 },
                 -- indent = { enabled = true, icon = "│" },
-                indent = { enabled = true, icon = "" },
+                -- indent = { enabled = true, icon = "" },
                 inline_highlight = { highlight = "@text.warning" },
             })
         end,
