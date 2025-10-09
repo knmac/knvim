@@ -2,12 +2,15 @@ return {
     "folke/sidekick.nvim",
     opts = {
         -- add any options here
-        -- cli = {
-        --     mux = {
-        --         backend = "zellij",
-        --         enabled = false,
-        --     },
-        -- },
+        cli = {
+            -- mux = {
+            --     backend = "zellij",
+            --     enabled = false,
+            -- },
+            prompts = {
+                ["commit"] = "Can you make the commit message and commit the staged files? Do not push the commit.",
+            },
+        },
     },
     -- stylua: ignore
     keys = {
