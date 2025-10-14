@@ -34,8 +34,8 @@ return {
                 progress = { enabled = false, },
                 -- progress = { enabled = true, },
                 hover = { enabled = true, },
-                signature = { enabled = false, },
-                -- signature = { enabled = true, },
+                -- signature = { enabled = false, },
+                signature = { enabled = true, },
                 message = { enabled = true, },
             },
             messages = {
