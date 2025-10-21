@@ -11,6 +11,11 @@ return {
                 ["commit"] = "Can you make the commit message and commit the staged files? Do not push the commit.",
             },
         },
+        copilot = {
+            status = {
+                enabled = false,
+            }
+        }
     },
     -- stylua: ignore
     keys = {

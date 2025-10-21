@@ -79,7 +79,6 @@ return {
                         daily_notes = { folder = vim.NIL },
                         new_notes_location = "current_dir",
                         templates = { folder = vim.NIL },
-                        disable_frontmatter = true,
                     },
                 },
             },
