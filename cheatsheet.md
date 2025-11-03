@@ -1,3 +1,9 @@
+---
+id: cheatsheet
+aliases: []
+tags: []
+---
+
 # Knvim cheatsheet
 
 (The default `<leader>` is `\`)
@@ -193,6 +199,7 @@ All DAP key-bindings start with `,`.
 | Neogen       | Generate docstring                              | `<leader> d`         |
 | Markdown     | Toggle markdown render                          | `<leader> m`         |
 |              | Cycle through checkbox marks                    | `Ctrl+<space>`       |
+| Sidekick     | Toggle sidekick (AI Agent)                      | `Ctrl+.`             |
 
 ## 2. Useful default vim key-bindings
 

@@ -95,6 +95,7 @@ lua/
    │  ├── outline.lua
    │  ├── persistence.lua
    │  ├── renderer-markdown-obsidian.lua
+   │  ├── sidekick.lua
    │  ├── snacks.lua
    │  ├── todo-comments.lua
    │  ├── which-key.lua
