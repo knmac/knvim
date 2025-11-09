@@ -16,10 +16,23 @@ return {
                 "<leader>m",
                 function()
                     if vim.bo.filetype == "markdown" then
-                        require("render-markdown").toggle()
+                        vim.cmd [[RenderMarkdown buf_toggle]]
+                        -- require("render-markdown").toggle()
                     end
                 end,
-                desc = "RenderMarkdown: Toggle rendering"
+                desc = "RenderMarkdown: Toggle rendering of the current buffer"
+            },
+            {
+                "<leader>M",
+                function()
+                    if vim.bo.filetype == "markdown" then
+                        vim.cmd [[RenderMarkdown preview]]
+                        vim.cmd [[wincmd l]]
+                        vim.cmd [[RenderMarkdown buf_enable]]
+                        vim.cmd [[wincmd h]]
+                    end
+                end,
+                desc = "RenderMarkdown: Toggle preview mode"
             },
         },
         init = function()
