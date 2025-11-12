@@ -11,20 +11,20 @@ K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username `kn
 
 Video demo with clickable `lualine`:
 
-![demo3](./res/demo1.gif)
+![demo 1](./res/demo1.gif)
 
 Config structure and cheat sheet (rendered):
 
-![demo1](./res/demo2.png)
+![demo 2](./res/demo2.png)
 
 Editing a python file, with LSP, Tree-sitter, and outline support:
 
-![demo2](./res/demo3.png)
+![demo 3](./res/demo3.png)
 
 ## 2. Feature highlights
 
 - Targeting python, bash, latex, markdown, and (_some_) C/C++ usage.
-- [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (_mostly_) clickable. (Toggle with the command `:ToggleClickableLualine`).
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (_mostly_) clickable. (Toggle with the command `:KnvimToggleClickableLualine`).
 - Key-bindings that (_hopefully_) make sense.
 - Fun (_for me_) to use!!!
 
@@ -32,30 +32,36 @@ Editing a python file, with LSP, Tree-sitter, and outline support:
 
 ### 3.1. Configured servers
 
-| Language              | Name       | Category         |
-| --------------------- | ---------- | ---------------- |
-| Python                | pyright    | LSP              |
-|                       | ruff_lsp   | Linter/Formatter |
-|                       | debugpy    | DAP              |
-| Bash                  | bashls     | LSP              |
-|                       | shellcheck | Linter           |
-| C/C++                 | clangd     | LSP              |
-|                       | cpplint    | Linter           |
-|                       | codelldb   | DAP              |
-| Vimscript             | vim_ls     | LSP              |
-| Lua                   | lua_ls     | LSP              |
-| LaTex                 | texlab     | LSP              |
-| Markdown              | marksman   | LSP              |
-|                       | prettier   | LSP              |
-| YAML                  | yamlls     | LSP              |
-|                       | prettier   | Formatter        |
-| Typescript/Javascript | tsserver   | LSP              |
-|                       | prettier   | Formatter        |
-| HTML/CSS/Json         | prettier   | Formatter        |
+| Language              | Name               | Category         |
+| --------------------- | ------------------ | ---------------- |
+| Python                | basedpyright       | LSP              |
+|                       | ruff_lsp           | Linter/Formatter |
+|                       | debugpy            | DAP              |
+| Bash                  | bashls             | LSP              |
+|                       | shellcheck         | Linter           |
+|                       | shfmt              | Formatter        |
+|                       | bash-debug-adapter | DAP              |
+| C/C++                 | clangd             | LSP              |
+|                       | cpplint            | Linter           |
+|                       | codelldb           | DAP              |
+| Vimscript             | vimls              | LSP              |
+| Lua                   | lua_ls             | LSP              |
+| LaTex                 | texlab             | LSP              |
+|                       | bibtex-tidy        | Formatter        |
+| Markdown              | marksman           | LSP              |
+|                       | prettier           | LSP              |
+| YAML                  | yamlls             | LSP              |
+|                       | prettier           | Formatter        |
+| Typescript/Javascript | ts_ls              | LSP              |
+|                       | prettier           | Formatter        |
+| JSON                  | jsonls             | LSP              |
+|                       | prettier           | Formatter        |
+| HTML/CSS              | prettier           | Formatter        |
+| Copilot               | copilot            | LSP              |
 
 ### 3.2. Config structure
 
-```
+```txt
 init.lua
 lsp/
 └── ...
@@ -195,7 +201,7 @@ indent-style = "space"
 
 For more information, visit [here](https://docs.astral.sh/ruff/configuration/) and [here](https://python-poetry.org/docs/pyproject/).
 
-### 7.2. DAP (Debugging tool)
+### 7.2. DAP (Debugging Adapter Protocol)
 
 Create the file `.vscode/launch.json` for each project, where the content looks something like this:
 

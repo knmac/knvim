@@ -318,7 +318,7 @@ Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath("data"
 | Previous misspelled word  | `[s`        |
 | Next misspelled word      | `]s`        |
 
-### 2.7. Ctags key-bindings (requires Ctags)
+### 2.7. CTags key-bindings (requires CTags)
 
 | Functionality        | Key-binding |
 | -------------------- | ----------- |
@@ -333,3 +333,5 @@ Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath("data"
 | Toggle comments for lines covered by motion        | `gc{motion}` |
 | Toggle comments \[count\] lines starting at cursor | `gcc`        |
 | Toggle comments on selected lines                  | `{Visual}gc` |
+
+Enjoy!
