@@ -3,57 +3,91 @@ local palettes = require("catppuccin.palettes").get_palette()
 
 return {
     -- Render markdown
+    -- {
+    --     "MeanderingProgrammer/markdown.nvim",
+    --     name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+    --     ft = "markdown",
+    --     dependencies = {
+    --         "nvim-treesitter/nvim-treesitter",
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    --     keys = {
+    --         {
+    --             "<leader>m",
+    --             function()
+    --                 if vim.bo.filetype == "markdown" then
+    --                     vim.cmd [[RenderMarkdown buf_toggle]]
+    --                     -- require("render-markdown").toggle()
+    --                 end
+    --             end,
+    --             desc = "RenderMarkdown: Toggle rendering of the current buffer"
+    --         },
+    --         {
+    --             "<leader>M",
+    --             function()
+    --                 if vim.bo.filetype == "markdown" then
+    --                     vim.cmd [[RenderMarkdown preview]]
+    --                     vim.cmd [[wincmd l]]
+    --                     vim.cmd [[RenderMarkdown buf_enable]]
+    --                     vim.cmd [[wincmd h]]
+    --                 end
+    --             end,
+    --             desc = "RenderMarkdown: Toggle preview mode"
+    --         },
+    --     },
+    --     init = function()
+    --         require("render-markdown").setup({
+    --             enabled = false, -- Only render markdown on <leader>m
+    --             anti_conceal = { enabled = false },
+    --             heading = { icons = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " } },
+    --             bullet = { icons = { "", "", "◆", "◇" } },
+    --             checkbox = {
+    --                 custom = {
+    --                     inprogress = { raw = "[~]", rendered = "󰏭 ", highlight = "RenderMarkdownInfo" },
+    --                     urgent = { raw = "[!]", rendered = "󰳤 ", highlight = "RenderMarkdownWarn", scope_highlight = "@text.warning" },
+    --                     postponed = { raw = "[>]", rendered = "󱋭 ", highlight = "RenderMarkdownError", scope_highlight = "markdownStrikeDelimiter" },
+    --                 },
+    --             },
+    --             -- indent = { enabled = true, icon = "│" },
+    --             -- indent = { enabled = true, icon = "" },
+    --             inline_highlight = { highlight = "@text.warning" },
+    --             latex = { enabled = false },
+    --         })
+    --     end,
+    -- },
+    -- Markview
     {
-        "MeanderingProgrammer/markdown.nvim",
-        name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
-        ft = "markdown",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-tree/nvim-web-devicons",
-        },
+        "OXY2DEV/markview.nvim",
+        lazy = false,
         keys = {
             {
                 "<leader>m",
                 function()
                     if vim.bo.filetype == "markdown" then
-                        vim.cmd [[RenderMarkdown buf_toggle]]
-                        -- require("render-markdown").toggle()
+                        vim.cmd [[Markview]]
                     end
                 end,
-                desc = "RenderMarkdown: Toggle rendering of the current buffer"
-            },
-            {
-                "<leader>M",
-                function()
-                    if vim.bo.filetype == "markdown" then
-                        vim.cmd [[RenderMarkdown preview]]
-                        vim.cmd [[wincmd l]]
-                        vim.cmd [[RenderMarkdown buf_enable]]
-                        vim.cmd [[wincmd h]]
-                    end
-                end,
-                desc = "RenderMarkdown: Toggle preview mode"
+                desc = "Markview: Toggle rendering"
             },
         },
         init = function()
-            require("render-markdown").setup({
-                enabled = false, -- Only render markdown on <leader>m
-                anti_conceal = { enabled = false },
-                heading = { icons = { "󰎥 ", "󰎨 ", "󰎫 ", "󰎲 ", "󰎯 ", "󰎴 " } },
-                bullet = { icons = { "", "", "◆", "◇" } },
-                checkbox = {
-                    custom = {
-                        inprogress = { raw = "[~]", rendered = "󰏭 ", highlight = "RenderMarkdownInfo" },
-                        urgent = { raw = "[!]", rendered = "󰳤 ", highlight = "RenderMarkdownWarn", scope_highlight = "@text.warning" },
-                        postponed = { raw = "[>]", rendered = "󱋭 ", highlight = "RenderMarkdownError", scope_highlight = "markdownStrikeDelimiter" },
+            local presets = require("markview.presets")
+            require("markview").setup({
+                preview = { enable = false },
+                markdown = {
+                    tables = presets.tables.rounded,
+                },
+                markdown_inline = {
+                    checkboxes = {
+                        checked = { text = "", hl = "MarkviewCheckboxChecked", scope_hl = "MarkviewCheckboxChecked" },
+                        unchecked = { text = "󰄱", hl = "MarkviewCheckboxUnchecked", scope_hl = "@text" },
+                        [">"] = { text = "󰏭", hl = "MarkviewCheckboxProgress", scope_hl = "MarkviewCheckboxProgress" },
+                        ["~"] = { text = "󱋭", hl = "MarkviewCheckboxCancelled", scope_hl = "MarkviewCheckboxStriked" },
+                        ["!"] = { text = "󰀦", hl = "MarkviewCheckboxUnchecked", scope_hl = "MarkviewCheckboxUnchecked" },
                     },
                 },
-                -- indent = { enabled = true, icon = "│" },
-                -- indent = { enabled = true, icon = "" },
-                inline_highlight = { highlight = "@text.warning" },
-                latex = { enabled = false },
             })
-        end,
+        end
     },
     -- Obsidian helper
     {
