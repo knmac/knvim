@@ -5,9 +5,9 @@
 
 K-nvim or kn-vim, personal attempt to config Neovim and a pun on my username `knmac`.
 
-## 1. Demo
+## 1. Overview
 
-<!-- ![Screenshot](./res/screenshot.png) -->
+### 1.1. Demo
 
 Video demo with clickable `lualine`:
 
@@ -21,12 +21,62 @@ Editing a python file, with LSP, Tree-sitter, and outline support:
 
 ![demo 3](./res/demo3.png)
 
-## 2. Feature highlights
+### 1.2. Feature highlights
 
 - Targeting python, bash, latex, markdown, and (_some_) C/C++ usage.
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) is configured to be (_mostly_) clickable. (Toggle with the command `:KnvimToggleClickableLualine`).
 - Key-bindings that (_hopefully_) make sense.
 - Fun (_for me_) to use!!!
+
+## 2. Installation
+
+### 2.1. Manual installation
+
+#### 2.1.1. Dependencies
+
+The following dependencies are for manual installation.
+
+- Neovim 0.11.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
+- A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [Ghostty](https://ghostty.org/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font). Knvim is also tested with [WezTerm](https://wezfurlong.org/wezterm/).
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) and [mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) (package managers for LSPs, DAPs, linters, and formatters).
+- [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for fuzzy finder (`Snacks.picker`).
+
+Optional dependencies:
+
+- Python package `pynvim` (can be installed with `pip install pynvim`).
+- [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [Snacks.nvim](https://github.com/folke/snacks.nvim).
+- [Yazi](https://yazi-rs.github.io/) for file explorer.
+- A virtual environment (e.g., `conda`, `pyenv`, etc.) with the name `knvim`.
+
+#### 2.1.2. Installation steps
+
+Clone this repo to `$HOME/.config`:
+
+```bash
+git clone https://github.com/knmac/knvim.git $HOME/.config/knvim
+```
+
+Then add this command to `.bashrc` or `.zshrc`.
+
+```bash
+export NVIM_APPNAME="knvim"
+```
+
+_Notes:_ Knvim will try to find the default python interpreter. But it is recommended to create a virtual environment using `conda` or `pyenv` with the name `knvim` to sandbox your package installation. For more information, see the variable `vim.g.python3_host_prog` in `knvim/init.lua` and `knvim/core/setting.lua`.
+
+#### 2.1.3. Removing knvim
+
+Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/knvim`. You can also remove your virtual environment if you set up one.
+
+### 2.2. Installation using nvim-lazyman
+
+[Nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the following command to install knvim:
+
+```bash
+lazyman -L Knvim
+```
+
+Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, bootstrapping, and other cool features.
 
 ## 3. Content
 
@@ -122,63 +172,15 @@ If you want to try individual experimental plugins instead of the all of them, u
 { import = "plugins.experimentals.remote-nvim", },
 ```
 
-## 4. Manual installation
-
-### 4.1. Dependencies
-
-The following dependencies are for manual installation.
-
-- Neovim 0.11.0+. Follow the installation guide on Neovim's [homepage](https://neovim.io/). This repo is just holding the config.
-- A [nerdfont](https://www.nerdfonts.com) for the glyphs and a terminal that supports the font (the screenshots use [Ghostty](https://ghostty.org/) and its baked-in [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font). Knvim is also tested with [WezTerm](https://wezfurlong.org/wezterm/).
-- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) for [mason.nvim](https://github.com/williamboman/mason.nvim) and [mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) (package managers for LSPs, DAPs, linters, and formatters).
-- [rg](https://github.com/BurntSushi/ripgrep) and [fd](https://github.com/sharkdp/fd) for fuzzy finder (`Snacks.picker`).
-
-Optional dependencies:
-
-- Python package `pynvim` (can be installed with `pip install pynvim`).
-- [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [Snacks.nvim](https://github.com/folke/snacks.nvim).
-- [Yazi](https://yazi-rs.github.io/) for file explorer.
-- A virtual environment (e.g., `conda`, `pyenv`, etc.) with the name `knvim`.
-
-### 4.2. Installation
-
-Clone this repo to `$HOME/.config`:
-
-```bash
-git clone https://github.com/knmac/knvim.git $HOME/.config/knvim
-```
-
-Then add this command to `.bashrc` or `.zshrc`.
-
-```bash
-export NVIM_APPNAME="knvim"
-```
-
-_Notes:_ Knvim will try to find the default python interpreter. But it is recommended to create a virtual environment using `conda` or `pyenv` with the name `knvim` to sandbox your package installation. For more information, see the variable `vim.g.python3_host_prog` in `knvim/init.lua` and `knvim/core/setting.lua`.
-
-### 4.3. Removing knvim
-
-Simply delete the two directories `$HOME/.config/knvim` and `$HOME/.local/share/knvim`. You can also remove your virtual environment if you set up one.
-
-## 5. Installation using nvim-lazyman
-
-[Nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) is a configuration manager that supports popular Neovim configurations. After installing `nvim-lazyman`, run the following command to install knvim:
-
-```bash
-lazyman -L Knvim
-```
-
-Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazyman) for details about installation, bootstrapping, and other cool features.
-
-## 6. Knvim Cheatsheet
+## 4. Knvim Cheatsheet
 
 Cheat sheet for knvim can be found [here](cheatsheet.md). You can also access cheat sheet from the start page.
 
-## 7. Extra configs (optional)
+## 5. Extra configs (optional)
 
 This section shows you how to set up extra configuration for knvim to work as you want (completely optional).
 
-### 7.1. Ruff (Python linter and formatter)
+### 5.1. Ruff (Python linter and formatter)
 
 Create the file `pyproject.toml` for each Python project, where the content looks something like this:
 
@@ -201,7 +203,7 @@ indent-style = "space"
 
 For more information, visit [here](https://docs.astral.sh/ruff/configuration/) and [here](https://python-poetry.org/docs/pyproject/).
 
-### 7.2. DAP (Debugging Adapter Protocol)
+### 5.2. DAP (Debugging Adapter Protocol)
 
 Create the file `.vscode/launch.json` for each project, where the content looks something like this:
 
@@ -225,7 +227,7 @@ Create the file `.vscode/launch.json` for each project, where the content looks 
 
 The above config uses Python as an example, but you can setup debugger for other languages similarly. The template for Python launcher can be generated with `,g`. If you want to specify a file for a launch instead of the current file, you can also set `cwd` as `${workspaceFolder}/path/to/the/file`. For more information, visit [here](https://go.microsoft.com/fwlink/?linkid=830387).
 
-### 7.3. Diffview (Intergate Diffview to git mergetool automatically)
+### 5.3. Diffview (Integrate Diffview to git mergetool automatically)
 
 Create the file `~/.gitconfig` globally, where the content looks something like this:
 
@@ -239,7 +241,7 @@ Create the file `~/.gitconfig` globally, where the content looks something like 
     cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\" -c DiffviewOpen"
 ```
 
-### 7.4. Marksman (LSP server for markdown)
+### 5.4. Marksman (LSP server for markdown)
 
 Create the file `.marksman.toml` for each project, where the (default) content looks something like this:
 
@@ -258,7 +260,7 @@ create_missing_file.enable = true
 wiki.style = "title-slug"
 ```
 
-## 8. FAQs
+## 6. FAQs
 
 _Q1: Why knvim is not working on Windows?_
 
@@ -293,7 +295,7 @@ _Q4: Image rendering in knvim?_
 
 _A4:_ Corresponding configuration can be found in `lua/plugins/utils/snacks.lua`. For more information, refer to [Snacks.nvim/image](https://github.com/folke/snacks.nvim/blob/main/docs/image.md).
 
-## 9. TODO
+## 7. TODO
 
 - [x] Image rendering.
 - [x] ~Automatically~ copy knvim to server for remote editing. You can try the experimental config `plugins.experimental.remote-nvim`.

@@ -18,35 +18,49 @@ Overall logic:
 - `F5-6`: buffers/tabs
 - `F9-12`: random frequently used things
 
-| Group                 | Functionality                             | Key-binding                  |
-| --------------------- | ----------------------------------------- | ---------------------------- |
-| `F1-4`: toggle things | Search for help                           | `F1` (or `<space> h`)        |
-|                       | Rename variables                          | `F2` (or `<leader> rn`)      |
-|                       | Toggle file explorer                      | `F3` (or `<leader> t`)       |
-|                       | Toggle symbol view                        | `F4` (or `<leader> o`)       |
-|                       | Show key-bindings                         | `Shift+F1` (or `<space> k`)  |
-|                       | Open to-do list (project-wise)            | `Shift+F2`                   |
-|                       | Open diagnostic list (project-wise)       | `Shift+F4` (or `<space> d`)  |
-| `F5-8`: buffers/tabs  | Show buffer list                          | `F5` (or `<space> b`)        |
-|                       | Previous buffer                           | `F6` (or `Ctrl+Alt+h`)       |
-|                       | Next buffer                               | `F7` (or `Ctrl+Alt+l`)       |
-|                       | Close the current buffer                  | `F8` (or `Ctrl+Alt+Shift+k`) |
-|                       | Show tab list                             | `Shift+F5`                   |
-|                       | Previous tab                              | `Shift+F6`                   |
-|                       | Next tab                                  | `Shift+F7`                   |
-|                       | Close the current tab                     | `Shift+F8`                   |
-| `F9-12`: others       | Remove trailing spaces                    | `F9`                         |
-|                       | Run the `make` command                    | `F10`                        |
-|                       | Toggle zoom the current window (splits)   | `F11` (or `<leader> z`)      |
-|                       | Toggle relative number                    | `F12`                        |
-|                       | Replace curly quotes with straight quotes | `Shift+F9`                   |
-|                       | Run the `make clean` command              | `Shift+F10`                  |
-|                       | Toggle color code colorizing (e.g., CSS)  | `Shift+F11`                  |
-|                       | Toggle welcome screen                     | `Shift+F12`                  |
+| Group                 | Functionality                            | Key-binding                  |
+| --------------------- | ---------------------------------------- | ---------------------------- |
+| `F1-4`: toggle things | Search for help                          | `F1` (or `<space> h`)        |
+|                       | Rename variables                         | `F2` (or `<leader> rn`)      |
+|                       | Toggle file explorer                     | `F3` (or `<leader> t`)       |
+|                       | Toggle symbol view                       | `F4` (or `<leader> o`)       |
+|                       | Show key-bindings                        | `Shift+F1` (or `<space> k`)  |
+|                       | Open to-do list (project-wise)           | `Shift+F2`                   |
+|                       | Open diagnostic list (project-wise)      | `Shift+F4` (or `<space> d`)  |
+| `F5-8`: buffers/tabs  | Show buffer list                         | `F5` (or `<space> b`)        |
+|                       | Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
+|                       | Next buffer                              | `F7` (or `Ctrl+Alt+l`)       |
+|                       | Close the current buffer                 | `F8` (or `Ctrl+Alt+Shift+k`) |
+|                       | Show tab list                            | `Shift+F5`                   |
+|                       | Previous tab                             | `Shift+F6`                   |
+|                       | Next tab                                 | `Shift+F7`                   |
+|                       | Close the current tab                    | `Shift+F8`                   |
+| `F9-12`: others       | Quick format the current file            | `F9`                         |
+|                       | Run the `make` command                   | `F10`                        |
+|                       | Toggle zoom the current window (splits)  | `F11` (or `<leader> z`)      |
+|                       | Toggle relative number                   | `F12`                        |
+|                       | Run the `make clean` command             | `Shift+F10`                  |
+|                       | Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
+|                       | Toggle welcome screen                    | `Shift+F12`                  |
 
-### 1.2. Snacks key-bindings
+### 1.2. Custom commands
 
-#### 1.2.1 Snacks.picker (fuzzy finder) key-bindings
+Overall logic:
+
+- All commands start with `Knvim` prefix
+
+| Command                        | Functionality                                                          |
+| ------------------------------ | ---------------------------------------------------------------------- |
+| `:KnvimClearMarks`             | Clear all bookmarks                                                    |
+| `:KnvimClearRegisters`         | Clear all registers                                                    |
+| `:KnvimFillLine <character>`   | Fill the current line with `<character>`                               |
+| `:KnvimQuickFormat`            | Remove trailing spaces and format smart single ‘’ and double “” quotes |
+| `:KnvimTermVert`               | Toggle vertical terminal                                               |
+| `:KnvimToggleClickableLualine` | Toggle clicability of statusline                                       |
+
+### 1.3. Snacks key-bindings
+
+#### 1.3.1 Snacks.picker (fuzzy finder) key-bindings
 
 All picker key-bindings start with `<space>`.
 
@@ -86,7 +100,7 @@ Inside the picker:
 
 For the complete key-bindings, see Snacks picker's [doc](https://github.com/folke/snacks.nvim/blob/main/docs/picker.md).
 
-#### 1.2.2. Other Snacks key-bindings
+#### 1.3.2. Other Snacks key-bindings
 
 | Functionality                         | Key-binding  |
 | ------------------------------------- | ------------ |
@@ -101,7 +115,7 @@ For the complete key-bindings, see Snacks picker's [doc](https://github.com/folk
 | Enter normal mode in terminal         | `<Esc><Esc>` |
 | Open Yazi                             | `Ctrl+y`     |
 
-### 1.3. LSP key-bindings
+### 1.4. LSP key-bindings
 
 | Group       | Functionality                                         | Key-binding                   |
 | ----------- | ----------------------------------------------------- | ----------------------------- |
@@ -122,7 +136,7 @@ For the complete key-bindings, see Snacks picker's [doc](https://github.com/folk
 |             | Go to previous diagnostic                             | `[d`                          |
 |             | Go to next diagnostic                                 | `]d`                          |
 
-### 1.4. Window and buffer navigation
+### 1.5. Window and buffer navigation
 
 Overall logic:
 
@@ -155,7 +169,7 @@ Overall logic:
 | Tab manipulation    | Switch to the next tab        | `Ctrl+Alt+PageDown` |
 | (vim default)       | Switch to the previous tab    | `Ctrl+Alt+PageUp`   |
 
-### 1.5. DAP key-bindings
+### 1.6. DAP key-bindings
 
 All DAP key-bindings start with `,`.
 
@@ -174,7 +188,7 @@ All DAP key-bindings start with `,`.
 | Hover variable while debugging            | `,k`        |
 | Generate launcher for python              | `,g`        |
 
-### 1.6. Other custom key-bindings
+### 1.7. Other custom key-bindings
 
 | Group        | Functionality                                   | Key-binding          |
 | ------------ | ----------------------------------------------- | -------------------- |
