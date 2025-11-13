@@ -107,10 +107,8 @@ vim.keymap.set("n", "<F8>", "<cmd>BufferClose<CR>", opts)
 -- <S-F8>: Close current tab
 vim.keymap.set("n", "<F20>", "<cmd>tabclose<CR>", opts)
 
--- <F9>: Remove trailing spaces
-vim.keymap.set("n", "<F9>", [[<cmd>%s/\s\+$//e<CR>]], opts)
--- <S-F9>: Format smart single ‘’ and double “” quotes
-vim.keymap.set("n", "<F21>", function() NormalizeQuotes() end, opts)
+-- <F9>: Quick format: remove trailing spaces, Format smart single ‘’ and double “” quotes
+vim.keymap.set("n", "<F9>", function() QuickFormat() end, opts)
 
 -- <F10>: Run make file
 vim.keymap.set("n", "<F10>", "<cmd>make<CR>", opts)

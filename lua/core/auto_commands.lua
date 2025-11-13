@@ -183,6 +183,8 @@ vim.keymap.set("n", "<leader>-", function() FillLine("─") end,
     { desc = "Fill line with `─` characters", noremap = true, silent = true })
 vim.keymap.set("n", "<leader>=", function() FillLine("━") end,
     { desc = "Fill line with `━` characters", noremap = true, silent = true })
+vim.api.nvim_create_user_command("KnvimFillLine", function(opts) FillLine(opts.args) end,
+    { nargs = 1, desc = "Fill line with specified character" })
 
 -- vim.cmd [[
 -- function! FillLine( str )
@@ -204,16 +206,17 @@ vim.keymap.set("n", "<leader>=", function() FillLine("━") end,
 -- vim.keymap.set("n", "<leader>=", ':call FillLine("=")<CR>', default_opts)
 
 
--- Normalize quotes
-function NormalizeQuotes()
+-- Quick format: remove trailing spaces, Format smart single ‘’ and double “” quotes
+function QuickFormat()
     local mode = vim.fn.mode()
     if mode == "v" or mode == "V" then
-        pcall(function() vim.cmd([['<,'>s/[‘’]/'/g]]) end)
-        pcall(function() vim.cmd([['<,'>s/[“”]/"/g]]) end)
+        pcall(function() vim.cmd([['<,'>s/\s\+$//e]]) end)
+        pcall(function() vim.cmd([['<,'>s/[‘’]/'/ge]]) end)
+        pcall(function() vim.cmd([['<,'>s/[“”]/"/ge]]) end)
     else
-        pcall(function() vim.cmd([[%s/[‘’]/'/g]]) end)
-        pcall(function() vim.cmd([[%s/[“”]/"/g]]) end)
+        pcall(function() vim.cmd([[%s/\s\+$//e]]) end)
+        pcall(function() vim.cmd([[%s/[‘’]/'/ge]]) end)
+        pcall(function() vim.cmd([[%s/[“”]/"/ge]]) end)
     end
 end
-
-vim.api.nvim_create_user_command("KnvimNormalizeQuotes", NormalizeQuotes, { range = true })
+vim.api.nvim_create_user_command("KnvimQuickFormat", QuickFormat, { range = true })
