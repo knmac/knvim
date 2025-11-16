@@ -27,7 +27,7 @@ return {
         opts = {
             ensure_installed = {
                 "basedpyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman",
-                "ts_ls", "yamlls", "jsonls", "copilot", "tinymist", "typstyle",
+                "ts_ls", "yamlls", "jsonls", "copilot", "tinymist",
 
             },
             automatic_installation = true,
@@ -37,8 +37,8 @@ return {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         opts = {
             ensure_installed = {
-                "cpplint", "shellcheck",            -- linter
-                "prettier", "bibtex-tidy", "shfmt", -- formatter
+                "cpplint", "shellcheck",                        -- linter
+                "prettier", "bibtex-tidy", "shfmt", "typstyle", -- formatter
             },
         },
     },
