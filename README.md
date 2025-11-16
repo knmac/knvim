@@ -100,6 +100,8 @@ Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazym
 |                       | bibtex-tidy        | Formatter        |
 | Markdown              | marksman           | LSP              |
 |                       | prettier           | LSP              |
+| Typst                 | tinymist           | LSP              |
+|                       | typstyle           | Formatter        |
 | YAML                  | yamlls             | LSP              |
 |                       | prettier           | Formatter        |
 | Typescript/Javascript | ts_ls              | LSP              |

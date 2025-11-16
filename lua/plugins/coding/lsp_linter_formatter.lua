@@ -27,7 +27,8 @@ return {
         opts = {
             ensure_installed = {
                 "basedpyright", "ruff", "bashls", "clangd", "vimls", "lua_ls", "texlab", "marksman",
-                "ts_ls", "yamlls", "jsonls", "copilot"
+                "ts_ls", "yamlls", "jsonls", "copilot", "tinymist", "tinymist", "typstyle",
+
             },
             automatic_installation = true,
         },
