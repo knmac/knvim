@@ -152,6 +152,7 @@ lua/
    │  ├── oil.lua
    │  ├── outline.lua
    │  ├── persistence.lua
+   │  ├── quicker.lua
    │  ├── renderer-markdown-obsidian.lua
    │  ├── sidekick.lua
    │  ├── snacks.lua
