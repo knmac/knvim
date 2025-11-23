@@ -1,7 +1,27 @@
 return {
     "folke/flash.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+        -- Disable default , and ; bindings, only use f, F, t, T
+        modes = {
+            char = {
+                -- keys = { "f", "F", "t", "T", ";", "," },
+                keys = { "f", "F", "t", "T" },
+            },
+            char_actions = function(motion)
+                return {
+                    -- [";"] = "next", -- set to `right` to always go right
+                    -- [","] = "prev", -- set to `left` to always go left
+                    -- clever-f style
+                    [motion:lower()] = "next",
+                    [motion:upper()] = "prev",
+                    -- jump2d style: same case goes next, opposite case goes prev
+                    -- [motion] = "next",
+                    -- [motion:match("%l") and motion:upper() or motion:lower()] = "prev",
+                }
+            end,
+        },
+    },
     -- stylua: ignore
     keys = {
         { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },

@@ -173,20 +173,21 @@ Overall logic:
 
 All DAP key-bindings start with `,`.
 
-| Functionality                             | Key-binding |
-| ----------------------------------------- | ----------- |
-| Toggle DAP UI                             | `,d`        |
-| Toggle DAP defautl REPL                   | `,D`        |
-| Toggle DAP breakpoint                     | `,b`        |
-| Toggle DAP breakpoint with condition      | `,B`        |
-| Continue DAP debugging                    | `,c`        |
-| Run last DAP launcher (if there are many) | `,l`        |
-| Step over                                 | `,n`        |
-| Step into                                 | `,s`        |
-| Step out                                  | `,u`        |
-| Terminate debugging                       | `,t`        |
-| Hover variable while debugging            | `,k`        |
-| Generate launcher for python              | `,g`        |
+| Functionality                                 | Key-binding |
+| --------------------------------------------- | ----------- |
+| Toggle DAP UI                                 | `,d`        |
+| Toggle DAP defautl REPL                       | `,D`        |
+| Toggle DAP breakpoint                         | `,b`        |
+| Toggle DAP breakpoint with condition          | `,B`        |
+| Continue DAP debugging                        | `,c`        |
+| Run last DAP launcher (if there are many)     | `,l`        |
+| Step over                                     | `,n`        |
+| Step into                                     | `,s`        |
+| Step out                                      | `,u`        |
+| Terminate debugging                           | `,t`        |
+| Hover variable while debugging                | `,k`        |
+| Add the expression under cursor to watch list | `,w`        |
+| Generate launcher for python                  | `,gp`       |
 
 ### 1.7. Other custom key-bindings
 

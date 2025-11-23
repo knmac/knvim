@@ -7,7 +7,7 @@ local python_launcher_template = [[
       "type": "python",
       "request": "launch",
       "name": "launcher name",
-      "program": "${file}",
+      "program": "${file} or ${workspaceFolder}/path/to/file",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}",
       "repl_lang": "javascript",
@@ -56,7 +56,8 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         -- event = "VeryLazy",
         keys = {
-            { ",d", function() require("dap-view").toggle() end, desc = "DAP: Toggle UI" },
+            { ",d", function() require("dap-view").toggle() end, desc = "DAP-view: Toggle UI" },
+            { ",w", function() require("dap-view").add_expr() end, desc = "DAP-view: Add expression to watch" },
         },
         opts = {},
     },
@@ -107,20 +108,20 @@ return {
                 end,
                 desc = "DAP: Toggle breakpoint with condition",
             },
-            { ",g", generate_python_launher, desc = "DAP: Generate launcher for Python" },
+            { ",gp", generate_python_launher, desc = "DAP: Generate launcher for Python" },
             {
                 ",k",
                 function() require("dap.ui.widgets").hover(nil, { border = "rounded" }) end,
                 desc = "DAP: Check variable value on hover",
             },
-            {
-                ",S",
-                function()
-                    local widgets = require("dap.ui.widgets")
-                    widgets.centered_float(widgets.scopes, { border = "rounded" })
-                end,
-                desc = "DAP: Open scope",
-            },
+            -- {
+            --     ",S",
+            --     function()
+            --         local widgets = require("dap.ui.widgets")
+            --         widgets.centered_float(widgets.scopes, { border = "rounded" })
+            --     end,
+            --     desc = "DAP: Open scope",
+            -- },
         },
         init = function()
             local dap = require("dap")
