@@ -21,27 +21,27 @@ Overall logic:
 | Group                 | Functionality                            | Key-binding                  |
 | --------------------- | ---------------------------------------- | ---------------------------- |
 | `F1-4`: toggle things | Search for help                          | `F1` (or `<space> h`)        |
-|                       | Rename variables                         | `F2` (or `<leader> rn`)      |
-|                       | Toggle file explorer                     | `F3` (or `<leader> t`)       |
-|                       | Toggle symbol view                       | `F4` (or `<leader> o`)       |
-|                       | Show key-bindings                        | `Shift+F1` (or `<space> k`)  |
-|                       | Open to-do list (project-wise)           | `Shift+F2`                   |
-|                       | Open diagnostic list (project-wise)      | `Shift+F4` (or `<space> d`)  |
+| .                     | Rename variables                         | `F2` (or `<leader> rn`)      |
+| .                     | Toggle file explorer                     | `F3` (or `<leader> t`)       |
+| .                     | Toggle symbol view                       | `F4` (or `<leader> o`)       |
+| .                     | Show key-bindings                        | `Shift+F1` (or `<space> k`)  |
+| .                     | Open to-do list (project-wise)           | `Shift+F2`                   |
+| .                     | Open diagnostic list (project-wise)      | `Shift+F4` (or `<space> d`)  |
 | `F5-8`: buffers/tabs  | Show buffer list                         | `F5` (or `<space> b`)        |
-|                       | Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
-|                       | Next buffer                              | `F7` (or `Ctrl+Alt+l`)       |
-|                       | Close the current buffer                 | `F8` (or `Ctrl+Alt+Shift+k`) |
-|                       | Show tab list                            | `Shift+F5`                   |
-|                       | Previous tab                             | `Shift+F6`                   |
-|                       | Next tab                                 | `Shift+F7`                   |
-|                       | Close the current tab                    | `Shift+F8`                   |
+| .                     | Previous buffer                          | `F6` (or `Ctrl+Alt+h`)       |
+| .                     | Next buffer                              | `F7` (or `Ctrl+Alt+l`)       |
+| .                     | Close the current buffer                 | `F8` (or `Ctrl+Alt+Shift+k`) |
+| .                     | Show tab list                            | `Shift+F5`                   |
+| .                     | Previous tab                             | `Shift+F6`                   |
+| .                     | Next tab                                 | `Shift+F7`                   |
+| .                     | Close the current tab                    | `Shift+F8`                   |
 | `F9-12`: others       | Quick format the current file            | `F9`                         |
-|                       | Run the `make` command                   | `F10`                        |
-|                       | Toggle zoom the current window (splits)  | `F11` (or `<leader> z`)      |
-|                       | Toggle relative number                   | `F12`                        |
-|                       | Run the `make clean` command             | `Shift+F10`                  |
-|                       | Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
-|                       | Toggle welcome screen                    | `Shift+F12`                  |
+| .                     | Run the `make` command                   | `F10`                        |
+| .                     | Toggle zoom the current window (splits)  | `F11` (or `<leader> z`)      |
+| .                     | Toggle relative number                   | `F12`                        |
+| .                     | Run the `make clean` command             | `Shift+F10`                  |
+| .                     | Toggle color code colorizing (e.g., CSS) | `Shift+F11`                  |
+| .                     | Toggle welcome screen                    | `Shift+F12`                  |
 
 ### 1.2. Custom commands
 
@@ -120,21 +120,21 @@ For the complete key-bindings, see Snacks picker's [doc](https://github.com/folk
 | Group       | Functionality                                         | Key-binding                   |
 | ----------- | ----------------------------------------------------- | ----------------------------- |
 | Navigation  | Go to *d*efinitions                                   | `gd`                          |
-|             | Go to *f*ile path (not LSP, vim default)              | `gf`                          |
-|             | Go to *f*ile path in a new vertical split             | `gF`                          |
-|             | Go to t*y*pe definition                               | `gy`                          |
-|             | Go to *r*eference                                     | `grr`                         |
-|             | Go to *i*mplementation                                | `gri`                         |
+| .           | Go to *f*ile path (not LSP, vim default)              | `gf`                          |
+| .           | Go to *f*ile path in a new vertical split             | `gF`                          |
+| .           | Go to t*y*pe definition                               | `gy`                          |
+| .           | Go to *r*eference                                     | `grr`                         |
+| .           | Go to *i*mplementation                                | `gri`                         |
 | Misc        | Re*n*ame variables                                    | `grn`                         |
-|             | Code *a*ction (if supported)                          | `gra`                         |
-|             | Show function documentation (on hover)                | `K`                           |
-|             | Show signature help (while typing function arguments) | `Ctrl+k`                      |
-|             | Code formatting (if supported)                        | `<leader> f`                  |
-|             | Toggle inlay-hint (if supported)                      | `<leader> i`                  |
+| .           | Code *a*ction (if supported)                          | `gra`                         |
+| .           | Show function documentation (on hover)                | `K`                           |
+| .           | Show signature help (while typing function arguments) | `Ctrl+k`                      |
+| .           | Code formatting (if supported)                        | `<leader> f`                  |
+| .           | Toggle inlay-hint (if supported)                      | `<leader> i`                  |
 | Diagnostics | Open *d*iagnostic list (project-wise)                 | `<space> d`                   |
-|             | Show current line's diagnostics                       | `Ctrl+w d` or `Ctrl+w Ctrl+d` |
-|             | Go to previous diagnostic                             | `[d`                          |
-|             | Go to next diagnostic                                 | `]d`                          |
+| .           | Show current line's diagnostics                       | `Ctrl+w d` or `Ctrl+w Ctrl+d` |
+| .           | Go to previous diagnostic                             | `[d`                          |
+| .           | Go to next diagnostic                                 | `]d`                          |
 
 ### 1.5. Window and buffer navigation
 
@@ -146,26 +146,26 @@ Overall logic:
 | Group               | Functionality                 | Key-binding         |
 | ------------------- | ----------------------------- | ------------------- |
 | Split manipulation  | Switch to the left window     | `Alt+h`             |
-|                     | Switch to the lower window    | `Alt+j`             |
-|                     | Switch to the upper window    | `Alt+k`             |
-|                     | Switch to the right window    | `Alt+l`             |
-|                     | Swap with the left window     | `Alt+Shift+h`       |
-|                     | Swap with the lower window    | `Alt+Shift+j`       |
-|                     | Swap with the upper window    | `Alt+Shift+k`       |
-|                     | Swap with the right window    | `Alt+Shift+l`       |
-|                     | Decrease window width         | `Alt+Left`          |
-|                     | Increase window width         | `Alt+Right`         |
-|                     | Decrease window height        | `Alt+Down`          |
-|                     | Increase window height        | `Alt+Up`            |
+| .                   | Switch to the lower window    | `Alt+j`             |
+| .                   | Switch to the upper window    | `Alt+k`             |
+| .                   | Switch to the right window    | `Alt+l`             |
+| .                   | Swap with the left window     | `Alt+Shift+h`       |
+| .                   | Swap with the lower window    | `Alt+Shift+j`       |
+| .                   | Swap with the upper window    | `Alt+Shift+k`       |
+| .                   | Swap with the right window    | `Alt+Shift+l`       |
+| .                   | Decrease window width         | `Alt+Left`          |
+| .                   | Increase window width         | `Alt+Right`         |
+| .                   | Decrease window height        | `Alt+Down`          |
+| .                   | Increase window height        | `Alt+Up`            |
 | Buffer manipulation | Switch to the previous buffer | `Ctrl+Alt+h`        |
-|                     | Switch to the next buffer     | `Ctrl+Alt+l`        |
-|                     | *J*ump to a buffer            | `Ctrl+Alt+j`        |
-|                     | *K*ill a buffer               | `Ctrl+Alt+k`        |
-|                     | Swap with the previous buffer | `Ctrl+Alt+Shift+h`  |
-|                     | Swap with the next buffer     | `Ctrl+Alt+Shift+l`  |
-|                     | Restore a closed buffer       | `Ctrl+Alt+Shift+j`  |
-|                     | Kill the current buffer       | `Ctrl+Alt+Shift+k`  |
-|                     | Pin/unpin the current buffer  | `Ctrl+Alt+p`        |
+| .                   | Switch to the next buffer     | `Ctrl+Alt+l`        |
+| .                   | *J*ump to a buffer            | `Ctrl+Alt+j`        |
+| .                   | *K*ill a buffer               | `Ctrl+Alt+k`        |
+| .                   | Swap with the previous buffer | `Ctrl+Alt+Shift+h`  |
+| .                   | Swap with the next buffer     | `Ctrl+Alt+Shift+l`  |
+| .                   | Restore a closed buffer       | `Ctrl+Alt+Shift+j`  |
+| .                   | Kill the current buffer       | `Ctrl+Alt+Shift+k`  |
+| .                   | Pin/unpin the current buffer  | `Ctrl+Alt+p`        |
 | Tab manipulation    | Switch to the next tab        | `Ctrl+Alt+PageDown` |
 | (vim default)       | Switch to the previous tab    | `Ctrl+Alt+PageUp`   |
 
@@ -194,26 +194,26 @@ All DAP key-bindings start with `,`.
 | Group        | Functionality                                   | Key-binding          |
 | ------------ | ----------------------------------------------- | -------------------- |
 | Misc         | **Show local key-maps in the buffer**           | `<leader> ?`         |
-|              | Insert python breakpoint (on the next line)     | `<leader> b`         |
-|              | Insert python breakpoint (on the previous line) | `<leader> B`         |
-|              | Fill line with `─` characters                   | `<leader> -`         |
-|              | Fill line with `━` characters                   | `<leader> =`         |
-|              | Generate doc string for function                | `<leader> d`         |
-|              | Toggle file explorer                            | `<leader> e`         |
-|              | Toggle outline view (on the screen right side)  | `<leader> o`         |
-|              | Toggle outline view (beside current buffer)     | `<leader> O`         |
-|              | Toggle Diffview                                 | `<leader> v`         |
-|              | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
+| .            | Insert python breakpoint (on the next line)     | `<leader> b`         |
+| .            | Insert python breakpoint (on the previous line) | `<leader> B`         |
+| .            | Fill line with `─` characters                   | `<leader> -`         |
+| .            | Fill line with `━` characters                   | `<leader> =`         |
+| .            | Generate doc string for function                | `<leader> d`         |
+| .            | Toggle file explorer                            | `<leader> e`         |
+| .            | Toggle outline view (on the screen right side)  | `<leader> o`         |
+| .            | Toggle outline view (beside current buffer)     | `<leader> O`         |
+| .            | Toggle Diffview                                 | `<leader> v`         |
+| .            | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
 | File Manager | Open Yazi                                       | `-`                  |
-|              | Open oil                                        | `_`                  |
+| .            | Open oil                                        | `_`                  |
 | Git hunk     | Go to previous hunk of Git change               | `[c`                 |
-|              | Go to next hunk of Git change                   | `]c`                 |
+| .            | Go to next hunk of Git change                   | `]c`                 |
 | Easy-align   | Start easy align (in visual mode)               | `<leader> a`         |
-|              | - _Example:_ align by `\|`                      | `<leader> a*\|`      |
-|              | - _Example:_ align by `<space>`                 | `<leader> a*<space>` |
+| .            | - _Example:_ align by `\|`                      | `<leader> a*\|`      |
+| .            | - _Example:_ align by `<space>`                 | `<leader> a*<space>` |
 | Neogen       | Generate docstring                              | `<leader> d`         |
 | Markdown     | Toggle markdown render                          | `<leader> m`         |
-|              | Cycle through checkbox marks                    | `Ctrl+<space>`       |
+| .            | Cycle through checkbox marks                    | `Ctrl+<space>`       |
 | Sidekick     | Toggle sidekick (AI Agent)                      | `Ctrl+.`             |
 
 ## 2. Useful default vim key-bindings
@@ -223,43 +223,43 @@ All DAP key-bindings start with `,`.
 | Group             | Functionality                                    | Key-binding               | Command   |
 | ----------------- | ------------------------------------------------ | ------------------------- | --------- |
 | Line navigation   | Go left/down/up/right                            | `h`/`j`/`k`/`l`           | -         |
-|                   | Go next/previous (useful for menu items)         | `Ctrl+n`/`Ctrl+p`         | -         |
-|                   | Go to start/end of current line                  | `0`/`$`                   | -         |
-|                   | Go to non-blank start/end of current line        | `^`/`g_`                  | -         |
+| .                 | Go next/previous (useful for menu items)         | `Ctrl+n`/`Ctrl+p`         | -         |
+| .                 | Go to start/end of current line                  | `0`/`$`                   | -         |
+| .                 | Go to non-blank start/end of current line        | `^`/`g_`                  | -         |
 | Word navigation   | Go to next/previous beginning of a word          | `w`/`b`                   | -         |
-|                   | Go to next/previous beginning of a WORD          | `W`/`B`                   | -         |
-|                   | Go to end of a word                              | `e`                       | -         |
-|                   | Go to end of a WORD                              | `E`                       | -         |
+| .                 | Go to next/previous beginning of a WORD          | `W`/`B`                   | -         |
+| .                 | Go to end of a word                              | `e`                       | -         |
+| .                 | Go to end of a WORD                              | `E`                       | -         |
 | Screen navigation | Go to first/last line                            | `gg`/`G`                  | -         |
-|                   | Go to `i`-th line                                | `<i>gg` or `<i>G`         | `:<i>`    |
-|                   | Move screen upward/downward (w.o. moving cursor) | `Ctrl+e`/`Ctrl+y`         | -         |
-|                   | Go half-page up/down                             | `Ctrl+u`/`Ctrl+d`         | -         |
-|                   | Go full-page backward/forward                    | `Ctrl+b`/`Ctrl+f`         | -         |
-|                   | Go to top of the screen (high)                   | `H`                       | -         |
-|                   | Go to middle of the screen (middle)              | `M`                       | -         |
-|                   | Go to bottom of the screen (low)                 | `L`                       | -         |
-|                   | Move current line to top of the screen           | `zt`                      | -         |
-|                   | Move current line to middle of the screen        | `zz`                      | -         |
-|                   | Move current line to bottom of the screen        | `zb`                      | -         |
+| .                 | Go to `i`-th line                                | `<i>gg` or `<i>G`         | `:<i>`    |
+| .                 | Move screen upward/downward (w.o. moving cursor) | `Ctrl+e`/`Ctrl+y`         | -         |
+| .                 | Go half-page up/down                             | `Ctrl+u`/`Ctrl+d`         | -         |
+| .                 | Go full-page backward/forward                    | `Ctrl+b`/`Ctrl+f`         | -         |
+| .                 | Go to top of the screen (high)                   | `H`                       | -         |
+| .                 | Go to middle of the screen (middle)              | `M`                       | -         |
+| .                 | Go to bottom of the screen (low)                 | `L`                       | -         |
+| .                 | Move current line to top of the screen           | `zt`                      | -         |
+| .                 | Move current line to middle of the screen        | `zz`                      | -         |
+| .                 | Move current line to bottom of the screen        | `zb`                      | -         |
 | Search navigation | Search (forward) for pattern                     | `/<pattern>`              | -         |
-|                   | Search (backward) for pattern                    | `?<pattern>`              | -         |
-|                   | Go to next/previous matching pattern             | `n`/`N`                   | -         |
-|                   | Clear search                                     | `Ctrl+l` (Neovim only)    | `:nohl`   |
+| .                 | Search (backward) for pattern                    | `?<pattern>`              | -         |
+| .                 | Go to next/previous matching pattern             | `n`/`N`                   | -         |
+| .                 | Clear search                                     | `Ctrl+l` (Neovim only)    | `:nohl`   |
 | Split navigation  | Create a horizontal split                        | `Ctrl+w` `s`              | `:split`  |
-|                   | Create a vertical split                          | `Ctrl+w` `v`              | `:vsplit` |
-|                   | Go to left/down/up/right split                   | `Ctrl+w` `h`/`j`/`k`/`l`  | -         |
-|                   | Move current split to the far left/down/up/right | `Ctrl+w` `H`/`J`/`K`/`L`  | -         |
-|                   | Switch to the top-left split                     | `Ctrl+w` `t`              | -         |
-|                   | Switch from (two) vertical to horizontal splits  | `Ctrl+w` `t` `Ctrl+w` `K` | -         |
-|                   | Switch from (two) horizontal to vertical splits  | `Ctrl+w` `t` `Ctrl+w` `H` | -         |
-|                   | Swap current split with the next                 | `Ctrl+w` `x`              | -         |
-|                   | Increase/decrease height                         | `Ctrl+w` `+`/`-`          | -         |
-|                   | Increase/decrease width                          | `Ctrl+w` `>`/`<`          | -         |
-|                   | Max out height                                   | `Ctrl+w` `_`              | -         |
-|                   | Max out width                                    | `Ctrl+w` `\|`             | -         |
-|                   | Equal height/width for all splits                | `Ctrl+w` `=`              | -         |
+| .                 | Create a vertical split                          | `Ctrl+w` `v`              | `:vsplit` |
+| .                 | Go to left/down/up/right split                   | `Ctrl+w` `h`/`j`/`k`/`l`  | -         |
+| .                 | Move current split to the far left/down/up/right | `Ctrl+w` `H`/`J`/`K`/`L`  | -         |
+| .                 | Switch to the top-left split                     | `Ctrl+w` `t`              | -         |
+| .                 | Switch from (two) vertical to horizontal splits  | `Ctrl+w` `t` `Ctrl+w` `K` | -         |
+| .                 | Switch from (two) horizontal to vertical splits  | `Ctrl+w` `t` `Ctrl+w` `H` | -         |
+| .                 | Swap current split with the next                 | `Ctrl+w` `x`              | -         |
+| .                 | Increase/decrease height                         | `Ctrl+w` `+`/`-`          | -         |
+| .                 | Increase/decrease width                          | `Ctrl+w` `>`/`<`          | -         |
+| .                 | Max out height                                   | `Ctrl+w` `_`              | -         |
+| .                 | Max out width                                    | `Ctrl+w` `\|`             | -         |
+| .                 | Equal height/width for all splits                | `Ctrl+w` `=`              | -         |
 | Other navigation  | Go to next/previous item in jumplist             | `Ctrl+i`/`Ctrl+o`         | -         |
-|                   | Go to next/previous item in tab (tab != buffer)  | `gt`/`gT`                 | -         |
+| .                 | Go to next/previous item in tab (tab != buffer)  | `gt`/`gT`                 | -         |
 
 ### 2.2. Buffers manipulation
 
