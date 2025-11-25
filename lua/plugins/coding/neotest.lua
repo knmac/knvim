@@ -25,6 +25,9 @@ return {
                     dap = { justMyCode = false },
                 }),
             },
+            floating = {
+                border = "rounded",
+            },
         })
     end,
 }
