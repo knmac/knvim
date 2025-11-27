@@ -176,7 +176,6 @@ All DAP key-bindings start with `,`.
 | Functionality                                 | Key-binding |
 | --------------------------------------------- | ----------- |
 | Toggle DAP UI                                 | `,d`        |
-| Toggle DAP defautl REPL                       | `,D`        |
 | Toggle DAP breakpoint                         | `,b`        |
 | Toggle DAP breakpoint with condition          | `,B`        |
 | Continue DAP debugging                        | `,c`        |
@@ -187,9 +186,25 @@ All DAP key-bindings start with `,`.
 | Terminate debugging                           | `,t`        |
 | Hover variable while debugging                | `,k`        |
 | Add the expression under cursor to watch list | `,w`        |
-| Generate launcher for python                  | `,gp`       |
+| Generate launcher template for python project | `,gp`       |
 
-### 1.7. Other custom key-bindings
+### 1.7. Neotest key-bindings
+
+All Neotest key-bindings start with `;`.
+
+| Functionality                             | Key-binding |
+| ----------------------------------------- | ----------- |
+| Toggle summary                            | `;s`        |
+| Open output (hover)                       | `;k`        |
+| Toggle output-panel                       | `;o`        |
+| Run the nearest test                      | `;rr`       |
+| Run the current file                      | `;rf`       |
+| Run the current file with nvim-dap        | `;rd`       |
+| Run the last test                         | `;ll`       |
+| Run the last test but debug with nvim-dap | `;ld`       |
+| Stop a running process                    | `;t`        |
+
+### 1.8. Other custom key-bindings
 
 | Group        | Functionality                                   | Key-binding          |
 | ------------ | ----------------------------------------------- | -------------------- |
