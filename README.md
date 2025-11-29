@@ -85,29 +85,29 @@ Follow instructions from [nvim-lazyman](https://github.com/doctorfree/nvim-lazym
 | Language              | Name               | Category         |
 | --------------------- | ------------------ | ---------------- |
 | Python                | basedpyright       | LSP              |
-| .                     | ruff_lsp           | Linter/Formatter |
-| .                     | debugpy            | DAP              |
+|                       | ruff_lsp           | Linter/Formatter |
+|                       | debugpy            | DAP              |
 | Bash                  | bashls             | LSP              |
-| .                     | shellcheck         | Linter           |
-| .                     | shfmt              | Formatter        |
-| .                     | bash-debug-adapter | DAP              |
+|                       | shellcheck         | Linter           |
+|                       | shfmt              | Formatter        |
+|                       | bash-debug-adapter | DAP              |
 | C/C++                 | clangd             | LSP              |
-| .                     | cpplint            | Linter           |
-| .                     | codelldb           | DAP              |
+|                       | cpplint            | Linter           |
+|                       | codelldb           | DAP              |
 | Vimscript             | vimls              | LSP              |
 | Lua                   | lua_ls             | LSP              |
 | LaTex                 | texlab             | LSP              |
-| .                     | bibtex-tidy        | Formatter        |
+|                       | bibtex-tidy        | Formatter        |
 | Markdown              | marksman           | LSP              |
-| .                     | prettier           | LSP              |
+|                       | prettier           | LSP              |
 | Typst                 | tinymist           | LSP              |
-| .                     | typstyle           | Formatter        |
+|                       | typstyle           | Formatter        |
 | YAML                  | yamlls             | LSP              |
-| .                     | prettier           | Formatter        |
+|                       | prettier           | Formatter        |
 | Typescript/Javascript | ts_ls              | LSP              |
-| .                     | prettier           | Formatter        |
+|                       | prettier           | Formatter        |
 | JSON                  | jsonls             | LSP              |
-| .                     | prettier           | Formatter        |
+|                       | prettier           | Formatter        |
 | HTML/CSS              | prettier           | Formatter        |
 | Copilot               | copilot            | LSP              |
 
