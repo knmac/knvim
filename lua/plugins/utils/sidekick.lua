@@ -7,6 +7,9 @@ return {
             --     backend = "zellij",
             --     enabled = false,
             -- },
+            tools = {
+                kiro = { cmd = { "kiro-cli" } },
+            },
             prompts = {
                 ["commit"] = "Can you make the commit message and commit the staged files? Do not push the commit.",
             },

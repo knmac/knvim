@@ -15,12 +15,6 @@ return {
                     border = "rounded",
                 },
             },
-            icons = {
-                ui = {
-                    bar = { separator = " " },
-                    menu = { indicator = " " },
-                },
-            },
         },
     },
 }
