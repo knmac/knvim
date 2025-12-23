@@ -23,7 +23,7 @@ return {
         --     end,
         --     desc = "Oil: open floating window"
         -- },
-        { "-", function() require("oil").open() end, desc = "Oil: open in the current buffer" },
+        { "_", function() require("oil").open() end, desc = "Oil: open in the current buffer" },
     },
     opts = {
         float = { padding = 2, border = "rounded", },

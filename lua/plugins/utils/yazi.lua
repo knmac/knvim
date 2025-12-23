@@ -6,7 +6,7 @@ return {
     keys = {
         -- { "<leader>-", "<cmd>Yazi<cr>", desc = "Open yazi at the current file", mode = { "n", "v" } },
         -- { "<leader>cw", "<cmd>Yazi cwd<cr>", desc = "Open the file manager in nvim's working directory", },
-        { "_", "<cmd>Yazi toggle<cr>", desc = "Yazi: Resume the last yazi session", },
+        -- { "_", "<cmd>Yazi toggle<cr>", desc = "Yazi: Resume the last yazi session", },
     },
     opts = {
         -- if you want to open yazi instead of netrw, see below for more info

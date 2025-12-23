@@ -219,8 +219,7 @@ All Neotest key-bindings start with `;`.
 |              | Toggle outline view (beside current buffer)     | `<leader> O`         |
 |              | Toggle Diffview                                 | `<leader> v`         |
 |              | In insert mode, `Alt+h,j,k,l` becomes arrows    | `Alt+h,j,k,l`        |
-| File Manager | Open Oil                                        | `-`                  |
-|              | Open Yazi                                       | `_`                  |
+| File Manager | Open Oil                                        | `_`                  |
 | Git hunk     | Go to previous hunk of Git change               | `[c`                 |
 |              | Go to next hunk of Git change                   | `]c`                 |
 | Easy-align   | Start easy align (in visual mode)               | `<leader> a`         |
