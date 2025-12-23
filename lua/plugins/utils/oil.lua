@@ -1,5 +1,5 @@
 -- A vim-vinegar like file explorer that lets you edit your filesystem like a normal Neovim buffer.
-local detail = false
+local detail = true
 
 -- Declare a global function to retrieve the current directory
 function _G.get_oil_winbar()
