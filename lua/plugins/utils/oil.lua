@@ -23,15 +23,15 @@ return {
         --     end,
         --     desc = "Oil: open floating window"
         -- },
-        { "_", function() require("oil").open() end, desc = "Oil: open in the current buffer" },
+        { "-", function() require("oil").open() end, desc = "Oil: open in the current buffer" },
     },
     opts = {
-        float = {
-            padding = 2,
-        },
-        view_options = {
-            show_hidden = true,
-        },
+        float = { padding = 2, border = "rounded", },
+        view_options = { show_hidden = true, },
+        confirmation = { border = "rounded", },
+        progress = { border = "rounded", },
+        ssh = { border = "rounded", },
+        keymaps_help = { border = "rounded", },
         keymaps = {
             ["q"] = { "actions.close", mode = "n" },
             ["gd"] = {
