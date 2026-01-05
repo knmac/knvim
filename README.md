@@ -45,7 +45,7 @@ Optional dependencies:
 
 - Python package `pynvim` (can be installed with `pip install pynvim`).
 - [LazyGit](https://github.com/jesseduffield/lazygit) for quick git management from [Snacks.nvim](https://github.com/folke/snacks.nvim).
-- [Yazi](https://yazi-rs.github.io/) for file explorer.
+<!-- - [Yazi](https://yazi-rs.github.io/) for file explorer. -->
 - A virtual environment (e.g., `conda`, `pyenv`, etc.) with the name `knvim`.
 
 #### 2.1.2. Installation steps
@@ -157,8 +157,7 @@ lua/
    │  ├── sidekick.lua
    │  ├── snacks.lua
    │  ├── todo-comments.lua
-   │  ├── which-key.lua
-   │  └── yazi.lua
+   │  └── which-key.lua
    └── init.lua
 ```
 
