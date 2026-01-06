@@ -48,7 +48,7 @@ local space_status = {
             { 2, 4, 8 },
             { prompt = "Local number of spaces per tab" },
             function(spaces)
-                if (spaces ~= nil) then
+                if spaces ~= nil then
                     vim.opt_local.tabstop = spaces
                     vim.opt_local.softtabstop = spaces -- For editing
                     vim.opt_local.shiftwidth = spaces  -- For autoindent
@@ -158,8 +158,8 @@ local filetype_mod = {
         if not is_clickable then return end
         vim.ui.select(
             vim.fn.getcompletion("", "filetype"),
-            { prompt = "Select file type: " },
-            function(choice) vim.bo.filetype = choice end
+            { prompt = "Select filetype" },
+            function(ft) if ft ~= nil then vim.bo.filetype = ft end end
         )
         vim.cmd.LspRestart()
     end,
@@ -172,11 +172,7 @@ local fileformat_mod = {
         vim.ui.select(
             { "unix", "mac", "dos" },
             { prompt = "Select fileformat" },
-            function(ff)
-                if ff ~= nil then
-                    vim.opt_local.fileformat = ff
-                end
-            end
+            function(ff) if ff ~= nil then vim.opt_local.fileformat = ff end end
         )
     end,
 }
