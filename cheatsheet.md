@@ -230,9 +230,38 @@ All Neotest key-bindings start with `;`.
 |              | Cycle through checkbox marks                    | `Ctrl+<space>`       |
 | Sidekick     | Toggle sidekick (AI Agent)                      | `Ctrl+.`             |
 
-## 2. Useful default vim key-bindings
+## 2. Clickable Lualine
 
-### 2.1. Standard navigation
+Lualine components are configured so that most of them are clickable, though the default behavior is non-clickable. To activate the clickable feature, click on the `󰍽` (mouse) icon on the far-right side.
+
+Here are the components (some are hidden by default):
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ModeGitBranchGitDiffDiagnostics   FileName   SpacingEncodingFileFormatFiletypeLSPStatusSearchCountProgressPythonEnvClick│
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+| Icon | Name        | Description                                                    | On-click                                    |
+| ---- | ----------- | -------------------------------------------------------------- | ------------------------------------------- |
+|     | Mode        | Vim mode status                                                |                                             |
+| 󰘬    | GitBranch   | (Optional) Current git branch                                  | Switch to another branch                    |
+|      | GitDiff     | (Optional) Git diff status (: added, : modified, : removed) | Toggle diff-view                            |
+|      | Diagnostics | (Optional) Diagnostics count from your preferred source        | Show diagnostics of current buffer          |
+|      | FileName    | Path to the current file (from cwd)                            | Show file selection (`Oil.nvim`)            |
+| 󱁐    | Spacing     | Number of spaces per tab (tabstop, softtabstop, shiftwidth)    | Switch to other spacing (2, 4, or 8)        |
+|      | Encoding    | File encoding                                                  |                                             |
+|      | FileFormat  | File format (unix, mac, dos)                                   | Switch to other file format                 |
+|      | FileType    | File type of the current buffer                                | Switch to other file type (and restart LSP) |
+|      | LSPStatus   | (Optional) Active LSP servers                                  | Show details of LSP config status           |
+| 󰍉    | SearchCount | (Optional) Number of search matches when hlsearch is active    | Clear search highlighting                   |
+|      | Progress    | Progress in file as row, col, and percentage                   |                                             |
+| 󰌠    | PythonEnv   | Current Python environment                                     | Switch to other Python envs                 |
+| 󰍽    | Click       | Currently clickable (󰍽) or non-clickable (󰍾)                   | Switch clickable status                     |
+
+## 3. Useful default vim key-bindings
+
+### 3.1. Standard navigation
 
 | Group             | Functionality                                    | Key-binding               | Command   |
 | ----------------- | ------------------------------------------------ | ------------------------- | --------- |
@@ -275,7 +304,7 @@ All Neotest key-bindings start with `;`.
 | Other navigation  | Go to next/previous item in jumplist             | `Ctrl+i`/`Ctrl+o`         | -         |
 |                   | Go to next/previous item in tab (tab != buffer)  | `gt`/`gT`                 | -         |
 
-### 2.2. Buffers manipulation
+### 3.2. Buffers manipulation
 
 | Functionality           | Command                               |
 | ----------------------- | ------------------------------------- |
@@ -286,7 +315,7 @@ All Neotest key-bindings start with `;`.
 | List all buffers        | `:ls`                                 |
 | Go to a buffer          | `:b` `<buffer_index>`/`<buffer_name>` |
 
-### 2.3. Substitution
+### 3.3. Substitution
 
 General command (regex):
 
@@ -315,7 +344,7 @@ Examples:
 - `:s/foo/bar/g`: replace `foo` by `bar` on the current line
 - `:'<,'>s/foo/bar/g`: replace all `foo` by `bar` on the selection (visual mode)
 
-### 2.4. Vim's default auto-completion (insert mode)
+### 3.4. Vim's default auto-completion (insert mode)
 
 | Functionality                      | Key-binding     |
 | ---------------------------------- | --------------- |
@@ -327,7 +356,7 @@ Examples:
 
 More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-5-awesome-examples-for-automatic-word-completion-using-ctrl-x-magic/)
 
-### 2.5. Code folding
+### 3.5. Code folding
 
 | Functionality    | Key-binding |
 | ---------------- | ----------- |
@@ -335,7 +364,7 @@ More information: [link](https://www.thegeekstuff.com/2009/01/vi-and-vim-editor-
 | Close all folds  | `zM`        |
 | Reopen all folds | `zR`        |
 
-### 2.6. Spelling
+### 3.6. Spelling
 
 Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath("data") .. "/spelling/en.utf-8.add"`). To turn spellchecking on, use the command: `:set spell` (turning off with `:set nospell`). You can specify which language as (e.g., en_us, en_gb, ...) `:set spell spelllang=en_us`. For more information, see `:h spell`.
 
@@ -347,7 +376,7 @@ Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath("data"
 | Previous misspelled word  | `[s`        |
 | Next misspelled word      | `]s`        |
 
-### 2.7. CTags key-bindings (requires CTags)
+### 3.7. CTags key-bindings (requires CTags)
 
 | Functionality        | Key-binding |
 | -------------------- | ----------- |
@@ -355,7 +384,7 @@ Need to set up `spellfile` first (knvim already set it as `vim.fn.stdpath("data"
 | Preview definition   | `Ctrl+w }`  |
 | Close preview window | `Ctrl+w z`  |
 
-### 2.8. Commenting (new in Neovim 0.10)
+### 3.8. Commenting (new in Neovim 0.10)
 
 | Functionality                                      | Key-binding  |
 | -------------------------------------------------- | ------------ |

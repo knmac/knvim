@@ -152,6 +152,15 @@ local env_status = {
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
 -- Modified status from builtin
 -- ────────────────────────────────────────────────────────────────────────────────────────────────
+local filename_mod = {
+    "filename", -- builtin filename component
+    path = 3,
+    on_click = function()
+        if not is_clickable then return end
+        require("oil").open()
+    end,
+}
+
 local filetype_mod = {
     "filetype", -- builtin filetype component
     on_click = function()
@@ -265,7 +274,7 @@ return {
                 diagnostics_mod,
             },
             lualine_c = {
-                { "filename", path = 3, },
+                filename_mod,
                 -- sess_status,
             },
             lualine_x = {
