@@ -237,9 +237,9 @@ Lualine components are configured so that most of them are clickable, though the
 Here are the components (some are hidden by default):
 
 ```text
-┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ModeGitBranchGitDiffDiagnostics   FileName   SpacingEncodingFileFormatFiletypeLSPStatusSearchCountProgressPythonEnvClick│
-└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌────┬─────────┬───────┬───────────┬──────────────┬───────┬────────┬──────────┬────────┬─────────┬───────────┬────────┬─────────┬─────┐
+│Mode│GitBranch│GitDiff│Diagnostics│   FileName   │Spacing│Encoding│FileFormat│Filetype│LSPStatus│SearchCount│Progress│PythonEnv│Click│
+└────┴─────────┴───────┴───────────┴──────────────┴───────┴────────┴──────────┴────────┴─────────┴───────────┴────────┴─────────┴─────┘
 ```
 
 | Icon | Name        | Description                                                    | On-click                                    |
@@ -253,11 +253,11 @@ Here are the components (some are hidden by default):
 |      | Encoding    | File encoding                                                  |                                             |
 |      | FileFormat  | File format (unix, mac, dos)                                   | Switch to other file format                 |
 |      | FileType    | File type of the current buffer                                | Switch to other file type (and restart LSP) |
-|      | LSPStatus   | (Optional) Active LSP servers                                  | Show details of LSP config status           |
+|     | LSPStatus   | (Optional) Active LSP servers                                  | Show details of LSP config status           |
 | 󰍉    | SearchCount | (Optional) Number of search matches when hlsearch is active    | Clear search highlighting                   |
-|      | Progress    | Progress in file as row, col, and percentage                   |                                             |
+| 󰪠    | Progress    | Progress in file as row, col, and percentage                   |                                             |
 | 󰌠    | PythonEnv   | Current Python environment                                     | Switch to other Python envs                 |
-| 󰍽    | Click       | Currently clickable (󰍽) or non-clickable (󰍾)                   | Switch clickable status                     |
+| 󰍽    | Click       | Currently clickable (󰍽) or non-clickable (󰍾)                   | Toggle clickable status                     |
 
 ## 3. Useful default vim key-bindings
 
