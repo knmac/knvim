@@ -21,6 +21,9 @@ return {
             ["<CR>"] = { "select_and_accept", "fallback" },
             -- ["<CR>"] = { "accept", "fallback" },
             ["<Tab>"] = {
+                function() -- sidekick next edit suggestion (NES)
+                    return require("sidekick").nes_jump_or_apply()
+                end,
                 function(cmp) return cmp.select_next() end,
                 "snippet_forward",
                 "fallback",
