@@ -110,6 +110,11 @@ local env_status = {
                 -- Standard path is .../[name]/bin/python, so get the third last token
                 current_env = tokens[#tokens - 2]
             end
+
+            -- Go up 1 level for uv project
+            if current_env == ".venv" and #tokens > 3 then
+                current_env = tokens[#tokens - 3]
+            end
         end
 
         return current_env
