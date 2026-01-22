@@ -120,7 +120,8 @@ return {
                         action = function()
                             vim.cmd(":e" .. vim.fn.stdpath("config") .. "/cheatsheet.md")
                             vim.cmd [[Outline!]]
-                            vim.cmd [[RenderMarkdown buf_enable]]
+                            -- vim.cmd [[RenderMarkdown buf_enable]]
+                            vim.cmd [[Markview enable]]
                         end,
                     },
                     --
