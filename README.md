@@ -143,17 +143,16 @@ lua/
    │  ├── rainbow_delimiters.lua
    │  └── winsep.lua
    ├── utils/
-   │  ├── diffview.lua
+   │  ├── codediff.lua
    │  ├── easy-align.lua
    │  ├── flash.lua
    │  ├── gitsigns.lua
-   │  ├── leap.lua
+   │  ├── markview.lua
    │  ├── nvim-colorizer.lua
    │  ├── oil.lua
    │  ├── outline.lua
    │  ├── persistence.lua
    │  ├── quicker.lua
-   │  ├── renderer-markdown-obsidian.lua
    │  ├── sidekick.lua
    │  ├── snacks.lua
    │  ├── todo-comments.lua
