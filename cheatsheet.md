@@ -1,9 +1,3 @@
----
-id: cheatsheet
-aliases: []
-tags: []
----
-
 # Knvim cheatsheet
 
 (The default `<leader>` is `\`)
