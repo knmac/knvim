@@ -3,10 +3,10 @@ return {
     opts = {
         -- add any options here
         cli = {
-            -- mux = {
-            --     backend = "zellij",
-            --     enabled = false,
-            -- },
+            mux = {
+                backend = "tmux",
+                enabled = true,
+            },
             tools = {
                 kiro = { cmd = { "kiro-cli" } },
             },
