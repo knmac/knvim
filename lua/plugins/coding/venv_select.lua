@@ -7,7 +7,7 @@ return {
         -- "mfussenegger/nvim-dap-python", --optional
         -- { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
     },
-    event = "VeryLazy",
+    ft = "python",
     keys = {
         { "<space>e", "<cmd>VenvSelect<cr>" },
     },
