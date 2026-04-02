@@ -1,4 +1,9 @@
 -- Collection of some nvim utilities
+local _version = tostring(vim.version())
+if vim.uv.os_uname().sysname == "Linux" then
+    _version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+end
+
 return {
     "folke/snacks.nvim",
     priority = 1000,
@@ -97,8 +102,15 @@ return {
                     { icon = "󱎸 ", key = "t", desc = "Grep text", action = ":lua Snacks.dashboard.pick('live_grep')" },
                     -- { icon = "󰺄 ", key = "s", desc = "Find session", action = ":SessionManager load_session" },
                     -- { icon = "󰺄 ", key = "s", desc = "Session manager", action = ":lua Snacks.dashboard.pick('projects')" },
-                    { icon = "󰺄 ", key = "s", desc = "Session manager", action = function() require("persistence")
-                            .select() end },
+                    {
+                        icon = "󰺄 ",
+                        key = "s",
+                        desc = "Session manager",
+                        action = function()
+                            require("persistence")
+                                .select()
+                        end
+                    },
                     -- { icon = " ", key = "r", desc = "Remote manager", action = ":RemoteStart" },
                     --
                     { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
@@ -135,7 +147,8 @@ return {
 ██║  ██╗██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
 ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]] ..
-                    "───── NVIM " .. tostring(vim.version()) .. " ─────",
+                    -- "───── NVIM v" .. tostring(vim.version()) .. " ─────",
+                    "───── NVIM v" .. _version .. " ─────",
             },
             sections = {
                 { section = "header" },
