@@ -49,17 +49,20 @@ vim.g.loaded_perl_provider = 0
 -- vim.g.mapleader = ','
 vim.opt.mouse = "a"               -- enable mouse support
 vim.opt.clipboard = "unnamedplus" -- copy/paste to system clipboard
-vim.g.clipboard = {               -- clipboard for remote computer (for kitty, use kitten ssh)
-    name = "OSC 52",
-    copy = {
-        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-    },
-    paste = {
-        ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-    },
-}
+-- clipboard for remote computer (for kitty, use kitten ssh)
+if vim.env.SSH_TTY then
+    vim.g.clipboard = {
+        name = "OSC 52",
+        copy = {
+            ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+            ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+        },
+        paste = {
+            ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+            ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+        },
+    }
+end
 vim.opt.swapfile = false               -- don't use swapfile
 vim.opt.wildmenu = true                -- enhance mode of command-line completion
 vim.opt.wildmode = "longest:full,full" -- completion mode config
