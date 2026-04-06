@@ -37,6 +37,7 @@ return {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         opts = {
             ensure_installed = {
+                "tree-sitter-cli",                              -- needed by nvim-treesitter (main)
                 "cpplint", "shellcheck",                        -- linter
                 "prettier", "bibtex-tidy", "shfmt", "typstyle", -- formatter
             },
