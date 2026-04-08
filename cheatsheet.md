@@ -223,6 +223,7 @@ All Neotest key-bindings start with `;`.
 | Markdown     | Toggle markdown render                          | `<leader> m`         |
 |              | Cycle through checkbox marks                    | `Ctrl+<space>`       |
 | Sidekick     | Toggle sidekick (AI Agent)                      | `Ctrl+.`             |
+|              | Select sidekick (AI Agent)                      | `Ctrl+/`             |
 
 ## 2. Clickable Lualine
 

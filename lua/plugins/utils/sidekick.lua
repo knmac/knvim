@@ -39,6 +39,13 @@ return {
             mode = { "n", "x", "i", "t" },
             desc = "Sidekick Switch Focus",
         },
+        {
+            "<c-/>",
+            function() require("sidekick.cli").select() end,
+            -- Or to select only installed tools:
+            -- require("sidekick.cli").select({ filter = { installed = true } })
+            desc = "Sidekick Select CLI",
+        },
         -- {
         --     "<leader>aa",
         --     function() require("sidekick.cli").toggle() end,
