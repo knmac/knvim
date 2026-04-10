@@ -33,14 +33,14 @@ return {
             --
             options = {
                 parsers = {
-                    css = false,                  -- preset: enables names, hex, rgb, hsl, oklch
-                    css_fn = false,               -- preset: enables rgb, hsl, oklch
-                    names = { enable = false },   -- Blue
-                    hex = { enable = false },      -- #123456
-                    rgb = { enable = true },      -- rgb(255, 0, 0)
-                    hsl = { enable = true },      -- hsl(120, 50, 50)
-                    oklch = { enable = true },    -- oklch(40.1% 0.123 21.57)
-                    tailwind = { enable = true }, -- bg-sky-500
+                    css = false,                          -- preset: enables names, hex, rgb, hsl, oklch
+                    css_fn = false,                       -- preset: enables rgb, hsl, oklch
+                    names = { enable = false },           -- Blue
+                    hex = { enable = true, rgb = false }, -- #RRGGBB only, not #RGB
+                    rgb = { enable = true },              -- rgb(255, 0, 0)
+                    hsl = { enable = true },              -- hsl(120, 50, 50)
+                    oklch = { enable = true },            -- oklch(40.1% 0.123 21.57)
+                    tailwind = { enable = true },         -- bg-sky-500
                     sass = { enable = true },
                     xterm = { enable = true },
                 },
