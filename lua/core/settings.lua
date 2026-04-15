@@ -89,6 +89,7 @@ vim.opt.showmatch = true      -- highlight matching parenthesis
 vim.opt.smartcase = true      -- ignore lowercase for the whole pattern
 vim.opt.linebreak = true      -- wrap on word boundary
 vim.opt.signcolumn = "yes"    -- always show the sign column to not shift the text
+vim.opt.winborder = "rounded" -- default border style of floating windows
 
 -- Marking special characters
 vim.opt.list = true -- list mode to mark special characters

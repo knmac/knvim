@@ -54,7 +54,7 @@ return {
         end,
         preview_config = {
             -- Options passed to nvim_open_win
-            border = "rounded",
+            -- border = "rounded",
             style = "minimal",
             relative = "cursor",
             row = 1,

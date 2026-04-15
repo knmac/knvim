@@ -14,8 +14,6 @@ return {
     opts = {
         preset = "classic", -- classic | modern | helix
         delay = 200,
-        win = {
-            border = "rounded",
-        },
+        win = { border = "rounded" },  -- this does not inherit vim.opt.winborder
     },
 }

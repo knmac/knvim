@@ -111,7 +111,8 @@ return {
             { ",gp", generate_python_launher, desc = "DAP: Generate launcher for Python" },
             {
                 ",k",
-                function() require("dap.ui.widgets").hover(nil, { border = "rounded" }) end,
+                -- function() require("dap.ui.widgets").hover(nil, { border = "rounded" }) end,
+                function() require("dap.ui.widgets").hover() end,
                 desc = "DAP: Check variable value on hover",
             },
             -- {

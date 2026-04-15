@@ -27,7 +27,7 @@ vim.diagnostic.config({
     -- Float
     float = {
         source = true, -- Or 'if_many'  -> show source of diagnostics
-        border = "rounded",
+        -- border = "rounded",
     },
 })
 
