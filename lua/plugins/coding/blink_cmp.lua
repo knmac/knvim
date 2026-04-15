@@ -1,3 +1,30 @@
+--- Experimental function to render markdown doc (for documentation)
+local render_markdown_doc = function(opts)
+    local buf = opts.window:get_buf()
+    local item = opts.item
+    local lines = {}
+
+    if item.detail and item.detail ~= "" then
+        vim.list_extend(lines, vim.split(item.detail, "\n"))
+    end
+
+    local doc = item.documentation
+    if doc then
+        if #lines > 0 then table.insert(lines, "---") end
+        if type(doc) == "string" then
+            vim.list_extend(lines, vim.split(doc, "\n"))
+        elseif type(doc) == "table" and doc.value then
+            vim.list_extend(lines, vim.split(doc.value, "\n"))
+        end
+    end
+
+    if #lines == 0 then return end
+
+    vim.api.nvim_set_option_value("modifiable", true, { buf = buf })
+    vim.lsp.util.stylize_markdown(buf, lines, {})
+    vim.api.nvim_set_option_value("modifiable", false, { buf = buf })
+end
+
 return {
     "saghen/blink.cmp",
     event = { "CmdlineEnter", "InsertEnter" },
@@ -82,6 +109,8 @@ return {
             documentation = {
                 auto_show = true,
                 auto_show_delay_ms = 100,
+                treesitter_highlighting = true,
+                draw = render_markdown_doc,
                 window = { border = "rounded" },
             },
             ghost_text = { enabled = true },
