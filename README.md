@@ -232,6 +232,8 @@ The above config uses Python as an example, but you can setup debugger for other
 
 Create the file `~/.gitconfig` globally, where the content looks something like this:
 
+**If using Diffview**:
+
 ```toml
 [merge]
     tool = nvim
@@ -240,6 +242,19 @@ Create the file `~/.gitconfig` globally, where the content looks something like 
     prompt = false
 [mergetool "nvim"]
     cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\" -c DiffviewOpen"
+```
+
+**If using Codediff**:
+
+```toml
+[merge]
+    tool = codediff
+[mergetool "codediff"]
+    cmd = "nvim \"$MERGED\" -c \"CodeDiff merge \\\"$MERGED\\\"\""
+[diff]
+    tool = codediff
+[difftool "codediff"]
+    cmd = "nvim \"$LOCAL\" \"$REMOTE\" +\"CodeDiff file $LOCAL $REMOTE\""
 ```
 
 ### 5.4. Marksman (LSP server for markdown)
