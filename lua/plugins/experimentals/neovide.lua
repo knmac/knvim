@@ -1,7 +1,9 @@
--- Neovide settings if available
 if vim.g.neovide then
     -- Set GUI  font
     vim.o.guifont = "JetBrainsMono Nerd Font:h17"
+
+    -- Set background
+    vim.cmd[[set background=dark]]
 
     -- Cursor effect
     -- vim.g.neovide_cursor_vfx_mode = "railgun"
@@ -21,6 +23,15 @@ if vim.g.neovide then
     vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
     vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
     vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
-end
 
-return {}
+    -- Frosted pop-up windows
+    vim.opt.winblend = 100
+    vim.opt.pumblend = 100
+    vim.g.neovide_floating_blur_amount_x = 30
+    vim.g.neovide_floating_blur_amount_y = 30
+
+    -- Ignore snacks ui features
+    vim.b.minianimate_disable = true
+    vim.b.snacks_scroll = false
+    vim.b.snacks_dim = false
+end
