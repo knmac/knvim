@@ -14,7 +14,7 @@ return {
     -- { import = "plugins.experimentals.metals" },
     -- { import = "plugins.experimentals.neopyter" },
     -- { import = "plugins.experimentals.neorg" },
-    { import = "plugins.experimentals.neovide" },
+    -- { import = "plugins.experimentals.neovide" },
     -- { import = "plugins.experimentals.nonels" },
     -- { import = "plugins.experimentals.remote-nvim" },
 }
