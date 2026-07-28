@@ -7,7 +7,7 @@ return {
     config = function()
         require("nvim-treesitter").install({
             "bash", "c", "lua", "markdown", "markdown_inline", "python", "query", "vim", "vimdoc",
-            "bibtex", "cmake", "cpp", "css", "dap_repl", "git_config", "html",
+            "bibtex", "cmake", "cpp", "css", "git_config", "html",
             "javascript", "json", "latex", "regex", "scala", "sql", "toml", "typescript", "yaml",
         })
 
