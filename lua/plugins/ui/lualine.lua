@@ -233,7 +233,10 @@ local lsp_status_mod = {
 local searchcount_mod = {
     "searchcount", -- builtin searchcount
     icon = "󰍉",
-    cond = function() return vim.fn.searchcount().total > 0 end,
+    cond = function()
+        local sc = vim.fn.searchcount()
+        return sc.total ~= nil and sc.total > 0
+    end,
     on_click = function()
         if not is_clickable then return end
         vim.cmd("nohlsearch")
