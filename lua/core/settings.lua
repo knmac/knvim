@@ -105,8 +105,10 @@ vim.opt.foldlevel = 99      -- set fold level
 vim.opt.foldlevelstart = 99 -- open most folds by default
 vim.opt.foldnestmax = 10    -- 10 nested fold max
 -- vim.opt.foldmethod = "indent" -- set folding method by looking at indent
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- NOTE: treesitter folding is set per-buffer in plugins/coding/treesitter.lua, so that
+-- buffers without a parser (large files, health) don't pay for a treesitter foldexpr.
 
 function _G.custom_fold_text()
     local line_start = vim.fn.getline(vim.v.foldstart)

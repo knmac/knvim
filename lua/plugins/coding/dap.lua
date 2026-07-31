@@ -66,7 +66,9 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         -- event = "VeryLazy",
         dependencies = "nvim-treesitter/nvim-treesitter",
-        build = ":TSInstall dap_repl",
+        -- NOTE: no `build = ":TSInstall dap_repl"`. On the `main` branch this plugin
+        -- registers `dap_repl` via a `User TSUpdate` autocmd, so the parser is picked
+        -- up by `:TSUpdate`; a `build` step here would race that registration.
         opts = {},
     },
     -- {
