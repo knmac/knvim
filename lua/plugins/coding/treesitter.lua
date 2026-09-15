@@ -10,7 +10,7 @@ return {
             "bash", "c", "lua", "markdown", "markdown_inline", "python", "query", "vim", "vimdoc",
             "bibtex", "cmake", "cpp", "css", "git_config", "html", "javascript", "json", "latex",
             "regex", "scala", "sql", "toml", "typescript", "yaml", "typst", "norg", "scss",
-            "svelte", "tsx", "vue",
+            "svelte", "tsx", "vue", "java",
         })
 
         -- Skip treesitter for large files and health buffers
