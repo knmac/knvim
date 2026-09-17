@@ -21,7 +21,9 @@ local render_markdown_doc = function(opts)
     if #lines == 0 then return end
 
     vim.api.nvim_set_option_value("modifiable", true, { buf = buf })
-    vim.lsp.util.stylize_markdown(buf, lines, {})
+    -- vim.lsp.util.stylize_markdown(buf, lines, {})
+    vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+    vim.treesitter.start(buf, "markdown") -- replaces deprecated vim.lsp.util.stylize_markdown
     vim.api.nvim_set_option_value("modifiable", false, { buf = buf })
 end
 
