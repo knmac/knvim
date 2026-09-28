@@ -50,7 +50,7 @@ vim.g.loaded_perl_provider = 0
 vim.opt.mouse = "a"               -- enable mouse support
 vim.opt.clipboard = "unnamedplus" -- copy/paste to system clipboard
 -- clipboard for remote computer (for kitty, use kitten ssh)
-if vim.env.SSH_TTY then
+if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
     vim.g.clipboard = {
         name = "OSC 52",
         copy = {
