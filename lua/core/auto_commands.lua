@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     group = vim.api.nvim_create_augroup("two_space_group", { clear = false }),
     desc = "2 spaces for these files types",
-    pattern = { "xml", "yaml", "json", "html", "css", "typescript", "scala", "markdown" },
+    pattern = { "xml", "yaml", "json", "html", "css", "typescript", "scala", "markdown", "javascript" },
     callback = function()
         vim.opt_local.tabstop = 2
         vim.opt_local.softtabstop = 2
